@@ -17,13 +17,16 @@ type QuizPhase = 'START' | 'SELECT' | 'QUESTION' | 'FEEDBACK' | 'RESULT';
 
 const ProgressBar = ({ current, total }: { current: number; total: number }) => {
   return (
-    <div className="absolute top-4 left-0 right-0 px-4 flex gap-1.5 z-50">
+    <div className="absolute top-4 left-0 right-0 px-4 flex gap-1 z-50">
       {Array.from({ length: total }).map((_, i) => (
-        <div key={i} className="h-0.5 flex-1 bg-olive/10 rounded-full overflow-hidden">
+        <div key={i} className="h-0.5 flex-1 bg-olive/5 rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-olive"
-            initial={{ width: 0 }}
-            animate={{ width: i < current ? '100%' : i === current ? '0%' : '0%' }}
+            className="h-full bg-olive/40"
+            initial={false}
+            animate={{ 
+              width: i < current ? "100%" : i === current ? "0%" : "0%",
+              backgroundColor: i < current ? "var(--color-olive)" : "rgba(var(--color-olive), 0.1)"
+            }}
           />
         </div>
       ))}
@@ -180,41 +183,48 @@ export default function App() {
                 </h2>
               </div>
               
-              <div className="grid gap-3 pb-24">
-                {currentQuestion.choices.map((choice, i) => (
-                  <motion.button
-                    key={i}
-                    onClick={() => handleChoice(choice)}
-                    disabled={hasAnswered}
-                    animate={hasAnswered ? { 
-                      opacity: choice.member === lastSelectedMember ? 1 : 0.4,
-                      scale: choice.member === lastSelectedMember ? 1.02 : 0.98
-                    } : {}}
-                    className={`w-full text-left p-5 rounded-2xl text-base leading-snug font-medium shadow-sm transition-all relative overflow-hidden ${
-                      !hasAnswered 
-                        ? 'bg-cream border border-olive/5 active:border-terracotta active:bg-terracotta/5' 
-                        : choice.member === lastSelectedMember
-                          ? 'bg-cream border-2 border-terracotta'
-                          : 'bg-white/50 border border-olive/10'
-                    }`}
-                  >
-                    <div className={hasAnswered ? 'pr-20' : ''}>
-                      {choice.text}
-                    </div>
-                    
-                    {hasAnswered && (
-                      <motion.div 
-                        initial={{ x: 20, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        className={`absolute right-4 top-1/2 -translate-y-1/2 font-bold text-[10px] uppercase tracking-widest ${
-                          choice.member === lastSelectedMember ? 'text-terracotta' : 'text-olive/40'
-                        }`}
-                      >
-                        {choice.member}
-                      </motion.div>
-                    )}
-                  </motion.button>
-                ))}
+              <div className="grid gap-2.5 pb-32">
+                {currentQuestion.choices.map((choice, i) => {
+                  const isSelected = choice.member === lastSelectedMember;
+                  return (
+                    <motion.button
+                      key={i}
+                      onClick={() => handleChoice(choice)}
+                      disabled={hasAnswered}
+                      initial={false}
+                      animate={hasAnswered ? { 
+                        opacity: isSelected ? 1 : 0.4,
+                        scale: isSelected ? 1 : 0.98,
+                        backgroundColor: isSelected ? "var(--color-cream)" : "rgba(255,255,255,0.05)"
+                      } : {}}
+                      className={`w-full text-left p-4 rounded-xl text-[15px] leading-snug font-medium transition-all relative flex items-center justify-between gap-4 border ${
+                        !hasAnswered 
+                          ? "bg-cream border-olive/5 shadow-sm active:scale-98 active:border-terracotta" 
+                          : isSelected
+                            ? "border-terracotta ring-1 ring-terracotta/20 shadow-md"
+                            : "border-transparent"
+                      }`}
+                    >
+                      <span className={`flex-1 ${hasAnswered && !isSelected ? "text-ink/60" : "text-ink"}`}>
+                        {choice.text}
+                      </span>
+                      
+                      <AnimatePresence>
+                        {hasAnswered && (
+                          <motion.div 
+                            initial={{ x: 10, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            className={`shrink-0 font-bold text-[9px] uppercase tracking-wider px-2 py-1 rounded-md ${
+                              isSelected ? "bg-terracotta text-white" : "bg-olive/10 text-olive/40"
+                            }`}
+                          >
+                            {choice.member}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.button>
+                  );
+                })}
               </div>
             </div>
 
