@@ -14,6 +14,8 @@
 
 @layer base {
   body {
-    @apply bg-bg-base text-ink font-sans;
+    @apply bg-bg-base text-ink font-sans antialiased;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
   }
 }

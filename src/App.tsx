@@ -197,32 +197,54 @@ export default function App() {
         )}
 
         {/* FEEDBACK PHASE */}
-        {phase === 'FEEDBACK' && (
+        {phase === 'FEEDBACK' && currentQuestion && (
           <motion.div
             key="feedback"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="h-full flex flex-col items-center justify-center p-8 bg-olive/95 backdrop-blur-md relative overflow-hidden"
+            className="h-full flex flex-col p-8 bg-olive/95 backdrop-blur-md relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
             
             <motion.div 
               initial={{ scale: 0.9, y: 10 }}
               animate={{ scale: 1, y: 0 }}
-              className="text-center space-y-6 z-10"
+              className="flex-1 flex flex-col justify-center gap-8 z-10"
             >
-              <div className="text-5xl mb-8">👉</div>
-              <h3 className="text-2xl font-serif italic text-cream/70 leading-tight">
-                Questa è la filosofia di
-              </h3>
-              <div className="text-6xl font-sans font-bold uppercase tracking-tighter text-white">
-                {lastSelectedMember}
+              <div className="text-center space-y-2 mb-4">
+                <span className="text-4xl">💡</span>
+                <h3 className="text-2xl font-serif italic text-cream/70 leading-tight">
+                  Analisi delle Filosofie
+                </h3>
+              </div>
+
+              <div className="space-y-4">
+                {currentQuestion.choices.map((choice, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className={`p-4 rounded-2xl border transition-all ${
+                      lastSelectedMember === choice.member 
+                        ? 'bg-cream border-white scale-[1.02] shadow-md' 
+                        : 'bg-white/10 border-white/20 opacity-60'
+                    }`}
+                  >
+                    <div className={`text-sm font-medium mb-1 line-clamp-2 ${lastSelectedMember === choice.member ? 'text-ink' : 'text-cream/80'}`}>
+                      "{choice.text}"
+                    </div>
+                    <div className={`text-[10px] font-bold uppercase tracking-widest ${lastSelectedMember === choice.member ? 'text-terracotta' : 'text-cream/50'}`}>
+                      → {choice.member}
+                    </div>
+                  </motion.div>
+                ))}
               </div>
               
               <button
                 onClick={handleNext}
-                className="mt-16 inline-flex items-center gap-3 bg-cream text-olive px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm active:scale-95 transition-transform"
+                className="mt-8 flex items-center justify-center gap-3 bg-cream text-olive w-full py-4 rounded-full font-bold uppercase tracking-widest text-sm active:scale-95 transition-transform"
               >
                 Prosegui <ChevronRight size={18} />
               </button>
