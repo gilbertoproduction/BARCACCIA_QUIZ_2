@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, RefreshCw, Users, BookOpen } from 'lucide-react';
+import { ChevronRight, RefreshCw, Users, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Member, Choice } from './types';
 import { QUIZZES, Quiz } from './data/quizzes';
 
@@ -39,6 +39,11 @@ export default function App() {
   const [activeQuiz, setActiveQuiz] = useState<Quiz | null>(null);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [hasAnswered, setHasAnswered] = useState(false);
+  const [completedQuizzes, setCompletedQuizzes] = useState<string[]>(() => {
+    const saved = localStorage.getItem('completed_quizzes');
+    return saved ? JSON.parse(saved) : [];
+  });
+
   const [scores, setScores] = useState<Record<Member, number>>({
     SIMO: 0,
     MARCO: 0,
@@ -47,6 +52,10 @@ export default function App() {
     FILO: 0,
   });
   const [lastSelectedMember, setLastSelectedMember] = useState<Member | null>(null);
+
+  useEffect(() => {
+    localStorage.setItem('completed_quizzes', JSON.stringify(completedQuizzes));
+  }, [completedQuizzes]);
 
   const currentQuestion = activeQuiz?.questions[currentIdx];
 
@@ -74,12 +83,15 @@ export default function App() {
       setCurrentIdx(currentIdx + 1);
       setHasAnswered(false);
     } else {
+      if (activeQuiz && !completedQuizzes.includes(activeQuiz.id)) {
+        setCompletedQuizzes(prev => [...prev, activeQuiz.id]);
+      }
       setPhase('RESULT');
     }
   };
 
   const resetQuiz = () => {
-    setPhase('START');
+    setPhase('SELECT');
     setActiveQuiz(null);
   };
 
@@ -139,24 +151,43 @@ export default function App() {
               <p className="text-neutral-500">Seleziona un argomento per iniziare il test.</p>
             </div>
 
-            <div className="space-y-4">
-              {QUIZZES.map((quiz) => (
-                <button
-                  key={quiz.id}
-                  onClick={() => handleSelectQuiz(quiz)}
-                  className="w-full text-left bg-cream p-6 rounded-3xl border border-olive/5 shadow-sm active:scale-98 transition-all"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-olive/5 rounded-xl flex items-center justify-center shrink-0">
-                      <BookOpen size={20} className="text-olive" />
+            <div className="space-y-4 pb-12">
+              {QUIZZES.map((quiz) => {
+                const isCompleted = completedQuizzes.includes(quiz.id);
+                return (
+                  <button
+                    key={quiz.id}
+                    onClick={() => handleSelectQuiz(quiz)}
+                    className={`w-full text-left p-6 rounded-3xl border transition-all shadow-sm active:scale-98 relative group ${
+                      isCompleted ? 'bg-cream/40 border-olive/10' : 'bg-cream border-olive/5'
+                    }`}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-colors ${
+                        isCompleted ? 'bg-olive text-white border-olive' : 'bg-olive/5 text-olive border-olive/5'
+                      }`}>
+                        {isCompleted ? <CheckCircle2 size={20} /> : <BookOpen size={20} />}
+                      </div>
+                      <div className="flex-1 pr-4">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h3 className={`font-bold text-lg leading-tight ${isCompleted ? 'text-ink/60' : 'text-ink'}`}>
+                            {quiz.title}
+                          </h3>
+                        </div>
+                        <p className={`text-xs leading-normal ${isCompleted ? 'text-neutral-400/60' : 'text-neutral-400'}`}>
+                          {quiz.description}
+                        </p>
+                      </div>
+                      
+                      {isCompleted && (
+                        <div className="absolute top-6 right-6 px-2 py-1 bg-olive/10 rounded-md">
+                          <span className="text-[8px] font-bold uppercase tracking-wider text-olive">Completato</span>
+                        </div>
+                      )}
                     </div>
-                    <div>
-                      <h3 className="font-bold text-lg leading-tight mb-1">{quiz.title}</h3>
-                      <p className="text-xs text-neutral-400 leading-normal">{quiz.description}</p>
-                    </div>
-                  </div>
-                </button>
-              ))}
+                  </button>
+                );
+              })}
             </div>
           </motion.div>
         )}
