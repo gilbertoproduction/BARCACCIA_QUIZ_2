@@ -35,6 +35,7 @@ export default function App() {
   const [phase, setPhase] = useState<QuizPhase>('START');
   const [activeQuiz, setActiveQuiz] = useState<Quiz | null>(null);
   const [currentIdx, setCurrentIdx] = useState(0);
+  const [hasAnswered, setHasAnswered] = useState(false);
   const [scores, setScores] = useState<Record<Member, number>>({
     SIMO: 0,
     MARCO: 0,
@@ -53,20 +54,22 @@ export default function App() {
   const handleSelectQuiz = (quiz: Quiz) => {
     setActiveQuiz(quiz);
     setCurrentIdx(0);
+    setHasAnswered(false);
     setScores({ SIMO: 0, MARCO: 0, DAVE: 0, PIETRO: 0, FILO: 0 });
     setPhase('QUESTION');
   };
 
   const handleChoice = (choice: Choice) => {
+    if (hasAnswered) return;
     setLastSelectedMember(choice.member);
     setScores(prev => ({ ...prev, [choice.member]: (prev[choice.member] as number) + 1 }));
-    setPhase('FEEDBACK');
+    setHasAnswered(true);
   };
 
   const handleNext = () => {
     if (activeQuiz && currentIdx < activeQuiz.questions.length - 1) {
       setCurrentIdx(currentIdx + 1);
-      setPhase('QUESTION');
+      setHasAnswered(false);
     } else {
       setPhase('RESULT');
     }
@@ -167,7 +170,7 @@ export default function App() {
           >
             <ProgressBar current={currentIdx} total={activeQuiz.questions.length} />
             
-            <div className="flex-1 flex flex-col gap-10 mt-8">
+            <div className="flex-1 flex flex-col gap-10 mt-8 overflow-y-auto hide-scrollbar">
               <div className="space-y-2">
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-olive opacity-60">
                   Domanda {currentIdx + 1} di {activeQuiz.questions.length}
@@ -177,18 +180,58 @@ export default function App() {
                 </h2>
               </div>
               
-              <div className="grid gap-3">
+              <div className="grid gap-3 pb-24">
                 {currentQuestion.choices.map((choice, i) => (
-                  <button
+                  <motion.button
                     key={i}
                     onClick={() => handleChoice(choice)}
-                    className="w-full text-left bg-cream border border-olive/5 p-5 rounded-2xl text-base leading-snug font-medium shadow-sm active:border-terracotta active:bg-terracotta/5 transition-all text-ink/80"
+                    disabled={hasAnswered}
+                    animate={hasAnswered ? { 
+                      opacity: choice.member === lastSelectedMember ? 1 : 0.4,
+                      scale: choice.member === lastSelectedMember ? 1.02 : 0.98
+                    } : {}}
+                    className={`w-full text-left p-5 rounded-2xl text-base leading-snug font-medium shadow-sm transition-all relative overflow-hidden ${
+                      !hasAnswered 
+                        ? 'bg-cream border border-olive/5 active:border-terracotta active:bg-terracotta/5' 
+                        : choice.member === lastSelectedMember
+                          ? 'bg-cream border-2 border-terracotta'
+                          : 'bg-white/50 border border-olive/10'
+                    }`}
                   >
-                    {choice.text}
-                  </button>
+                    <div className={hasAnswered ? 'pr-20' : ''}>
+                      {choice.text}
+                    </div>
+                    
+                    {hasAnswered && (
+                      <motion.div 
+                        initial={{ x: 20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        className={`absolute right-4 top-1/2 -translate-y-1/2 font-bold text-[10px] uppercase tracking-widest ${
+                          choice.member === lastSelectedMember ? 'text-terracotta' : 'text-olive/40'
+                        }`}
+                      >
+                        {choice.member}
+                      </motion.div>
+                    )}
+                  </motion.button>
                 ))}
               </div>
             </div>
+
+            {hasAnswered && (
+              <motion.div 
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                className="absolute bottom-10 left-6 right-6 z-20"
+              >
+                <button
+                  onClick={handleNext}
+                  className="w-full bg-olive text-white py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-xl active:scale-95 transition-transform flex items-center justify-center gap-2"
+                >
+                  Prosegui <ChevronRight size={18} />
+                </button>
+              </motion.div>
+            )}
 
             <div className="py-6 text-center text-olive/30 font-bold text-[9px] uppercase tracking-[0.3em]">
               {activeQuiz.title}
@@ -196,61 +239,7 @@ export default function App() {
           </motion.div>
         )}
 
-        {/* FEEDBACK PHASE */}
-        {phase === 'FEEDBACK' && currentQuestion && (
-          <motion.div
-            key="feedback"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="h-full flex flex-col p-8 bg-olive/95 backdrop-blur-md relative overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
-            
-            <motion.div 
-              initial={{ scale: 0.9, y: 10 }}
-              animate={{ scale: 1, y: 0 }}
-              className="flex-1 flex flex-col justify-center gap-8 z-10"
-            >
-              <div className="text-center space-y-2 mb-4">
-                <span className="text-4xl">💡</span>
-                <h3 className="text-2xl font-serif italic text-cream/70 leading-tight">
-                  Analisi delle Filosofie
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                {currentQuestion.choices.map((choice, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    className={`p-4 rounded-2xl border transition-all ${
-                      lastSelectedMember === choice.member 
-                        ? 'bg-cream border-white scale-[1.02] shadow-md' 
-                        : 'bg-white/10 border-white/20 opacity-60'
-                    }`}
-                  >
-                    <div className={`text-sm font-medium mb-1 line-clamp-2 ${lastSelectedMember === choice.member ? 'text-ink' : 'text-cream/80'}`}>
-                      "{choice.text}"
-                    </div>
-                    <div className={`text-[10px] font-bold uppercase tracking-widest ${lastSelectedMember === choice.member ? 'text-terracotta' : 'text-cream/50'}`}>
-                      → {choice.member}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <button
-                onClick={handleNext}
-                className="mt-8 flex items-center justify-center gap-3 bg-cream text-olive w-full py-4 rounded-full font-bold uppercase tracking-widest text-sm active:scale-95 transition-transform"
-              >
-                Prosegui <ChevronRight size={18} />
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
+        {/* FEEDBACK PHASE REMOVED AND MOVED TO QUESTION */}
 
         {/* RESULT PHASE */}
         {phase === 'RESULT' && (
