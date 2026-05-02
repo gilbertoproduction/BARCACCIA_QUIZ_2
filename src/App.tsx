@@ -46,16 +46,16 @@ const XPBar = ({ xp }: { xp: number }) => {
   const progress = (xpInCurrentLevel / XP_PER_LEVEL) * 100;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 p-4 pt-6 bg-gradient-to-b from-cyber-black to-transparent">
+    <div className="fixed top-0 left-0 right-0 z-[60] px-4 pt-6 pb-4 bg-cyber-black/80 backdrop-blur-md border-b border-white/5">
       <div className="max-w-md mx-auto flex items-center gap-4">
         <div className="flex flex-col flex-1 gap-1">
           <div className="flex justify-between items-end mb-1">
-            <span className="text-[10px] font-mono text-neon-cyan/50 tracking-tighter">LVL {currentLevel}</span>
-            <span className="text-[10px] font-mono text-neon-cyan/50 tracking-tighter">{xpInCurrentLevel}/{XP_PER_LEVEL} XP</span>
+            <span className="text-[9px] font-mono font-bold text-neon-cyan/70 tracking-widest uppercase">SYS.STATUS: ONLINE</span>
+            <span className="text-[10px] font-mono text-neon-cyan neon-text-cyan uppercase">LVL {currentLevel} • {xpInCurrentLevel}/{XP_PER_LEVEL} XP</span>
           </div>
-          <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden border border-white/5 p-[1px]">
+          <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
             <motion.div 
-              className="h-full bg-neon-cyan rounded-full neon-glow-cyan"
+              className="h-full bg-neon-cyan rounded-full shadow-[0_0_10px_rgba(0,243,255,0.8)]"
               animate={{ width: `${progress}%` }}
               transition={{ type: 'spring', damping: 20, stiffness: 60 }}
             />
@@ -270,7 +270,7 @@ export default function App() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            className="absolute inset-0 flex flex-col p-6 pt-24"
+            className="absolute inset-0 flex flex-col p-6 pt-28"
           >
             <div className="flex justify-between items-end mb-8 shrink-0 z-10">
               <div>
@@ -327,9 +327,7 @@ export default function App() {
             
             <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-cyber-black to-transparent pointer-events-none" />
           </motion.div>
-        )}
-
-        {/* QUESTION PHASE */}
+        )}        {/* QUESTION PHASE */}
         {phase === 'QUESTION' && currentQuestion && activeQuiz && (
           <motion.div
             key={`q-${currentIdx}`}
@@ -337,37 +335,15 @@ export default function App() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20, filter: 'blur(10px)' }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute inset-0 flex flex-col p-6 pt-24"
+            className="absolute inset-0 flex flex-col p-6 pt-20"
           >
-            {/* Header stabile */}
-            <div className="flex justify-between items-center mb-6 shrink-0 z-10">
-              <div className="flex flex-col">
-                <span className="font-mono text-[9px] text-neon-magenta tracking-[0.3em] uppercase opacity-70">
-                  Neural Analysis in progress
-                </span>
-                <span className="font-mono text-[10px] text-white/40 uppercase">
-                  Query {currentIdx + 1}/{activeQuiz.questions.length}
-                </span>
-              </div>
-              <div className="flex gap-1.5">
-                {activeQuiz.questions.map((_, i) => (
-                  <div 
-                    key={i} 
-                    className={`h-1 w-3 rounded-full transition-all duration-500 ${
-                      i <= currentIdx ? "bg-neon-cyan neon-glow-cyan" : "bg-white/5"
-                    }`} 
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Area contenuto con scroll indipendente */}
-            <div className="flex-1 overflow-y-auto hide-scrollbar -mx-2 px-2 pb-40">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tighter leading-[1.1] italic uppercase mb-10 mt-2">
+            {/* Area contenuto compattata per visibilità totale senza scroll */}
+            <div className="flex-1 flex flex-col min-h-0">
+              <h2 className="text-lg md:text-xl font-bold tracking-tighter leading-tight italic uppercase mb-4 shrink-0 text-white/90">
                 {currentQuestion.text}
               </h2>
               
-              <div className="space-y-3">
+              <div className="flex-1 flex flex-col gap-2 min-h-0">
                 {currentQuestion.choices.map((choice, i) => {
                   const isThisSelected = selectedChoice?.text === choice.text;
                   const showSelectionStyle = hasAnswered && isThisSelected;
@@ -382,40 +358,35 @@ export default function App() {
                       animate={{ 
                         opacity: showFadedStyle ? 0.2 : 1, 
                         y: 0,
-                        scale: isThisSelected ? 1.02 : 1,
-                        borderColor: showSelectionStyle ? '#00f3ff' : 'rgba(255,255,255,0.1)'
+                        scale: isThisSelected ? 1.01 : 1,
+                        borderColor: showSelectionStyle ? '#00f3ff' : 'rgba(255,255,255,0.08)'
                       }}
-                      transition={{ 
-                        delay: i * 0.05,
-                        duration: 0.3,
-                        scale: { type: "spring", damping: 15, stiffness: 300 }
-                      }}
-                      className={`relative w-full text-left p-5 rounded-2xl border transition-colors duration-300 overflow-hidden ${
+                      className={`relative w-full text-left p-3.5 rounded-xl border transition-colors duration-200 overflow-hidden shrink-0 ${
                         !hasAnswered 
-                          ? "glass-card hover:bg-white/10 active:scale-[0.98]" 
+                          ? "glass-card hover:bg-white/5 active:scale-[0.99]" 
                           : isThisSelected ? "bg-neon-cyan/5" : "bg-white/5"
                       }`}
                     >
                       {showSelectionStyle && (
                         <motion.div 
-                          className="absolute inset-0 border-2 border-neon-cyan/50 neon-glow-cyan rounded-2xl pointer-events-none"
+                          className="absolute inset-0 border-2 border-neon-cyan/40 neon-glow-cyan rounded-xl pointer-events-none"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                         />
                       )}
                       
-                      <div className="relative flex justify-between items-center gap-4">
-                        <span className={`text-[15px] font-medium leading-snug transition-colors duration-300 ${showSelectionStyle ? 'text-neon-cyan' : 'text-white/90'}`}>
+                      <div className="relative flex justify-between items-center gap-3">
+                        <span className={`text-[13px] font-medium leading-tight transition-colors duration-300 ${showSelectionStyle ? 'text-neon-cyan' : 'text-white/80'}`}>
                           {choice.text}
                         </span>
                         {hasAnswered && (
                           <motion.div 
-                            initial={{ scale: 0, rotate: -45 }}
-                            animate={{ scale: 1, rotate: 0 }}
-                            className={`text-[9px] font-mono font-black px-2 py-1 rounded shrink-0 border tracking-tighter ${
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            className={`text-[8px] font-mono font-black px-1.5 py-0.5 rounded shrink-0 border tracking-tighter ${
                               isThisSelected 
                                 ? 'text-black bg-neon-cyan border-neon-cyan' 
-                                : 'text-neon-orange bg-neon-orange/10 border-neon-orange/30 shadow-[0_0_5px_#ff9d0044]'
+                                : 'text-neon-orange bg-neon-orange/10 border-neon-orange/30 shadow-[0_0_5px_#ff9d0022]'
                             }`}
                           >
                             {choice.member}
@@ -428,23 +399,23 @@ export default function App() {
               </div>
             </div>
 
-            {/* Pulsante fisso con area di rispetto */}
-            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-cyber-black via-cyber-black/80 to-transparent pointer-events-none" />
-            
-            <AnimatePresence>
-              {hasAnswered && (
-                <motion.div 
-                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 20, scale: 0.95 }}
-                  className="absolute bottom-10 left-6 right-6 z-50 pointer-events-auto"
-                >
-                  <CyberButton variant="neon" onClick={handleNext} className="w-full h-16 text-lg tracking-[0.1em]">
-                    PROSSIMA ANALISI <ChevronRight size={20} />
-                  </CyberButton>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {/* Area pulsante fissa ma con ingombro ridotto */}
+            <div className="h-24 flex items-center shrink-0">
+              <AnimatePresence>
+                {hasAnswered && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 5 }}
+                    className="w-full"
+                  >
+                    <CyberButton variant="neon" onClick={handleNext} className="w-full h-12 text-sm tracking-[0.1em]">
+                      AVANTI <ChevronRight size={16} />
+                    </CyberButton>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </motion.div>
         )}
 
@@ -454,34 +425,34 @@ export default function App() {
             key="result"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="absolute inset-0 flex flex-col p-6 pt-24 overflow-y-auto hide-scrollbar"
+            className="absolute inset-0 flex flex-col p-6 pt-24 min-h-0 overflow-y-auto hide-scrollbar"
           >
-            <div className="text-center mb-10 shrink-0">
+            <div className="text-center mb-6 shrink-0">
               <motion.div 
                 initial={{ opacity: 0, letterSpacing: '1em' }}
                 animate={{ opacity: 1, letterSpacing: '0.3em' }}
-                className="text-neon-magenta text-[10px] font-mono mb-2 uppercase"
+                className="text-neon-magenta text-[9px] font-mono mb-2 uppercase"
               >
                 Sincronizzazione Completa
               </motion.div>
-              <h2 className="text-sm font-mono text-white/40 mb-4 tracking-tighter uppercase">PROFILO NEURALE IDENTIFICATO</h2>
-              <div className="relative inline-block mt-4">
+              <h2 className="text-[10px] font-mono text-white/40 mb-2 tracking-tighter uppercase">PROFILO NEURALE IDENTIFICATO</h2>
+              <div className="relative inline-block mt-2">
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="text-8xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-neon-cyan to-neon-magenta neon-glow-cyan leading-none pb-2"
+                  className="text-7xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-neon-cyan to-neon-magenta leading-none pb-2"
                 >
                   {topMember}
                 </motion.div>
-                <div className="absolute -top-4 -right-12 bg-neon-cyan text-black font-mono text-[10px] px-2 py-1 font-bold rounded shadow-[0_0_10px_rgba(0,243,255,0.8)]">
+                <div className="absolute -top-2 -right-10 bg-neon-cyan text-black font-mono text-[9px] px-1.5 py-0.5 font-bold rounded shadow-[0_0_10px_rgba(0,243,255,0.6)]">
                   {matchPercentage}% MATCH
                 </div>
               </div>
             </div>
 
-            <div className="glass-card rounded-3xl p-6 mb-6">
-              <h3 className="text-[9px] font-mono text-white/30 uppercase tracking-[0.3em] mb-6">Matrice di Affinità Neurale</h3>
-              <div className="space-y-6">
+            <div className="glass-card rounded-2xl p-5 mb-4 shrink-0">
+              <h3 className="text-[8px] font-mono text-white/30 uppercase tracking-[0.3em] mb-4">Matrice di Affinità Neurale</h3>
+              <div className="space-y-4">
                 {sortedMembers.map(([member, score], idx) => {
                   const perc = Math.round(((score as number) / totalAnswers) * 100);
                   return (
