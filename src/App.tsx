@@ -3,34 +3,98 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, RefreshCw, Users, BookOpen, CheckCircle2 } from 'lucide-react';
+import { 
+  ChevronRight, RefreshCw, Trophy, Zap, 
+  Flame, Award, Settings, Volume2, 
+  VolumeX, Target, Cpu, LayoutGrid
+} from 'lucide-react';
 import { Member, Choice } from './types';
 import { QUIZZES, Quiz } from './data/quizzes';
 
 // --- Types ---
+type QuizPhase = 'START' | 'SELECT' | 'QUESTION' | 'RESULT';
 
-type QuizPhase = 'START' | 'SELECT' | 'QUESTION' | 'FEEDBACK' | 'RESULT';
+interface UserStats {
+  xp: number;
+  level: number;
+  streak: number;
+  lastPlayed: string | null;
+  badges: string[];
+}
+
+// --- Constants ---
+const XP_PER_ANSWER = 50;
+const XP_PER_LEVEL = 1000;
+const BADGES = [
+  { id: 'first_step', name: 'Codice Sorgente', icon: <Cpu />, desc: 'Primo quiz completato' },
+  { id: 'streak_3', name: 'Circuiti Caldi', icon: <Flame />, desc: '3 giorni di streak' },
+  { id: 'level_5', name: 'Architetto Digitale', icon: <Award />, desc: 'Raggiungi il livello 5' },
+  { id: 'perfectionist', name: 'Algoritmo Puro', icon: <Target />, desc: '100% simile a qualcuno' },
+];
+
+// --- Utilities ---
+const getLevel = (xp: number) => Math.floor(xp / XP_PER_LEVEL) + 1;
+const getXPForNextLevel = (level: number) => level * XP_PER_LEVEL;
 
 // --- Sub-components ---
 
-const ProgressBar = ({ current, total }: { current: number; total: number }) => {
+const XPBar = ({ xp }: { xp: number }) => {
+  const currentLevel = getLevel(xp);
+  const xpInCurrentLevel = xp % XP_PER_LEVEL;
+  const progress = (xpInCurrentLevel / XP_PER_LEVEL) * 100;
+
   return (
-    <div className="absolute top-4 left-0 right-0 px-4 flex gap-1 z-50">
-      {Array.from({ length: total }).map((_, i) => (
-        <div key={i} className="h-0.5 flex-1 bg-olive/5 rounded-full overflow-hidden">
-          <motion.div
-            className="h-full bg-olive/40"
-            initial={false}
-            animate={{ 
-              width: i < current ? "100%" : i === current ? "0%" : "0%",
-              backgroundColor: i < current ? "var(--color-olive)" : "rgba(var(--color-olive), 0.1)"
-            }}
-          />
+    <div className="fixed top-0 left-0 right-0 z-50 p-4 pt-6 bg-gradient-to-b from-cyber-black to-transparent">
+      <div className="max-w-md mx-auto flex items-center gap-4">
+        <div className="flex flex-col flex-1 gap-1">
+          <div className="flex justify-between items-end mb-1">
+            <span className="text-[10px] font-mono text-neon-cyan/50 tracking-tighter">LVL {currentLevel}</span>
+            <span className="text-[10px] font-mono text-neon-cyan/50 tracking-tighter">{xpInCurrentLevel}/{XP_PER_LEVEL} XP</span>
+          </div>
+          <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden border border-white/5 p-[1px]">
+            <motion.div 
+              className="h-full bg-neon-cyan rounded-full neon-glow-cyan"
+              animate={{ width: `${progress}%` }}
+              transition={{ type: 'spring', damping: 20, stiffness: 60 }}
+            />
+          </div>
         </div>
-      ))}
+      </div>
     </div>
+  );
+};
+
+const CyberButton = ({ 
+  children, 
+  onClick, 
+  className = "", 
+  variant = 'primary',
+  disabled = false 
+}: { 
+  children: React.ReactNode; 
+  onClick?: () => void; 
+  className?: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'neon';
+  disabled?: boolean;
+}) => {
+  const variants = {
+    primary: "bg-white/5 text-white hover:bg-white/10 active:scale-95 border-white/10",
+    secondary: "bg-neon-magenta/20 text-neon-magenta hover:bg-neon-magenta/30 border-neon-magenta/30",
+    outline: "bg-transparent border-white/20 text-white/70 hover:border-white/40",
+    neon: "bg-neon-cyan text-black font-bold shadow-[0_0_15px_rgba(0,243,255,0.4)]"
+  };
+
+  return (
+    <motion.button
+      whileTap={{ scale: 0.97 }}
+      onClick={onClick}
+      disabled={disabled}
+      className={`relative px-6 py-4 rounded-2xl border transition-all duration-200 flex items-center justify-center gap-2 group overflow-hidden ${variants[variant]} ${className}`}
+    >
+      <div className="relative z-10">{children}</div>
+    </motion.button>
   );
 };
 
@@ -39,23 +103,46 @@ export default function App() {
   const [activeQuiz, setActiveQuiz] = useState<Quiz | null>(null);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [hasAnswered, setHasAnswered] = useState(false);
+  const [isSoundEnabled, setIsSoundEnabled] = useState(true);
+  const [showLevelUp, setShowLevelUp] = useState(false);
+
+  const [stats, setStats] = useState<UserStats>(() => {
+    const saved = localStorage.getItem('user_stats');
+    if (saved) return JSON.parse(saved);
+    return { xp: 0, level: 1, streak: 0, lastPlayed: null, badges: [] };
+  });
+
   const [completedQuizzes, setCompletedQuizzes] = useState<string[]>(() => {
     const saved = localStorage.getItem('completed_quizzes');
     return saved ? JSON.parse(saved) : [];
   });
 
   const [scores, setScores] = useState<Record<Member, number>>({
-    SIMO: 0,
-    MARCO: 0,
-    DAVE: 0,
-    PIETRO: 0,
-    FILO: 0,
+    SIMO: 0, MARCO: 0, DAVE: 0, PIETRO: 0, FILO: 0,
   });
-  const [lastSelectedMember, setLastSelectedMember] = useState<Member | null>(null);
+
+  const saveStats = useCallback((newStats: UserStats) => {
+    setStats(newStats);
+    localStorage.setItem('user_stats', JSON.stringify(newStats));
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('completed_quizzes', JSON.stringify(completedQuizzes));
   }, [completedQuizzes]);
+
+  // Handle Level Up Check
+  useEffect(() => {
+    const currentLevel = getLevel(stats.xp);
+    if (currentLevel > stats.level) {
+      setShowLevelUp(true);
+      saveStats({ ...stats, level: currentLevel });
+      
+      // Auto-unlock level badge
+      if (currentLevel >= 5 && !stats.badges.includes('level_5')) {
+        saveStats({ ...stats, level: currentLevel, badges: [...stats.badges, 'level_5'] });
+      }
+    }
+  }, [stats.xp, stats.level, stats.badges, saveStats]);
 
   const currentQuestion = activeQuiz?.questions[currentIdx];
 
@@ -73,9 +160,14 @@ export default function App() {
 
   const handleChoice = (choice: Choice) => {
     if (hasAnswered) return;
-    setLastSelectedMember(choice.member);
+    
     setScores(prev => ({ ...prev, [choice.member]: (prev[choice.member] as number) + 1 }));
     setHasAnswered(true);
+    
+    // Gain XP
+    saveStats({ ...stats, xp: stats.xp + XP_PER_ANSWER });
+
+    // Haptic feedback simulation or sound could go here
   };
 
   const handleNext = () => {
@@ -85,6 +177,12 @@ export default function App() {
     } else {
       if (activeQuiz && !completedQuizzes.includes(activeQuiz.id)) {
         setCompletedQuizzes(prev => [...prev, activeQuiz.id]);
+        
+        // Badge: first_step
+        const newBadges = [...stats.badges];
+        if (!newBadges.includes('first_step')) newBadges.push('first_step');
+        
+        saveStats({ ...stats, badges: newBadges });
       }
       setPhase('RESULT');
     }
@@ -105,35 +203,57 @@ export default function App() {
   const matchPercentage = totalAnswers > 0 ? Math.round((scores[topMember] / totalAnswers) * 100) : 0;
 
   return (
-    <div className="fixed inset-0 bg-bg-base text-ink font-sans overflow-hidden select-none touch-none">
+    <div className="fixed inset-0 bg-cyber-black text-white font-sans overflow-hidden select-none touch-none">
+      <XPBar xp={stats.xp} />
+      
       <AnimatePresence mode="wait">
-        
         {/* START PHASE */}
         {phase === 'START' && (
           <motion.div
             key="start"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="h-full flex flex-col items-center justify-center p-8 text-center gap-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            className="h-full flex flex-col items-center justify-center p-8 text-center gap-10"
           >
-            <div className="w-20 h-20 bg-olive/5 rounded-full flex items-center justify-center mb-2">
-              <Users size={32} className="text-olive" />
+            <div className="relative">
+              <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                className="w-48 h-48 rounded-full border-2 border-dashed border-neon-cyan/20 flex items-center justify-center"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-32 h-32 bg-neon-cyan/10 rounded-full flex items-center justify-center neon-glow-cyan border border-neon-cyan/30">
+                  <Cpu size={48} className="text-neon-cyan" />
+                </div>
+              </div>
             </div>
+
             <div className="space-y-4">
-              <h1 className="text-5xl font-serif text-olive leading-tight">
-                L'Essenza dei Cinque
+              <h1 className="text-4xl font-bold tracking-tighter uppercase italic">
+                La Barcaccia <span className="text-neon-cyan">OS</span>
               </h1>
-              <p className="text-neutral-500 max-w-xs text-lg mx-auto">
-                Un'esperienza interattiva per scoprire quale pilastro del gruppo rispecchia la tua visione.
+              <p className="text-white/40 max-w-xs text-sm mx-auto font-mono">
+                Sincronizza il tuo profilo neurale con i cinque architetti del gruppo.
               </p>
             </div>
-            <button
-              onClick={handleStart}
-              className="mt-8 bg-terracotta text-white px-12 py-4 rounded-full font-bold text-lg uppercase tracking-widest active:scale-95 transition-transform shadow-lg shadow-terracotta/20"
-            >
-              Comincia
-            </button>
+
+            <div className="flex flex-col gap-4 w-full max-w-xs">
+              <CyberButton variant="neon" onClick={handleStart} className="w-full">
+                INIZIALIZZA SESSIONE
+              </CyberButton>
+            </div>
+            
+            <div className="fixed bottom-10 flex gap-8">
+              <div className="flex flex-col items-center gap-1">
+                <Flame size={16} className="text-neon-magenta" />
+                <span className="text-[10px] font-mono text-white/30 uppercase tracking-tighter">{stats.streak} Streak</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <Trophy size={16} className="text-neon-lime" />
+                <span className="text-[10px] font-mono text-white/30 uppercase tracking-tighter">{stats.badges.length} Badges</span>
+              </div>
+            </div>
           </motion.div>
         )}
 
@@ -141,51 +261,56 @@ export default function App() {
         {phase === 'SELECT' && (
           <motion.div
             key="select"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="h-full flex flex-col p-8 pt-16 overflow-y-auto"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            className="h-full flex flex-col p-6 pt-24 overflow-y-auto hide-scrollbar"
           >
-            <div className="mb-10">
-              <h2 className="text-3xl font-serif text-olive mb-2">Scegli il Quiz</h2>
-              <p className="text-neutral-500">Seleziona un argomento per iniziare il test.</p>
+            <div className="flex justify-between items-end mb-8">
+              <div>
+                <h2 className="text-2xl font-bold tracking-tight uppercase italic">DATABASE QUIZ</h2>
+                <p className="text-xs text-white/40 font-mono">SELEZIONA MODULO DI TEST</p>
+              </div>
+              <button 
+                onClick={() => setIsSoundEnabled(!isSoundEnabled)}
+                className="p-3 glass-card rounded-xl text-white/50"
+              >
+                {isSoundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+              </button>
             </div>
 
-            <div className="space-y-4 pb-12">
+            <div className="grid gap-4 pb-20">
               {QUIZZES.map((quiz) => {
                 const isCompleted = completedQuizzes.includes(quiz.id);
                 return (
-                  <button
+                  <motion.button
                     key={quiz.id}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     onClick={() => handleSelectQuiz(quiz)}
-                    className={`w-full text-left p-6 rounded-3xl border transition-all shadow-sm active:scale-98 relative group ${
-                      isCompleted ? 'bg-cream/40 border-olive/10' : 'bg-cream border-olive/5'
+                    className={`relative overflow-hidden p-5 rounded-3xl border transition-all text-left ${
+                      isCompleted 
+                        ? 'bg-neon-lime/10 border-neon-lime/30 opacity-60' 
+                        : 'glass-card'
                     }`}
                   >
                     <div className="flex items-start gap-4">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-colors ${
-                        isCompleted ? 'bg-olive text-white border-olive' : 'bg-olive/5 text-olive border-olive/5'
+                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 border transition-colors ${
+                        isCompleted ? 'bg-neon-lime/20 text-neon-lime border-neon-lime/30' : 'bg-white/5 text-white/70 border-white/10'
                       }`}>
-                        {isCompleted ? <CheckCircle2 size={20} /> : <BookOpen size={20} />}
+                        {isCompleted ? <Trophy size={22} /> : <LayoutGrid size={22} />}
                       </div>
-                      <div className="flex-1 pr-4">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h3 className={`font-bold text-lg leading-tight ${isCompleted ? 'text-ink/60' : 'text-ink'}`}>
-                            {quiz.title}
-                          </h3>
-                        </div>
-                        <p className={`text-xs leading-normal ${isCompleted ? 'text-neutral-400/60' : 'text-neutral-400'}`}>
+                      <div className="flex-1">
+                        <h3 className="font-bold text-lg leading-none mb-1 uppercase tracking-tighter">
+                          {quiz.title}
+                        </h3>
+                        <p className="text-[10px] text-white/50 uppercase font-mono overflow-hidden text-ellipsis whitespace-nowrap">
                           {quiz.description}
                         </p>
                       </div>
-                      
-                      {isCompleted && (
-                        <div className="absolute top-6 right-6 px-2 py-1 bg-olive/10 rounded-md">
-                          <span className="text-[8px] font-bold uppercase tracking-wider text-olive">Completato</span>
-                        </div>
-                      )}
+                      <ChevronRight size={16} className="text-white/20 mt-4" />
                     </div>
-                  </button>
+                  </motion.button>
                 );
               })}
             </div>
@@ -196,63 +321,65 @@ export default function App() {
         {phase === 'QUESTION' && currentQuestion && activeQuiz && (
           <motion.div
             key={`q-${currentIdx}`}
-            initial={{ x: '100%', opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: '-100%', opacity: 0 }}
-            transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="h-full relative flex flex-col p-6 pt-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, filter: 'blur(10px)' }}
+            className="h-full flex flex-col p-6 pt-24"
           >
-            <ProgressBar current={currentIdx} total={activeQuiz.questions.length} />
-            
-            <div className="flex-1 flex flex-col gap-10 mt-8 overflow-y-auto hide-scrollbar">
-              <div className="space-y-2">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-olive opacity-60">
-                  Domanda {currentIdx + 1} di {activeQuiz.questions.length}
-                </span>
-                <h2 className="text-3xl font-serif leading-[1.1] text-ink">
-                  {currentQuestion.text}
-                </h2>
+            <div className="flex justify-between items-center mb-10">
+              <span className="font-mono text-[10px] text-neon-magenta tracking-widest uppercase">
+                ANALISI {currentIdx + 1}/{activeQuiz.questions.length}
+              </span>
+              <div className="flex gap-1">
+                {activeQuiz.questions.map((_, i) => (
+                  <div 
+                    key={i} 
+                    className={`h-1 w-4 rounded-full transition-all ${
+                      i <= currentIdx ? "bg-neon-magenta" : "bg-white/10"
+                    }`} 
+                  />
+                ))}
               </div>
+            </div>
+
+            <div className="flex-1 flex flex-col gap-8">
+              <h2 className="text-3xl font-bold tracking-tighter leading-tight italic uppercase">
+                {currentQuestion.text}
+              </h2>
               
-              <div className="grid gap-2.5 pb-32">
+              <div className="grid gap-3 pb-32">
                 {currentQuestion.choices.map((choice, i) => {
-                  const isSelected = choice.member === lastSelectedMember;
+                  const isSelected = choice.member === sortedMembers.find(([m]) => scores[m] > 0)?.[0] && hasAnswered; 
+                  // Simplified selected logic for display
                   return (
                     <motion.button
                       key={i}
-                      onClick={() => handleChoice(choice)}
                       disabled={hasAnswered}
-                      initial={false}
-                      animate={hasAnswered ? { 
-                        opacity: isSelected ? 1 : 0.4,
-                        scale: isSelected ? 1 : 0.98,
-                        backgroundColor: isSelected ? "var(--color-cream)" : "rgba(255,255,255,0.05)"
-                      } : {}}
-                      className={`w-full text-left p-4 rounded-xl text-[15px] leading-snug font-medium transition-all relative flex items-center justify-between gap-4 border ${
+                      onClick={() => handleChoice(choice)}
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: i * 0.05 }}
+                      className={`relative w-full text-left p-5 rounded-2xl border transition-all overflow-hidden ${
                         !hasAnswered 
-                          ? "bg-cream border-olive/5 shadow-sm active:scale-98 active:border-terracotta" 
-                          : isSelected
-                            ? "border-terracotta ring-1 ring-terracotta/20 shadow-md"
-                            : "border-transparent"
+                          ? "glass-card hover:border-neon-cyan/50 active:scale-[0.99]" 
+                          : choice.member === choice.member ? "bg-white/5 border-white/20" : "opacity-30 border-transparent"
                       }`}
                     >
-                      <span className={`flex-1 ${hasAnswered && !isSelected ? "text-ink/60" : "text-ink"}`}>
-                        {choice.text}
-                      </span>
-                      
-                      <AnimatePresence>
+                      {hasAnswered && (
+                        <motion.div 
+                          className="absolute inset-0 bg-neon-cyan/10"
+                          initial={{ x: '-100%' }}
+                          animate={{ x: 0 }}
+                        />
+                      )}
+                      <div className="relative flex justify-between items-center gap-4">
+                        <span className="text-[15px] font-medium leading-snug">{choice.text}</span>
                         {hasAnswered && (
-                          <motion.div 
-                            initial={{ x: 10, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            className={`shrink-0 font-bold text-[9px] uppercase tracking-wider px-2 py-1 rounded-md ${
-                              isSelected ? "bg-terracotta text-white" : "bg-olive/10 text-olive/40"
-                            }`}
-                          >
+                          <span className="text-[10px] font-mono font-bold text-neon-cyan bg-neon-cyan/10 px-2 py-1 rounded">
                             {choice.member}
-                          </motion.div>
+                          </span>
                         )}
-                      </AnimatePresence>
+                      </div>
                     </motion.button>
                   );
                 })}
@@ -260,84 +387,118 @@ export default function App() {
             </div>
 
             {hasAnswered && (
-              <motion.div 
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                className="absolute bottom-10 left-6 right-6 z-20"
-              >
-                <button
-                  onClick={handleNext}
-                  className="w-full bg-olive text-white py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-xl active:scale-95 transition-transform flex items-center justify-center gap-2"
-                >
-                  Prosegui <ChevronRight size={18} />
-                </button>
-              </motion.div>
+              <div className="fixed bottom-10 left-6 right-6">
+                <CyberButton variant="neon" onClick={handleNext} className="w-full">
+                  ANALIZZA PROSSIMO <ChevronRight size={18} />
+                </CyberButton>
+              </div>
             )}
-
-            <div className="py-6 text-center text-olive/30 font-bold text-[9px] uppercase tracking-[0.3em]">
-              {activeQuiz.title}
-            </div>
           </motion.div>
         )}
-
-        {/* FEEDBACK PHASE REMOVED AND MOVED TO QUESTION */}
 
         {/* RESULT PHASE */}
         {phase === 'RESULT' && (
           <motion.div
             key="result"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="h-full flex flex-col p-8 pt-16 overflow-y-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="h-full flex flex-col p-6 pt-24 overflow-y-auto hide-scrollbar"
           >
             <div className="text-center mb-10">
-              <div className="inline-block px-3 py-1 bg-terracotta/10 rounded-full text-terracotta font-bold text-[10px] uppercase tracking-widest mb-4">
-                {activeQuiz?.title}
-              </div>
-              <h2 className="text-4xl font-serif text-olive leading-tight mb-2">
-                Il tuo Profilo
-              </h2>
-              <p className="text-base text-neutral-500 font-medium mb-6">
-                Sei al <span className="text-terracotta font-bold">{matchPercentage}%</span> simile a
-              </p>
-              <div className="text-7xl font-sans font-bold uppercase tracking-tighter text-ink leading-none">
-                {topMember}
+              <div className="text-neon-magenta text-xs font-mono mb-2 tracking-[0.3em] uppercase">Sincronizzazione Completa</div>
+              <h2 className="text-xl font-mono text-white/40 mb-4 tracking-tighter">PROFILO NEURALE</h2>
+              <div className="relative inline-block mt-4">
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="text-8xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-neon-cyan to-neon-magenta neon-glow-cyan"
+                >
+                  {topMember}
+                </motion.div>
+                <div className="absolute -top-4 -right-8 bg-neon-lime text-black font-mono text-[10px] px-2 py-1 font-bold rounded glitch-effect">
+                  {matchPercentage}% MATCH
+                </div>
               </div>
             </div>
 
-            <div className="bg-cream rounded-3xl p-6 shadow-sm border border-olive/5 mb-8">
-              <h3 className="text-[10px] uppercase tracking-widest text-olive/40 font-bold mb-6">Classifica dei Pilastri</h3>
-              <div className="space-y-6">
-                {sortedMembers.map(([member, score], idx) => (
-                  <div key={member} className="flex items-center gap-5">
-                    <div className="w-8 text-xl font-serif italic text-olive/20 font-bold">#{idx + 1}</div>
-                    <div className="flex-1">
-                      <div className="flex justify-between items-end mb-2">
-                        <span className="text-sm font-bold uppercase tracking-wider text-ink/70">{member}</span>
-                        <span className="text-xs font-mono text-terracotta font-bold">{Math.round(((score as number) / totalAnswers) * 100)}%</span>
+            <div className="glass-card rounded-3xl p-6 mb-8">
+              <h3 className="text-[10px] font-mono text-white/30 uppercase tracking-[0.2em] mb-6">Matrice di Affinità</h3>
+              <div className="space-y-5">
+                {sortedMembers.map(([member, score], idx) => {
+                  const perc = Math.round(((score as number) / totalAnswers) * 100);
+                  return (
+                    <div key={member} className="flex flex-col gap-2">
+                      <div className="flex justify-between items-center font-mono">
+                        <span className="text-xs text-white/60">#{idx+1} {member}</span>
+                        <span className="text-[10px] text-neon-cyan">{perc}%</span>
                       </div>
-                      <div className="h-1 bg-olive/5 rounded-full overflow-hidden">
+                      <div className="h-1 bg-white/5 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
-                          animate={{ width: `${((score as number) / totalAnswers) * 100}%` }}
-                          className="h-full bg-olive/40"
+                          animate={{ width: `${perc}%` }}
+                          className={`h-full ${idx === 0 ? 'bg-neon-cyan' : 'bg-white/20'}`}
                         />
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
-            <button
-              onClick={resetQuiz}
-              className="mt-auto flex items-center justify-center gap-3 bg-terracotta text-white py-4 rounded-full font-bold uppercase tracking-widest text-sm active:scale-95 transition-transform"
-            >
-              <RefreshCw size={18} /> Altri Quiz
-            </button>
+            <div className="grid grid-cols-2 gap-4 mb-10">
+              <div className="glass-card p-4 rounded-2xl flex flex-col items-center">
+                <Zap size={20} className="text-neon-cyan mb-1" />
+                <span className="text-xl font-bold italic tracking-tighter">+{XP_PER_ANSWER * (activeQuiz?.questions.length || 1)}</span>
+                <span className="text-[8px] font-mono text-white/30 uppercase">XP GUADAGNATI</span>
+              </div>
+              <div className="glass-card p-4 rounded-2xl flex flex-col items-center">
+                <Award size={20} className="text-neon-lime mb-1" />
+                <span className="text-xl font-bold italic tracking-tighter">#{completedQuizzes.length}</span>
+                <span className="text-[8px] font-mono text-white/30 uppercase">QUIZ ARCHIVIATI</span>
+              </div>
+            </div>
+
+            <CyberButton variant="outline" onClick={resetQuiz} className="w-full mb-20 translate-y-[-10px]">
+              <RefreshCw size={18} /> RIAVVIA SISTEMA
+            </CyberButton>
           </motion.div>
         )}
+      </AnimatePresence>
 
+      {/* LEVEL UP NOTIFICATION */}
+      <AnimatePresence>
+        {showLevelUp && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-cyber-black/90 backdrop-blur-xl flex items-center justify-center p-8 text-center"
+          >
+            <motion.div
+              initial={{ scale: 0.8, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              className="space-y-6"
+            >
+              <div className="w-32 h-32 mx-auto relative">
+                <motion.div 
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                  className="absolute inset-0 rounded-full border-2 border-dashed border-neon-cyan"
+                />
+                <div className="absolute inset-0 flex items-center justify-center text-4xl font-black text-neon-cyan italic">
+                  {stats.level}
+                </div>
+              </div>
+              <div className="space-y-2">
+                <h2 className="text-4xl font-black italic tracking-tighter uppercase">Level Up!</h2>
+                <p className="text-white/50 font-mono text-sm uppercase tracking-widest">Aggiornamento Neurale Completato</p>
+              </div>
+              <CyberButton variant="neon" onClick={() => setShowLevelUp(false)} className="w-full px-12 mt-8">
+                RICEVUTO
+              </CyberButton>
+            </motion.div>
+          </motion.div>
+        )}
       </AnimatePresence>
     </div>
   );

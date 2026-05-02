@@ -3425,5 +3425,865 @@ export const QUIZZES: Quiz[] = [
         ]
       }
     ]
+  },
+  {
+    id: 'calciofollie',
+    title: 'Calciomercato & Follie Societarie',
+    description: 'Valutazioni dei giocatori, scambi improbabili e l\'odio per Paratici.',
+    questions: [
+      {
+        id: 1,
+        text: 'Cosa pensi della clausola da 111 milioni di Lautaro Martinez?',
+        choices: [
+          { text: 'Per me vale pure ben di più di 110, se Dybala andasse in Premier varrebbe 170 in due mesi.', member: 'MARCO' },
+          { text: 'È palesemente problematica perché non hai la capacità di spesa per sostituirlo con uno che renda uguale.', member: 'SIMO' },
+          { text: 'Vale 40 milioni, 6 mesi storti e non lo vendi più, è come Piatek.', member: 'PIETRO' },
+          { text: 'È una valutazione gonfiata per fare plusvalenze fittizie tra Inter e Barça.', member: 'DAVE' },
+          { text: 'Un altro africano che non arriva all\'uva, per me vale 40 milioni e non ha dimostrato nulla.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 2,
+        text: 'De Ligt è stato pagato 85 milioni. Qual è il tuo verdetto?',
+        choices: [
+          { text: 'Pagare così tanto un 19enne è senza senso, ha lo stipendio più alto di Chiellini e Bonucci.', member: 'SIMO' },
+          { text: 'È un investimento ripagato dai click su Transfermarkt, i turchi sono malati di queste cose.', member: 'PIETRO' },
+          { text: 'Un difensore di alto livello, ma la difesa traballa perché il centrocampo non filtra nulla.', member: 'FILO' },
+          { text: 'È un prezzo da calciatore affermato, non voglio dargli tempo di maturare a quelle cifre.', member: 'DAVE' },
+          { text: 'È molto forte, ma vederlo in panchina per far giocare Demiral fa esplodere.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 3,
+        text: 'Paratici propone lo scambio De Sciglio-Kurzawa. Cosa ne pensi?',
+        choices: [
+          { text: 'De Sciglio è il miglior terzino della Serie A, Kurzawa a giugno lo prendi gratis.', member: 'PIETRO' },
+          { text: 'Paratici è istintivo e pericoloso, sta cercando di rimediare ai buchi di bilancio.', member: 'DAVE' },
+          { text: 'Ennesima operazione basata su plusvalenze per far quadrare i conti della Juve a pecora.', member: 'SIMO' },
+          { text: 'De Sciglio difende peggio di un centrale di Serie C, lo scambio ci può stare.', member: 'FILO' },
+          { text: 'Ormai alla Juve si fanno solo scambi pazzi perché non c\'è più un soldo.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 4,
+        text: 'Come valuti l\'acquisto di Eriksen da parte dell\'Inter a gennaio?',
+        choices: [
+          { text: 'Classico giocatore preso solo perché era in saldo, totalmente inutile nel modulo di Conte.', member: 'DAVE' },
+          { text: 'Mossa da top manager di Marotta, a giugno lo avrebbero cercato tutti i big club.', member: 'SIMO' },
+          { text: 'È il "vecino" del Barcellona, un giocatore buono ma non un fenomeno da 100 milioni.', member: 'PIETRO' },
+          { text: 'Inconsistentep, rallenta la manovra e deprime le azioni con passaggi all\'indietro.', member: 'FILO' },
+          { text: 'Bisogna vedere quanto ci mette ad adattarsi, ma indubbiamente è forte.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 5,
+        text: 'Qual è il segreto del successo dell\'Atalanta sul mercato?',
+        choices: [
+          { text: 'Vendono la merda come se fosse oro e Percassi si mette tutto in tasca.', member: 'PIETRO' },
+          { text: 'Hanno una struttura all\'inglese, investono gradualmente senza bruciare le tappe.', member: 'SIMO' },
+          { text: 'Producono giocatori decenti che poi la Juve ricompra strapagandoli.', member: 'DAVE' },
+          { text: 'Giocano a memoria da tre anni, hanno un parco attaccanti che fa invidia al Brasile.', member: 'FILO' },
+          { text: 'Corrono il doppio degli altri e asfaltano chiunque, sono una roba pazza.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 6,
+        text: 'Il ritorno di Ibrahimovic al Milan: marketing o tecnica?',
+        choices: [
+          { text: 'Mossa da disperati, prendono uno che non si allena da mesi per sistemare i loro casini.', member: 'PIETRO' },
+          { text: 'Marketing puro, ma almeno lui stacca i piedi da terra a differenza di altri.', member: 'FILO' },
+          { text: 'Farà almeno 10 gol, serve a rivalutare una squadra di bidoni.', member: 'DAVE' },
+          { text: 'Pagato un\'ira di dio di stipendio, giocherà minimo 8 partite.', member: 'SIMO' },
+          { text: 'È il "diavolo che veste Ibra", l\'unica pezza in un cantiere aperto.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 7,
+        text: 'Se fossi il Direttore Sportivo della Juve, chi venderesti subito?',
+        choices: [
+          { text: 'Douglas Costa e Alex Sandro, cessioni obbligate per liberare il monte ingaggi.', member: 'PIETRO' },
+          { text: 'Ramsey e Rabiot, giocano solo per lo stipendio che prendono.', member: 'DAVE' },
+          { text: 'Danilo, un terzino penoso che non sa né difendere né giocare la palla.', member: 'FILO' },
+          { text: 'Tutti quelli che non corrono, serve gente con la fame di vincere.', member: 'MARCO' },
+          { text: 'Chiunque non sia funzionale al progetto di Sarri per l\'anno prossimo.', member: 'SIMO' }
+        ]
+      },
+      {
+        id: 8,
+        text: 'Cosa pensi dello scambio Politano-Spinazzola saltato?',
+        choices: [
+          { text: 'Marotta ha avuto il cuore juventino, Spinazzola è fatto di cristallo.', member: 'PIETRO' },
+          { text: 'Ausilio ha rotto i coglioni, non si parla con Marotta e fanno casini.', member: 'DAVE' },
+          { text: 'Prestito con obbligo basato sulle presenze, era l\'unico modo per non perderci.', member: 'SIMO' },
+          { text: 'Ennesima figura di merda dei dirigenti che non sanno comunicare tra loro.', member: 'MARCO' },
+          { text: 'Politano vale 25 milioni, darlo via per uno rotto era da galera.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 9,
+        text: 'Chi è il peggior dirigente del calcio italiano attuale?',
+        choices: [
+          { text: 'Paratici, è pericoloso e istintivo negli acquisti sopra i 100 milioni.', member: 'DAVE' },
+          { text: 'Maldini e Boban, hanno un livello di incompetenza straordinaria.', member: 'PIETRO' },
+          { text: 'Quelli del Napoli che vendono ma non reinvestono mai seriamente.', member: 'SIMO' },
+          { text: 'Cairo, dice che fattura ma poi chiede sacrifici ai giocatori.', member: 'MARCO' },
+          { text: 'Tutti quelli che non sanno ammazzare il campionato quando ne hanno l\'occasione.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 10,
+        text: 'Tonali o Zaniolo: chi è il vero colpo da fare?',
+        choices: [
+          { text: 'Tonali, ha qualità che dureranno fino a fine carriera, Zaniolo a 27 anni sarà un bidone.', member: 'DAVE' },
+          { text: 'Zaniolo, ha una fisicità impressionante ed è già il migliore della Roma.', member: 'SIMO' },
+          { text: 'Zaniolo solo se includi Rugani o Bernardeschi nello scambio per la plusvalenza.', member: 'PIETRO' },
+          { text: 'Entrambi sopravvalutati dai giornali italiani, ma Zaniolo spacca le partite.', member: 'FILO' },
+          { text: 'A pari prezzo Zaniolo, ma se costa troppo allora meglio Tonali.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 11,
+        text: 'Cosa pensi dei parametri zero della Juve?',
+        choices: [
+          { text: 'Non conviene prenderli, tra commissioni e stipendio ti costano come un acquisto normale.', member: 'DAVE' },
+          { text: 'Emre Can a parametro zero un cazzo, abbiamo pagato 17 milioni i procuratori.', member: 'PIETRO' },
+          { text: 'Marotta li ha sempre usati bene, Paratici invece li usa per affossare il bilancio.', member: 'MARCO' },
+          { text: 'Sono devastanti a livello di bilancio perché puoi fare plusvalenze pazze rivendendoli.', member: 'SIMO' },
+          { text: 'Khedira e Matuidi sono vecchi, non corrono più e pesano troppo.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 12,
+        text: 'La valutazione di 170 milioni per Alexander-Arnold è corretta?',
+        choices: [
+          { text: 'Un terzino anche se è Dio non può costare più di 80 milioni.', member: 'PIETRO' },
+          { text: 'In Premier i prezzi sono pompati oltremodo, è una roba scandalosa.', member: 'MARCO' },
+          { text: 'È il prezzo giusto per un giovane che sposta gli equilibri in un top club.', member: 'SIMO' },
+          { text: 'Pagare così tanto per un difensore è una follia della Premier League.', member: 'FILO' },
+          { text: 'Cifra basata solo sull\'hype della Champions vinta dal Liverpool.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 13,
+        text: 'Mandragora alla Juve per 26 milioni. Operazione sensata?',
+        choices: [
+          { text: 'È una merda di giocatore, non vale 10 milioni.', member: 'SIMO' },
+          { text: 'Vecchi debiti da rimborsare all\'Udinese, altrimenti fanno uscire cose losche.', member: 'PIETRO' },
+          { text: 'Cifra pazza, un giocatore mediocre che serve solo per le liste.', member: 'MARCO' },
+          { text: 'Tipico magheggio Juve-Udinese per gonfiare i valori dei cartellini.', member: 'DAVE' },
+          { text: 'Meglio puntare su altri giovani della primavera Atalanta.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 14,
+        text: 'Qual quale sarà la prossima squadra di Bonaventura a parametro zero?',
+        choices: [
+          { text: 'Fiorentina o Cagliari, squadre da metà classifica.', member: 'PIETRO' },
+          { text: 'Atalanta, tornerebbe dove ha fatto bene.', member: 'DAVE' },
+          { text: 'È un giocatore finito, non lo prenderei neanche gratis.', member: 'FILO' },
+          { text: 'Il Milan è un leso a farlo scadere, l\'anno scorso valeva ancora molto.', member: 'SIMO' },
+          { text: 'Una squadra che ha bisogno di esperienza in mezzo al campo.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 15,
+        text: 'Chi vincerà il prossimo scudetto post-dominio Juve?',
+        choices: [
+          { text: 'L\'Inter di Conte, ormai il ciclo Juve è finito per colpa di Paratici.', member: 'PIETRO' },
+          { text: 'La Lazio, giocano a memoria e hanno Immobile che è un record-man.', member: 'FILO' },
+          { text: 'La Juve vincerà ancora per anni perché le altre squadre sono gestite da incapaci.', member: 'MARCO' },
+          { text: 'Dipende tutto dal mercato estivo e da come si adatteranno i nuovi acquisti.', member: 'SIMO' },
+          { text: 'Se non rivoluzionano la rosa, lo scudetto lo vince chi ha più fortuna.', member: 'DAVE' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'covidgombloddi',
+    title: 'Coronavirus & Gombloddi Globali',
+    description: 'Allarmismo, statistiche sui morti, zone rosse e l\'odio per Burioni.',
+    questions: [
+      {
+        id: 1,
+        text: 'Qual è stata la tua prima reazione ai primi casi in Italia?',
+        choices: [
+          { text: 'In Italia non morirà nessuno, è solo una stupida influenza.', member: 'DAVE' },
+          { text: 'Bisogna creare allarmismo, altrimenti mi rimandano a lavorare a Lodi.', member: 'SIMO' },
+          { text: 'È un complotto dei 5 Stelle per rimanere al governo senza elezioni.', member: 'PIETRO' },
+          { text: 'È una malattia creata in laboratorio a Wuhan e ci hanno tenuto tutto nascosto.', member: 'MARCO' },
+          { text: 'Signori, siamo fottuti, è la fine del mondo libero.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 2,
+        text: 'Cosa pensi del dato sui decessi comunicato dalla Protezione Civile?',
+        choices: [
+          { text: 'Sono morti "con" coronavirus, non "di" coronavirus. Il quadro clinico era già compromesso.', member: 'DAVE' },
+          { text: 'I numeri sono sottostimati, la gente muore in casa e non gli fanno nemmeno il tampone.', member: 'SIMO' },
+          { text: 'La letalità è bassissima tra i giovani, ammazza solo chi ha già tre patologie gravi.', member: 'FILO' },
+          { text: 'In Italia contano tutto per fare pietà all\'Europa e chiedere i Coronabond.', member: 'PIETRO' },
+          { text: '30 milioni di italiani ce l\'hanno già latente, i morti sono solo una piccola percentuale.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 3,
+        text: 'Burioni è un eroe della scienza o un cercatore di fama?',
+        choices: [
+          { text: 'È un coglione che blasta la gente solo per tornaconto personale.', member: 'DAVE' },
+          { text: 'È un idolo, ha ragione a insultare chi non capisce la matematica dei contagi.', member: 'SIMO' },
+          { text: 'Un pezzente che approfitta del trend per vendere libri.', member: 'PIETRO' },
+          { text: 'Fa parte della lobby medica che vuole chiudere tutto per i propri interessi.', member: 'MARCO' },
+          { text: 'Non lo so, io seguo solo le notizie di Polemica Quotidiana.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 4,
+        text: 'Come si sconfigge veramente il virus secondo te?',
+        choices: [
+          { text: 'Stando in casa in pigiama a fare smart working e ordinando cibo online.', member: 'SIMO' },
+          { text: 'Con l\'immunità di gregge, facciamo ammalare tutti i giovani e salviamo l\'economia.', member: 'PIETRO' },
+          { text: 'Usando l\'Avigan, in Giappone hanno risolto tutto in due giorni e noi non lo diciamo.', member: 'DAVE' },
+          { text: 'Riaprendo tutto e tornando alla normalità, muore solo l\'1% in più della popolazione.', member: 'MARCO' },
+          { text: 'Con una rivolta a Roma contro il governo che ci toglie la libertà.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 5,
+        text: 'La Cina ha gestito bene l\'emergenza?',
+        choices: [
+          { text: 'Hanno costruito due ospedali in dieci giorni, sono delle formiche geneticamente superiori.', member: 'SIMO' },
+          { text: 'I loro numeri sono ridicoli, hanno nascosto tutto finché non sono stati costretti a chiudere.', member: 'PIETRO' },
+          { text: 'Hanno una dittatura efficiente, se sgarri ti fucilano e risolvono il problema.', member: 'MARCO' },
+          { text: 'Ci hanno insegnato a barare sui dati per fare bella figura col mondo.', member: 'DAVE' },
+          { text: 'Maledetti cinesi di merda, ci hanno infettato tutti con i loro mercatini luridi.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 6,
+        text: 'Cosa pensi del video del TGR Leonardo del 2015 sul virus creato in laboratorio?',
+        choices: [
+          { text: 'Prova schiacciante che sapevano tutto da anni, altro che pipistrelli.', member: 'MARCO' },
+          { text: 'È una bufala per boomer, i coronavirus naturali si evolvono sempre.', member: 'SIMO' },
+          { text: 'Salvini lo usa per fare propaganda, ma è un video vecchio che non c\'entra nulla.', member: 'DAVE' },
+          { text: 'È il jolly di chi non sa argomentare e vede complotti ovunque.', member: 'PIETRO' },
+          { text: 'Se lo ha detto la Rai allora deve essere vero per forza.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 7,
+        text: 'Ti fideresti del vaccino quando uscirà?',
+        choices: [
+          { text: 'Subito, voglio uscire di casa senza patemi e tornare alla vita di prima.', member: 'SIMO' },
+          { text: 'Dipende, non vorrei avere effetti collaterali e diventare autistico.', member: 'PIETRO' },
+          { text: 'Lo farò solo se obbligatorio, ma preferirei evitare.', member: 'MARCO' },
+          { text: 'Aspetto di vedere se funziona sugli altri prima di farlo io.', member: 'DAVE' },
+          { text: 'Solo se me lo garantisce Trump o una società seria americana.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 8,
+        text: 'Cosa pensi dei runner inseguiti dagli elicotteri in TV?',
+        choices: [
+          { text: 'Ridicolo, fanno più danni gli ospedali con i contagi interni che uno che corre da solo.', member: 'PIETRO' },
+          { text: 'Giusto, bisogna spaventare la gente perché gli italiani sono indisciplinati.', member: 'DAVE' },
+          { text: 'È una scena da regime totalitario, una violazione dei diritti civili.', member: 'FILO' },
+          { text: 'Operazione simpatia per far vedere che lo stato c\'è, ma è una fuffa.', member: 'SIMO' },
+          { text: 'Una roba da galera, Barbara d\'Urso dovrebbe essere chiusa.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 9,
+        text: 'La Svezia non ha fatto il lockdown. Chi ha ragione?',
+        choices: [
+          { text: 'Hanno avuto culo che il virus era una robetta e la loro densità è bassa.', member: 'PIETRO' },
+          { text: 'Hanno ammesso di aver sbagliato, noi siamo stati i primi a capire la gravità.', member: 'SIMO' },
+          { text: 'Sono stati più intelligenti, non hanno sfasciato l\'economia per un\'influenza.', member: 'MARCO' },
+          { text: 'Hanno una cultura diversa, non hanno bisogno di leggi per stare distanti.', member: 'DAVE' },
+          { text: 'Hanno dimostrato che la quarantena è una lesità totale.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 10,
+        text: 'Qual è il sintomo più strano del coronavirus secondo te?',
+        choices: [
+          { text: 'Non sentire i gusti, mio padre è stato male tre giorni per questo.', member: 'PIETRO' },
+          { text: 'La stupidità della gente che compra 40 pacchi di carta igienica.', member: 'SIMO' },
+          { text: 'Pensare di avere il virus solo perché hai un colpo di tosse.', member: 'DAVE' },
+          { text: 'L\'ansia che ti viene a guardare i bollettini delle 18.', member: 'MARCO' },
+          { text: 'La voglia di fare start-up assurde chiusi in camera.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 11,
+        text: 'Cosa pensi di chi gira con la mascherina all\'aperto da solo?',
+        choices: [
+          { text: 'Un terrorizzato che guarda male tutti quelli che si avvicinano.', member: 'SIMO' },
+          { text: 'Un imbecille, la mascherina serve solo per non contagiare, non per proteggersi.', member: 'PIETRO' },
+          { text: 'Io la porto doppia per sicurezza, non si sa mai con questi neri in giro.', member: 'FILO' },
+          { text: 'Una vittima dell\'allarmismo mediatico creato dai giornali.', member: 'MARCO' },
+          { text: 'Inutile se non è una FFP3 professionale col filtro sostituibile.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 12,
+        text: 'La chiusura dei voli dalla Cina è stata utile?',
+        choices: [
+          { text: 'Una lesata enorme, hanno fatto scalo in Europa e sono arrivati lo stesso senza controlli.', member: 'DAVE' },
+          { text: 'Sì, ma dovevamo farlo un mese prima invece di dire "abbraccia un cinese".', member: 'MARCO' },
+          { text: 'Ha solo ritardato l\'inevitabile, il virus circolava già da gennaio.', member: 'PIETRO' },
+          { text: 'Giusto per dare un segnale politico, ma tecnicamente non è servito a nulla.', member: 'SIMO' },
+          { text: 'Dovevamo bombardarli direttamente a Wuhan per fermare il contagio.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 13,
+        text: 'Come vedi l\'Italia dopo la fine della quarantena?',
+        choices: [
+          { text: 'In recessione pesantissima, con lo spread a 300 e un governo tecnico cattivo.', member: 'PIETRO' },
+          { text: 'Più forte di prima, con una digitalizzazione accelerata grazie allo smart working.', member: 'SIMO' },
+          { text: 'Una nazione bonsai, al 21esimo posto per ricchezza nel mondo.', member: 'MARCO' },
+          { text: 'Un paese che ha distrutto il proprio futuro per salvare dei vecchi oncologici.', member: 'DAVE' },
+          { text: 'Un inferno di disoccupazione e rabbia sociale, pronti alla rivoluzione.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 14,
+        text: 'Boris Johnson in terapia intensiva: karma o sfortuna?',
+        choices: [
+          { text: 'Karma purissimo, così impara a parlare di immunità di gregge.', member: 'SIMO' },
+          { text: 'Sfortuna, ma almeno ha avuto il coraggio di dire la verità sul rischio di perdere i propri cari.', member: 'DAVE' },
+          { text: 'Un complotto per fargli cambiare idea sulla strategia di apertura.', member: 'MARCO' },
+          { text: 'Un disonore per il Regno Unito, sono diventati gli zimbelli del mondo.', member: 'PIETRO' },
+          { text: 'Spero che schiatti così si libera un posto al top.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 15,
+        text: 'Qual è la tua attività preferita durante il lockdown?',
+        choices: [
+          { text: 'Fare grafici su Excel e seguire i corsi Mooc gratuiti.', member: 'SIMO' },
+          { text: 'Studiare trading e fare esperimenti con le opzioni su Plus500.', member: 'DAVE' },
+          { text: 'Seguire le dirette di Conte e insultare i complottisti su Facebook.', member: 'MARCO' },
+          { text: 'Leggere il Sole 24 Ore e prevedere il crollo di Tesla.', member: 'PIETRO' },
+          { text: 'Gestire la pagina Polemica Quotidiana e cercare followers.', member: 'FILO' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'wallstreetstartup',
+    title: 'Wall Street & Startup Lese',
+    description: 'Trading compulsivo, spread, overnight e idee di business assurde.',
+    questions: [
+      {
+        id: 1,
+        text: 'Qual è la tua strategia su Plus500?',
+        choices: [
+          { text: 'Short su qualsiasi cosa sia in bolla, soprattutto Tesla e le navi da crociera.', member: 'PIETRO' },
+          { text: 'Comprare azioni Juve al minimo e rivenderle dopo il rimbalzo in borsa.', member: 'DAVE' },
+          { text: 'Long su aziende solide come LVMH e P&G e lasciarle marcire per mesi.', member: 'SIMO' },
+          { text: 'Usare la demo per fare 700k di profitto finto con leve pazze a 100.', member: 'FILO' },
+          { text: 'Non investire, è un mondo di bot che ti fottono in 3 secondi.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 2,
+        text: 'Cos\'è lo spread?',
+        choices: [
+          { text: 'Una tassa sull\'acquisto che ti fa partire subito in negativo di 3 euro sulla Juve.', member: 'DAVE' },
+          { text: 'La differenza tra ricchi e poveri che aumenta durante le crisi.', member: 'MARCO' },
+          { text: 'Una roba che non ho mai calcolato in anni di trading in demo.', member: 'FILO' },
+          { text: 'Una commissione irrisoria se investi migliaia di euro, ma pesante per noi poveri.', member: 'PIETRO' },
+          { text: 'Un valore che dipende dalla volatilità del titolo, lo sanno tutti.', member: 'SIMO' }
+        ]
+      },
+      {
+        id: 3,
+        text: 'Qual è l\'idea di startup più rivoluzionaria del gruppo?',
+        choices: [
+          { text: 'Una catena di Kebab di lusso con chef marocchini esperti e grafica accattivante.', member: 'PIETRO' },
+          { text: 'Un\'azienda che stipendia donne single per aumentare la natalità italiana con fondi UE.', member: 'FILO' },
+          { text: 'Un\'agenzia di social media marketing per kebabbari e agenzie immobiliari a 50€ al mese.', member: 'SIMO' },
+          { text: 'Un\'app per prenotare il turno in palestra dopo la riapertura.', member: 'DAVE' },
+          { text: 'Pavimenti grigliati che mangiano la polvere per eliminare le colf.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 4,
+        text: 'Cosa pensi di Elon Musk e Tesla?',
+        choices: [
+          { text: 'Un venditore di fuffa, Tesla è una bolla che crollerà appena finisce l\'hype.', member: 'PIETRO' },
+          { text: 'Un genio che ha mascherato un business di batterie con delle auto invendibili.', member: 'SIMO' },
+          { text: 'Un pazzo che scrive su Twitter di sparare alla gente e poi si lamenta della censura.', member: 'MARCO' },
+          { text: 'Bisogna comprarla ora che è scesa, rimbalzerà a 900 dollari.', member: 'FILO' },
+          { text: 'Il suo sistema di guida autonoma è pericoloso, basta un adesivo sul cartello per fotterlo.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 5,
+        text: 'Jeff Bezos ha regalato un mese di Amazon Video gratis. Perché?',
+        choices: [
+          { text: 'Markettata pazzesca per passare da santo e farsi pubblicità gratuita.', member: 'PIETRO' },
+          { text: 'Vuole distruggere definitivamente i negozi fisici e le finanziarie.', member: 'DAVE' },
+          { text: 'Perché è un uomo illuminato che ha a cuore la nostra quarantena.', member: 'MARCO' },
+          { text: 'Per abituare la gente al servizio e poi fargli pagare l\'abbonamento.', member: 'SIMO' },
+          { text: 'Perché Amazon è in vita grazie alla finanza e non alle vendite.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 6,
+        text: 'Qual è il miglior broker per iniziare a investire soldi reali?',
+        choices: [
+          { text: 'Revolut, perché hai 3 operazioni gratis al mese e compri frazioni di azioni.', member: 'DAVE' },
+          { text: 'eToro, è un social trading a prova di scemo e non ha commissioni sulla leva.', member: 'PIETRO' },
+          { text: 'Intesa San Paolo, è la mia banca e mi fido delle istituzioni italiane.', member: 'FILO' },
+          { text: 'Banca Sella o Fineco, ma hanno commissioni fisse troppo alte per noi.', member: 'MARCO' },
+          { text: 'Nessuno, meglio tenere i soldi sotto il materasso in questo periodo.', member: 'SIMO' }
+        ]
+      },
+      {
+        id: 7,
+        text: 'Cosa sono i Coronacoin?',
+        choices: [
+          { text: 'Una criptovaluta geniale basata sul numero di infetti, salirà del 1000%.', member: 'PIETRO' },
+          { text: 'Una truffa ai danni di idioti che non sanno dove buttare i soldi.', member: 'SIMO' },
+          { text: 'Un modo per investire nella ricerca medica tramite blockchain.', member: 'MARCO' },
+          { text: 'Roba spazzatura che non ha alcun valore legale.', member: 'DAVE' },
+          { text: 'Una pazzia nata durante le notti di quarantena.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 8,
+        text: 'Perché l\'oro è crollato nonostante sia un bene rifugio?',
+        choices: [
+          { text: 'Perché i grandi investitori hanno venduto oro per coprire le perdite azionarie.', member: 'DAVE' },
+          { text: 'È un bug del mercato, tornerà a 60 euro al grammo tra tre mesi.', member: 'SIMO' },
+          { text: 'Perché la gente ha bisogno di liquidità immediata per fare la spesa.', member: 'PIETRO' },
+          { text: 'Significa che non è una vera crisi economica ma solo passeggera.', member: 'FILO' },
+          { text: 'Boh, io l\'oro lo vedo solo nelle collane dei rapper.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 9,
+        text: 'Qual è il ruolo ideale per Marco in una startup?',
+        choices: [
+          { text: 'Controllo qualità e assaggiatore ufficiale (specialmente per il kebab).', member: 'MARCO' },
+          { text: 'Project Manager per i rapporti con le nuove generazioni su TikTok.', member: 'DAVE' },
+          { text: 'Responsabile dell\'amministrazione e archiviazione fatture MRN.', member: 'SIMO' },
+          { text: 'Quello che pacca le riunioni per andare al mare a Marina.', member: 'PIETRO' },
+          { text: 'L\'uomo del mistero che non interviene mai ma osserva.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 10,
+        text: 'Come descriveresti il "Metodo Guzzon" nel marketing?',
+        choices: [
+          { text: 'Comprare 35k followers su Instagram e poi dire "io i social non li uso".', member: 'SIMO' },
+          { text: 'Un cialtrone che ha cancellato i video da YouTube per nascondere le sue lesate.', member: 'DAVE' },
+          { text: 'Dire che hai letto 453 libri ma non ricordarti nemmeno la terza differenza del tuo servizio.', member: 'PIETRO' },
+          { text: 'Un imprenditore atipico che ha fallito con MySecretary.', member: 'MARCO' },
+          { text: 'Un genio del male che voleva creare il gruppo S. Stefano.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 11,
+        text: 'Cosa succederà al prezzo del petrolio dopo il crollo a -37 dollari?',
+        choices: [
+          { text: 'Falliranno tutte le aziende tranne quelle garantite dagli stati.', member: 'PIETRO' },
+          { text: 'È il momento di fare all-in ed entrare a prezzi ridicoli.', member: 'FILO' },
+          { text: 'Le macchine elettriche diventeranno inutili perché la benzina costerà zero.', member: 'MARCO' },
+          { text: 'Le lobby del petrolio dichiareranno guerra alla Cina per rialzare i prezzi.', member: 'DAVE' },
+          { text: 'Non cambierà nulla per noi consumatori, ci fottono sempre al distributore.', member: 'SIMO' }
+        ]
+      },
+      {
+        id: 12,
+        text: 'Qual è la miglior fonte di informazione finanziaria?',
+        choices: [
+          { text: 'Il Sole 24 Ore cartaceo, anche se a volte invertono i grafici.', member: 'PIETRO' },
+          { text: 'Bloomberg e la CNN, i mercati americani anticipano tutto.', member: 'SIMO' },
+          { text: 'Yahoo Finance e una calcolatrice, bastano e avanzano.', member: 'DAVE' },
+          { text: 'Le dirette di Mentana e i post di Warren Buffett.', member: 'MARCO' },
+          { text: 'I report segreti di JP Morgan che filtrano su Telegram.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 13,
+        text: 'Cosa faresti con un budget di 500 euro reali?',
+        choices: [
+          { text: 'Tre posizioni su indici USA e Germania, leva 1:10.', member: 'PIETRO' },
+          { text: 'Compro un MacBook Pro usato per studiare meglio il trading.', member: 'DAVE' },
+          { text: 'Li tengo pronti sul conto in attesa del crollo definitivo della borsa italiana.', member: 'MARCO' },
+          { text: 'Compro 50 mascherine e le rivendo a 20 euro l\'una a Bari.', member: 'SIMO' },
+          { text: 'Ci apro un conto trading e seguo l\'istinto di Filo.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 14,
+        text: 'Perché l\'India è trentesima in classifica nonostante sia un colosso?',
+        choices: [
+          { text: 'Perché non fanno tamponi e hanno problemi molto più grandi del virus.', member: 'PIETRO' },
+          { text: 'Inquinano così tanto il Gange che il virus muore appena entra in acqua.', member: 'MARCO' },
+          { text: 'Si stanno muovendo a piedi verso i villaggi, i dati veri sono 200 volte superiori.', member: 'SIMO' },
+          { text: 'Hanno l\'immunità di gregge naturale perché vivono nello sporco.', member: 'FILO' },
+          { text: 'Aspettano il momento giusto per superare tutti e prendersi il podio.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 15,
+        text: 'Qual è il segreto per non farsi fottere dalle commissioni overnight?',
+        choices: [
+          { text: 'Chiudere tutte le posizioni il venerdì alle 17.29 e riaprirle il lunedì.', member: 'PIETRO' },
+          { text: 'Non fare day trading ma investimenti di lungo periodo.', member: 'SIMO' },
+          { text: 'Usare solo piattaforme che non hanno interessi notturni come eToro.', member: 'DAVE' },
+          { text: 'Non tenere posizioni aperte durante il weekend, paghi 3 volte.', member: 'MARCO' },
+          { text: 'Guadagnare così tanto che le commissioni diventano trascurabili.', member: 'FILO' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'politicaita',
+    title: 'Politica Italiana & Personaggi Pubblici',
+    description: 'Conte, Salvini, Renzi, il MES e i Governatori locali.',
+    questions: [
+      {
+        id: 1,
+        text: 'Cosa ne pensi dell\'attacco di Conte a Salvini e Meloni in diretta nazionale?',
+        choices: [
+          { text: 'Ha fatto benissimo, bisognava ristabilire la verità contro chi diffonde fake news.', member: 'DAVE' },
+          { text: 'Una mossa politica scorretta, ha usato un mezzo istituzionale per fare campagna elettorale.', member: 'PIETRO' },
+          { text: 'Ha parlato con logica e senso compiuto, finalmente un premier non ignorante.', member: 'SIMO' },
+          { text: 'Ha fatto il leso, doveva tacere e lavorare invece di cercare lo scontro.', member: 'FILO' },
+          { text: 'Mi è piaciuto, ha blastato i caciaroni che non sanno nemmeno cos\'è il MES.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 2,
+        text: 'Qual è la tua posizione sul MES?',
+        choices: [
+          { text: 'È il "Messia", può risolvere i problemi dell\'Italia se lo usiamo per la sanità.', member: 'PIETRO' },
+          { text: 'Una trappola della Germania per commissariarci e rubarci i soldi.', member: 'MARCO' },
+          { text: 'Strumento necessario se non ci sono condizioni stringenti, bisogna fidarsi.', member: 'DAVE' },
+          { text: 'No al MES per principio, meglio i Coronabond o il Recovery Fund.', member: 'SIMO' },
+          { text: 'Il MES è debito, ci stiamo indebitando per generazioni come faceva Berlusconi.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 3,
+        text: 'Matteo Salvini è ancora un leader credibile?',
+        choices: [
+          { text: 'È un genio del marketing, sa che cambiare idea ogni tre giorni paga in termini di voti.', member: 'SIMO' },
+          { text: 'Un ignorante che non si è nemmeno laureato e spara cazzate per attirare i boomer.', member: 'PIETRO' },
+          { text: 'L\'unico che prova a difendere l\'Italia dagli immigrati e dall\'Europa cattiva.', member: 'FILO' },
+          { text: 'Sta prendendo troppe cantonate, segnalo ogni suo post per notizia falsa.', member: 'DAVE' },
+          { text: 'Mi stava più simpatico un tempo, ultimamente è diventato troppo leso.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 4,
+        text: 'Cosa pensi del Governatore De Luca?',
+        choices: [
+          { text: 'Il miglior comico del 2020, le sue minacce col lanciafiamme sono poesia.', member: 'PIETRO' },
+          { text: 'Un politico serio che parla in italiano e si fa capire dalla gente ignorante.', member: 'SIMO' },
+          { text: 'Un pazzo che vuole chiudere tutto anche se non c\'è motivo.', member: 'MARCO' },
+          { text: 'In Campania servono questi messaggi forti per far stare la gente a casa.', member: 'DAVE' },
+          { text: 'Mi fa morire quando insulta i sindaci e la movida.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 5,
+        text: 'Matteo Renzi: genio incompreso o traditore?',
+        choices: [
+          { text: 'Il miglior politico della storia italiana, superiore intellettualmente a tutti.', member: 'PIETRO' },
+          { text: 'Un egocentrico che vuole sempre stare al centro dell\'attenzione.', member: 'SIMO' },
+          { text: 'L\'uomo di Confindustria, pensa solo all\'economia e mai ai cittadini.', member: 'DAVE' },
+          { text: 'Uno che ha rovinato il PD e ora cerca di distruggere il governo.', member: 'MARCO' },
+          { text: 'Renzie mi sembra sul pezzo, ha capito che il virus girerà per due anni.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 6,
+        text: 'Cosa ne pensi di Trump e della sua gestione del virus?',
+        choices: [
+          { text: 'Un deficiente che si è tolto dall\'accordo di Parigi e nega il clima.', member: 'MARCO' },
+          { text: 'Un grande, l\'unico che sta frenando l\'avanzata cinese nel mondo.', member: 'PIETRO' },
+          { text: 'Ha già perso le elezioni perché ha detto che il virus non esisteva negli USA.', member: 'SIMO' },
+          { text: 'Un manipolatore di masse, la sua comunicazione è da regime.', member: 'DAVE' },
+          { text: 'Trump è il top, dice sempre quello che pensa senza filtri.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 7,
+        text: 'La regolarizzazione di 600.000 immigrati è una buona idea?',
+        choices: [
+          { text: 'Sì, serve per farli emergere dal nero e fargli pagare le tasse.', member: 'SIMO' },
+          { text: 'Una follia, con la disoccupazione che salirà a morte non ha senso darla a loro.', member: 'FILO' },
+          { text: 'Giusto, aumenta il PIL e toglie manovalanza alla criminalità organizzata.', member: 'PIETRO' },
+          { text: 'Lo fanno solo per avere nuovi braccianti legali per l\'agricoltura.', member: 'MARCO' },
+          { text: 'Un provvedimento tardivo, andava fatto anni fa indipendentemente dal virus.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 8,
+        text: 'Chi vedresti bene in un "Governo del Cambiamento"?',
+        choices: [
+          { text: 'Draghi alla presidenza e Cottarelli all\'economia, il dream team dei tecnici.', member: 'PIETRO' },
+          { text: 'Giuseppe Conte supportato da una commissione di veri esperti.', member: 'DAVE' },
+          { text: 'Qualcuno che non sia né di destra né di sinistra, ma competente.', member: 'MARCO' },
+          { text: 'Filippo Mazzotti a capo della comunicazione nazionale.', member: 'SIMO' },
+          { text: 'Silvio Berlusconi, l\'unico che sapeva gestire i rapporti internazionali.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 9,
+        text: 'Cosa pensi del movimento delle "Sardine"?',
+        choices: [
+          { text: 'Hanno rotto il cazzo, sono solo dei radical chic che non hanno proposte vere.', member: 'FILO' },
+          { text: 'Un\'operazione per fermare Salvini che ha funzionato in Emilia.', member: 'SIMO' },
+          { text: 'Gente che canta "Bella Ciao" senza sapere nemmeno perché.', member: 'PIETRO' },
+          { text: 'Mi ero trovato in piazza con loro a dicembre, sembravano propositivi.', member: 'DAVE' },
+          { text: 'Non li seguo, mi sembrano un po\' troppo legati al PD.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 10,
+        text: 'La Lagarde alla BCE: promossa o bocciata?',
+        choices: [
+          { text: 'Una puttana, ha fatto salire lo spread di proposito con quella frase.', member: 'PIETRO' },
+          { text: 'Una dilettante, ha distrutto in un secondo il lavoro di anni di Draghi.', member: 'MARCO' },
+          { text: 'Ha corretto il tiro dopo, ma l\'errore iniziale è stato gravissimo.', member: 'SIMO' },
+          { text: 'Voleva favorire le banche tedesche a discapito dell\'Italia.', member: 'DAVE' },
+          { text: 'Inadatta al ruolo, ci porterà al default.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 11,
+        text: 'Cosa pensi di Luigi Di Maio?',
+        choices: [
+          { text: 'Uno che non sa parlare e sembra stupido, l\'immagine peggiore dell\'Italia nel mondo.', member: 'FILO' },
+          { text: 'Un miracolato che ha chiesto l\'impeachment di Mattarella e poi ha chiesto scusa.', member: 'SIMO' },
+          { text: 'Meglio di Gallera, almeno lui ogni tanto ammette di non sapere le cose.', member: 'PIETRO' },
+          { text: 'Ha perso tutto il potere che aveva nei 5 Stelle, ormai è finito.', member: 'MARCO' },
+          { text: 'Non ha nemmeno la laurea, non dovrebbe stare al ministero degli esteri.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 12,
+        text: 'La gestione della "Fase 2" è stata coerente?',
+        choices: [
+          { text: 'No, hanno aperto le librerie ma non i parrucchieri, non ha senso logico.', member: 'DAVE' },
+          { text: 'È un lockdown mascherato, hanno solo cambiato il nome alla fase 1.', member: 'MARCO' },
+          { text: 'Hanno messo la responsabilità in mano ai cittadini, una mossa da geni.', member: 'SIMO' },
+          { text: 'Ridicola, puoi vedere la zia ma non l\'amico, indimostrabile.', member: 'PIETRO' },
+          { text: 'Bisognava riaprire tutto subito, la gente sta morendo di fame non di virus.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 13,
+        text: 'Cosa pensi dei rimborsi da 600 euro per le partite IVA?',
+        choices: [
+          { text: 'Una miseria, non ci paghi nemmeno le bollette dell\'ufficio.', member: 'FILO' },
+          { text: 'Assistenzialismo puro che serve solo a comprare voti.', member: 'PIETRO' },
+          { text: 'Meglio di niente, ma i soldi devono arrivare subito, non a settembre.', member: 'MARCO' },
+          { text: 'Bisognerebbe darli solo a chi ha avuto cali di fatturato reali.', member: 'DAVE' },
+          { text: 'Lo stato dovrebbe dare un indennizzo maggiore a chi è stato costretto a chiudere.', member: 'SIMO' }
+        ]
+      },
+      {
+        id: 14,
+        text: 'La Chiesa che vuole riaprire a Pasqua: cosa ne pensi?',
+        choices: [
+          { text: 'Vogliono solo alleggerire la spesa INPS facendo infettare i vecchi.', member: 'PIETRO' },
+          { text: 'Follia, sono delle bombe di contagio per i credenti.', member: 'SIMO' },
+          { text: 'Una scelta coraggiosa per dare speranza alle persone.', member: 'MARCO' },
+          { text: 'Se aprono loro allora devono aprire anche i centri commerciali.', member: 'DAVE' },
+          { text: 'Maledetti cristiani, pensano solo alle loro canzoncine.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 15,
+        text: 'Chi è il vero "nemico dell\'Italia" in Europa?',
+        choices: [
+          { text: 'L\'Olanda e i paesi del nord, ci chiamano PIGS e ci godono a vederci a pecora.', member: 'PIETRO' },
+          { text: 'La Germania, che ci blocca le mascherine e poi chiede scusa in ritardo.', member: 'MARCO' },
+          { text: 'Noi stessi, perché siamo un popolo di evasori e analfabeti funzionali.', member: 'SIMO' },
+          { text: 'I burocrati di Bruxelles che non capiscono le esigenze dei singoli stati.', member: 'DAVE' },
+          { text: 'La Francia, che bara sui morti e non fa i tamponi.', member: 'FILO' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'calciotattica',
+    title: 'Calcio, Tattica & Bel Giuoco',
+    description: 'Sarri vs Allegri, portieri registi, Serie A vs Premier e infortuni.',
+    questions: [
+      {
+        id: 1,
+        text: 'Maurizio Sarri alla Juve: rivoluzione o fallimento?',
+        choices: [
+          { text: 'Fallimento totale, il bel gioco non è mai esistito e giochiamo peggio di prima.', member: 'FILO' },
+          { text: 'Va aspettato fino all\'anno prossimo, deve avere i giocatori adatti al suo calcio.', member: 'SIMO' },
+          { text: 'Sta facendo più di quel che deve con una squadra costruita senza senso da Paratici.', member: 'PIETRO' },
+          { text: 'La sua mano non si vede, la squadra vince solo per le giocate dei singoli.', member: 'DAVE' },
+          { text: 'Se vince il campionato rimane, altrimenti lo cacciano subito.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 2,
+        text: 'Qual è il problema principale di questa Juve?',
+        choices: [
+          { text: 'Il centrocampo schifoso, Matuidi e Khedira sono troppo vecchi per correre.', member: 'DAVE' },
+          { text: 'L\'assenza di Chiellini, senza il capitano la difesa non ha sicurezza.', member: 'MARCO' },
+          { text: 'Ronaldo, perché per farlo giocare bisogna sacrificare l\'equilibrio di tutta la squadra.', member: 'PIETRO' },
+          { text: 'La lentezza nel muovere palla, facciamo 25 minuti di passaggi prima di tirare.', member: 'SIMO' },
+          { text: 'Ramsey e Rabiot, due pesi morti che prendono milioni senza fare nulla.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 3,
+        text: 'Chiellini è ancora il difensore più forte del mondo?',
+        choices: [
+          { text: 'Sì, nettamente, la sua esperienza è la prima leva per vincere.', member: 'MARCO' },
+          { text: 'Forse un tempo, a 35 anni dopo un infortunio al crociato è dura tornare top.', member: 'SIMO' },
+          { text: 'Meglio Demiral, è più giovane e ha più fame di lui.', member: 'PIETRO' },
+          { text: 'Senza di lui la Juve prende gol da chiunque, anche dal Verona.', member: 'FILO' },
+          { text: 'È un rischio portarlo all\'Europeo se non recupera il ritmo partita.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 4,
+        text: 'Cosa pensi dei portieri che devono giocare con i piedi?',
+        choices: [
+          { text: 'Una moda stupida che porta solo a fare cazzate alla Ospina.', member: 'PIETRO' },
+          { text: 'Donnarumma ne fa una a partita, il suo valore è calato a 30 milioni.', member: 'DAVE' },
+          { text: 'Se il portiere sa fare assist allora vale più di 60 milioni, vedi Alisson.', member: 'SIMO' },
+          { text: 'Szczesny è fortissimo, ma a volte sembra un handicap quando prova i lanci.', member: 'FILO' },
+          { text: 'Buffon a 42 anni è ancora meglio di metà dei portieri di Serie A.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 5,
+        text: 'La Serie A è diventata come la Premier League?',
+        choices: [
+          { text: 'Sì, valanghe di 5-0 ogni domenica, il livello delle difese è calato.', member: 'SIMO' },
+          { text: 'No, la Premier è un campionato di lesi strapagati, noi siamo tatticamente superiori.', member: 'PIETRO' },
+          { text: 'Magari lo fosse, avremmo stadi di proprietà e non saremmo a pecora.', member: 'DAVE' },
+          { text: 'La Serie A è super competitiva, solo Simo pensa il contrario.', member: 'MARCO' },
+          { text: 'In Premier corrono il triplo, noi camminiamo in campo.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 6,
+        text: 'Chi è l\'attaccante più forte della Serie A oggi?',
+        choices: [
+          { text: 'Immobile, i numeri parlano chiaro, è un record-man assoluto.', member: 'FILO' },
+          { text: 'Ronaldo, ha 25 anni di età biologica e segna in ogni partita.', member: 'PIETRO' },
+          { text: 'Dybala, quando è in forma è un Dio e gli riesce tutto.', member: 'DAVE' },
+          { text: 'Lukaku, trascina l\'Inter da solo insieme a Lautaro.', member: 'SIMO' },
+          { text: 'Ilicic, è buggato e fa gol da centrocampo.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 7,
+        text: 'Cosa pensi di Adrien Rabiot?',
+        choices: [
+          { text: 'Migliore in campo in molte partite, ha fatto più interdizione di tutti.', member: 'PIETRO' },
+          { text: 'Un disastro, sbaglia controlli banali e sembra a disagio col pallone.', member: 'FILO' },
+          { text: 'Giocatore tecnico ma pigro, dovrebbe dimezzarsi lo stipendio.', member: 'DAVE' },
+          { text: 'Ha bisogno di tempo per adattarsi ai ritmi del calcio italiano.', member: 'SIMO' },
+          { text: 'Un altro parametro zero che ci perseguiterà fino a fine contratto.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 8,
+        text: 'Il Verona di Juric è la vera sorpresa dell\'anno?',
+        choices: [
+          { text: 'Sì, giocano bene a calcio con una squadraccia di scarti.', member: 'SIMO' },
+          { text: 'Hanno sculato un sacco di partite, non dureranno.', member: 'PIETRO' },
+          { text: 'Kumbulla e Faraoni sono giocatori da top club ora.', member: 'MARCO' },
+          { text: 'Hanno battuto la Juve perché noi eravamo in crisi nera.', member: 'DAVE' },
+          { text: 'Meriterebbero di lottare per l\'Europa League.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 9,
+        text: 'Cosa succederà alla Champions League quest\'anno?',
+        choices: [
+          { text: 'La vince il Bayern Monaco, sono gli unici che non hanno sospeso il campionato.', member: 'PIETRO' },
+          { text: 'L\'Atalanta può arrivare in semifinale se becca il Lipsia.', member: 'MARCO' },
+          { text: 'Sarà un terno al lotto per via dello stop di tre mesi.', member: 'DAVE' },
+          { text: 'Il Real di Zidane è immortale, vincerà ancora lui.', member: 'SIMO' },
+          { text: 'La vincerà chi ha più grinta e meno positivi al Covid.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 10,
+        text: 'Cosa pensi dell\'esclusione di Emre Can dalla lista Champions?',
+        choices: [
+          { text: 'Una scelta scellerata che ha svalutato un giocatore da 40 milioni.', member: 'SIMO' },
+          { text: 'Giusto, non era adatto al gioco di Sarri e bisognava tagliarlo.', member: 'DAVE' },
+          { text: 'Sarri lo ha rovinato, la società non lo ha protetto per niente.', member: 'PIETRO' },
+          { text: 'Poteva essere utile come difensore aggiunto in emergenza.', member: 'MARCO' },
+          { text: 'Can è forte, lo ha dimostrato al Dortmund facendo gol pazzeschi.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 11,
+        text: 'Qual è il modulo perfetto per la Juve?',
+        choices: [
+          { text: '4-3-3 con esterni a piede invertito per fare il bel giogo.', member: 'DAVE' },
+          { text: '4-3-1-2 con Dybala trequartista dietro Ronaldo e Higuain.', member: 'FILO' },
+          { text: 'Difesa a 3 con Bonucci mediano al rientro di Chiellini.', member: 'PIETRO' },
+          { text: 'Albero di Natale, 4-3-2-1, per coprire meglio il centrocampo.', member: 'SIMO' },
+          { text: '3-5-2 per sfruttare gli esterni che corrono come pazzi.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 12,
+        text: 'Arthur del Barcellona è un buon acquisto?',
+        choices: [
+          { text: 'Il miglior centrocampista del mondo, tecnico e fisico insieme.', member: 'SIMO' },
+          { text: 'Fa panchina al Barça, è il "vecino" dei blaugrana.', member: 'PIETRO' },
+          { text: 'Un altro giocatore di 1 metro e 70 che non serve a nulla.', member: 'FILO' },
+          { text: 'Ha il fisico di un 13enne, non mi convince per niente.', member: 'DAVE' },
+          { text: 'Speriamo che si adatti subito, ma il suo disrespect per la Juve è tanto.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 13,
+        text: 'La Serie A a porte chiuse: chi ne beneficia?',
+        choices: [
+          { text: 'L\'Inter, perché ha una panchina corta e meno pressione dal pubblico.', member: 'DAVE' },
+          { text: 'La Lazio, perché non ha le coppe e può concentrarsi solo sul campo.', member: 'SIMO' },
+          { text: 'Nessuno, è un\'atmosfera da amichevole estiva che deprime tutti.', member: 'PIETRO' },
+          { text: 'Le squadre piccole, perché giocare allo Stadium vuoto è più facile.', member: 'MARCO' },
+          { text: 'La Juve, perché Agnelli ha il peso politico per decidere i rinvii.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 14,
+        text: 'Bernardeschi "mezzala": invenzione o colpo di genio?',
+        choices: [
+          { text: 'Invenzione di Sarri perché non sa dove metterlo, giocatore inutile.', member: 'SIMO' },
+          { text: 'Può funzionare se impara a fare gli inserimenti che faceva a Firenze.', member: 'DAVE' },
+          { text: 'Da vendere subito alla Roma per Zaniolo o Pellegrini.', member: 'PIETRO' },
+          { text: 'Bernardeschi è da radiare, non sa nemmeno in che posizione gioca.', member: 'FILO' },
+          { text: 'Una pena così non si vedeva da anni, spero lo vendano.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 15,
+        text: 'Chi è il miglior trequartista italiano del momento?',
+        choices: [
+          { text: 'Lorenzo Pellegrini, giocatore completo che cambia gli equilibri.', member: 'PIETRO' },
+          { text: 'Castrovilli, ha fatto il fenomeno quest\'anno alla Fiorentina.', member: 'DAVE' },
+          { text: 'Zaccagni del Verona, ha dimostrato di valere un top club.', member: 'SIMO' },
+          { text: 'Saponara, da quando è al Lecce ha svoltato la squadra.', member: 'FILO' },
+          { text: 'Non ce ne sono di forti, il livello è calato troppo.', member: 'MARCO' }
+        ]
+      }
+    ]
   }
 ];
