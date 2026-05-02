@@ -413,7 +413,9 @@ export default function App() {
                             initial={{ scale: 0, rotate: -45 }}
                             animate={{ scale: 1, rotate: 0 }}
                             className={`text-[9px] font-mono font-black px-2 py-1 rounded shrink-0 border tracking-tighter ${
-                              isThisSelected ? 'text-black bg-neon-cyan border-neon-cyan' : 'text-white/20 bg-white/5 border-white/10'
+                              isThisSelected 
+                                ? 'text-black bg-neon-cyan border-neon-cyan' 
+                                : 'text-neon-orange bg-neon-orange/10 border-neon-orange/30 shadow-[0_0_5px_#ff9d0044]'
                             }`}
                           >
                             {choice.member}
