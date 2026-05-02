@@ -4285,5 +4285,865 @@ export const QUIZZES: Quiz[] = [
         ]
       }
     ]
+  },
+  {
+    id: 'calciomanagement',
+    title: 'Calcio & Management: La fiera del DS leso',
+    description: 'Calciomercato, Tudor, Comolli, Marotta e gli esuberi.',
+    questions: [
+      {
+        id: 1,
+        text: 'Kolo Muani alla Juve per 60 milioni. Qual è il tuo verdetto?',
+        choices: [
+          { text: 'È un leso, ne vale massimo 35. A 80 prendevi Gyokeres.', member: 'FILO' },
+          { text: 'Se spendi 60 per metterlo trequartista meriti il fallimento.', member: 'DAVE' },
+          { text: 'Il PSG ha alzato il prezzo perché Comolli è un demente.', member: 'SIMO' },
+          { text: 'Incredibile che lo strapaghino dopo averlo avuto in prestito.', member: 'PIETRO' },
+          { text: 'Solo noi possiamo pagare 50 milioni un cesso del genere.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 2,
+        text: 'L’Inter affida la panchina a Chivu. Cosa ne pensi?',
+        choices: [
+          { text: 'Chivu al Ravenna? Sarebbe il suo livello.', member: 'MARCO' },
+          { text: 'Chivu è un neofita, non arriverà in Champions.', member: 'SIMO' },
+          { text: 'Meglio lui del "giochismo" di Thiago Motta.', member: 'DAVE' },
+          { text: 'Con Chivu l\'Inter è a rischio decimo posto.', member: 'FILO' },
+          { text: 'Vediamo se è un Pirlo o se dura fino a Natale.', member: 'PIETRO' }
+        ]
+      },
+      {
+        id: 3,
+        text: 'Manuel Locatelli titolare inamovibile. Reazione?',
+        choices: [
+          { text: 'È il cancro della squadra, ma gli allenatori lo amano.', member: 'PIETRO' },
+          { text: 'BASTA LOCATELLI! Non fa un passaggio verticale neanche per sbaglio.', member: 'FILO' },
+          { text: 'Prende 6.5 anche se svirgola ogni pallone. Mafia.', member: 'SIMO' },
+          { text: 'Passano gli anni ma lui è sempre lì a fare danni.', member: 'DAVE' },
+          { text: 'Schifo, vergogna e putridume.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 4,
+        text: 'Comolli come Direttore Sportivo della Juve.',
+        choices: [
+          { text: 'Sta dormendo da tre mesi, ridatemi Nedved.', member: 'FILO' },
+          { text: 'Peggio di Paratici e Giuntoli messi insieme.', member: 'MARCO' },
+          { text: 'Si affida agli algoritmi ma compra solo gente che si rompe.', member: 'PIETRO' },
+          { text: 'Vende i giovani a 10 e compra i rottami a 40.', member: 'DAVE' },
+          { text: 'Ha venduto Nico Gonzalez a 33 milioni, bisogna chiedergli scusa.', member: 'SIMO' }
+        ]
+      },
+      {
+        id: 5,
+        text: 'La gestione di Lautaro Martinez all’Inter.',
+        choices: [
+          { text: 'Vale 100 milioni? Se qualcuno li offre gli danno la 104.', member: 'FILO' },
+          { text: 'È uno dei più forti al mondo, ma Chivu non lo valorizza.', member: 'SIMO' },
+          { text: 'Meglio scambiarlo con uno che corre 90 minuti.', member: 'DAVE' },
+          { text: 'Lautaro meglio di Trezeguet, ma i juventini non lo ammettono.', member: 'PIETRO' },
+          { text: 'Un montato scarsissimo, starebbe bene al Ravenna.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 6,
+        text: 'Douglas Luiz torna in Premier League.',
+        choices: [
+          { text: 'Ennesima minusvalenza di un giocatore che non ha mai giocato.', member: 'DAVE' },
+          { text: 'Lo avrei tenuto titolare a palleggiare con Fagioli.', member: 'FILO' },
+          { text: 'Venduto per pagare la buonuscita di Vlahovic.', member: 'SIMO' },
+          { text: 'In Premier tornerà un fenomeno, la Juve brucia tutti.', member: 'PIETRO' },
+          { text: 'Altra operazione da deficienti.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 7,
+        text: 'Cosa pensi di Alberto Costa?',
+        choices: [
+          { text: 'Chi è? Mai sentito nominare.', member: 'FILO' },
+          { text: 'Venduto a 20 milioni? Comolli è un mostro o gli altri sono scemi.', member: 'SIMO' },
+          { text: 'Peggio di Kelly, non sa stare in campo.', member: 'MARCO' },
+          { text: 'Un prospetto che diventerà forte in un ambiente non marcio.', member: 'PIETRO' },
+          { text: 'Classico acquisto da "algoritmo" che non ha mai debuttato.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 8,
+        text: 'L\'Atalanta rifiuta 45 milioni per Lookman.',
+        choices: [
+          { text: 'Lo tengono in ostaggio, hanno un retaggio razziale.', member: 'PIETRO' },
+          { text: 'A 45 milioni era da vendere bendati.', member: 'MARCO' },
+          { text: 'Se resta fuori rosa perdono capitale e stipendio. Lesi.', member: 'SIMO' },
+          { text: 'Meglio per noi, almeno non va a rinforzare l\'Inter.', member: 'DAVE' },
+          { text: 'Lookman a 45? Ma se ne vale massimo 25.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 9,
+        text: 'Il mercato della Lazio di Lotito.',
+        choices: [
+          { text: 'Lotito continua a cucinare con due spicci.', member: 'PIETRO' },
+          { text: 'Squadra da metà classifica, non mi interessa.', member: 'FILO' },
+          { text: 'Hanno preso Tavares che è un rottame peggio di Cabal.', member: 'DAVE' },
+          { text: 'Lotito è il padre dei mafiosi ma sa vendere.', member: 'MARCO' },
+          { text: 'Se prendono Rovella a 40 milioni Marotta è drogato.', member: 'SIMO' }
+        ]
+      },
+      {
+        id: 10,
+        text: 'Vlahovic e la risoluzione del contratto.',
+        choices: [
+          { text: 'Finalmente! Giocatore da Serie C.', member: 'MARCO' },
+          { text: 'Costa 24 milioni l\'anno, è una zavorra che blocca tutto.', member: 'SIMO' },
+          { text: 'Lo svincolano per prendere un altro nero con le treccine.', member: 'PIETRO' },
+          { text: 'Si fa svincolare per rubare l\'ingaggio altrove. Pezzo di merda.', member: 'DAVE' },
+          { text: 'Tribuna fissa tutto l\'anno se non rinnova al ribasso.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 11,
+        text: 'Il ritorno di Massimiliano Allegri al Milan.',
+        choices: [
+          { text: 'Farà passare un quarto posto per un miracolo.', member: 'PIETRO' },
+          { text: 'È un mostro, vince lo scudetto con una squadra di morti.', member: 'SIMO' },
+          { text: 'Allegri > Conte, ma non volete ammetterlo.', member: 'FILO' },
+          { text: 'Spero che la squadra gli giochi contro dal primo giorno.', member: 'DAVE' },
+          { text: 'Schifo, giocherà con il 5-4-1 in casa.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 12,
+        text: 'Nico Paz al Como per 10 milioni.',
+        choices: [
+          { text: 'Paz > Yildiz. L\'unico colpo serio dell\'estate.', member: 'PIETRO' },
+          { text: 'Il Como ha più ambizione della Juve.', member: 'DAVE' },
+          { text: 'Il Real ha la recompra, il Como non decide nulla.', member: 'SIMO' },
+          { text: 'Magari lo avessimo preso noi invece di spendere 40 per Nico Gonzalez.', member: 'FILO' },
+          { text: 'Bel giocatore, ma sparirà nel giro di un anno.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 13,
+        text: 'Il ruolo di trequartista per McKennie.',
+        choices: [
+          { text: 'È un insulto al calcio, ma Tudor è un fenomeno per voi.', member: 'SIMO' },
+          { text: 'Parte ogni anno fuori rosa e finisce capitano. Inesplicabile.', member: 'DAVE' },
+          { text: 'Almeno si inserisce, meglio di Koopmeiners che dorme.', member: 'FILO' },
+          { text: 'Sarebbe il titolare perfetto per la Lazio di Sarri.', member: 'PIETRO' },
+          { text: 'Panzone paracarro, fuori dai coglioni.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 14,
+        text: 'La cessione di Soule alla Roma.',
+        choices: [
+          { text: 'Errore storico, valeva 50 milioni.', member: 'FILO' },
+          { text: 'Per ora non ha dimostrato nulla più dei 25 milioni incassati.', member: 'SIMO' },
+          { text: 'Meglio di Conceicao a mani basse.', member: 'DAVE' },
+          { text: 'La Juve svende il futuro per comprare il presente bollito.', member: 'PIETRO' },
+          { text: 'Giuntoli ci ha disintegrati vendendo lui.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 15,
+        text: 'Le amichevoli estive della Juventus.',
+        choices: [
+          { text: 'Perdere col Benevento e col Parma è un segnale di scudetto?', member: 'DAVE' },
+          { text: 'Risultati inutili, conta solo la condizione atletica.', member: 'FILO' },
+          { text: 'Tudor out se non vince la prossima.', member: 'MARCO' },
+          { text: 'Mi sto segando sulle vostre sconfitte estive.', member: 'PIETRO' },
+          { text: 'Avete la squadra in turnover e Bremer rotto, cosa volete?', member: 'SIMO' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'logistica',
+    title: 'Logistica & Grandi Eventi: Il Manuale del Pacco',
+    description: 'Reunion, trasporti, BlaBlaCar e imprevisti domestici.',
+    questions: [
+      {
+        id: 1,
+        text: 'È giovedì pomeriggio e devi decidere come scendere a Ravenna.',
+        choices: [
+          { text: 'Vengo in macchina così non ho pensieri per la domenica.', member: 'DAVE' },
+          { text: 'Prendo il treno delle 18:53 da Bologna, alle 19:53 sono lì.', member: 'SIMO' },
+          { text: 'BlaBlaCar a 12€, risparmio e viaggio con una bionda.', member: 'FILO' },
+          { text: 'Arrivo sabato a pranzo, venerdì ho un compleanno a Vado.', member: 'PIETRO' },
+          { text: 'Io sono già qui, vi aspetto per i pop-corn.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 2,
+        text: 'Ti montano i condizionatori proprio il giorno della reunion. Cosa fai?',
+        choices: [
+          { text: 'Annulliamo tutto, devo pulire il tufo e i mobili spostati.', member: 'DAVE' },
+          { text: 'Ma falli montare un altro giorno, sei un leso enorme!', member: 'FILO' },
+          { text: 'Vengo a Monza ad aiutarti a pulire se serve.', member: 'SIMO' },
+          { text: 'Ennesima scusa per non venire, non reggi la pressione.', member: 'PIETRO' },
+          { text: 'La reunion con l\'idraulico sì e la nostra no?', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 3,
+        text: 'Il viaggio con "Silvana" di BlaBlaCar per 12 euro.',
+        choices: [
+          { text: 'Dave ha perso ore di reunion per 12 euro e una 45enne.', member: 'FILO' },
+          { text: 'Se è antipatica è un fallimento totale, dacci il nome!', member: 'SIMO' },
+          { text: 'L\'ho portata fino a Lido Adriano, mi è costato più di benzina.', member: 'DAVE' },
+          { text: 'Dave taxi dei maranza, non vale la pena per 8 euro netti.', member: 'PIETRO' },
+          { text: 'Doveva essere una topa e invece era una zia.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 4,
+        text: 'Prenotazione cena alla "Casa delle Aie" senza essere soci.',
+        choices: [
+          { text: 'Andiamo alle 22:30, vedrete che non c\'è fila.', member: 'MARCO' },
+          { text: 'Ma serve la tessera, altrimenti facciamo 2 ore di coda!', member: 'SIMO' },
+          { text: 'Se non c\'è il tavolo io non vengo, odio stare in piedi.', member: 'FILO' },
+          { text: 'Mi immagino Salvini ai fornelli in quel posto di destra.', member: 'PIETRO' },
+          { text: 'Kebabberia e via, non complichiamo la vita.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 5,
+        text: 'La gestione del sonno post-serata barcaccia.',
+        choices: [
+          { text: 'Se dormo 4 ore sto benissimo... (e poi svengo).', member: 'DAVE' },
+          { text: 'Mi sono svegliato ora (alle 13:00), ero in riserva.', member: 'MARCO' },
+          { text: 'Ho preso un caffè doppio a mezzanotte e non ho dormito nulla.', member: 'FILO' },
+          { text: 'Mi sveglio alle 10, faccio colazione e sono operativo.', member: 'SIMO' },
+          { text: 'Io parto alle 2 di notte per non trovare traffico.', member: 'PIETRO' }
+        ]
+      },
+      {
+        id: 6,
+        text: 'Il "People Mover" di Bologna a 16 euro.',
+        choices: [
+          { text: 'Una truffa, non ho mai pagato così tanto in Europa.', member: 'DAVE' },
+          { text: 'Visionario, ti porta in aeroporto in 7 minuti.', member: 'SIMO' },
+          { text: 'Meglio il bus urbano a 2 euro, siete degli spendaccioni.', member: 'FILO' },
+          { text: 'Io vado a piedi piuttosto che dare soldi a Lepore.', member: 'PIETRO' },
+          { text: 'In Cina lo avrebbero costruito in 6 giorni e gratis.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 7,
+        text: 'Smart working dalla reunion. Dove ti piazzi?',
+        choices: [
+          { text: 'Balconcino con arietta e fibra ottica per i business.', member: 'SIMO' },
+          { text: 'Bar marcio sotto l\'ufficio, tanto non c\'è mai nessuno.', member: 'FILO' },
+          { text: 'Luogo privato, se sentono le tazzine di caffè mi licenziano.', member: 'DAVE' },
+          { text: 'Io lavoro solo se mi pagano un milione come i chirurghi.', member: 'PIETRO' },
+          { text: 'Io sono in ferie, ma il capo mi ha fatto lavorare sabato mattina.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 8,
+        text: 'L\'abbigliamento ufficiale per la serata al Matilda/Touche.',
+        choices: [
+          { text: 'Maglietta "Fight Fight Fight" di Trump.', member: 'FILO' },
+          { text: 'Camicia sbottonata e Rolex falso per puntare le Gilf.', member: 'PIETRO' },
+          { text: 'Qualcosa di sobrio, non siamo più adolescenti.', member: 'DAVE' },
+          { text: 'Polo Palace regalata a Londra, un tocco di classe.', member: 'SIMO' },
+          { text: 'Costume e infradito, tanto siamo al mare.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 9,
+        text: 'Il ritorno a Milano la domenica sera.',
+        choices: [
+          { text: 'Parto alle 16:43 col treno diretto, non voglio rischiare.', member: 'DAVE' },
+          { text: 'Rimanete a dormire, lunedì facciamo smart insieme!', member: 'SIMO' },
+          { text: 'Ripartire domenica è una merda, meglio il lunedì mattina.', member: 'FILO' },
+          { text: 'Io vado via alle 23:00, la notte la strada è mia.', member: 'PIETRO' },
+          { text: 'Ma restiamo a vedere la F1 e poi si decide.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 10,
+        text: 'La batteria della macchina che muore prima di partire.',
+        choices: [
+          { text: 'Successo ieri sera, 210 euro bruciati. Zio cane.', member: 'DAVE' },
+          { text: 'È un classico, potevi cambiarla 10 anni fa.', member: 'FILO' },
+          { text: 'Colpa delle auto diesel vecchie, passa all\'elettrico.', member: 'SIMO' },
+          { text: 'Dave ha la freccetta blu di PES, è sfigato forte.', member: 'PIETRO' },
+          { text: 'Almeno è successo a casa e non in autostrada.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 11,
+        text: 'Dove parcheggiare a Bologna per l\'aeroporto?',
+        choices: [
+          { text: 'Parcheggio dell\'aeroporto, costa ma sei comodo.', member: 'SIMO' },
+          { text: 'Mettila a Borgo Panigale e prendi un taxi, ti pelano meno.', member: 'PIETRO' },
+          { text: 'Evita Borgo, è un dormitorio di maranza pericolosi.', member: 'DAVE' },
+          { text: 'Chiedo a mio cugino se mi lascia il garage.', member: 'FILO' },
+          { text: 'Io vado in stazione e prendo il treno, zero sbatte.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 12,
+        text: 'Organizzare l\'addio al celibato di Simo.',
+        choices: [
+          { text: 'Las Vegas o Amsterdam, quartiere a luci rosse.', member: 'FILO' },
+          { text: 'Un tavolo riservato "Barcaccia" lontano da Vera.', member: 'DAVE' },
+          { text: 'Basta che ci sia da bere e belle simmenthal.', member: 'PIETRO' },
+          { text: 'Lo organizzo io: tour dei reattori nucleari in Francia.', member: 'SIMO' },
+          { text: 'Mi basta che non finisca in rissa come l\'asta.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 13,
+        text: 'La spesa per il weekend barcaccia.',
+        choices: [
+          { text: '40€ per un pranzo? Mi sento un napoletano derubato.', member: 'PIETRO' },
+          { text: 'Ho stimato 100€ tra benzina e casello, meglio il treno.', member: 'DAVE' },
+          { text: 'Paghiamo tutto con le quote del Fanta che Pietro deve dare.', member: 'SIMO' },
+          { text: 'Io non ho abbonamenti, risparmio tutto per il casino.', member: 'FILO' },
+          { text: 'Dividiamo tutto per 5 e non rompiamo i coglioni.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 14,
+        text: 'L\'ospitalità a casa Medri.',
+        choices: [
+          { text: 'Letto a una piazza e mezza o materasso gonfiabile?', member: 'SIMO' },
+          { text: 'Se mi aprite alle 3 di notte vi porto una tisana.', member: 'PIETRO' },
+          { text: 'Vengo solo se c\'è l\'aria condizionata a palla.', member: 'DAVE' },
+          { text: 'Palazzo Palace è pronto per ospitare l\'elite.', member: 'FILO' },
+          { text: 'Basta che non russate come dei trichechi.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 15,
+        text: 'Il traffico del venerdì pomeriggio verso la riviera.',
+        choices: [
+          { text: 'Bollino nero, una follia mettersi in strada.', member: 'FILO' },
+          { text: 'Maps dice 3 ore, ma io ce ne metto 2 e 40.', member: 'SIMO' },
+          { text: 'Mi becco l\'ora di punta a Bologna, sono spacciato.', member: 'DAVE' },
+          { text: 'Io parto sabato mattina, partenza intelligente.', member: 'PIETRO' },
+          { text: 'Se piove non c\'è nessuno, spero nel temporale.', member: 'MARCO' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'ideologie',
+    title: 'Ideologie & Visione del Mondo: Tra Trump e il Green',
+    description: 'Politica, Trump, Green, Immigrazione, Israele e Palestina.',
+    questions: [
+      {
+        id: 1,
+        text: 'Cosa ne pensi del limite di 30 km/h a Bologna?',
+        choices: [
+          { text: 'Lepore è un genio visionario, ha risparmiato 150 milioni.', member: 'SIMO' },
+          { text: 'Una cagata ideologica che danneggia solo chi lavora.', member: 'DAVE' },
+          { text: 'Inutile, le bici vanno più forte delle macchine ora.', member: 'PIETRO' },
+          { text: 'Grazie Lepore, ora ci mettiamo il doppio per fare 2 km.', member: 'FILO' },
+          { text: 'In Cina corrono a 500 orari e noi torniamo al medioevo.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 2,
+        text: 'Donald Trump ha dichiarato la fine della guerra in 24 ore.',
+        choices: [
+          { text: 'Numero 1 assoluto, l\'unico che capisce qualcosa.', member: 'FILO' },
+          { text: 'È un matto pericoloso, egoista e senza scrupoli.', member: 'SIMO' },
+          { text: 'Ha risolto 7 guerre a parole, nei fatti è un meme.', member: 'PIETRO' },
+          { text: 'Meglio lui dei comunisti che vogliono le tasse al 50%.', member: 'DAVE' },
+          { text: 'Un buffone, ma almeno fa ridere.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 3,
+        text: 'La questione dei Diesel Euro 5 e il blocco della circolazione.',
+        choices: [
+          { text: 'Una macchina di 10 anni è nuova, vietarla è da criminali.', member: 'FILO' },
+          { text: 'Serve un incentivo statale, non si può obbligare la gente a spendere 30k.', member: 'PIETRO' },
+          { text: 'In Pianura Padana moriamo di cancro, i catorci vanno rottamati.', member: 'SIMO' },
+          { text: 'Misura inutile, lo smog viene dalle caldaie non dalle auto.', member: 'DAVE' },
+          { text: 'Io tra 10 anni vorrei trovare un\'auto a meno di 15.000€.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 4,
+        text: 'Il conflitto in Medio Oriente e il ruolo di Israele.',
+        choices: [
+          { text: 'È un genocidio sistematico per motivi economici.', member: 'SIMO' },
+          { text: 'Israele ha il diritto di difendersi dai terroristi.', member: 'FILO' },
+          { text: 'Stato canaglia e terrorista, fuori dall\'Europa subito.', member: 'PIETRO' },
+          { text: 'Una minaccia costante, non so come facciano a farsi odiare così.', member: 'DAVE' },
+          { text: 'Un massacro schifoso, ma zio Adolfo era peggio.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 5,
+        text: 'Cosa pensi di Ilaria Salis e della sinistra attuale?',
+        choices: [
+          { text: 'Personaggi di poco spessore, andrebbero mandati in Ungheria.', member: 'FILO' },
+          { text: 'La odiate solo perché la destra vi ha fatto il lavaggio del cervello.', member: 'PIETRO' },
+          { text: 'Rappresenta un\'istanza corretta ma comunicata male.', member: 'SIMO' },
+          { text: 'Una zecca che cavalca le mode del momento.', member: 'DAVE' },
+          { text: 'Schifo e pena, nient\'altro.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 6,
+        text: 'L\'integrazione e la sicurezza nelle stazioni italiane.',
+        choices: [
+          { text: 'Ci vogliono le ronde e l\'esercito, pulizia immediata.', member: 'FILO' },
+          { text: 'Il problema sono i contesti degradati, non la razza.', member: 'PIETRO' },
+          { text: 'Bisogna scortare le donne alle auto, è diventato pericoloso.', member: 'SIMO' },
+          { text: 'I maranza vanno sgominati o mandati via col foglio di via.', member: 'DAVE' },
+          { text: 'In carcere campano meglio che a lavoro, 400 euro di multa è ridicolo.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 7,
+        text: 'Matteo Renzi: Genio o Viscido?',
+        choices: [
+          { text: 'Il miglior politico italiano, porta tutti a spasso.', member: 'PIETRO' },
+          { text: 'Un viscido che cambia alleanza ogni mezz\'ora.', member: 'FILO' },
+          { text: 'Qualità pura, l\'unico vero riformista rimasto.', member: 'SIMO' },
+          { text: 'Ha rovinato tutto personalizzando il referendum.', member: 'DAVE' },
+          { text: 'Un pagliaccio, ma almeno sa parlare inglese.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 8,
+        text: 'La "Global Solidarity Flottilla" per Gaza.',
+        choices: [
+          { text: 'Eroi della pace, meriterebbero il Nobel al posto di Trump.', member: 'PIETRO' },
+          { text: 'Un branco di provocatori che rischia di far scoppiare la guerra.', member: 'DAVE' },
+          { text: 'Manie di protagonismo che spostano il focus dai veri problemi.', member: 'SIMO' },
+          { text: 'Andrebbero bombardati direttamente da Mattarella.', member: 'FILO' },
+          { text: 'Stupidi che si fanno tenere 24 ore senza mangiare per un post.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 9,
+        text: 'Le auto elettriche cinesi (Xiaomi, Leapmotor).',
+        choices: [
+          { text: 'Superiorità umiliante, l\'Europa ha già perso questa sfida.', member: 'SIMO' },
+          { text: 'Plasticoni cinesi, ridatemi il motore a scoppio.', member: 'FILO' },
+          { text: 'Ottime se costano 25k e hanno la tecnologia avanzata.', member: 'PIETRO' },
+          { text: 'Se si rompe un pezzo devi aspettare mesi, non convengono.', member: 'DAVE' },
+          { text: 'Io spero solo che tra 10 anni costino meno.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 10,
+        text: 'La Russia di Putin e il conflitto in Ucraina.',
+        choices: [
+          { text: 'Preferisco la Russia all\'Ucraina e a Zelensky.', member: 'FILO' },
+          { text: 'Zelensky vuole solo guadagnarci, è uno schifoso.', member: 'DAVE' },
+          { text: 'Putin deve morire, ha distrutto l\'ordine mondiale.', member: 'SIMO' },
+          { text: 'La NATO sta provocando da anni, non siamo innocenti.', member: 'PIETRO' },
+          { text: 'Meglio le ucraine delle israeliane comunque.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 11,
+        text: 'Il ponte sullo Stretto di Messina.',
+        choices: [
+          { text: 'Fondamentale per la NATO e la difesa europea.', member: 'FILO' },
+          { text: 'Uno spreco di miliardi mentre le strade cadono a pezzi.', member: 'PIETRO' },
+          { text: 'Atto di invasione dei giudici comunisti contro il progresso.', member: 'DAVE' },
+          { text: 'Un disastro ecologico annunciato, basta cemento.', member: 'SIMO' },
+          { text: 'In Cina lo avrebbero finito nel 2012.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 12,
+        text: 'La settimana lavorativa di 4 giorni o 72 ore?',
+        choices: [
+          { text: 'Piuttosto vado a rubare, 72 ore è la morte.', member: 'SIMO' },
+          { text: 'Meno proteste e più lavoro, la Grecia ha capito tutto.', member: 'FILO' },
+          { text: 'Smart working obbligatorio al 33% per tutti.', member: 'PIETRO' },
+          { text: 'Preferirei lavorare di notte e stare al mare di giorno.', member: 'DAVE' },
+          { text: 'Basta che lo stipendio rimanga uguale.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 13,
+        text: 'La pirateria uccide il calcio?',
+        choices: [
+          { text: 'Dazn è una truffa, viva il pezzotto non tracciabile.', member: 'DAVE' },
+          { text: '10 euro al mese per la propria squadra è onesto.', member: 'PIETRO' },
+          { text: 'Mi godo i miei 9.99€ al mese e rido di voi.', member: 'SIMO' },
+          { text: 'Guardo tutto gratis su link arabi in 4k.', member: 'FILO' },
+          { text: 'La pubblicità col bambino che piange è ridicola.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 14,
+        text: 'Elon Musk e l\'America Party.',
+        choices: [
+          { text: 'Un genio riformista, lo voterei subito.', member: 'PIETRO' },
+          { text: 'Troppo potere in mano a un solo uomo, inquietante.', member: 'SIMO' },
+          { text: 'Sta coprendo i suoi interessi economici con la politica.', member: 'DAVE' },
+          { text: 'Meglio lui di Kamala o della Schlein.', member: 'FILO' },
+          { text: 'I Pokémon nel suo video erano fuori luogo.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 15,
+        text: 'Il rapporto tra religione e geopolitica.',
+        choices: [
+          { text: 'Gli ebrei tengono per le palle il mondo intero.', member: 'PIETRO' },
+          { text: 'Smettetela di credere a libri fantasy di 2000 anni fa.', member: 'SIMO' },
+          { text: 'I musulmani sono una minaccia alla sicurezza nazionale.', member: 'FILO' },
+          { text: 'Ogni fede portata all\'estremismo è un cancro.', member: 'DAVE' },
+          { text: 'Almeno il Natale lo festeggiamo ancora?', member: 'MARCO' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'sportnicchia',
+    title: 'Sport di Nicchia & Performance: Sinner e la F1',
+    description: 'Tennis (Sinner/Alcaraz), Formula 1 (Ferrari/Verstappen) e atletica.',
+    questions: [
+      {
+        id: 1,
+        text: 'Jannik Sinner ha un dolore al gomito durante il match. Cosa pensi?',
+        choices: [
+          { text: 'Solita sceneggiata medica per deconcentrare l\'avversario.', member: 'DAVE' },
+          { text: 'È un leso, Alcaraz lo asfalta se non sta bene.', member: 'FILO' },
+          { text: 'Ha ragione lui, si gestisce come un top player.', member: 'SIMO' },
+          { text: 'È il calo dovuto ai bottoni della maglia troppo pesanti.', member: 'PIETRO' },
+          { text: 'Sinner nuovo Tamberi? Capiamo.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 2,
+        text: 'La strategia della Ferrari al GP di Spa.',
+        choices: [
+          { text: 'Vasseur out, non capiscono niente di gomme.', member: 'DAVE' },
+          { text: 'Leclerc non si prende mai la responsabilità, hulkenberg è meglio.', member: 'PIETRO' },
+          { text: 'Il box Ferrari andrebbe licenziato in tronco.', member: 'SIMO' },
+          { text: 'Gara noiosissima, mi sono addormentato al giro 12.', member: 'FILO' },
+          { text: 'Altra prestazione imbarazzante, come al solito.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 3,
+        text: 'Max Verstappen vince ancora. È il GOAT?',
+        choices: [
+          { text: 'Ha la macchina migliore, mettetelo sulla Racing Bull.', member: 'PIETRO' },
+          { text: 'Un fenomeno, ha vinto con la Ferrari prima di Hamilton.', member: 'SIMO' },
+          { text: 'Gara a senso unico, troppo superiore.', member: 'MARCO' },
+          { text: 'Meglio lui di quegli smidollati che piangono.', member: 'DAVE' },
+          { text: 'La F1 ha rotto il cazzo, non la seguo più.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 4,
+        text: 'Cosa pensi di Kimi Antonelli?',
+        choices: [
+          { text: 'Troppo bravo ragazzo, non ha la faccia da cazzo.', member: 'PIETRO' },
+          { text: 'Ha pianto in intervista? Debolezza inaccettabile.', member: 'DAVE' },
+          { text: 'Fa cagare, sparirà nel giro di due anni.', member: 'SIMO' },
+          { text: 'Un altro sopravvalutato dalla stampa italiana.', member: 'FILO' },
+          { text: 'Speriamo non faccia la fine di Colapinto.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 5,
+        text: 'Lewis Hamilton e il suo record in Canada.',
+        choices: [
+          { text: 'È rincoglionito o la macchina è oscena.', member: 'PIETRO' },
+          { text: 'Ha capito che vinceva solo per la macchina.', member: 'FILO' },
+          { text: 'Sta rivivendo Cars 3 in prima persona.', member: 'DAVE' },
+          { text: 'Leclerc lo sta umiliando in ogni qualifica.', member: 'SIMO' },
+          { text: 'Una pena vederlo ridotto così.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 6,
+        text: 'Il "Six Kings Slam" di tennis in Arabia.',
+        choices: [
+          { text: 'Competizione cringe che non vale punti ATP.', member: 'DAVE' },
+          { text: 'Lo hanno fatto solo per i soldi degli sceicchi.', member: 'FILO' },
+          { text: 'Sinner lo ha vinto dimostrando di essere il numero 1.', member: 'SIMO' },
+          { text: 'Guardare una partita in silenzio con gente che stappa champagne è una merda.', member: 'PIETRO' },
+          { text: 'Sport ormai diventato solo marketing.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 7,
+        text: 'Tamberi e Jacobs dopo le delusioni post-Olimpiche.',
+        choices: [
+          { text: 'Lamentoni incredibili, Jacobs è sparito nel nulla.', member: 'PIETRO' },
+          { text: 'Tamberi lo radierei dallo sport, è insopportabile.', member: 'FILO' },
+          { text: 'Hanno avuto infortuni, bisogna avere rispetto.', member: 'SIMO' },
+          { text: 'Sono implosi in modo clamoroso, fine del ciclo.', member: 'DAVE' },
+          { text: 'Meglio il nuoto, stiamo andando fortissimo lì.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 8,
+        text: 'La pallavolo e gli altri sport "minori".',
+        choices: [
+          { text: 'Mi sento oppresso a giocare con la maglietta, meglio la canotta.', member: 'DAVE' },
+          { text: 'Il volley femminile campione del mondo ci salva l\'onore.', member: 'SIMO' },
+          { text: 'Basket? Si corrono e nessuno ruba la palla, noioso.', member: 'PIETRO' },
+          { text: 'Non seguo nulla che non abbia un motore o 22 lesi in campo.', member: 'FILO' },
+          { text: 'Il Ravenna in Serie C attira più spettatori della Davis.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 9,
+        text: 'Il cambio di format della Champions League.',
+        choices: [
+          { text: 'Una truffa, hanno rubato un format del 2006.', member: 'SIMO' },
+          { text: 'Mi mancano i gironi classici, questo è un casino.', member: 'FILO' },
+          { text: 'Serve solo a far giocare più partite e rompere i giocatori.', member: 'DAVE' },
+          { text: 'Entro il 2028 vedremo anche i club arabi in Champions.', member: 'PIETRO' },
+          { text: 'Formula schifosa, ma la Juve perderebbe comunque.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 10,
+        text: 'Gli stipendi dei tennisti vs calciatori.',
+        choices: [
+          { text: '7k per un biglietto di Wimbledon? Siete pazzi.', member: 'PIETRO' },
+          { text: 'I tennisti guadagnano troppo per quanto poco giocano.', member: 'FILO' },
+          { text: 'Ci sono chirurghi che prendono un milione, i calciatori sono poveri.', member: 'DAVE' },
+          { text: 'Se fossi milionario vivrei a Montecarlo come loro.', member: 'SIMO' },
+          { text: 'Yamal a 17 anni prende più di quanto vedremo in 10 vite.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 11,
+        text: 'Sinner e il rapporto con l\'Italia (Vespa, Mattarella).',
+        choices: [
+          { text: 'Vespa è un sionista, Sinner ha fatto bene a paccare.', member: 'PIETRO' },
+          { text: 'Gli italiani devono tifare Sinner a prescindere.', member: 'SIMO' },
+          { text: 'Non è un purosangue, ha l\'accento di Hitler.', member: 'FILO' },
+          { text: 'Le polemiche politiche nello sport sono noiose.', member: 'DAVE' },
+          { text: 'Mattarella di merda, Sinner nr 1.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 12,
+        text: 'Il ritiro di Djokovic contro Fritz.',
+        choices: [
+          { text: 'Lo ha fatto apposta per non far slittare la finale di Sinner.', member: 'DAVE' },
+          { text: 'Novak è finito, spazio ai giovani maranza.', member: 'PIETRO' },
+          { text: 'Senza di lui il tennis perde il 50% del fascino.', member: 'FILO' },
+          { text: 'Sinner ha sculato il sorteggio come sempre.', member: 'MARCO' },
+          { text: 'È questione di umidità, la palla saltava troppo.', member: 'SIMO' }
+        ]
+      },
+      {
+        id: 13,
+        text: 'Adrian Newey non va in Ferrari.',
+        choices: [
+          { text: 'Mi viene da ridere, nel 2026 ci passa davanti l\'Aston Martin.', member: 'SIMO' },
+          { text: 'Ferrari is my Red Flag, lo sapevo che fallivamo.', member: 'PIETRO' },
+          { text: 'Ennesima dimostrazione di incapacità dirigenziale.', member: 'MARCO' },
+          { text: 'Meglio investire quei soldi in piloti che non si stampano.', member: 'DAVE' },
+          { text: 'Chi se ne frega, tanto non vincono da 20 anni.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 14,
+        text: 'La preparazione atletica nel calcio moderno.',
+        choices: [
+          { text: 'I giocatori di oggi sono degli handicappati, non reggono 3 gare.', member: 'DAVE' },
+          { text: 'Bisognava mandarli tutti in palestra a fare pesi.', member: 'FILO' },
+          { text: 'Chivu viaggia a 67 punti di media, è quello il dato.', member: 'SIMO' },
+          { text: 'Gli allenatori italiani sono i migliori a gestire i carichi.', member: 'PIETRO' },
+          { text: 'Si rompono perché pensano solo alla figa.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 15,
+        text: 'Qual è lo sport più inutile oggi?',
+        choices: [
+          { text: 'La Moto GP, l\'ultimo mondiale serio era Rossi vs Marquez.', member: 'DAVE' },
+          { text: 'Il salto con l\'asta, a meno che non ci sia Duplantis.', member: 'SIMO' },
+          { text: 'Il basket, corrono e non succede nulla.', member: 'PIETRO' },
+          { text: 'La Formula E, un insulto ai motori.', member: 'FILO' },
+          { text: 'Il calcio della Juve degli ultimi 5 anni.', member: 'MARCO' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'lifestyle',
+    title: 'Lifestyle & Curiosità Barcaccia: Dagli Hamburger alle Camicie',
+    description: 'Abitudini, gadget tech, ricordi del CLAMM e polemiche interne.',
+    questions: [
+      {
+        id: 1,
+        text: 'Come ordini il tuo hamburger al ristorante?',
+        choices: [
+          { text: 'Solo pane e carne, tolgo tutto il resto.', member: 'MARCO' },
+          { text: 'Tolgo il cetriolino come al McDonald\'s.', member: 'FILO' },
+          { text: 'Senza salse è immangiabile, preferisco quella vegana.', member: 'PIETRO' },
+          { text: 'Barbecue americano tutta la vita, la fiorentina è sopravvalutata.', member: 'SIMO' },
+          { text: 'Mangio quello che capita, basta che sia abbondante.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 2,
+        text: 'Hai 1300 euro da spendere in tecnologia. Cosa compri?',
+        choices: [
+          { text: 'L\'AirDresser di Samsung per non stirare le camicie.', member: 'SIMO' },
+          { text: 'Un iPhone nuovo per avere il simulatore del Fanta.', member: 'PIETRO' },
+          { text: 'Li tengo in banca, 1300 euro sono un mese di stipendio.', member: 'DAVE' },
+          { text: 'Compro azioni Juve, tanto ricapitalizzano sempre.', member: 'FILO' },
+          { text: 'Mi prendo un box di One Piece e lo gradasso.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 3,
+        text: 'Si parla di Filippo Turetta e del CLAMM. Ti ricordi di lui?',
+        choices: [
+          { text: 'Era in classe con noi, ho pure le foto.', member: 'MARCO' },
+          { text: 'Io non l\'ho mai visto, eravamo nella nostra bolla.', member: 'DAVE' },
+          { text: 'Ha abbandonato il primo anno, me lo ricordo vagamente.', member: 'PIETRO' },
+          { text: 'Era un pazzo criminale, come i Pro-Pal.', member: 'FILO' },
+          { text: 'Se ci avessi fatto un lavoro di gruppo non lo racconterei.', member: 'SIMO' }
+        ]
+      },
+      {
+        id: 4,
+        text: 'Cosa sono i "Labubu"?',
+        choices: [
+          { text: 'Le nuove once d\'oro, bisogna investirci subito.', member: 'PIETRO' },
+          { text: 'Una bolla senza senso destinata a durare un mese.', member: 'SIMO' },
+          { text: 'Roba da licenziamento immediato se li vedo in ufficio.', member: 'FILO' },
+          { text: 'Ne ho visto uno sulla tomba di Gramsci, pazzesco.', member: 'MARCO' },
+          { text: 'Mi state prendendo in giro? Mai sentiti.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 5,
+        text: 'La reunion barcaccia a Varsavia.',
+        choices: [
+          { text: 'Vengo solo se c\'è un interpretate per le polacche.', member: 'FILO' },
+          { text: 'Dave Benjamin Merico ci porterà in giro per le banche svizzere.', member: 'PIETRO' },
+          { text: 'Organizziamo tutto con un anno di anticipo o salta.', member: 'DAVE' },
+          { text: 'Sarà il crossover definitivo tra la Barcaccia e Maja.', member: 'SIMO' },
+          { text: 'Io prego il signore che accada il prima possibile.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 6,
+        text: 'Il tuo rapporto con le scommesse e il gioco d\'azzardo.',
+        choices: [
+          { text: 'Punto sul live di Alcaraz per diventare ricco.', member: 'PIETRO' },
+          { text: 'Ho perso 133€ al casinò di Montecarlo, a testa alta.', member: 'FILO' },
+          { text: 'Scommetto 20 euro che l\'Inter finisce fuori dalla Champions.', member: 'SIMO' },
+          { text: 'Non butto soldi in queste cazzate, preferisco ammortizzare l\'auto.', member: 'DAVE' },
+          { text: 'Io vinco solo al Fanta grazie allo sculo di Simo.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 7,
+        text: 'La "Settimana Benessere" in Fater.',
+        choices: [
+          { text: 'Una settimana gratis a 5 stelle per i dirigenti? Che invidia.', member: 'PIETRO' },
+          { text: 'La toglieranno l\'anno prossimo, godiamocela ora.', member: 'SIMO' },
+          { text: 'In Mapei se chiedi un permesso ti sputano in un occhio.', member: 'DAVE' },
+          { text: 'Tipica roba da multinazionale di sinistra.', member: 'FILO' },
+          { text: 'Preferirei 4000 euro netti e zero vacanze.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 8,
+        text: 'Come reagisci a un infortunio di un tuo giocatore al Fanta?',
+        choices: [
+          { text: 'Mi strappo i capelli e insulto il DS della squadra reale.', member: 'MARCO' },
+          { text: 'Non parlo più di calcio fino al 2030.', member: 'SIMO' },
+          { text: 'È la sfiga che mi perseguita perché sono troppo forte.', member: 'PIETRO' },
+          { text: 'Me lo aspettavo, la rosa era costruita male.', member: 'DAVE' },
+          { text: 'Spero si rompa anche il tuo così siamo pari.', member: 'FILO' }
+        ]
+      },
+      {
+        id: 9,
+        text: 'Il pranzo ideale della Barcaccia.',
+        choices: [
+          { text: 'Rosticceria da 15 euro, tanta sostanza e zero formalità.', member: 'PIETRO' },
+          { text: 'Casa delle Aie, cappelletti al ragù e vino della casa.', member: 'FILO' },
+          { text: 'Sushi ordinato e buttato via per dimostrare il ceto sociale.', member: 'SIMO' },
+          { text: 'Qualcosa di veloce vicino all\'aeroporto per non fare tardi.', member: 'DAVE' },
+          { text: 'Agriturismo a Brisighella, lontano dai maranza.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 10,
+        text: 'Cosa pensi di LinkedIn e dei post aziendali?',
+        choices: [
+          { text: 'Odio profondo per chi posta stronzate sulle ferie illimitate.', member: 'FILO' },
+          { text: 'Ci sono dei leccaculo incredibili, mi fanno schifo.', member: 'DAVE' },
+          { text: 'Lo uso solo per trovare nuovi DS per la Palace.', member: 'SIMO' },
+          { text: 'Utile per spiare gli ex compagni del CLAMM che hanno successo.', member: 'PIETRO' },
+          { text: 'Io non apro LinkedIn da anni, troppa pressione.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 11,
+        text: 'Il tuo orientamento politico (secondo la chat).',
+        choices: [
+          { text: 'Renziano di ferro, legge e ordine.', member: 'PIETRO' },
+          { text: 'Trumpiano, pro-armi e anti-immigrati.', member: 'FILO' },
+          { text: 'Radical chic di sinistra ma con il mutuo agevolato.', member: 'SIMO' },
+          { text: 'Ex grillino pentito che ora vota Meloni per disperazione.', member: 'DAVE' },
+          { text: 'Apolitico, basta che non mi alzino le tasse sulla Cola.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 12,
+        text: 'La gestione dei rifiuti e la raccolta differenziata.',
+        choices: [
+          { text: 'Il porta a porta è una follia che aumenta i costi.', member: 'PIETRO' },
+          { text: 'Vago con i sacchi in macchina cercando un cassonetto libero.', member: 'FILO' },
+          { text: 'Mi serve la tessera per l\'indifferenziata o esplodo.', member: 'SIMO' },
+          { text: 'Una scusa per controllarci, viva la libertà.', member: 'DAVE' },
+          { text: 'Io butto tutto nel cestino del bagno e bona.', member: 'MARCO' }
+        ]
+      },
+      {
+        id: 13,
+        text: 'Il regalo di compleanno perfetto.',
+        choices: [
+          { text: 'Maglietta ufficiale della Juve con nome e patch.', member: 'FILO' },
+          { text: 'Il libro di Lorenzo Baroncelli sul caos.', member: 'DAVE' },
+          { text: 'La maglia di Neymar della squadra araba.', member: 'MARCO' },
+          { text: 'Un drone stendipanni per il balcone.', member: 'SIMO' },
+          { text: 'Un anno di abbonamento a Perplexity AI.', member: 'PIETRO' }
+        ]
+      },
+      {
+        id: 14,
+        text: 'La tua reazione davanti a un venditore di rose.',
+        choices: [
+          { text: 'Lo tocco e poi corro in bagno a lavarmi le mani.', member: 'MARCO' },
+          { text: 'Gli do due euro e gli dico di andare a Gaza.', member: 'FILO' },
+          { text: 'Gli chiedo se ha il POS per pagare con Revolut.', member: 'PIETRO' },
+          { text: 'Gli compro tutto il mazzo per fare colpo sulla simmenthal.', member: 'SIMO' },
+          { text: 'Lo ignoro fingendo di essere al telefono in inglese.', member: 'DAVE' }
+        ]
+      },
+      {
+        id: 15,
+        text: 'Il ricordo più bello del CLAMM a Bologna.',
+        choices: [
+          { text: 'Le lezioni di econometria e la lavagna tattica.', member: 'SIMO' },
+          { text: 'Le discussioni sulla difesa a 3 nel corridoio.', member: 'DAVE' },
+          { text: 'Quando pensavamo di fare le startup e diventare milionari.', member: 'PIETRO' },
+          { text: 'Le serate ignoranti al Touche (anche se non c\'eravamo).', member: 'FILO' },
+          { text: 'I pranzi da 10 euro dove mangiavamo come dei maiali.', member: 'MARCO' }
+        ]
+      }
+    ]
   }
 ];
