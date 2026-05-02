@@ -46,12 +46,12 @@ const XPBar = ({ xp }: { xp: number }) => {
   const progress = (xpInCurrentLevel / XP_PER_LEVEL) * 100;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] px-4 pt-6 pb-4 bg-cyber-black/80 backdrop-blur-md border-b border-white/5">
+    <div className="fixed top-0 left-0 right-0 z-[60] px-4 pt-4 pb-3 bg-cyber-black/80 backdrop-blur-md border-b border-white/5">
       <div className="max-w-md mx-auto flex items-center gap-4">
         <div className="flex flex-col flex-1 gap-1">
-          <div className="flex justify-between items-end mb-1">
-            <span className="text-[9px] font-mono font-bold text-neon-cyan/70 tracking-widest uppercase">SYS.STATUS: ONLINE</span>
-            <span className="text-[10px] font-mono text-neon-cyan neon-text-cyan uppercase">LVL {currentLevel} • {xpInCurrentLevel}/{XP_PER_LEVEL} XP</span>
+          <div className="flex justify-between items-end mb-0.5">
+            <span className="text-[8px] font-mono font-bold text-neon-cyan/50 tracking-widest uppercase">SYS.STATUS: ONLINE</span>
+            <span className="text-[9px] font-mono text-neon-cyan neon-text-cyan uppercase">LVL {currentLevel} • {xpInCurrentLevel}/{XP_PER_LEVEL} XP</span>
           </div>
           <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
             <motion.div 
@@ -270,23 +270,23 @@ export default function App() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            className="absolute inset-0 flex flex-col p-6 pt-28"
+            className="absolute inset-0 flex flex-col p-6 pt-20"
           >
-            <div className="flex justify-between items-end mb-8 shrink-0 z-10">
+            <div className="flex justify-between items-end mb-6 shrink-0 z-10">
               <div>
-                <h2 className="text-2xl font-bold tracking-tight uppercase italic neon-text-cyan">NETWORK DATABASE</h2>
-                <p className="text-[10px] text-white/40 font-mono uppercase tracking-[0.2em]">Select Neural Data Module</p>
+                <h2 className="text-xl font-bold tracking-tight uppercase italic neon-text-cyan">NETWORK DATABASE</h2>
+                <p className="text-[9px] text-white/40 font-mono uppercase tracking-[0.2em]">Select Neural Module</p>
               </div>
               <button 
                 onClick={() => setIsSoundEnabled(!isSoundEnabled)}
-                className="p-3 glass-card rounded-xl text-white/50 hover:text-white transition-colors"
+                className="p-2.5 glass-card rounded-xl text-white/50 hover:text-white transition-colors"
                 title="Toggle Audio"
               >
-                {isSoundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+                {isSoundEnabled ? <Volume2 size={18} /> : <VolumeX size={18} />}
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto hide-scrollbar pb-10 space-y-4">
+            <div className="flex-1 overflow-y-auto hide-scrollbar pb-6 space-y-3">
               {QUIZZES.map((quiz, idx) => {
                 const isCompleted = completedQuizzes.includes(quiz.id);
                 return (
@@ -298,27 +298,27 @@ export default function App() {
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleSelectQuiz(quiz)}
-                    className={`relative w-full overflow-hidden p-5 rounded-3xl border transition-all text-left ${
+                    className={`relative w-full overflow-hidden p-4 rounded-2xl border transition-all text-left ${
                       isCompleted 
                         ? 'bg-neon-lime/10 border-neon-lime/30 opacity-60' 
                         : 'glass-card hover:border-white/30'
                     }`}
                   >
-                    <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 border transition-colors ${
+                    <div className="flex items-center gap-3">
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-colors ${
                         isCompleted ? 'bg-neon-lime/20 text-neon-lime border-neon-lime/30' : 'bg-white/5 text-white/70 border-white/10'
                       }`}>
-                        {isCompleted ? <Trophy size={22} /> : <Cpu size={22} />}
+                        {isCompleted ? <Trophy size={18} /> : <Cpu size={18} />}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-lg leading-none mb-1 uppercase tracking-tighter truncate">
+                        <h3 className="font-bold text-base leading-none mb-1 uppercase tracking-tighter truncate">
                           {quiz.title}
                         </h3>
-                        <p className="text-[10px] text-white/50 uppercase font-mono truncate">
+                        <p className="text-[9px] text-white/50 uppercase font-mono truncate">
                           {quiz.description}
                         </p>
                       </div>
-                      <ChevronRight size={16} className="text-white/20 shrink-0" />
+                      <ChevronRight size={14} className="text-white/20 shrink-0" />
                     </div>
                   </motion.button>
                 );
@@ -335,7 +335,7 @@ export default function App() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20, filter: 'blur(10px)' }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute inset-0 flex flex-col p-6 pt-20"
+            className="absolute inset-0 flex flex-col p-6 pt-16"
           >
             {/* Area contenuto compattata per visibilità totale senza scroll */}
             <div className="flex-1 flex flex-col min-h-0">
@@ -361,7 +361,7 @@ export default function App() {
                         scale: isThisSelected ? 1.01 : 1,
                         borderColor: showSelectionStyle ? '#00f3ff' : 'rgba(255,255,255,0.08)'
                       }}
-                      className={`relative w-full text-left p-3.5 rounded-xl border transition-colors duration-200 overflow-hidden shrink-0 ${
+                      className={`relative w-full text-left p-3 rounded-xl border transition-colors duration-200 overflow-hidden shrink-0 ${
                         !hasAnswered 
                           ? "glass-card hover:bg-white/5 active:scale-[0.99]" 
                           : isThisSelected ? "bg-neon-cyan/5" : "bg-white/5"
@@ -376,7 +376,7 @@ export default function App() {
                       )}
                       
                       <div className="relative flex justify-between items-center gap-3">
-                        <span className={`text-[13px] font-medium leading-tight transition-colors duration-300 ${showSelectionStyle ? 'text-neon-cyan' : 'text-white/80'}`}>
+                        <span className={`text-[12px] font-medium leading-tight transition-colors duration-300 ${showSelectionStyle ? 'text-neon-cyan' : 'text-white/80'}`}>
                           {choice.text}
                         </span>
                         {hasAnswered && (
@@ -425,43 +425,43 @@ export default function App() {
             key="result"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="absolute inset-0 flex flex-col p-6 pt-24 min-h-0 overflow-y-auto hide-scrollbar"
+            className="absolute inset-0 flex flex-col p-6 pt-20 min-h-0 overflow-y-auto hide-scrollbar"
           >
             <div className="text-center mb-6 shrink-0">
               <motion.div 
                 initial={{ opacity: 0, letterSpacing: '1em' }}
                 animate={{ opacity: 1, letterSpacing: '0.3em' }}
-                className="text-neon-magenta text-[9px] font-mono mb-2 uppercase"
+                className="text-neon-magenta text-[8px] font-mono mb-1 uppercase"
               >
                 Sincronizzazione Completa
               </motion.div>
-              <h2 className="text-[10px] font-mono text-white/40 mb-2 tracking-tighter uppercase">PROFILO NEURALE IDENTIFICATO</h2>
-              <div className="relative inline-block mt-2">
+              <h2 className="text-[9px] font-mono text-white/40 mb-2 tracking-tighter uppercase">PROFILO NEURALE IDENTIFICATO</h2>
+              <div className="relative inline-block mt-1">
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="text-7xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-neon-cyan to-neon-magenta leading-none pb-2"
+                  className="text-6xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-neon-cyan to-neon-magenta leading-none pb-2"
                 >
                   {topMember}
                 </motion.div>
-                <div className="absolute -top-2 -right-10 bg-neon-cyan text-black font-mono text-[9px] px-1.5 py-0.5 font-bold rounded shadow-[0_0_10px_rgba(0,243,255,0.6)]">
+                <div className="absolute -top-1 -right-8 bg-neon-cyan text-black font-mono text-[8px] px-1.5 py-0.5 font-bold rounded shadow-[0_0_10px_rgba(0,243,255,0.6)]">
                   {matchPercentage}% MATCH
                 </div>
               </div>
             </div>
 
-            <div className="glass-card rounded-2xl p-5 mb-4 shrink-0">
-              <h3 className="text-[8px] font-mono text-white/30 uppercase tracking-[0.3em] mb-4">Matrice di Affinità Neurale</h3>
-              <div className="space-y-4">
+            <div className="glass-card rounded-xl p-4 mb-3 shrink-0">
+              <h3 className="text-[7px] font-mono text-white/30 uppercase tracking-[0.3em] mb-3">Matrice di Affinità Neurale</h3>
+              <div className="space-y-3">
                 {sortedMembers.map(([member, score], idx) => {
                   const perc = Math.round(((score as number) / totalAnswers) * 100);
                   return (
-                    <div key={member} className="flex flex-col gap-2">
+                    <div key={member} className="flex flex-col gap-1">
                       <div className="flex justify-between items-center font-mono">
-                        <span className={`text-[10px] tracking-widest ${idx === 0 ? 'text-neon-cyan' : 'text-white/40'}`}>
+                        <span className={`text-[9px] tracking-widest ${idx === 0 ? 'text-neon-cyan' : 'text-white/40'}`}>
                           0{idx+1} {member}
                         </span>
-                        <span className={`text-[10px] ${idx === 0 ? 'text-neon-cyan' : 'text-white/60'}`}>
+                        <span className={`text-[9px] ${idx === 0 ? 'text-neon-cyan' : 'text-white/60'}`}>
                           {perc}%
                         </span>
                       </div>
@@ -478,22 +478,22 @@ export default function App() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mb-6 shrink-0">
-              <div className="glass-card p-4 rounded-3xl flex flex-col items-center">
-                <Zap size={18} className="text-neon-cyan mb-1" />
-                <span className="text-xl font-bold italic tracking-tighter">+{XP_PER_ANSWER * (activeQuiz?.questions.length || 1)}</span>
-                <span className="text-[8px] font-mono text-white/30 uppercase tracking-tighter">XP ACQUISITI</span>
+            <div className="grid grid-cols-2 gap-3 mb-4 shrink-0">
+              <div className="glass-card p-3 rounded-2xl flex flex-col items-center">
+                <Zap size={16} className="text-neon-cyan mb-0.5" />
+                <span className="text-lg font-bold italic tracking-tighter">+{XP_PER_ANSWER * (activeQuiz?.questions.length || 1)}</span>
+                <span className="text-[7px] font-mono text-white/30 uppercase tracking-tighter">XP ACQUISITI</span>
               </div>
-              <div className="glass-card p-4 rounded-3xl flex flex-col items-center">
-                <Target size={18} className="text-neon-lime mb-1" />
-                <span className="text-xl font-bold italic tracking-tighter">#{completedQuizzes.length}</span>
-                <span className="text-[8px] font-mono text-white/30 uppercase tracking-tighter">SYSTEM LOGS</span>
+              <div className="glass-card p-3 rounded-2xl flex flex-col items-center">
+                <Target size={16} className="text-neon-lime mb-0.5" />
+                <span className="text-lg font-bold italic tracking-tighter">#{completedQuizzes.length}</span>
+                <span className="text-[7px] font-mono text-white/30 uppercase tracking-tighter">SYSTEM LOGS</span>
               </div>
             </div>
 
-            <div className="pb-10">
-              <CyberButton variant="outline" onClick={resetQuiz} className="w-full">
-                <RefreshCw size={18} className="group-hover:rotate-180 transition-transform duration-500" /> RIAVVIA SISTEMA
+            <div className="pb-8 shrink-0">
+              <CyberButton variant="outline" onClick={resetQuiz} className="w-full h-12 text-sm font-bold uppercase tracking-widest">
+                <RefreshCw size={16} className="group-hover:rotate-180 transition-transform duration-500" /> RIAVVIA SISTEMA
               </CyberButton>
             </div>
           </motion.div>
