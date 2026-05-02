@@ -8,10 +8,34 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight, RefreshCw, Users, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Member, Choice } from './types';
 import { QUIZZES, Quiz } from './data/quizzes';
+import { Question } from './types';
 
 // --- Types ---
 
 type QuizPhase = 'START' | 'SELECT' | 'QUESTION' | 'FEEDBACK' | 'RESULT';
+
+const RANDOM_ID = 'random-quiz';
+
+function shuffleArray<T>(array: T[]): T[] {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+}
+
+function generateRandomQuiz(): Quiz {
+  const allQuestions: Question[] = QUIZZES.flatMap(q => q.questions);
+  const shuffledQuestions = shuffleArray(allQuestions);
+  
+  return {
+    id: RANDOM_ID,
+    title: 'Mix Esplosivo (Casuale)',
+    description: 'Tutte le domande mescolate per un\'esperienza imprevedibile ogni volta.',
+    questions: shuffledQuestions.slice(0, 15) // Limit to 15 questions for a balanced session
+  };
+}
 
 // --- Sub-components ---
 
@@ -61,6 +85,11 @@ export default function App() {
 
   const handleStart = () => {
     setPhase('SELECT');
+  };
+
+  const handleStartRandom = () => {
+    const randomQuiz = generateRandomQuiz();
+    handleSelectQuiz(randomQuiz);
   };
 
   const handleSelectQuiz = (quiz: Quiz) => {
@@ -152,6 +181,29 @@ export default function App() {
             </div>
 
             <div className="space-y-4 pb-12">
+              <button
+                onClick={handleStartRandom}
+                className="w-full text-left p-6 rounded-3xl border transition-all shadow-md active:scale-98 relative group bg-terracotta border-terracotta/20 mb-6"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-white/20 text-white border border-white/20">
+                    <RefreshCw size={20} className="group-active:rotate-180 transition-transform duration-500" />
+                  </div>
+                  <div className="flex-1 pr-4 text-white">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-bold text-xl leading-tight">
+                        Modalità Casuale
+                      </h3>
+                    </div>
+                    <p className="text-sm opacity-80 leading-normal">
+                      Genera un quiz unico mescolando tutte le domande esistenti.
+                    </p>
+                  </div>
+                </div>
+              </button>
+
+              <div className="h-px bg-olive/10 w-full mb-6" />
+
               {QUIZZES.map((quiz) => {
                 const isCompleted = completedQuizzes.includes(quiz.id);
                 return (
