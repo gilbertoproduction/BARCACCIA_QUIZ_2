@@ -103,6 +103,7 @@ export default function App() {
   const [activeQuiz, setActiveQuiz] = useState<Quiz | null>(null);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [hasAnswered, setHasAnswered] = useState(false);
+  const [selectedChoice, setSelectedChoice] = useState<Choice | null>(null);
   const [isSoundEnabled, setIsSoundEnabled] = useState(true);
   const [showLevelUp, setShowLevelUp] = useState(false);
 
@@ -154,6 +155,7 @@ export default function App() {
     setActiveQuiz(quiz);
     setCurrentIdx(0);
     setHasAnswered(false);
+    setSelectedChoice(null);
     setScores({ SIMO: 0, MARCO: 0, DAVE: 0, PIETRO: 0, FILO: 0 });
     setPhase('QUESTION');
   };
@@ -161,19 +163,19 @@ export default function App() {
   const handleChoice = (choice: Choice) => {
     if (hasAnswered) return;
     
+    setSelectedChoice(choice);
     setScores(prev => ({ ...prev, [choice.member]: (prev[choice.member] as number) + 1 }));
     setHasAnswered(true);
     
     // Gain XP
     saveStats({ ...stats, xp: stats.xp + XP_PER_ANSWER });
-
-    // Haptic feedback simulation or sound could go here
   };
 
   const handleNext = () => {
     if (activeQuiz && currentIdx < activeQuiz.questions.length - 1) {
       setCurrentIdx(currentIdx + 1);
       setHasAnswered(false);
+      setSelectedChoice(null);
     } else {
       if (activeQuiz && !completedQuizzes.includes(activeQuiz.id)) {
         setCompletedQuizzes(prev => [...prev, activeQuiz.id]);
@@ -185,12 +187,14 @@ export default function App() {
         saveStats({ ...stats, badges: newBadges });
       }
       setPhase('RESULT');
+      setSelectedChoice(null);
     }
   };
 
   const resetQuiz = () => {
     setPhase('SELECT');
     setActiveQuiz(null);
+    setSelectedChoice(null);
   };
 
   const sortedMembers = useMemo(() => {
@@ -204,9 +208,11 @@ export default function App() {
 
   return (
     <div className="fixed inset-0 bg-cyber-black text-white font-sans overflow-hidden select-none touch-none">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(0,243,255,0.05),_transparent_70%)]" />
       <XPBar xp={stats.xp} />
       
-      <AnimatePresence mode="wait">
+      <div className="relative h-full w-full max-w-md mx-auto">
+        <AnimatePresence mode="wait">
         {/* START PHASE */}
         {phase === 'START' && (
           <motion.div
@@ -264,56 +270,62 @@ export default function App() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            className="h-full flex flex-col p-6 pt-24 overflow-y-auto hide-scrollbar"
+            className="absolute inset-0 flex flex-col p-6 pt-24"
           >
-            <div className="flex justify-between items-end mb-8">
+            <div className="flex justify-between items-end mb-8 shrink-0 z-10">
               <div>
-                <h2 className="text-2xl font-bold tracking-tight uppercase italic">DATABASE QUIZ</h2>
-                <p className="text-xs text-white/40 font-mono">SELEZIONA MODULO DI TEST</p>
+                <h2 className="text-2xl font-bold tracking-tight uppercase italic neon-text-cyan">NETWORK DATABASE</h2>
+                <p className="text-[10px] text-white/40 font-mono uppercase tracking-[0.2em]">Select Neural Data Module</p>
               </div>
               <button 
                 onClick={() => setIsSoundEnabled(!isSoundEnabled)}
-                className="p-3 glass-card rounded-xl text-white/50"
+                className="p-3 glass-card rounded-xl text-white/50 hover:text-white transition-colors"
+                title="Toggle Audio"
               >
                 {isSoundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
               </button>
             </div>
 
-            <div className="grid gap-4 pb-20">
-              {QUIZZES.map((quiz) => {
+            <div className="flex-1 overflow-y-auto hide-scrollbar pb-10 space-y-4">
+              {QUIZZES.map((quiz, idx) => {
                 const isCompleted = completedQuizzes.includes(quiz.id);
                 return (
                   <motion.button
                     key={quiz.id}
-                    whileHover={{ scale: 1.02 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleSelectQuiz(quiz)}
-                    className={`relative overflow-hidden p-5 rounded-3xl border transition-all text-left ${
+                    className={`relative w-full overflow-hidden p-5 rounded-3xl border transition-all text-left ${
                       isCompleted 
                         ? 'bg-neon-lime/10 border-neon-lime/30 opacity-60' 
-                        : 'glass-card'
+                        : 'glass-card hover:border-white/30'
                     }`}
                   >
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-center gap-4">
                       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 border transition-colors ${
                         isCompleted ? 'bg-neon-lime/20 text-neon-lime border-neon-lime/30' : 'bg-white/5 text-white/70 border-white/10'
                       }`}>
-                        {isCompleted ? <Trophy size={22} /> : <LayoutGrid size={22} />}
+                        {isCompleted ? <Trophy size={22} /> : <Cpu size={22} />}
                       </div>
-                      <div className="flex-1">
-                        <h3 className="font-bold text-lg leading-none mb-1 uppercase tracking-tighter">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-lg leading-none mb-1 uppercase tracking-tighter truncate">
                           {quiz.title}
                         </h3>
-                        <p className="text-[10px] text-white/50 uppercase font-mono overflow-hidden text-ellipsis whitespace-nowrap">
+                        <p className="text-[10px] text-white/50 uppercase font-mono truncate">
                           {quiz.description}
                         </p>
                       </div>
-                      <ChevronRight size={16} className="text-white/20 mt-4" />
+                      <ChevronRight size={16} className="text-white/20 shrink-0" />
                     </div>
                   </motion.button>
                 );
               })}
             </div>
+            
+            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-cyber-black to-transparent pointer-events-none" />
           </motion.div>
         )}
 
@@ -321,63 +333,91 @@ export default function App() {
         {phase === 'QUESTION' && currentQuestion && activeQuiz && (
           <motion.div
             key={`q-${currentIdx}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, filter: 'blur(10px)' }}
-            className="h-full flex flex-col p-6 pt-24"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20, filter: 'blur(10px)' }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="absolute inset-0 flex flex-col p-6 pt-24"
           >
-            <div className="flex justify-between items-center mb-10">
-              <span className="font-mono text-[10px] text-neon-magenta tracking-widest uppercase">
-                ANALISI {currentIdx + 1}/{activeQuiz.questions.length}
-              </span>
-              <div className="flex gap-1">
+            {/* Header stabile */}
+            <div className="flex justify-between items-center mb-6 shrink-0 z-10">
+              <div className="flex flex-col">
+                <span className="font-mono text-[9px] text-neon-magenta tracking-[0.3em] uppercase opacity-70">
+                  Neural Analysis in progress
+                </span>
+                <span className="font-mono text-[10px] text-white/40 uppercase">
+                  Query {currentIdx + 1}/{activeQuiz.questions.length}
+                </span>
+              </div>
+              <div className="flex gap-1.5">
                 {activeQuiz.questions.map((_, i) => (
                   <div 
                     key={i} 
-                    className={`h-1 w-4 rounded-full transition-all ${
-                      i <= currentIdx ? "bg-neon-magenta" : "bg-white/10"
+                    className={`h-1 w-3 rounded-full transition-all duration-500 ${
+                      i <= currentIdx ? "bg-neon-cyan neon-glow-cyan" : "bg-white/5"
                     }`} 
                   />
                 ))}
               </div>
             </div>
 
-            <div className="flex-1 flex flex-col gap-8">
-              <h2 className="text-3xl font-bold tracking-tighter leading-tight italic uppercase">
+            {/* Area contenuto con scroll indipendente */}
+            <div className="flex-1 overflow-y-auto hide-scrollbar -mx-2 px-2 pb-40">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tighter leading-[1.1] italic uppercase mb-10 mt-2">
                 {currentQuestion.text}
               </h2>
               
-              <div className="grid gap-3 pb-32">
+              <div className="space-y-3">
                 {currentQuestion.choices.map((choice, i) => {
-                  const isSelected = choice.member === sortedMembers.find(([m]) => scores[m] > 0)?.[0] && hasAnswered; 
-                  // Simplified selected logic for display
+                  const isThisSelected = selectedChoice?.text === choice.text;
+                  const showSelectionStyle = hasAnswered && isThisSelected;
+                  const showFadedStyle = hasAnswered && !isThisSelected;
+
                   return (
                     <motion.button
                       key={i}
                       disabled={hasAnswered}
                       onClick={() => handleChoice(choice)}
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: i * 0.05 }}
-                      className={`relative w-full text-left p-5 rounded-2xl border transition-all overflow-hidden ${
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ 
+                        opacity: showFadedStyle ? 0.2 : 1, 
+                        y: 0,
+                        scale: isThisSelected ? 1.02 : 1,
+                        borderColor: showSelectionStyle ? '#00f3ff' : 'rgba(255,255,255,0.1)'
+                      }}
+                      transition={{ 
+                        delay: i * 0.05,
+                        duration: 0.3,
+                        scale: { type: "spring", damping: 15, stiffness: 300 }
+                      }}
+                      className={`relative w-full text-left p-5 rounded-2xl border transition-colors duration-300 overflow-hidden ${
                         !hasAnswered 
-                          ? "glass-card hover:border-neon-cyan/50 active:scale-[0.99]" 
-                          : choice.member === choice.member ? "bg-white/5 border-white/20" : "opacity-30 border-transparent"
+                          ? "glass-card hover:bg-white/10 active:scale-[0.98]" 
+                          : isThisSelected ? "bg-neon-cyan/5" : "bg-white/5"
                       }`}
                     >
-                      {hasAnswered && (
+                      {showSelectionStyle && (
                         <motion.div 
-                          className="absolute inset-0 bg-neon-cyan/10"
-                          initial={{ x: '-100%' }}
-                          animate={{ x: 0 }}
+                          className="absolute inset-0 border-2 border-neon-cyan/50 neon-glow-cyan rounded-2xl pointer-events-none"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
                         />
                       )}
+                      
                       <div className="relative flex justify-between items-center gap-4">
-                        <span className="text-[15px] font-medium leading-snug">{choice.text}</span>
+                        <span className={`text-[15px] font-medium leading-snug transition-colors duration-300 ${showSelectionStyle ? 'text-neon-cyan' : 'text-white/90'}`}>
+                          {choice.text}
+                        </span>
                         {hasAnswered && (
-                          <span className="text-[10px] font-mono font-bold text-neon-cyan bg-neon-cyan/10 px-2 py-1 rounded">
+                          <motion.div 
+                            initial={{ scale: 0, rotate: -45 }}
+                            animate={{ scale: 1, rotate: 0 }}
+                            className={`text-[9px] font-mono font-black px-2 py-1 rounded shrink-0 border tracking-tighter ${
+                              isThisSelected ? 'text-black bg-neon-cyan border-neon-cyan' : 'text-white/20 bg-white/5 border-white/10'
+                            }`}
+                          >
                             {choice.member}
-                          </span>
+                          </motion.div>
                         )}
                       </div>
                     </motion.button>
@@ -386,13 +426,23 @@ export default function App() {
               </div>
             </div>
 
-            {hasAnswered && (
-              <div className="fixed bottom-10 left-6 right-6">
-                <CyberButton variant="neon" onClick={handleNext} className="w-full">
-                  ANALIZZA PROSSIMO <ChevronRight size={18} />
-                </CyberButton>
-              </div>
-            )}
+            {/* Pulsante fisso con area di rispetto */}
+            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-cyber-black via-cyber-black/80 to-transparent pointer-events-none" />
+            
+            <AnimatePresence>
+              {hasAnswered && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                  className="absolute bottom-10 left-6 right-6 z-50 pointer-events-auto"
+                >
+                  <CyberButton variant="neon" onClick={handleNext} className="w-full h-16 text-lg tracking-[0.1em]">
+                    PROSSIMA ANALISI <ChevronRight size={20} />
+                  </CyberButton>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
 
@@ -400,43 +450,53 @@ export default function App() {
         {phase === 'RESULT' && (
           <motion.div
             key="result"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="h-full flex flex-col p-6 pt-24 overflow-y-auto hide-scrollbar"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="absolute inset-0 flex flex-col p-6 pt-24 overflow-y-auto hide-scrollbar"
           >
-            <div className="text-center mb-10">
-              <div className="text-neon-magenta text-xs font-mono mb-2 tracking-[0.3em] uppercase">Sincronizzazione Completa</div>
-              <h2 className="text-xl font-mono text-white/40 mb-4 tracking-tighter">PROFILO NEURALE</h2>
+            <div className="text-center mb-10 shrink-0">
+              <motion.div 
+                initial={{ opacity: 0, letterSpacing: '1em' }}
+                animate={{ opacity: 1, letterSpacing: '0.3em' }}
+                className="text-neon-magenta text-[10px] font-mono mb-2 uppercase"
+              >
+                Sincronizzazione Completa
+              </motion.div>
+              <h2 className="text-sm font-mono text-white/40 mb-4 tracking-tighter uppercase">PROFILO NEURALE IDENTIFICATO</h2>
               <div className="relative inline-block mt-4">
                 <motion.div 
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  className="text-8xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-neon-cyan to-neon-magenta neon-glow-cyan"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-8xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-neon-cyan to-neon-magenta neon-glow-cyan leading-none pb-2"
                 >
                   {topMember}
                 </motion.div>
-                <div className="absolute -top-4 -right-8 bg-neon-lime text-black font-mono text-[10px] px-2 py-1 font-bold rounded glitch-effect">
+                <div className="absolute -top-4 -right-12 bg-neon-cyan text-black font-mono text-[10px] px-2 py-1 font-bold rounded shadow-[0_0_10px_rgba(0,243,255,0.8)]">
                   {matchPercentage}% MATCH
                 </div>
               </div>
             </div>
 
-            <div className="glass-card rounded-3xl p-6 mb-8">
-              <h3 className="text-[10px] font-mono text-white/30 uppercase tracking-[0.2em] mb-6">Matrice di Affinità</h3>
-              <div className="space-y-5">
+            <div className="glass-card rounded-3xl p-6 mb-6">
+              <h3 className="text-[9px] font-mono text-white/30 uppercase tracking-[0.3em] mb-6">Matrice di Affinità Neurale</h3>
+              <div className="space-y-6">
                 {sortedMembers.map(([member, score], idx) => {
                   const perc = Math.round(((score as number) / totalAnswers) * 100);
                   return (
                     <div key={member} className="flex flex-col gap-2">
                       <div className="flex justify-between items-center font-mono">
-                        <span className="text-xs text-white/60">#{idx+1} {member}</span>
-                        <span className="text-[10px] text-neon-cyan">{perc}%</span>
+                        <span className={`text-[10px] tracking-widest ${idx === 0 ? 'text-neon-cyan' : 'text-white/40'}`}>
+                          0{idx+1} {member}
+                        </span>
+                        <span className={`text-[10px] ${idx === 0 ? 'text-neon-cyan' : 'text-white/60'}`}>
+                          {perc}%
+                        </span>
                       </div>
                       <div className="h-1 bg-white/5 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${perc}%` }}
-                          className={`h-full ${idx === 0 ? 'bg-neon-cyan' : 'bg-white/20'}`}
+                          className={`h-full transition-all duration-1000 ease-out ${idx === 0 ? 'bg-neon-cyan neon-glow-cyan shadow-[0_0_5px_#00f3ff]' : 'bg-white/20'}`}
                         />
                       </div>
                     </div>
@@ -445,25 +505,28 @@ export default function App() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mb-10">
-              <div className="glass-card p-4 rounded-2xl flex flex-col items-center">
-                <Zap size={20} className="text-neon-cyan mb-1" />
+            <div className="grid grid-cols-2 gap-4 mb-6 shrink-0">
+              <div className="glass-card p-4 rounded-3xl flex flex-col items-center">
+                <Zap size={18} className="text-neon-cyan mb-1" />
                 <span className="text-xl font-bold italic tracking-tighter">+{XP_PER_ANSWER * (activeQuiz?.questions.length || 1)}</span>
-                <span className="text-[8px] font-mono text-white/30 uppercase">XP GUADAGNATI</span>
+                <span className="text-[8px] font-mono text-white/30 uppercase tracking-tighter">XP ACQUISITI</span>
               </div>
-              <div className="glass-card p-4 rounded-2xl flex flex-col items-center">
-                <Award size={20} className="text-neon-lime mb-1" />
+              <div className="glass-card p-4 rounded-3xl flex flex-col items-center">
+                <Target size={18} className="text-neon-lime mb-1" />
                 <span className="text-xl font-bold italic tracking-tighter">#{completedQuizzes.length}</span>
-                <span className="text-[8px] font-mono text-white/30 uppercase">QUIZ ARCHIVIATI</span>
+                <span className="text-[8px] font-mono text-white/30 uppercase tracking-tighter">SYSTEM LOGS</span>
               </div>
             </div>
 
-            <CyberButton variant="outline" onClick={resetQuiz} className="w-full mb-20 translate-y-[-10px]">
-              <RefreshCw size={18} /> RIAVVIA SISTEMA
-            </CyberButton>
+            <div className="pb-10">
+              <CyberButton variant="outline" onClick={resetQuiz} className="w-full">
+                <RefreshCw size={18} className="group-hover:rotate-180 transition-transform duration-500" /> RIAVVIA SISTEMA
+              </CyberButton>
+            </div>
           </motion.div>
         )}
-      </AnimatePresence>
+        </AnimatePresence>
+      </div>
 
       {/* LEVEL UP NOTIFICATION */}
       <AnimatePresence>
