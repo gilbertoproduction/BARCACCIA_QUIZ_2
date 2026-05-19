@@ -5145,5 +5145,3445 @@ export const QUIZZES: Quiz[] = [
         ]
       }
     ]
+  },
+  {
+    id: 'calciomercato_valore',
+    title: 'IL CALCIOMERCATO E IL VALORE DEI GIOCATORI',
+    description: 'Come valutare un giocatore senza farsi fregare dalle plusvalenze?',
+    questions: [
+      {
+        id: 1,
+        text: "Come giudichi l'operazione Arthur-Pjanic tra Juve e Barcellona?",
+        choices: [
+          { text: "Arthur 72+10. Mamma mia che lesi, ci costerà 15 milioni l'anno di ammortamento.", member: 'DAVE' },
+          { text: "Pjanic a 60 milioni è un magheggio contabile. Arthur non li vale 70 milioni.", member: 'PIETRO' },
+          { text: "Arthur è forte e gli chiederai umilmente scusa. Non andrai mai in perdita, fai plusvalenza.", member: 'SIMO' },
+          { text: "Scambiarlo per Pjanic ci sta perché sta facendo pena. In 5 anni lo ammortizzi.", member: 'FILO' },
+          { text: "Paratici lesity.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Eriksen finisce in panchina all'Inter. Quanto vale sul mercato?",
+        choices: [
+          { text: "Vabbè sono fottuto rega.", member: 'MARCO' },
+          { text: "Vale 60 milioni. Se lo vendiamo a più di 50 voglio le tue scuse.", member: 'SIMO' },
+          { text: "40 milioni per Eriksen non te li dà nessuno, tantomeno in questa specifica sessione.", member: 'FILO' },
+          { text: "Per come sta giocando ne vale 10. All'Inter con Conte non è in grado.", member: 'PIETRO' },
+          { text: "Non vale nulla. Dovreste pagare per mandarlo via, Locatelli mille volte meglio.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 3,
+        text: "La Juve deve sbarazzarsi di Higuain. Che si fa?",
+        choices: [
+          { text: "100 milioni.", member: 'FILO' },
+          { text: "Se sono disposti a pagare per mandarlo via significa che proprio non ne ha.", member: 'DAVE' },
+          { text: "Lo svincoli con 18 milioni di minusvalenza e gli paghi pure la buonuscita? È da deficiente.", member: 'SIMO' },
+          { text: "No il Pipa parte per me.", member: 'MARCO' },
+          { text: "Il Pipa ai tempi valeva 70 milioni, a 95 è stato strapagato. Ma come riserva non mi sembra così schifosa.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "C'è la possibilità di prendere Suarez a 0.",
+        choices: [
+          { text: "È un vecchio di merda, per caratteristiche fisiche ha 1-2 anni massimo nelle gambe.", member: 'DAVE' },
+          { text: "Magari 😍 Voglio anche Dzeko però.", member: 'MARCO' },
+          { text: "Prende 15 milioni di stipendio, non te lo danno a poco.", member: 'SIMO' },
+          { text: "Se Suarez grazie al decreto crescita va a prendere quanto Higuain non è un'operazione totalmente sbagliata.", member: 'PIETRO' },
+          { text: "Giocatore TOP. Se gli dai 10 milioni te lo porti a casa e hai un top da affiancare a CR7.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Il Napoli spende cifre folli per Osimhen (quasi 80 milioni).",
+        choices: [
+          { text: "Pazzi, tutti sono fenomeni in Ligue 1.", member: 'MARCO' },
+          { text: "Se non fa schifo, 60 li vale, ha 21 anni. Han fatto bene.", member: 'SIMO' },
+          { text: "Dela mago, ha i soldi perché son scattati gli obblighi di riscatto su Rog, Inglese, Grassi.", member: 'PIETRO' },
+          { text: "Vabbè livelli bassi -> valore di 45/50 mln.", member: 'FILO' },
+          { text: "Visto che Aurelio lo valutava 80, alla fine costa quanto McKennie.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Tonali va al Milan per circa 35 milioni.",
+        choices: [
+          { text: "Tonali all'Inter per 35 milioni? Giocatore distrutto dalle droghe, non lo volevo.", member: 'SIMO' },
+          { text: "Tonali scalderebbe la panca, troppo traffico a centrocampo.", member: 'PIETRO' },
+          { text: "Il top.", member: 'FILO' },
+          { text: "Ci sta, hanno una mediana da scudetto.", member: 'DAVE' },
+          { text: "Porcaputtana ahahahah.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Coman fa vincere la Champions al Bayern. Operazione sbagliata darlo via a 20M anni fa?",
+        choices: [
+          { text: "Ha un passo diverso, 20 milioni è poco. Allegri non ha capito nulla.", member: 'DAVE' },
+          { text: "Era un regalo di Paratici, 40 milioni son pochi poi.", member: 'PIETRO' },
+          { text: "In Italia non c'è lo spazio per fare quello che fa Coman. Fa 3 gol all'anno, basta dire cazzate.", member: 'FILO' },
+          { text: "L'hai confuso con Douglas Costa.", member: 'MARCO' },
+          { text: "Dare un buon prospetto per 20 milioni e poi gioca le finali facendo gol, è un'operazione sbagliata.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Bisogna prendere un centravanti alla Juve. Chi compriamo?",
+        choices: [
+          { text: "Cornelius, Okaka, Pellè, Simy. Prendiamo un attaccante normale da 15 milioni.", member: 'DAVE' },
+          { text: "Zapata sarebbe troppo il top. Ma non penso succederà.", member: 'MARCO' },
+          { text: "Io voglio un mezzo giocatore da 10-15 che si butta dentro e fa a sportellate.", member: 'FILO' },
+          { text: "La Juve dovrebbe prender Galabinov. È un trattore.", member: 'PIETRO' },
+          { text: "La Juve deve avere il Benzema, Suarez, Kane della situazione. Lewandowsky.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Zaniolo si rompe di nuovo il crociato.",
+        choices: [
+          { text: "La Juve deve comprarlo ora Zaniolo, spendendo 20 mln. È come una casa a Manhattan.", member: 'MARCO' },
+          { text: "Scambio Ramsey-Zaniolo ai dettagli. Buy the dip.", member: 'PIETRO' },
+          { text: "Zaniolo giocatore finito o nuovo Robben?", member: 'FILO' },
+          { text: "Zaniolo vale 0 ora. È un ex calciatore.", member: 'DAVE' },
+          { text: "Zaniolo, Odegaard e Mount sono i trequartisti giovani più forti in Europa.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Vidal e Rakitic in uscita dal Barcellona.",
+        choices: [
+          { text: "Sono in scadenza di contratto ed è vecchio. Vidal vale 20 max 25.", member: 'SIMO' },
+          { text: "A me Rakitic non piace.", member: 'MARCO' },
+          { text: "Li valuto come Blaise (Matuidi). Valgono tra i 10 e i 15 milioni, o svincolamento lampo.", member: 'PIETRO' },
+          { text: "Non si è apprezzato in questi mesi.", member: 'DAVE' },
+          { text: "Vidal ha un valore di 10/15 milioni. Ma è un valore fittizio.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Hakimi all'Inter per 40 milioni.",
+        choices: [
+          { text: "Hakimi è uno dei 3 terzini più forti in giro senza ombra di dubbio.", member: 'SIMO' },
+          { text: "Colpaccio, Marotta top player. Se va all'Inter è finita.", member: 'PIETRO' },
+          { text: "Se lo pagate solo 40 milioni esplodo.", member: 'FILO' },
+          { text: "Hakimi nuovo bidone. Nuovo Lazaro, Schelotto, Dalbert.", member: 'DAVE' },
+          { text: "Aiuto ma veramente Hakimi? Basta è un fenomeno Marotta.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Milan su Chiesa per 60 milioni?",
+        choices: [
+          { text: "Chiesa bidone. Dai è sotto gli occhi di tutti, solo Paratici può stravedere per lui.", member: 'MARCO' },
+          { text: "Chiesa per me è un Barella/Sensi, quindi 40 è già troppo.", member: 'SIMO' },
+          { text: "A me Chiesa piacerebbe, è italiano, è giovane ed è forte.", member: 'FILO' },
+          { text: "Chiesa al Milan per Bennacer e Conti. Esclusiva barcaccia.sport.", member: 'PIETRO' },
+          { text: "Chiesa in 2 minuti ha fatto imbestialire Mancini. Se devo spendere 40 prendo Boga.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Chiellini rinnova ancora il contratto.",
+        choices: [
+          { text: "Chiellini ha finito di giocare a calcio vedrai.", member: 'SIMO' },
+          { text: "Chiello fortissimo, ma ormai è finito dobbiamo rassegnarci.", member: 'MARCO' },
+          { text: "Paratici dovrebbe dimettersi per aver rinnovato Matuidi e Khedira e Chiellini.", member: 'DAVE' },
+          { text: "Per me c'è ancora il Chiello. Anche se spero di no.", member: 'FILO' },
+          { text: "Chiellini è il motivo per cui avremo di nuovo 5 centrali.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Il mercato in uscita dell'Inter (Joao Mario, Nainggolan, Perisic, Vecino).",
+        choices: [
+          { text: "Vecino è il nuovo Bale. E Perisic al Bayern è stato utile.", member: 'PIETRO' },
+          { text: "🤣🤣🤣", member: 'MARCO' },
+          { text: "Un anno fa avevo anticipato che nessuno dei prestiti sarebbe stato riscattato.", member: 'DAVE' },
+          { text: "Se ci riscattano Joao, Perisic e Lazaro facciamo 60 milioni.", member: 'SIMO' },
+          { text: "Joao Mario 40 milioni. Ci ha garantito 2 scudetti.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Rabiot a 7/8 milioni netti l'anno.",
+        choices: [
+          { text: "Rabiot è l'unico che ha un po' di passo.", member: 'FILO' },
+          { text: "Cavallo pacco Rabiot. È uno a cui avrei dato 4/4,5 milioni l'anno.", member: 'DAVE' },
+          { text: "25 milioni per il cartellino e 8 di stipendio li pago a un Benzema, non a lui.", member: 'MARCO' },
+          { text: "Prende 7 milioni perché è arrivato da svincolato. È forte.", member: 'PIETRO' },
+          { text: "Se lo paghi 30 mln devi dargli 3,5 max. Valutavo Rabiot 30-40 mln.", member: 'SIMO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'politica_covid',
+    title: 'LA POLITICA, IL COVID E I MASSIMI SISTEMI',
+    description: 'Sopravvivere tra lockdown, leghisti, Recovery Fund e le idee di Pietro.',
+    questions: [
+      {
+        id: 1,
+        text: "Salvini fa l'ennesimo post per cavalcare l'onda su un fatto di cronaca.",
+        choices: [
+          { text: "Il Capitano sta dando spettacolo. Sembra una pagina troll/meme di attualità.", member: 'FILO' },
+          { text: "Mentre veniva attaccato pensava \"Nera -> attacco -> Instagram -> Likes\".", member: 'DAVE' },
+          { text: "Salvini stai zitto cazzo. Sempre a generalizzare.", member: 'SIMO' },
+          { text: "NON TOCCATE IL CAPITANO.", member: 'PIETRO' },
+          { text: "Ahahahahah 🤣", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Elezioni USA: Trump contro Biden.",
+        choices: [
+          { text: "Biden non lo conosco proprio. Come presenza scenica mi ricorda Bersani vs Berlusconi.", member: 'DAVE' },
+          { text: "Se Trump non vincerà le elezioni saranno state truccate.", member: 'FILO' },
+          { text: "Vince Biden sicuro. (E perderà).", member: 'MARCO' },
+          { text: "Lo dice Pastorello.", member: 'SIMO' },
+          { text: "Biden è veramente poco carismatico. Ci voleva una nera aggressiva contro Trump.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Gli USA superano l'Italia nei contagi COVID, poi la Francia ha un boom.",
+        choices: [
+          { text: "Siamo in autunno, è tutto normale. I giornali riportano i numeri e gli ansiosi esplodono.", member: 'DAVE' },
+          { text: "La Francia ha 7k. Finalmente gli USA ci hanno superato nel death rate. L'approccio Trump il migliore.", member: 'PIETRO' },
+          { text: "America paese da quarto mondo. Devi ammetterlo.", member: 'MARCO' },
+          { text: "Se bloccano tutto già ora c'è da esplodere. Gli allarmisti mi fanno troppo esplodere.", member: 'FILO' },
+          { text: "Noi abbiamo avuto 1 contagio ogni 300 persone. Abbiamo gestito la cosa obiettivamente meglio di tutti.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Riforma delle pensioni e Quota 100.",
+        choices: [
+          { text: "Quota 100 è stata un'altra misura assistenziale. L'unico modo per risanare le casse è toglierla.", member: 'DAVE' },
+          { text: "Le pensioni italiane sono un grande schema Ponzi, più accedi in ritardo più rimani fregato.", member: 'PIETRO' },
+          { text: "Quota 100 la riforma migliore degli ultimi 10 anni. Non si può lavorare fino a 70 anni, svegliatevi!", member: 'SIMO' },
+          { text: "Le pensioni? Se le chiedi di tagliarsi il 30% di pensione in cambio di 0 clandestini lei lo fa.", member: 'FILO' },
+          { text: "Io vado a giocarmi la retrocessione ora.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Il movimento Black Lives Matter e l'inginocchiarsi.",
+        choices: [
+          { text: "La polizia uccide sistematicamente i neri. La battaglia è sacrosanta, vorrei che non mettessero KO la gente per stronzate.", member: 'DAVE' },
+          { text: "Io sto con Leclerc. Ha ragione, è anti black humor inginocchiarsi.", member: 'FILO' },
+          { text: "Io non lo farei. È segno di subordinazione. È un capriccio dei suprematisti neri.", member: 'PIETRO' },
+          { text: "Il razzismo esiste c'è poco da dire. È un capriccio non farlo. A te di fatto non costa nulla inginocchiarti.", member: 'SIMO' },
+          { text: "Un altro afroamericano morto negli USA. Ci vuole una nuova rivoluzione americana.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Referendum sul taglio dei parlamentari.",
+        choices: [
+          { text: "Io all'inizio ero più per il sì, adesso son più per il no. Non penso che una sia ottimale rispetto all'altra.", member: 'MARCO' },
+          { text: "Io non voto. Comunque voterei sì, perché così sono costretti ad andare fino a fine legislatura.", member: 'PIETRO' },
+          { text: "Io voto sì. I sostenitori del no dicono che comporterebbe \"riduzione della rappresentanza\" ma non sanno apportare esempi.", member: 'DAVE' },
+          { text: "La riduzione della rappresentanza c'è è innegabile. I partiti minori non riusciranno ad avere accesso.", member: 'SIMO' },
+          { text: "Boh per me vince il no. Movimento 5 stelle nuova juve?", member: 'FILO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Recovery Fund e aiuti dall'Europa.",
+        choices: [
+          { text: "Tasse su tasse. Mezza manovra di un governo.", member: 'SIMO' },
+          { text: "L'Europa ci regala i soldi, 1/3 a fondo perduto. Speriamo che la Merkel sistemi le cose.", member: 'PIETRO' },
+          { text: "I mercati sono impazziti. Spero ci sia un governo Merkel.", member: 'FILO' },
+          { text: "La Merkel sta con noi.", member: 'MARCO' },
+          { text: "Stanno studiando le carte con le lacrime agli occhi.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 8,
+        text: "De Luca stravince le regionali in Campania.",
+        choices: [
+          { text: "De Luca al governo subito. Mi piace un sacco il suo odio verso i campani più scemi.", member: 'PIETRO' },
+          { text: "De Luca classic persona da cui mi farei governare. Le cose le fa con la testa.", member: 'SIMO' },
+          { text: "Ha stravinto.", member: 'DAVE' },
+          { text: "I politici sono la cosa più marcia che c'è in italia.", member: 'FILO' },
+          { text: "🤦🏻‍♂️", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Le mascherine a scuola e le misure del Governo.",
+        choices: [
+          { text: "Il governo spenderà un sacco di soldi per comprare banchi che saranno distrutti. Investimenti sprecati.", member: 'DAVE' },
+          { text: "L'interazione sociale è fondamentale. Certo che con la mascherina diventa complicato.", member: 'FILO' },
+          { text: "I bambini si scambiano le mascherine a scuola come se fossero figurine. Fine.", member: 'SIMO' },
+          { text: "Quelli delle superiori posson stare in casa da soli. Fillo, fino alle medie in classe dai.", member: 'PIETRO' },
+          { text: "Che deficienti veramente. Lo stato deve usare il pugno di ferro qua.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Caso Suarez e l'esame di italiano a Perugia.",
+        choices: [
+          { text: "Se trovano i conti succede un casino. Mazzette a gogo.", member: 'PIETRO' },
+          { text: "La Juve dovrebbe prendere le distanze con un comunicato. La Procura ha bloccato tutto.", member: 'DAVE' },
+          { text: "Non penso c'entri la Juve. È obbligatorio per le liste.", member: 'SIMO' },
+          { text: "Ma il punto è: perché Suarez doveva fare quell’esame? Per andare alla juve o per avere un passaporto?", member: 'FILO' },
+          { text: "Facciamo 50000 e siam sicuri passi l'esame.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Evasi 825 miliardi di tasse nell'Unione Europea. Quanto pesa l'Italia?",
+        choices: [
+          { text: "120 dico.", member: 'PIETRO' },
+          { text: "60.", member: 'DAVE' },
+          { text: "Ahahahah.", member: 'FILO' },
+          { text: "190! Record del mondo! Il 10% del PIL.", member: 'SIMO' },
+          { text: "Maledetti evasori pesanti.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "L'app Immuni.",
+        choices: [
+          { text: "Persone che lo scaricano in Italia: alcune. In Nigeria: zero. Utilità: meno di zero. Ci serve un app per lucrare.", member: 'FILO' },
+          { text: "Fatta malissimo, se la tirano come se ce l'avessero solo loro.", member: 'PIETRO' },
+          { text: "Mettono i soldi su app inutili invece di sistemare le cose importanti.", member: 'DAVE' },
+          { text: "Che cazzata.", member: 'SIMO' },
+          { text: "Mah, mi sa da invenzione.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Renzi ammette la sconfitta elettorale (Italia Viva al 7%).",
+        choices: [
+          { text: "Renzi è il più grande spreco della politica italiana. Ha mandato il paese in vacca per il suo ego.", member: 'PIETRO' },
+          { text: "Ha distrutto se stesso e il PD spianando la strada ai populisti.", member: 'DAVE' },
+          { text: "Renzi re dei talk show.", member: 'SIMO' },
+          { text: "C’è Renzie su Rete4.", member: 'FILO' },
+          { text: "Ahahahahah.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Il reddito di cittadinanza (RDC).",
+        choices: [
+          { text: "È sacrosanto in teoria ma è stato fatto male e in fretta e furia. Se avesse avuto un altro nome, meno critiche.", member: 'DAVE' },
+          { text: "Poveraccio cazzo, la prima cosa da fare è stracciarlo. Ha portato gente che non deve prenderlo a chiederlo.", member: 'PIETRO' },
+          { text: "Glieli rimborsano col reddito di cittadinanza.", member: 'FILO' },
+          { text: "Ma saranno dei mafiosi, non è certo il RDC il problema.", member: 'SIMO' },
+          { text: "AHAHAHAH.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Come risolvere il problema della criminalità e delle carceri?",
+        choices: [
+          { text: "Negli USA ti sparano 7 colpi alle spalle. Qui processo Alongi.", member: 'SIMO' },
+          { text: "Gente che non può contribuire in nessun modo alla società se non esser messa in piazza e presa a schiaffi.", member: 'PIETRO' },
+          { text: "Vorrei la diretta del loro processo in tv per godere un po'.", member: 'DAVE' },
+          { text: "Io metterei in parlamento solo napoletani.", member: 'FILO' },
+          { text: "In galera e buttare la chiave.", member: 'MARCO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'dinamiche_insulti',
+    title: 'DINAMICHE DA BARCACCIA E INSULTI',
+    description: 'Tra radical chic, boomer, e lauree in Management.',
+    questions: [
+      {
+        id: 1,
+        text: "Chi è l'utente di Facebook \"Alessandro Raimondi che chiede chiarimenti\"?",
+        choices: [
+          { text: "Un eroe. Alessandro Raimondi che ottiene risultati. Va aggiunto alla Barcaccia.", member: 'DAVE' },
+          { text: "La redazione Sky si sta cagando sotto per le sue mail.", member: 'SIMO' },
+          { text: "Il nuovo capo. Con fotomontaggi di lui che chiede chiarimenti a Mattarella.", member: 'PIETRO' },
+          { text: "Ma chi è questo ahahah, il leso.", member: 'FILO' },
+          { text: "🤣🤣🤣", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Le figuracce di chi cerca lavoro (Risorse Umane - HR).",
+        choices: [
+          { text: "Odio gli HR. Ci raccontano che impiegano 30 secondi e poi impiegano mesi per fare una selezione. Passacarte.", member: 'DAVE' },
+          { text: "HR: \"Cosa ne pensi del lavoro degli HR?\" FILLO: \"Lavoro perlopiù inutile per alzare le quote rosa in azienda\".", member: 'PIETRO' },
+          { text: "Le HR sono delle lese che si credono importanti, se dico la verità mi scartano.", member: 'FILO' },
+          { text: "In Fater HR riduce del 10% i candidati, scarta solo i casi umani, il resto va ai manager.", member: 'SIMO' },
+          { text: "Pazzesco.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Smartphone: iPhone vs Cinesoni (Android).",
+        choices: [
+          { text: "Il mio Teclast pagato 95 euro. Commosso dalla fluidità. Esci dalla bolla Fillo, entra in Android.", member: 'PIETRO' },
+          { text: "Ma l'iPhone è il telefono più bello nonché il migliore. Durata esagerata, gli altri dopo 2 anni sono morti.", member: 'FILO' },
+          { text: "Fillo vive nel 1950. Certo, 1000 euro di telefono se guadagni 100k l'anno.", member: 'SIMO' },
+          { text: "Devo dire che i prodotti Apple sono fatti troppo bene, però i prezzi sono esagerati. Io ho il cinesone da 100 euro.", member: 'DAVE' },
+          { text: "Io ho l'iPad.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Le teorie complottiste di Greg (Il Greg).",
+        choices: [
+          { text: "Discorso da Greg. Il Covid attivato dal 5G.", member: 'DAVE' },
+          { text: "Voglio vedere cosa racconta Greg in sto periodo. Radio Greg ❤️. Carica dai 7 ai 9 video al giorno.", member: 'FILO' },
+          { text: "Teraleso insulto dell'anno? Che leso.", member: 'SIMO' },
+          { text: "I giornalisti che attaccano Salvini sui migranti sono decerebrati, meglio Dellimellow.", member: 'PIETRO' },
+          { text: "Gente lesa ovunque in sto mondo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "\"Calciatori Brutti\" (pagina Facebook).",
+        choices: [
+          { text: "Usano sempre le stesse espressioni \"come + paragone a caso\". Che ridicoli.", member: 'DAVE' },
+          { text: "Sono dei geni, io rido sempre per il Cholismo.", member: 'PIETRO' },
+          { text: "Ormai si smerda talmente tante volte da solo che non fa più notizia.", member: 'SIMO' },
+          { text: "È un teraleso che merita solo la merda. Lucra sui lesi.", member: 'FILO' },
+          { text: "AHAHAHAHAHAHAH 🤣", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Le lauree e gli studenti che evadono l'ISEE.",
+        choices: [
+          { text: "Quelli esenti al 100% dalle tasse hanno tutti l'iPhone. Chi paga la retta al 100% ha il cinesone.", member: 'DAVE' },
+          { text: "Da grande voglio fare l'evasore. Apriamo una srl che fa magheggi per abbassare l'ISEE.", member: 'PIETRO' },
+          { text: "Meno cose hai intestate meno paghi. La casa la vendi, spendi i soldi e vai sotto.", member: 'SIMO' },
+          { text: "Mamma mia... il team barcaccia deve supervisionare lo Stato.", member: 'FILO' },
+          { text: "Incredibile.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Le \"Chicche\" (Audio e Link) inviati sul gruppo.",
+        choices: [
+          { text: "Questi audio signori sono delle chicche per coccolarvi. Come un gruppo Premium da 100€/mese.", member: 'FILO' },
+          { text: "Un OnlyFans della Barcaccia.", member: 'PIETRO' },
+          { text: "Audio di Fillo sono per giovani, con una grafica accattivante.", member: 'SIMO' },
+          { text: "Meno male che non ho aperto.", member: 'MARCO' },
+          { text: "Meglio di PapaHD.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Chi è il \"Gigaleso del Mese\"?",
+        choices: [
+          { text: "Pietro che pensa di non essere un gigaleso 😍. Simo gigaleso del mese.", member: 'FILO' },
+          { text: "Fillo è il gigaleso della barcaccia a prescindere. Io sono il Dellimellow della Barcaccia.", member: 'PIETRO' },
+          { text: "Non è facile sorpassarmi per il gigaleso del mese dopo i miei numeri. Ma Dave ha confermato i trasferimenti al fanta!", member: 'SIMO' },
+          { text: "Paratici re dei lesi. Gigaleso dell'eone.", member: 'MARCO' },
+          { text: "Dave leso dell'anno per aver scelto Borja Valero.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Streaming illegale: Rojadirecta, MamaHD, PapaHD, o App?",
+        choices: [
+          { text: "FOOTBALL LIVE! App del tablet spaziale. Buttate Apple!", member: 'PIETRO' },
+          { text: "Papahd mi sta facendo tiltare. NON C’È UN LINK CHE FUNZIONI IO STO ESPLODENDO.", member: 'FILO' },
+          { text: "Mamahd ultimamente è deludente. Il secondo link, quello in italiano.", member: 'SIMO' },
+          { text: "Rojadirecta en català ❤. L'unico che va sull'iPad.", member: 'MARCO' },
+          { text: "Hanno fatto strage di siti, non ne va mezzo. I link italiani prendono dalla stessa fonte di merda.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Micol, la food blogger e le ex compagne del Clamm.",
+        choices: [
+          { text: "La conoscevo! È uguale a una tipa di Ravenna.", member: 'MARCO' },
+          { text: "Una delle più lese di Ravenna. Ha 90 anni di esperienza.", member: 'FILO' },
+          { text: "A Ravenna bisogna andare con il cellulare B. Il Clamm con meno figa di sempre.", member: 'PIETRO' },
+          { text: "Io non la seguo più su Insta perché mi dava fastidio il fatto che posta 2000 storie.", member: 'DAVE' },
+          { text: "È più facile che abbia tutti gli indiani/arabi/pakistani che la seguono, comprati.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Giulio Ebrahim.",
+        choices: [
+          { text: "Giulio si deve ancora laureare mi sa puttana troia. Il migliore di tutti è lui però raga.", member: 'SIMO' },
+          { text: "Giulio indossa un camice, un pigiama, un blazer o una divisa da karate?", member: 'DAVE' },
+          { text: "Cosa ci fa la Sofia Rossi con Giulio 🤔?", member: 'MARCO' },
+          { text: "Chi è la Sofia Rossi?", member: 'PIETRO' },
+          { text: "Al clamm???", member: 'FILO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Il lavoro di Marco.",
+        choices: [
+          { text: "Marco ha scelto il lavoro sbagliato. Quello dove si lavora veramente.", member: 'SIMO' },
+          { text: "Direttore amministrativo contabile per un comune del ravennate, ma non lo passerò mai.", member: 'MARCO' },
+          { text: "Giacomo Forlai è diventato consulente finanziario. Marco distruggiamoli dall'interno.", member: 'DAVE' },
+          { text: "Marco entra nel mercato degli investimenti finalmente. Fba Amazon.", member: 'PIETRO' },
+          { text: "Dove lavori Marco??", member: 'FILO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Affitto della camera nello \"Student Hotel\" a 480 euro a Bologna.",
+        choices: [
+          { text: "Mi sembra un prezzo normale. Hai palestra, aule studio, piscina e pulizia.", member: 'SIMO' },
+          { text: "Con 480 preferisco pagare una singola in un appartamento con le spese. E ci esce la palestra.", member: 'DAVE' },
+          { text: "Se è scalabile sulle tasse è tutta un'altra storia. I vostri genitori scaricavano l'affitto in nero?", member: 'PIETRO' },
+          { text: "Che cazzo ahahahahahaha.", member: 'FILO' },
+          { text: "Folle.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Citazioni dal Vangelo.",
+        choices: [
+          { text: "Giovanni 8, 31-32 «Se perseverate nella mia parola, siete veramente miei discepoli».", member: 'SIMO' },
+          { text: "Apocalisse 3:21 «Chi vince lo farò sedere presso di me sul mio trono».", member: 'PIETRO' },
+          { text: "Ma cosa c'entra? Stai impazzendo.", member: 'FILO' },
+          { text: "Ahahahah.", member: 'DAVE' },
+          { text: "Invenzione divina.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Il ritorno della Barcaccia per il weekend a Ravenna (Compleanno di Simo).",
+        choices: [
+          { text: "Fillo paga tutto con i buoni pasto o contante. E ci porta a troie.", member: 'PIETRO' },
+          { text: "8 agosto festeggio il mio compleanno a casa mia. Posso ospitare 3 persone a dormire.", member: 'SIMO' },
+          { text: "Vengo anch'io Simo. Se assomiglia a Filomena Fitti parto adesso.", member: 'DAVE' },
+          { text: "Ti facciam saper Fillo 💪🏻.", member: 'MARCO' },
+          { text: "Appuntamento tra 1 mese con la Barcaccia al completo. Faccio le corse e arrivo.", member: 'FILO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'trading_finanza',
+    title: 'TRADING, FINANZA E BUSINESS PAZZE',
+    description: 'Tra Plus500, azioni Apple, short sul Gold, e startup inesistenti.',
+    questions: [
+      {
+        id: 1,
+        text: "Investimenti su Tesla e Apple.",
+        choices: [
+          { text: "Shortate la Ferrari. Tesla -80%. Crolla tutto.", member: 'PIETRO' },
+          { text: "Buy su Apple signori. Ho fatto 1,65€ in 38 secondi.", member: 'FILO' },
+          { text: "Incredibile Tesla. Pump pre-market dai fanboy e crollo all'apertura.", member: 'DAVE' },
+          { text: "Signori puntate su Rivian. Follower di Tesla.", member: 'SIMO' },
+          { text: "Io compro oro.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Lo scalping di Fillo sull'oro (Gold) e sul Dax.",
+        choices: [
+          { text: "Ho fatto 19€ oggi con piccoli trades. 15€ in 1 minuto e 30. Se volete darmi dei soldi li trasformo nel doppio.", member: 'FILO' },
+          { text: "Fillo ma con 100 euro fai poco se non c'è leva. Ti fai prendere dalla pressione.", member: 'PIETRO' },
+          { text: "E' un suicidio questa strategia. Ti sei salvato perché c'è il supporto a 1915.", member: 'DAVE' },
+          { text: "Se fai rosso appena ti do i soldi vengo a prenderti a palate nei denti. Fillo nuovo Warren Buffet?", member: 'SIMO' },
+          { text: "Io mi fido di Fillo, metteteci i soldi.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Il disastro del Trading di Dave (le Opzioni e la perdita dei soldi).",
+        choices: [
+          { text: "Ho perso 250 euro. All'inizio ne ho persi 100 con le opzioni colpa di Vincenzo. Poi ho fatto operazioni vendetta e ho perso.", member: 'DAVE' },
+          { text: "Dave il detective. Il mio consiglio è stare lontani dal trading giornaliero, non vale la pena sbattersi per 20 euro.", member: 'PIETRO' },
+          { text: "Dave, investi su di me. Mi dai 100 euro e te ne garantisco 25 indietro in caso di bancarotta.", member: 'FILO' },
+          { text: "Dave stai diventando uno di quelli che da un giorno all'altro perde tutto senza capire come.", member: 'SIMO' },
+          { text: "Meglio Amazon FBA.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "L'idea di Startup geniale 1: Consulenza per aziende in crisi a costo zero.",
+        choices: [
+          { text: "Agenzia di consulenza che aiuta le aziende in crisi gratuitamente, percentuale sul fatturato. La Barcaccia Consulting.", member: 'FILO' },
+          { text: "Un calzolaio fa 5k al mese di fatturato? Fillo, devi aprire una partita IVA. Sembri l'Albanese del Parma.", member: 'PIETRO' },
+          { text: "Meglio un pacchetto fisso che una percentuale sul fatturato. Devi prendere aziende che stanno morendo, sui 8k.", member: 'SIMO' },
+          { text: "I pacchetti che vengono proposti a bar e locali per gestire i social. Rivoluzione culturale.", member: 'DAVE' },
+          { text: "Vai, facciamo i milioni.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "L'idea di Startup geniale 2: Fantacalcio Statistico.",
+        choices: [
+          { text: "Pagina con statistiche e analisi pazze sul fanta. Fanta-statistico o Soccer-stat. Anticipiamo il futuro.", member: 'SIMO' },
+          { text: "Deve essere professionale, in stile Transfermarkt. FootStats non mi dispiace.", member: 'FILO' },
+          { text: "Serve della Serie A, così lesi come Sarri ci assumerebbero.", member: 'MARCO' },
+          { text: "Millantiamo un programma statistico per farci pagare. Io curo la pagina \"TrattativePlausibili.com\".", member: 'PIETRO' },
+          { text: "Opta Barcaccia.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 6,
+        text: "L'idea di Startup geniale 3: Lucchetti/Catene per Monopattini Elettrici.",
+        choices: [
+          { text: "Produzione di \"catene\" per tenere legati i monopattini fuori dagli edifici per chi va in giacca e cravatta.", member: 'DAVE' },
+          { text: "Ma non si possono attaccare alla sbarra come le bici? Vendiamo prodotti per pulire le ruote sporche di fango.", member: 'PIETRO' },
+          { text: "Marketttata inutile.", member: 'FILO' },
+          { text: "Idea lesa, chi cazzo lo compra.", member: 'SIMO' },
+          { text: "Se vabbè.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Il Cashback di Stato (10% e super premi).",
+        choices: [
+          { text: "Regolamento da hackerare alla Fantascudetto. Bisogna scrivere una guida per boomer IMMEDIATAMENTE.", member: 'PIETRO' },
+          { text: "Se non fosse lo Stato direi che è una truffa.", member: 'DAVE' },
+          { text: "Che porcata.", member: 'SIMO' },
+          { text: "Ci farà svoltare l'economia, si investe tutto.", member: 'FILO' },
+          { text: "Bene bene.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Fater (l'azienda di Simo) e l'Auto Aziendale.",
+        choices: [
+          { text: "Nissan Qashqai nuova, 10 mila km. La benza è pagata anche nei weekend, ci vado in vacanza.", member: 'SIMO' },
+          { text: "Te la boccio, dovevi puntare sullo Stelvio. Risparmi 300 euro al mese! Il bollo costa uguale.", member: 'PIETRO' },
+          { text: "A me il Qashqai non piace, ma molto meglio di quella Opel Astra che faceva vomitare. Io andrei in giro facendomi pagare la benza.", member: 'FILO' },
+          { text: "La macchina aziendale... Devo entrare in Fater. Ho inviato una candidatura.", member: 'DAVE' },
+          { text: "Ti fa passare per quello che ne fa troppa di fatica.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "L'utilizzo di PayPal per ricaricare Plus500.",
+        choices: [
+          { text: "Ma quanto costa farsi PayPal? Non ce l'ho. I soldi li ricarico col bonifico?", member: 'FILO' },
+          { text: "Guarda questi boomer che si passan soldi con l'iban nel 2020. Simo entra nel 2010. Fatti Revolut!", member: 'PIETRO' },
+          { text: "Se li carichi con PayPal è immediata. Paghi l'1% di commissione solo quando ritiri i soldi.", member: 'DAVE' },
+          { text: "Te devi essere uno di quei lesi che usa Satispay per fare il giovane.", member: 'SIMO' },
+          { text: "🤦🏻‍♂️", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Creare un sito web per la \"Barcaccia Sport\" o il Fanta.",
+        choices: [
+          { text: "Usiamo Jimdo, ci vogliono 30 secondi. Ho creato un sito in un'ora pazza del pomeriggio.", member: 'PIETRO' },
+          { text: "Weebly è buono, ho l'app. Voglio un dominio normale senza nomi di merda e che funzioni sul telefono.", member: 'FILO' },
+          { text: "Sono in attesa della password del Fanta.", member: 'SIMO' },
+          { text: "Compreremo azioni della Juve.", member: 'DAVE' },
+          { text: "Ma chi lo apre il sito.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Diventare Consulenti o Broker privati.",
+        choices: [
+          { text: "Io ti do una quota da gestire.", member: 'FILO' },
+          { text: "Facciamo i Big Centesimi. Ho un amico a Milano che fa diversificazione portafogli.", member: 'SIMO' },
+          { text: "Io e Dave ormai siamo due professionisti del settore. Non ha senso gestire un portafoglio di 500 euro.", member: 'PIETRO' },
+          { text: "Ci penso io rega. Voi affidatevi i vostri soldi e andrà tutto bene (non specifico per chi 😏).", member: 'MARCO' },
+          { text: "Io chiedo 1000 euro ai miei e inizio a fare trading serio.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Vendere fuffa e \"Business del secolo\" su YouTube.",
+        choices: [
+          { text: "Proporci agli YouTuber come agganci interni del calciomercato. Rimaniamo nell'ombra, diamo cazzate, loro ci mettono la faccia.", member: 'SIMO' },
+          { text: "Mi aspettavo uno schema Ponzi incredibile. Dobbiamo iniziare a fare dei Musically.", member: 'PIETRO' },
+          { text: "Diamo notizie sempliciotte e scontate e vinciamo la fiducia dei lesi.", member: 'FILO' },
+          { text: "Ahahah.", member: 'DAVE' },
+          { text: "Certo, così facciamo un milione.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Le case a Manhattan.",
+        choices: [
+          { text: "È il momento giusto per comprare case a Manhattan, che fra 3 anni le rivendiamo al quintuplo del prezzo.", member: 'MARCO' },
+          { text: "Qualcuno ha 3 milioni di euro?", member: 'SIMO' },
+          { text: "Marco finto luminare.", member: 'PIETRO' },
+          { text: "Investiamo i soldi di Plus.", member: 'FILO' },
+          { text: "Follia.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Il Bilancio delle Squadre di Calcio.",
+        choices: [
+          { text: "Il Barcellona ha bruciato 363 milioni tra Dembele, Coutinho e Malcom. Hanno dovuto sacrificare Arthur per l'altare delle plusvalenze.", member: 'SIMO' },
+          { text: "Paulinho è un manino contabile, venduto a 45 in Cina a caso. Giro di capitali illeciti. Coutinho gigapacco.", member: 'PIETRO' },
+          { text: "L'errore dell'Atletico Madrid: la Juve paga l'ammortamento di Morata a 10 milioni all'anno. L'investimento peggiore.", member: 'DAVE' },
+          { text: "I costi dei cartellini mandano avanti il calcio.", member: 'FILO' },
+          { text: "Paratici Incompetente.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Come perdere soldi sicuri.",
+        choices: [
+          { text: "Telexfree. Simo ci ha perso la vita e i soldi della causa non li riavrà mai.", member: 'PIETRO' },
+          { text: "Se non avessi messo quei soldi prima non avrei conosciuto voi. Ma ho gli anticorpi, Guzzon svanito nel nulla.", member: 'SIMO' },
+          { text: "Io ho perso 250 euro totali su Plus500 e mi sono fermato.", member: 'DAVE' },
+          { text: "Quel leso... ah quel maledetto leso (Guzzon).", member: 'MARCO' },
+          { text: "Con una scommessa pazza del Medro TG.", member: 'FILO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'calcio_fanta',
+    title: 'IL CALCIO GIOCATO E IL FANTACALCIO',
+    description: 'Fantascudetto, Sarri vs Pirlo, Quote Lesate e Gol Annullati.',
+    questions: [
+      {
+        id: 1,
+        text: "Scegliere la piattaforma per il Fantacalcio della Barcaccia.",
+        choices: [
+          { text: "Ho trovato il modo di fare un fanta senza asta e partire da zero: Superscudetto di Sky! Lega privata, 5 cambi a giornata.", member: 'PIETRO' },
+          { text: "L'avevo proposto io e tu non eri d'accordo! Se non sistemano le regole e le quotazioni entro domenica, buoni amazon.", member: 'DAVE' },
+          { text: "Non ho tempo per FantaSky. Facciamo l'asta una sera, chi vince ha un drink offerto. Semplice.", member: 'FILO' },
+          { text: "Ok andata, ma ci sono 14 trilioni di regole diverse. Ti costringe a fare il mercato all'ultimo.", member: 'SIMO' },
+          { text: "Ok mi sono iscritto, password rubin kebab.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Le regole buggate di Superscudetto Sky.",
+        choices: [
+          { text: "La porcata è che i giocatori cambiano valutazione di 0.4. Se hai un +3 di porta inviolata (clean sheet) è oro.", member: 'DAVE' },
+          { text: "È ingiusto dare dei malus immeritati. Un 40enne che deve accendere il computer non ha tempo di cambiare i giocatori.", member: 'SIMO' },
+          { text: "Se uno sbaglia un rigore nell'anticipo lo puoi togliere! Fillo, son 1 ora max a settimana.", member: 'PIETRO' },
+          { text: "Io giocherò con un buco a centrocampo perché Arthur non ha giocato. E Lirola mi fa quasi buco in difesa.", member: 'MARCO' },
+          { text: "Il format fa schifo.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "La tattica estrema al Fantacalcio di Pietro.",
+        choices: [
+          { text: "La pazienza è la virtù dei forti. Io non cambio il capitano, meglio 7 punti certi che 8-10 possibili. Il primo è un hacker.", member: 'PIETRO' },
+          { text: "Pietro ha rischiato di vincere la giornata. Ma la mossa Kucka capitano è un all in che dimostra i pianeti allineati.", member: 'DAVE' },
+          { text: "Pietro sei tu che porti sfiga, hai tolto Bonucci per Ibra e Bonucci ha segnato. Sculosimo.", member: 'SIMO' },
+          { text: "Hai già vinto Pietro, basta piangere.", member: 'MARCO' },
+          { text: "Il Totonino è meglio.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Giudizio su Maurizio Sarri alla Juve.",
+        choices: [
+          { text: "Sarri è un grande allenatore, ma succube dei giocatori. Alla Juve non è stato seguito. Non ha personalità.", member: 'DAVE' },
+          { text: "C'è un odio verso Sarri che non comprendo. Palese sia un grande allenatore, ma la rosa non era alla sua altezza, troppi vecchi over 32.", member: 'PIETRO' },
+          { text: "È inallenabile. L'hanno esonerato perché stupidi tifosi volevano il bel gioco invece che vincere.", member: 'SIMO' },
+          { text: "La scelta più sbagliata. Traghettatore. Centrocampo inesistente per tutta la stagione, mi strapperei gli occhi.", member: 'FILO' },
+          { text: "Le sue dichiarazioni lese... \"Abbiamo perso al 93' perché volevamo vincere a tutti i costi\".", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "L'arrivo di Andrea Pirlo.",
+        choices: [
+          { text: "Ha preso 107 su 110 al corso. Ma è una vergogna la tesi \"Il calcio che vorrei\", linee troppo generali. Falso 9 Pjaca.", member: 'DAVE' },
+          { text: "Pirlo è un gestore. Penso sia di mentalità più aperta, essendo stato in America. Farà migliorare CR7 nelle punizioni.", member: 'FILO' },
+          { text: "Pirlo è il segnale di un cambio di politica. Ma non prendi uno che non ha mai allenato. Pirlo = Seedorf = Inizio del declino.", member: 'PIETRO' },
+          { text: "Pirlo traghettatore. Un biennale da 1,8 milioni vuol dire che potete mandarlo a fanculo quando volete.", member: 'SIMO' },
+          { text: "Pirlo ❤ De Sciglio ala, non possiamo che perdere.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Il disastro dell'Inter in Europa League e il \"Conte Out\".",
+        choices: [
+          { text: "Se l'Inter non vince l'Europa League prossimo anno potrebbe beccarsi un girone con Real e City. Conte ragiona per dopodomani.", member: 'SIMO' },
+          { text: "L'Inter ha preso a modello la Juve, quindi inizia col perdere le finali europee. Conte è andato via dalla Juve per i capricci.", member: 'PIETRO' },
+          { text: "Godo per i tifosi di merda. L'Inter con che cazzo di difesa gioca? D'Ambrosio Bastoni Kolarov centrali.", member: 'FILO' },
+          { text: "Stagione fallimentare per Conte. 0-0 quotato a 14.50. \"C'è qualcuno che vuole creare problemi all'Inter\".", member: 'DAVE' },
+          { text: "Pazza Inter. Si sono mangiati 3 gol clamorosi.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "I rigori dati alla Juventus (e la regola sui falli di mano).",
+        choices: [
+          { text: "Scandalosi questi rigori. Quello di De Roon si stava proteggendo la faccia, Bastoni va incontro alla palla.", member: 'DAVE' },
+          { text: "Rigore netto. Da questa angolazione è clamoroso, si butta prima. Stupro il primo che sento dire che la Juve ruba.", member: 'SIMO' },
+          { text: "Non può esser rigore. I fantasmi di Oliver. La Juve deve far ricorso.", member: 'PIETRO' },
+          { text: "Palla piena. Non lo danno sennò esplodo. E danno 6 minuti, figli di puttana.", member: 'FILO' },
+          { text: "Non c'erano entrambi i rigori. Aveva attaccato il braccio.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Ciro Immobile vince la Scarpa d'Oro.",
+        choices: [
+          { text: "Signori ora è ufficiale. Ciruzzo scarpa d'oro ❤ Partitona da 7.5.", member: 'MARCO' },
+          { text: "Mi dispiace che Immobile abbia raggiunto Higuain, deve solo ringraziare i rigori.", member: 'DAVE' },
+          { text: "Cirooooo. Non gliene frega un cazzo del titolino personale di CR7.", member: 'PIETRO' },
+          { text: "Se CR7 non segna in contropiede con l'Udinese... Io spero in una goleada di CR7.", member: 'FILO' },
+          { text: "Immobile appena esce dal sistema Lazio fa vedere che è un mezzo giocatore, sbaglia sempre tutto.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "L'uscita della Juve contro il Lione in Champions.",
+        choices: [
+          { text: "Che vergogna sta sconfitta. Pena. Mi peserà tutto il weekend. La Juve poteva fare 4-0 col Lione, solita sfiga europea con rigore inventato.", member: 'FILO' },
+          { text: "Siamo scarsi. Molto scarsi. È finito il ciclo rega, non siamo mai pericolosi. Anno scorso non stavo così male.", member: 'MARCO' },
+          { text: "Abbiamo una squadra di morti. Quando attacchiamo la fascia e rientriamo col passaggio al centro scendo il calendario.", member: 'DAVE' },
+          { text: "Lione culone. Tutto qui. Fa anche rima. Il Lione è una merda roba da EL.", member: 'SIMO' },
+          { text: "Juventini di merda. Io sto godendo.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Il tracollo del Barcellona col Bayern (8-2).",
+        choices: [
+          { text: "Ma che cazzo di partita è 8-2. Nemmeno in FA Cup quando si incontrano City e una squadra di Serie D.", member: 'FILO' },
+          { text: "Il Barça è in crisi nera. Cazzo il Barça è affetto dal morbo Juventus, squadra fatta per accontentare il dio Messi.", member: 'PIETRO' },
+          { text: "Il Barça mentalmente è una squadra di merda. Al 4 a 1 avevano già spento la luce. Coutinho ❤️", member: 'SIMO' },
+          { text: "È di nuovo Germania Brasile? Poverino Messi.", member: 'MARCO' },
+          { text: "Bayern squadra da 92 milioni. Dirigenza TOP.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 11,
+        text: "La griglia di partenza del Campionato (Le Previsioni).",
+        choices: [
+          { text: "Inter, Juve, Atalanta, Napoli, Milan, Roma, Lazio. La Lazio non arriva neanche quarta. Retrocedono Spezia, Crotone, Udinese.", member: 'DAVE' },
+          { text: "Inter, Juve, Napoli, Lazio, Milan, Atalanta, Roma. Con rischio che l'Atalanta ruba il quarto posto. Retrocedono Spezia, Udinese, Benevento.", member: 'PIETRO' },
+          { text: "Juve (vince con 4 giornate d'anticipo 95 punti), Lazio, Atalanta, Inter. Retrocede il Lecce con 32 punti, salvi Genoa e Torino.", member: 'SIMO' },
+          { text: "Juve, Inter, Napoli, Roma, Milan, Atalanta, Lazio. L'Inter è messa meglio secondo me.", member: 'FILO' },
+          { text: "Juve Inter Napoli Atalanta Lazio Milan Roma Cagliari Sassuolo. Crotone Udinese Spezia retrocesse.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Bernardeschi in rovesciata / giocatori flop.",
+        choices: [
+          { text: "Rovesciata di Bernardeschi adesso... su passaggio di tacco di Ronaldo. La Juve sta facendo alcune azioni da PlayStation.", member: 'DAVE' },
+          { text: "Bernardeschi: 5. È scarso e se non è in stato di grazia non può giocare nella Juve. Meglio un Higuain che non cammina.", member: 'FILO' },
+          { text: "Berna rimane sicuro. Se gioca nella Fiorentina sarebbe il più forte.", member: 'SIMO' },
+          { text: "Berna poverino le sta giocando tutte e non mi è sembrato così scadente. Io l'ho rivalutato.", member: 'PIETRO' },
+          { text: "Berna titolare e si vola verso la disfatta ❤.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "La partita saltata Juve-Napoli per ASL.",
+        choices: [
+          { text: "È inaccettabile che il regolamento venga scavalcato da un'ASL sfigata di Napoli. Atteggiamento camorristico. De Laurentiis gode.", member: 'PIETRO' },
+          { text: "Allarmismo napoletano. Hanno dimostrato ancora una volta di essere i più lesi d'Italia.", member: 'FILO' },
+          { text: "Solo AdL può trasgredire delle regole stabilite 2 giorni fa. La ASL ha messo il Napoli in isolamento fiduciario, loro hanno sbagliato tutto.", member: 'DAVE' },
+          { text: "Vanno contro le leggi! C'erano dubbi sul fatto che la Lega potesse esprimersi contro la Juve?", member: 'SIMO' },
+          { text: "Ufficiale??? Come funziona coi voti nel fanta ahahaha?", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "La stagione disastrosa della Ferrari in Formula 1.",
+        choices: [
+          { text: "Ferrari domani -10%. La Ferrari ha fatto un lavorone in fabbrica per peggiorare la macchina. 1 punto a Vettel per la ruotata.", member: 'PIETRO' },
+          { text: "Mamma mia, Binotto ha capito che le gomme più morbide sono le più veloci. La priorità non è tenere Leclerc.", member: 'DAVE' },
+          { text: "La stampa italiana mi fa esplodere. Leclerc fenomeno. Formula 1 in cui il primo doppia il quarto non si può vedere.", member: 'SIMO' },
+          { text: "La Ferrari tornerà a vincere nel 2022 quando cambieranno le regole. Sti due anni faremo cagare pesantemente.", member: 'MARCO' },
+          { text: "Se la Ferrari non compete è giusto che gli altri abbiano il controllo. Io al massimo insulto la Ferrari.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Il gioco del Napoli di Gattuso.",
+        choices: [
+          { text: "Assurdo, Gattuso top raga. Ha vinto la Coppa Italia battendo la Juve. Dries!", member: 'SIMO' },
+          { text: "Gattuso alla fine se la sta cavando da allenatore. Sono contento per Rino, premio simpatia.", member: 'PIETRO' },
+          { text: "Il Napoli è parcheggiato. De Perdentis ha vinto. Pena, schifo, vergogna Juve.", member: 'FILO' },
+          { text: "Il Napoli si è chiuso e la Juve non ha i calciatori per scardinare. Colpa di Sarri che ha finito i cambi.", member: 'DAVE' },
+          { text: "Che noia rega, gattuso figlio di...", member: 'MARCO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'scleri_stadio',
+    title: 'Calcio, Fantascudetto e Scleri da Stadio',
+    description: 'La disperazione per la Juve di Pirlo, l\'odio per le scelte di Conte, i pianti per il Fantacalcio.',
+    questions: [
+      {
+        id: 1,
+        text: "La Juventus sta giocando malissimo e prende l'ennesimo contropiede. Qual è la tua reazione?",
+        choices: [
+          { text: "BENTANCUR NON VOGLIO PIÙ VEDERLO IN CAMPO! Fa solo falli del cazzo da dietro, MA COSA FA!", member: 'FILO' },
+          { text: "Pirlo è un giampaolo. Centrocampo a 2 trasparente, una squadra di merda.", member: 'DAVE' },
+          { text: "Ahahahahah godo, la Juve ha perso il campionato. Se non vince oggi è finita.", member: 'SIMO' },
+          { text: "Siam proprio scarsi. Se quest'anno vinciamo anche solo un trofeo è una conquista immensa.", member: 'MARCO' },
+          { text: "Bel giuoco? Pirlismo. Complimenti a Paratici che ha speso 50 milioni per Chiesa.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Devi fare la formazione su Fantascudetto Sky, ma manca poco all'inizio delle partite.",
+        choices: [
+          { text: "Non l'ho fatta, ho voluto fare il precisino per evitare infortuni nel riscaldamento e mi sono dimenticato.", member: 'DAVE' },
+          { text: "Io non so come ci stiate dietro, io mi sono rotto le palle. È sfinente.", member: 'SIMO' },
+          { text: "Faccio i cambi in base ai poteri, ho lasciato Lukaku in panca per farvi capire.", member: 'PIETRO' },
+          { text: "Io la metto ma non cambio i giocatori dalla terza giornata ahahahah 🤣", member: 'MARCO' },
+          { text: "Mi scoccia. Elimino l'app. Me lo fai te?", member: 'FILO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Eriksen entra al 90' per 3 minuti. Come commenti la mossa di Conte?",
+        choices: [
+          { text: "Lo sta prendendo per il culo. Neanche con Esposito faceva così.", member: 'PIETRO' },
+          { text: "Conte figlio di puttana vero. Mette barella rotto per non mettere lui.", member: 'SIMO' },
+          { text: "Eriksen è un bidone, snob e non vuole neanche imparare l'italiano.", member: 'DAVE' },
+          { text: "Vabe ma è un rabiot, fa schifo.", member: 'FILO' },
+          { text: "Ahahahahahah povero, non l'ha mai fatto giocare in Champions.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Dove guardiamo la partita stasera visto che Sky e DAZN costano una follia?",
+        choices: [
+          { text: "Ho un sito super top, Calcion.net. Senza pubblicità e in italiano, basta cambiare i dns.", member: 'DAVE' },
+          { text: "PapaHD in TV, si vede da dio. A parte lo spam porno continuo.", member: 'FILO' },
+          { text: "Io su MamaHD, ma mi è andato a puttane lo streaming prima del rigore.", member: 'PIETRO' },
+          { text: "Cazzo si è bloccato Calcio.ga, sto esplodendo. Mandatemi un link!", member: 'SIMO' },
+          { text: "Io sto provando a beccarla ma han chiuso tutto qua, non la vedo da un mese.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Hakimi fa una doppietta clamorosa.",
+        choices: [
+          { text: "HAAAAAAAKKIIIIMIIIII! DOPPIETTAAAAA! Ahahahahah DAAAAAVEE IMPARI A STARTI ZITTO!", member: 'SIMO' },
+          { text: "PORCA PUTTANNA Yshsbshdsh. L'ho tenuto 9 partite, lo scarico e fa gol. Marocchino di merda.", member: 'PIETRO' },
+          { text: "L'ho messo capitano Hachraf 🤣🤣 bene bene.", member: 'MARCO' },
+          { text: "Ahahahah, il Karma. Io l'ho cacciato all'ultimo.", member: 'DAVE' },
+          { text: "Porca troia. Simo che scula sempre.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Un ex arbitro commenta in TV un episodio da VAR e dice una palese cazzata.",
+        choices: [
+          { text: "Gli ex arbitri sono dei gigalesi totali.", member: 'FILO' },
+          { text: "È palese la ruberia, partitaccia rubata. Pagliacci.", member: 'SIMO' },
+          { text: "Che pelato leso, da tirargli due schiaffi in diretta.", member: 'DAVE' },
+          { text: "Io non ho parole, Oliver ha un bidone della spazzatura al posto del cuore.", member: 'PIETRO' },
+          { text: "Taci, inventatissimo! Se me lo fischiavano contro esplodevo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Arthur sbaglia un passaggio (forse l'unico della partita).",
+        choices: [
+          { text: "Mamma Arthur... la Juve dovrebbe far reclamo ufficiale.", member: 'PIETRO' },
+          { text: "Arthur non ha ancora fatto niente di che, porta palla in modo strano.", member: 'DAVE' },
+          { text: "È fortissimo, uno dei top 10 mondiali. Voi non capite niente di calcio.", member: 'SIMO' },
+          { text: "Arthur l'unico che da un minimo di equilibrio, se gioca Bentancur è persa.", member: 'FILO' },
+          { text: "Entra Arthur non ti preoccupare, la risolve lui ahahah.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Cristiano Ronaldo viene escluso dai convocati o sostituito in una partita inutile.",
+        choices: [
+          { text: "Non è andato a Benevento per rincorrere i suoi record personali in Champions di cui non frega a nessuno.", member: 'DAVE' },
+          { text: "GODO! GODO! Lo avevo detto io!", member: 'SIMO' },
+          { text: "Povero Morata, sempre a lui tocca tirare la carretta. CR7 pensa a dove andare l'anno prossimo.", member: 'PIETRO' },
+          { text: "Ronny è incazzato nero ahahahaha, svalvola.", member: 'MARCO' },
+          { text: "Per mortificare Dybala che è più fragile di un dodicenne.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "L'Atalanta demolisce l'avversario in Champions.",
+        choices: [
+          { text: "Squadraccia. Io l'Atalanta la sacrificherei per il tricolore.", member: 'MARCO' },
+          { text: "Il gasp ha portato avanti un progetto incredibile. Gomez e Ilicic da cacciare a calci nei denti.", member: 'PIETRO' },
+          { text: "L'Atalanta in 10 che massacra... Vabbè, nuova Borussia Dortmund.", member: 'SIMO' },
+          { text: "Deve vincere la dea, sarebbe una beffa perdere questa.", member: 'FILO' },
+          { text: "L'Atalanta l'anno scorso è stata eliminata dal PSG, in Coppa Italia meglio uscire subito.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Giampaolo fa una mossa tattica incomprensibile (es. difensore centrale al 90').",
+        choices: [
+          { text: "Che disastro di allenatore Giampaolo. Sbaglia sempre le rimonte.", member: 'DAVE' },
+          { text: "Giampaolo primo esonero. Saluta. Fa la collezione.", member: 'SIMO' },
+          { text: "In preda al panico ha messo due centrali. Discepolo del pirlismo.", member: 'PIETRO' },
+          { text: "Voi siete le bimbe di Giampaolo.", member: 'FILO' },
+          { text: "Il Toro fa pena, ma Giampaolo è il top ahahahah.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Zlatan Ibrahimovic fa un'intervista provocatoria.",
+        choices: [
+          { text: "Ibra ha rotto i coglioni. Sempre a parlare cazzo.", member: 'DAVE' },
+          { text: "Idolo. Fa bene se ottiene reazioni del genere.", member: 'PIETRO' },
+          { text: "È Ibra... cosa ti aspetti.", member: 'FILO' },
+          { text: "Piccolo asino ahahahah, mi ha fatto morire.", member: 'SIMO' },
+          { text: "Ahahahahahah pazzesco, rischia di esplodere il mondo con Romelu.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Durante la sosta Nazionali, l'Italia gioca un'amichevole contro l'Estonia.",
+        choices: [
+          { text: "Vergognoso fermare il campionato per queste partite di merda in mezzo alla quarantena. Rischiamo ricadute psicologiche.", member: 'FILO' },
+          { text: "Ma c'è ancora chi guarda le partite della nazionale? (Non io) ho visto solo il risultato.", member: 'SIMO' },
+          { text: "Boicottiamo le nazionali. Stiamo mettendo a rischio la solvibilità dei campionati per un fottuto Italia-Moldavia.", member: 'PIETRO' },
+          { text: "Partita organizzata per far felice Simo.", member: 'DAVE' },
+          { text: "Solo per fare spaccare i giocatori, maledetti.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Il telecronista Rai fa un commento tecnico imbarazzante.",
+        choices: [
+          { text: "La telecronaca della Rai BASTA. Qualcuno spacchi la testa ai cronisti.", member: 'FILO' },
+          { text: "Rimedio è il peggiore. La Rai sfonda le casse con le pubblicità.", member: 'DAVE' },
+          { text: "È una sofferenza la telecronaca Rai quando ti abitui a Caressa e Bergomi.", member: 'PIETRO' },
+          { text: "I telecronisti sono dei gigalesi ahaha, non ci stanno capendo.", member: 'SIMO' },
+          { text: "Ma chi sei Adani? Ahahahahah.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Viene annunciato il recupero di Juve-Napoli.",
+        choices: [
+          { text: "Ci godo. I napoletani hanno imbrogliato e lo sanno, Adl è una merda cazzo.", member: 'DAVE' },
+          { text: "Napoletani di merda nel dubbio, De Perdentis. La giustizia non può essere grigia.", member: 'FILO' },
+          { text: "Il Napoli lo ha fatto per salvaguardare la vostra salute, neanche un grazie.", member: 'PIETRO' },
+          { text: "Partita rubata alla juve e nessuno dice niente. I soliti complotti.", member: 'SIMO' },
+          { text: "Non siamo più la mafia del calcio signori, Napoli e Inter sono le nuove mafie.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Papu Gomez viene venduto a gennaio dopo la rottura con Gasperini.",
+        choices: [
+          { text: "Esclusiva mia, papu alla lazio. Oppure lo vendono a 4 milioni per non pagare lo stipendio.", member: 'PIETRO' },
+          { text: "Magari alla Juve? Sì lo siamo disperati ❤️", member: 'MARCO' },
+          { text: "Papu all inter? Esplosioni. Papu > Eriksen.", member: 'FILO' },
+          { text: "Interessamento dell'inter per la situazione Gomez ----> trasformato dalla Gazzetta in Gomez all'inter. Classica cazzata.", member: 'SIMO' },
+          { text: "Gomez per sostituire Dybala? Come nell'ultimo anno di Allegri.", member: 'DAVE' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'politica_societa',
+    title: 'Politica, Pandemia & Società',
+    description: 'DPCM, elezioni americane, zone rosse, complotti cinesi, e il "Capitano" Salvini.',
+    questions: [
+      {
+        id: 1,
+        text: "Viene annunciata una nuova restrizione e l'Italia passa in zona arancione/rossa.",
+        choices: [
+          { text: "BASTA. Se ci fossi io al governo saremmo al top. Pandemia che uccide over 75 e tutti quanti dobbiamo vivere a metà.", member: 'FILO' },
+          { text: "È giusto. Se lasci zona gialla ti trovi punto e a capo. L'intelligenza del governante sta nel prevenire.", member: 'SIMO' },
+          { text: "Hanno abbassato le soglie completamente a caso. Non riesco più a stare dietro a queste cazzate.", member: 'DAVE' },
+          { text: "Io spero che chiudano tutto. Vi rispediamo in rossa bastardi. Rt a 2.", member: 'PIETRO' },
+          { text: "Io non so che succederà, non sto seguendo molto ahahahaha.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Qual è la tua opinione su Donald Trump?",
+        choices: [
+          { text: "Trump è uno come me. Fa ignoranza e combatte per dei principi senza paura del giudizio.", member: 'FILO' },
+          { text: "Trump è un boomer di quelli proprio boomer. È un caso clinico, un narcisista maligno.", member: 'DAVE' },
+          { text: "Lo ritengo una regressione della civiltà. È vicino a ideali che il popolo dovrebbe aver sorpassato.", member: 'SIMO' },
+          { text: "Trump è per la libertà dei cittadini. Ha cavalcato bene i media, ma il problema sono i cazzo di ignoranti che lo votano.", member: 'PIETRO' },
+          { text: "Usa = paese leso. Dopo tutti gli scandali, Bush, Clinton... sono dei lesi là.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Qualcuno condivide un articolo in cui si insinua che il Covid sia stato manipolato in Cina.",
+        choices: [
+          { text: "I cinesi sono la peggior specie. Cina merda.", member: 'SIMO' },
+          { text: "Non toccarmi i cinesi. Coincidenza per l'appunto.", member: 'MARCO' },
+          { text: "Chinavirus è corretto. Questa gente non capisce niente, leccano il culo alla Cina in continuazione.", member: 'FILO' },
+          { text: "Il vero complotto mondiale non è il covid, è la fottuta titolarità di Bonucci negli anni.", member: 'PIETRO' },
+          { text: "Come hanno fatto i complottisti a non scoprirlo subito grazie alle loro due lauree?", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Come giudichi l'ex premier Giuseppe Conte?",
+        choices: [
+          { text: "Conte di merda. Lo fanno per le poltrone, i grillini stanno lì a fare i viscidi.", member: 'FILO' },
+          { text: "Io sono una bimba di Conte, Renzi non mi farà cambiare.", member: 'MARCO' },
+          { text: "Il governo è in balia dei tecnici che sono totalmente scollegati dalla realtà. Conte non sta capendo niente.", member: 'DAVE' },
+          { text: "Conte venderebbe anche la mamma per un po' di attenzioni. È un avvocatucciolo.", member: 'PIETRO' },
+          { text: "Povero Conte. Io vedo l'entrata sulla scena politica di Filippo come un collante per il futuro.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "E invece cosa pensi di Matteo Renzi che apre la crisi di governo?",
+        choices: [
+          { text: "Renzi è l'eroe di cui abbiamo bisogno ma che non meritiamo.", member: 'SIMO' },
+          { text: "Renzi è una merda. Lo odiano tutti. Però inventa bene.", member: 'FILO' },
+          { text: "Renzi giga leso dell'anno. È già ufficiale al 25/01 👏🏻👏🏻👏🏻.", member: 'MARCO' },
+          { text: "Renzi il solito bufalaro. Complimenti a Renzi per aver bruciato dei milioni grazie all'instabilità.", member: 'DAVE' },
+          { text: "Chiedete scusa a Renzi. È l'eroe che l'Italia non merita, ma quello di cui ha bisogno. Stava portando l'Italia ai vertici europei.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Come viene vista l'ascesa di Mario Draghi?",
+        choices: [
+          { text: "Fiducia totale. Mi sacrificherei nel fuoco se lui lo chiedesse.", member: 'PIETRO' },
+          { text: "Persona stimata da tutti. Spero che abbia un team all'altezza, perché se no è finita.", member: 'FILO' },
+          { text: "Se Draghi mi chiede di assaltare il parlamento, io vado.", member: 'DAVE' },
+          { text: "Voci dicono che Draghi sia Pietro sotto mentite spoglie.", member: 'SIMO' },
+          { text: "Draghi? Spero ci tiri fuori dai casini 🤣🤣", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Parliamo di vaccini: l'Italia è prima in Europa per somministrazioni nella prima settimana.",
+        choices: [
+          { text: "Siamo i secondi migliori in Europa. Pietro chiedi scusa.", member: 'SIMO' },
+          { text: "PRIMI IN EUROPA. È come fare una gara e esser primi dopo 3 giri con le gomme distrutte.", member: 'PIETRO' },
+          { text: "Daje iniettate cazzo. Chissà se già a marzo si vedrà un mini effetto vaccino.", member: 'DAVE' },
+          { text: "Pietro cheerleader del governo. Non avevamo i medici, in 6 mesi li creavo.", member: 'FILO' },
+          { text: "Tanto a fine febbraio saremo gli ultimi. Fine febbraio 2030.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Cosa pensi di Matteo Salvini (\"Il Capitano\")?",
+        choices: [
+          { text: "Il capitano non molla ❤️ Fomentano l'odio contro di lui da anni ma lui resiste.", member: 'FILO' },
+          { text: "Salvini è un urlatore aizza ignoranti. Spara cazzate a raffica.", member: 'DAVE' },
+          { text: "Gia lo fa Salvini peter. È un estremista.", member: 'SIMO' },
+          { text: "Salvini mente di continuo e ha il 25%. I suoi elettori son boomer.", member: 'PIETRO' },
+          { text: "Ma che cazzo dice ahahahah.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Qual è la tua posizione sui no-mask e i negazionisti del virus?",
+        choices: [
+          { text: "Troia schifosa. Vorrei affogarla ❤️", member: 'FILO' },
+          { text: "Ho un piano: sguinzagli qualche positivo in piazza e il gioco è fatto.", member: 'PIETRO' },
+          { text: "Per me sono tutti degli idioti, devo ancora trovare un motivo per non mettere la mascherina.", member: 'DAVE' },
+          { text: "Titi è un no mask. È evidente.", member: 'SIMO' },
+          { text: "Gigalesi cazzo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "E sulla gestione della scuola da parte del Ministro Azzolina?",
+        choices: [
+          { text: "Lei è scema. L'Azzolina via dalla scuola è l'unica cosa buona di questa crisi.", member: 'DAVE' },
+          { text: "NON TOCCATE I BAMBINI. La scuola è sacra, è un investimento importante.", member: 'PIETRO' },
+          { text: "Si fanno lezioni a distanza per non far gravare sui trasporti. O si apre o si chiude.", member: 'SIMO' },
+          { text: "Preferivo la Maria Stella. Sono dei deficienti.", member: 'FILO' },
+          { text: "Azzolina giga lesa.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Il Presidente della Regione Campania, Vincenzo De Luca, fa l'ennesima sfuriata in diretta.",
+        choices: [
+          { text: "De Luca distrugge tutti. È lui il mio duce.", member: 'DAVE' },
+          { text: "Chiedete scusa a De Luca. Un genio, l'unico a combattere il potere del Nord.", member: 'PIETRO' },
+          { text: "De Luca fa ignoranza.", member: 'FILO' },
+          { text: "Trolla. Il potere gli ha dato alla testa, ma era un buon candidato.", member: 'SIMO' },
+          { text: "Il lanciafiamme ahahahah", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Che ne pensi del MES (Meccanismo Europeo di Stabilità)?",
+        choices: [
+          { text: "Non ha senso aprire prestiti se hai cash. Il mes per la sanità è stato concepito per stati in difficoltà.", member: 'DAVE' },
+          { text: "I prestiti mes costano circa come quelli di mercato con lo spread che c’è ora. Ste cose bisogna esserci dentro per saperle.", member: 'FILO' },
+          { text: "Non ha senso il mes. Il btp a 10 anni rende lo +0.5%, una schifezza. Non ha senso far saltare il governo per sta cagata di mes.", member: 'PIETRO' },
+          { text: "Ci sono miliardi di euro per terra, vogliamo raccoglierli grazie? Francia e Germania si finanziano a interessi negativi.", member: 'SIMO' },
+          { text: "Fateli gestire a me questi miliardi.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "L'ASL ti mette in quarantena e poi perde il tuo tampone. Come reagisci?",
+        choices: [
+          { text: "Sono dei deficienti non smetterò mai di dirlo. Schifosi di merda. Parassiti. Qua c'è da chiamare la polizia.", member: 'FILO' },
+          { text: "Dopo 13 minuti mi hanno chiuso il telefono in faccia. ADESSO VADO LÀ, GLI SPUTO NELLA BOCCA E LI INFETTO TUTTI.", member: 'SIMO' },
+          { text: "Io chiamo lo 0544 286854. Ma è perennemente occupato... Da dopodomani esco, fregacazzo.", member: 'MARCO' },
+          { text: "Dopo tanti anni di stipendi rubati gli uffici igiene hanno un compito e ovviamente lo fanno male.", member: 'DAVE' },
+          { text: "Se non ho sintomi io me ne sbatterei. Giro con la mascherina e bona.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Notizia: \"Manifestanti Pro-Trump assaltano Capitol Hill a Washington\".",
+        choices: [
+          { text: "Il Campidoglio è il palazzo politico più importante del paese. C'è stata una sparatoria. Assurdo negli USA.", member: 'SIMO' },
+          { text: "CHISSENE FREGA. In un paese normale sarebbe qualcosa di clamoroso. MA STAI PARLANDO DEGLI USA. Normale per gli usa.", member: 'MARCO' },
+          { text: "Se avessero fatto fuori tutti i manifestanti avrei fatto un applauso a trump. Sono dei subumani.", member: 'PIETRO' },
+          { text: "A mezzanotte scatta il coprifuoco a Washington... Tengo la diretta su la7 per non perdermi le manganellate.", member: 'DAVE' },
+          { text: "Sei tu il normalone di destra Pietro. Trump è uno come me.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Elezioni Americane: a chi diamo la colpa se Trump perde?",
+        choices: [
+          { text: "Ci sono dei brogli in corso. 300mila schede perse in Florida. E i media fanno schifo.", member: 'FILO' },
+          { text: "Un ringraziamento a Black Lives Matter che ha portato quei migliaia di voti decisivi in più. Biden pagherà.", member: 'DAVE' },
+          { text: "Trump la vince al riconteggio. Se vince Biden è un casino per noi. L'ha sfottuto anche l'Iran.", member: 'PIETRO' },
+          { text: "L'econometria non sbaglia mai. Biden ha vinto. I sondaggi in USA sono inutili, change my mind.", member: 'SIMO' },
+          { text: "Hanno ucciso Trump o Biden? Che gigalesi cazzo.", member: 'MARCO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'tecnologia_soldi',
+    title: 'Tecnologia, Soldi e "Riccanza"',
+    description: 'Cinesoni vs iPhone, lo stipendio, il Cashback, i finti guru del web.',
+    questions: [
+      {
+        id: 1,
+        text: "Qual è il tuo parere sui telefoni cinesi (Xiaomi, Huawei, Oppo)?",
+        choices: [
+          { text: "Fillo abituato ad apple pensava che quello fosse il prezzo di solo mouse. Prendi lo Xiaomi Mi 10 e mi ringrazierai. Piscia in testa all'iphone alla metà del prezzo.", member: 'PIETRO' },
+          { text: "Raga io ho comprato un cinesone l'anno fa, pagato 100 euro e va da dio. Non spenderò mai più di 199 euro per un telefono.", member: 'DAVE' },
+          { text: "Cina e corea a me non cambia un cazzo, telefono cinese ha un significato ben preciso: telefono di merda marcio.", member: 'FILO' },
+          { text: "L'modificato io oggi il redmi ahahahah. 185 euro. 😍😍😍al🔝del🔝", member: 'MARCO' },
+          { text: "Ho un hwawei p20 aziendale. Il fatto che apple e samsung durino meno di 2 anni è una favola che si racconta chi compra le cinesate.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "E per quanto riguarda i prodotti Apple?",
+        choices: [
+          { text: "Ho un xs Max Da 256 gb. Telefono top. Iphone è così. La mia salute mentale vale più di pochi spicci.", member: 'FILO' },
+          { text: "Offertona iphone: 470 euro per un cellulare con 2 pollici occupati dal bordo. Sui cell son sicuro che apple truffi la gente.", member: 'PIETRO' },
+          { text: "L'8 della apple dopo 2/3 anni è vecchio marcio. Non vedo cellulari da 32 giga da 2 anni.", member: 'SIMO' },
+          { text: "Apple è quella che aggiorna più a lungo. Ho l'iPad e il Mac M1 😍.", member: 'DAVE' },
+          { text: "Troppi soldi ahahahahaha, io non ci spendo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Il Governo vara il \"Cashback di Stato\". Cosa ne pensi?",
+        choices: [
+          { text: "È una merda. 300 euro a semestre è uno schifo. Si combatte per 100€ ragazzi. È una porcata.", member: 'FILO' },
+          { text: "Non so te ma io uso sempre la carta. Mi stanno regalando soldi. I 5 stelle stanno per lasciare una voragine nei conti ❤️ ma approfittiamone.", member: 'SIMO' },
+          { text: "È mirato, l'italia è tra i paesi che usano meno le carte. Serve la scossa. Puoi anche comprarti i buoni Amazon nei negozi per aggirare il limite.", member: 'PIETRO' },
+          { text: "Ridare il 10% per gli acquisti all'Unieuro è un nuovo bonus monopattino.", member: 'DAVE' },
+          { text: "Ma non paga quasi niente Amazon, dateci i nostri miliardi.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "L'azienda ti manda dai clienti. Quanto fatturi?",
+        choices: [
+          { text: "Io vendo prodotti per 11,5 milioni di euro l'anno alla Fater. Solo premi al raggiungimento di obiettivi. Se cestino 50k butto il 5% del guadagno.", member: 'SIMO' },
+          { text: "Simo senza sapere né leggere né scrivere vende meglio di Paratici. 14 milioni ahahah.", member: 'DAVE' },
+          { text: "Hai il budget escort e coca per i clienti? O FATTURAT! Una strigliata e passa la paura.", member: 'PIETRO' },
+          { text: "Ma sei scemo allora. Simo non sa niente e vende per 14 milioni. Simo devi pagarci lo stipendio.", member: 'FILO' },
+          { text: "Hai fatto licenziare un megaboss ❤️ Al top del top.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Qualcuno nomina Big Luca, Montemagno o altri \"fuffaguru\" del web.",
+        choices: [
+          { text: "È un fuffaro. Le sue aziende sono tutte in perdita, si mantiene solo grazie ai suoi corsi.", member: 'PIETRO' },
+          { text: "Markettari in pieno stile guzzon. Gente così non ha diritto di vivere.", member: 'FILO' },
+          { text: "Guzzon era andato a un suo seminario sul marketing. Io faccio un corso di 3 ore e imparo a usare i fogli google ahahah.", member: 'DAVE' },
+          { text: "Sono dei geni. Questa ci starebbe bene in una nostra pagina facebook 'lesità totali'.", member: 'SIMO' },
+          { text: "Che soggetti... ahahahahaha.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Devi comprare un computer nuovo, spazio archiviazione: 256GB o 512GB?",
+        choices: [
+          { text: "Mi scoccia regalare soldi ad apple con abbonamenti cloud. Prendo 512, 1€ a gb è troppo ma lo faccio. Logic pro x occupa un centinaio di giga.", member: 'FILO' },
+          { text: "Non vedo come possano finire 256 giga nei prossimi 3 anni. Il cloud costa poco e ti tieni la flessibilità.", member: 'SIMO' },
+          { text: "Fai una cosa, compra bitcoin con quei 1500 euro, arrivi a 2000 e vendi tutto. E ti prendi la versione da 500.", member: 'PIETRO' },
+          { text: "La riccanza. Se scarichi gran filmoni prendi 500.", member: 'DAVE' },
+          { text: "Se ha solo 16 giga esplodo, redmi note 8 pro a 185€ da expert.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Ti propongono di creare una start-up per fare concorrenza ad Amazon.",
+        choices: [
+          { text: "Ho un'idea: un sito per fare concorrenza ad amazon. Obiettivo: cancellare amazon dall’Italia. Se offri un'esperienza fuori dal comune la gente lo usa.", member: 'FILO' },
+          { text: "Non potrà esistere mai un ecommerce superiore ad amazon. Hanno una logistica folle, solo il teletrasporto potrà cambiare le cose. Idea pazza: collegare un drone al tuo account.", member: 'PIETRO' },
+          { text: "Un amazon con un'esperienza d'acquisto più difficoltosa. Geniale.", member: 'DAVE' },
+          { text: "Ma non ha senso. È come se tu facessi pagare più tasse a uno che non è in cassa integrazione.", member: 'SIMO' },
+          { text: "Se avessi la certezza che migliori l'economia italiana lo farei. Sogno di vedere l'Italia volare.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Notizia: \"Amazon si prenderà i diritti della Serie A\". Quanto costerà?",
+        choices: [
+          { text: "Fanno 15/20 euro per il pacchetto calcio da pagare a parte. Dazn costa 10 euro al mese e ha 3 partite.", member: 'DAVE' },
+          { text: "Secondo me stanno nei 12 euro. Come netflix che ti da 5 account con 16 euro. Se fai pagare 20 al mese è un bordello.", member: 'SIMO' },
+          { text: "Io spero alzino il prezzo tenendolo comunque contenuto. Avrei l’obiettivo di un monopolio in testa.", member: 'FILO' },
+          { text: "Se lo portano a 60 per il calcio la gente esplode. 4,99 prime solo pacchi per i lesi. E 14,99 il pacchetto totale. Devi rendere il servizio base costoso.", member: 'PIETRO' },
+          { text: "Se sky perde tutte le partite sono finiti, già disdicono tutti comunque... Bah.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Cosa pensi del nuovo \"Smartworking\" o telelavoro?",
+        choices: [
+          { text: "Mio cuggino ha iniziato a lavorare per Deloitte e ha fatto solo un mese di ufficio. 1500 euro al mese facili.", member: 'DAVE' },
+          { text: "Ipotesi al vaglio: far pagare più tasse alle categorie che hanno potuto lavorare. Si parla anche di tassa sullo smart working.", member: 'PIETRO' },
+          { text: "Fater fallisce con questa mossa. Tutti a casa e nessuno vende un cazzo.", member: 'FILO' },
+          { text: "Consulenza è massacrante come ritmi, fidati che non si diverte a casa.", member: 'SIMO' },
+          { text: "Io sono tornato a sgobbare in ufficio ahahahaha.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Tasse, evasione e fatture in nero.",
+        choices: [
+          { text: "Comune che incassa di più dall'evasione fiscale: San Giovanni in Persiceto. Pietro ti ho trovato lavoro.", member: 'SIMO' },
+          { text: "Si chiama fattura promozionale ed è una mega porcata. Anche chiamata fattura per evadere.", member: 'PIETRO' },
+          { text: "La Cina fa dumping fiscale. Dobbiamo vendere l'Italia alla Germania per 600 miliardi.", member: 'DAVE' },
+          { text: "Io devo aprire la partita iva (a regime forfettario) e pago 1000€ ogni 3 mesi per l’inps. Una merda.", member: 'FILO' },
+          { text: "Basta pagare le tasse a questi gigalesi.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Investimenti finanziari (Borsa, Bitcoin, Trading).",
+        choices: [
+          { text: "Tutti a comprare le quote di blackrock. Io sono un visionario, compriamo sabbia ora che finisce.", member: 'SIMO' },
+          { text: "Domani si comprano gli indici italiani. Buy the dip. I miners di bitcoin inquinano più di intere nazioni.", member: 'PIETRO' },
+          { text: "Non so quanto sono diventato ricco con tutte le giocate live che ho fatto sulle partite. Il killer del bet.", member: 'MARCO' },
+          { text: "Ma Avatrade è un buon broker? Abs me l'ha consigliato.", member: 'FILO' },
+          { text: "FTSE MIB ai livelli di aprile maggio. Lo straordinario successo in borsa di GameStop grazie a Reddit.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Quale di queste auto è il futuro?",
+        choices: [
+          { text: "Tesla è sborona. Ci sono salito ed è uno spettacolo.", member: 'MARCO' },
+          { text: "Io alzo la tassa sui diesel vecchi, bisogna spingere la gente a cambiare auto ogni 10 anni.", member: 'DAVE' },
+          { text: "Ma che cazzata. Se ricarichi la Tesla con energia prodotta dal petrolio non ha senso. Tra 20 anni si venderanno ancora macchine a diesel.", member: 'PIETRO' },
+          { text: "Non sono molto esperto del settore auto, ma se smaltire le batterie inquina più del carburante non ha senso.", member: 'SIMO' },
+          { text: "Basta rompere i coglioni con queste auto elettriche. Meglio l'ignoranza.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Come giudichi LinkedIn e le HR (Risorse Umane)?",
+        choices: [
+          { text: "È una rete di lesi che si fanno i pompini a vicenda. Se uno mi aspetta 1 ora per un colloquio, io HR lo mando via.", member: 'FILO' },
+          { text: "I recruiter sono i nuovi boomer. Condividono cazzate pazzesche con frasi motivazionali.", member: 'DAVE' },
+          { text: "C'è la tizia che si lamenta dei fischi per strada. Se io le scrivo mi denuncia. Fiera dei radical chic.", member: 'PIETRO' },
+          { text: "Io ho trovato aziende grandissime a cui mandare il CV. Ma è vero, certi post fanno rabbrividire.", member: 'SIMO' },
+          { text: "Mai vista sta roba, non lo uso molto.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Quanto si spende per mangiare bene e bere?",
+        choices: [
+          { text: "Il top è la mortadella. Non spendo più di 5 euro.", member: 'DAVE' },
+          { text: "Con 300€ ti faccio un pacco pazzo, un grana e 4 vini top. Io mi sono fatto 2 spritz e prosciutto di Parma (quello vero da 30€ al chilo).", member: 'FILO' },
+          { text: "Fater mi regala 300 euro di roba a Natale. Salame e pizzette, top. Aperitivo offerto in hotel!", member: 'SIMO' },
+          { text: "Mangiare una piada alle vongole a Rimini. Riccanza. Il kebabbaro in piazza Verdi è il mio ristorante.", member: 'PIETRO' },
+          { text: "Io mi ubriaco e basta 🤣🤣", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Scegli una startup geniale tra queste proposte dal gruppo:",
+        choices: [
+          { text: "App per fare la spesa in 3D in un centro commerciale virtuale. Obbiettivo: distruggere Amazon.", member: 'FILO' },
+          { text: "App del Fantavirus / Fantamorto con i politici e i personaggi famosi che prendono il Covid.", member: 'PIETRO' },
+          { text: "Start up per montare POS e spiegare ai vecchi la lotteria degli scontrini rubando commissioni.", member: 'DAVE' },
+          { text: "Elettronica commestibile. Dobbiamo buttarci in quel business. Etichette digitali sulla carne.", member: 'SIMO' },
+          { text: "Social network nuovo per giovani con grafica accattivante che ti permetta di fare screenshot liberi.", member: 'MARCO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'filosofia_vita',
+    title: 'Filosofia di Vita, Scontri & "Lesità"',
+    description: 'Le liti epiche del gruppo, le assegnazioni del premio "Gigaleso dell\'anno".',
+    questions: [
+      {
+        id: 1,
+        text: "Qualcuno esprime un'opinione politica con cui sei in totale disaccordo. Come rispondi?",
+        choices: [
+          { text: "Sei un gigaleso ignorante. Parli di cose che non sai. BASTA MEDRO FAI SILENZIO. Le tue sono INVENZIONI.", member: 'FILO' },
+          { text: "Se x sta a y allora tu = teraleso. Questa è la dura e cruda realtà dei fatti, se vuoi puoi raccontartela.", member: 'SIMO' },
+          { text: "Ma sei serio? Io ti faccio un'analisi veloce e ti distruggo. Sei la cheerleader di Salvini.", member: 'PIETRO' },
+          { text: "Questa conversazione mi sta facendo esplodere, siete dei complottisti ahahah.", member: 'DAVE' },
+          { text: "Non mi metto in mezzo, qua si rischia di esplodere il mondo 🤣🤣", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Arriva il momento di assegnare il Premio \"Gigaleso dell'Anno\". Chi voti?",
+        choices: [
+          { text: "Pietro premio polemica dell’anno. Batte anche Jerry. Pietro si conferma gigaleso del mese, non capisce nulla.", member: 'FILO' },
+          { text: "Il vincitore già c'è ma non sa ancora di esserlo. Filo è il prototipo definitivo del leso.", member: 'SIMO' },
+          { text: "Vincitore Fontana. Fontana giga leso del 2020🏆", member: 'MARCO' },
+          { text: "Abs caso eclatante. Oppure Dave che fa il fenomeno e poi perde tutto su Fantascudetto.", member: 'DAVE' },
+          { text: "Io propongo 10 candidature. Filo sui brogli USA, Marco complottista, Simo e la vicenda Eriksen. Ma il vero leso è chi vota Lega.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Cos'è il \"Medro TG\"?",
+        choices: [
+          { text: "È un brand di qualità indiscussa. Annuncia i colpi di mercato (mai azzeccati) in esclusiva.", member: 'SIMO' },
+          { text: "Il terzo medro. Fake news certificate. Sparate cazzate da 3 anni.", member: 'FILO' },
+          { text: "Io sto ancora aspettando le scuse del medro tg sul trasferimento di Piatek.", member: 'PIETRO' },
+          { text: "Ahahahahah, il Medro TG annuncia Alaba al Real e Piatek alla Juve.", member: 'DAVE' },
+          { text: "Le spara più grosse di Tuttosport.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Cosa significa la parola \"Sciolto\"?",
+        choices: [
+          { text: "Termine da simmenthal arata. Consiglio di non utilizzarlo in futuro.", member: 'FILO' },
+          { text: "Pietro è più sciolto di un ghiacciolo sul cemento al sole in una giornata d’estate da 4 ore a 55 gradi effettivi.", member: 'SIMO' },
+          { text: "Significa che ti ho appena distrutto in un dibattito politico e non sai cosa rispondere.", member: 'PIETRO' },
+          { text: "Nuovo adoroh? Parola dell'anno?", member: 'DAVE' },
+          { text: "Siete tutti sciolti ahahahah.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Qualcuno manda un lunghissimo audio di 3 minuti. Cosa fai?",
+        choices: [
+          { text: "Ho ascoltato 20 secondi, sono a posto grazie.", member: 'FILO' },
+          { text: "Ma non potevi scriverlo? Non lo apro neanche.", member: 'DAVE' },
+          { text: "Ti rispondo con un audio di 5 minuti per smontare ogni tua singola parola.", member: 'PIETRO' },
+          { text: "Ho fatto un audio di 2 minuti ma non mi veniva un termine e l'ho cancellato. Adesso lo rifaccio.", member: 'SIMO' },
+          { text: "Ahahahahaha ho sentito solo bestemmie alla fine.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Qual è la tua arma segreta durante una discussione accesa sul gruppo di WhatsApp?",
+        choices: [
+          { text: "Scrivere in CAP LOCK senza dare spiegazioni. BASTA BASTA BASTA.", member: 'FILO' },
+          { text: "Il piantino. Piango, gufo, mi lamento della sfortuna e poi alla fine vinco io (sculomedro).", member: 'SIMO' },
+          { text: "Il benaltrismo e lo screenshot di un articolo di giornale preso a caso.", member: 'PIETRO' },
+          { text: "Tirare in ballo le statistiche. L'ho cercato su internet e i numeri dicono che ho ragione io.", member: 'DAVE' },
+          { text: "L'assenza. Leggo tutto dopo 3 ore e rispondo con l'emoji del gufo 🦉 o la faccina rassegnata 🤦‍♂️.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Uno di voi ha appena mandato uno sticker/meme offensivo su un altro membro del gruppo.",
+        choices: [
+          { text: "Cheerleader di Simo. Ridete sempre alle sue battute lese.", member: 'FILO' },
+          { text: "Ahahhahahaha. Lo salvo subito, nuovo sticker definitivo. Aggiunto alla collezione.", member: 'SIMO' },
+          { text: "Dai è un fotomontaggio fatto male. Io ho il meme di te che fai il pagliaccio.", member: 'PIETRO' },
+          { text: "Dave teen. Foto pvt mandate a Simo per sbaglio ahahah.", member: 'DAVE' },
+          { text: "Poesia 😍. Le facce lese sono la mia passione.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Che rapporto hai con le \"contraddizioni\"?",
+        choices: [
+          { text: "Te le faccio notare con un dito puntato. CONTRADDIZIONE! Hai detto l'opposto 3 mesi fa, ho le prove.", member: 'FILO' },
+          { text: "Io non mi contraddico, il mio pensiero evolve con i fatti. Siete voi che siete rimasti all'età della pietra.", member: 'SIMO' },
+          { text: "Pietro è la contraddizione vivente. Odia la Juve ma tifa per loro, odia Trump ma lo invidia.", member: 'DAVE' },
+          { text: "Non sono contraddizioni, sono provocazioni. Lo faccio apposta per fare l'avvocato del diavolo e farvi esplodere.", member: 'PIETRO' },
+          { text: "AHAHAH ti sei appena smentito da solo!", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Quale di questi insulti utilizzi più frequentemente?",
+        choices: [
+          { text: "Teraleso, gigaleso, ignorantone, capra.", member: 'FILO' },
+          { text: "Mongoloide, pezzente, cerebroleso.", member: 'SIMO' },
+          { text: "Radical chic, boomer, ritardato.", member: 'PIETRO' },
+          { text: "Cesso, pippa, bufalaro.", member: 'DAVE' },
+          { text: "Giga leso, pagliaccio.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Qualcuno ti accusa di non capire niente di calcio. Come rispondi?",
+        choices: [
+          { text: "Io conosco la mia squadra. L'ho previsto mesi fa. Ho una connessione superiore con l'Inter.", member: 'SIMO' },
+          { text: "Io ne capisco molto di più di te, seguo la tattica e non solo i gol.", member: 'DAVE' },
+          { text: "Povero illuso. Le mie pagelle e i miei pronostici parlano chiaro. Chi vince ha ragione.", member: 'PIETRO' },
+          { text: "Ma se non hai mai toccato un pallone! Io sono un giocatore, tu sei solo un teorico.", member: 'FILO' },
+          { text: "Io manco la guardo la partita, scommetto e vinco i soldi. Killer del bet.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Come descriveresti \"La Barcaccia\"?",
+        choices: [
+          { text: "È un equilibratore sociale. Gente come Filo e Pietro riescono a convivere. Nemmeno nel più impensabile dei governi si potrebbe fare ciò.", member: 'SIMO' },
+          { text: "Uno dei gruppi che più hanno disincentivato la mia voglia di fare. Siete una manica di comunisti.", member: 'FILO' },
+          { text: "Il gruppo dei miracoli, dove le fake news diventano verità inconfutabili.", member: 'PIETRO' },
+          { text: "Il posto in cui un 0-0 del Milan porta più messaggi di un attentato terroristico.", member: 'DAVE' },
+          { text: "Un manicomio ahahahahahah.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Qual è la tua scusa quando perdi al Fantacalcio o al Fantascudetto?",
+        choices: [
+          { text: "Sfiga pazzesca. I miei si spaccano sempre. Ho 8 infortunati, mi annullano i gol al VAR.", member: 'SIMO' },
+          { text: "L'app faceva schifo. Non potevo fare i cambi. E l'arbitro ha regalato rigori.", member: 'FILO' },
+          { text: "Mi sono dimenticato di fare la formazione perché stavo aiutando mio padre / facendo la spesa.", member: 'DAVE' },
+          { text: "Ho voluto fare un cambio ragionato (es. togliere Gosens) per essere superiore, e mi ha punito.", member: 'PIETRO' },
+          { text: "Non l'ho neanche aperta l'app, ho autocompletato. E vi batto lo stesso.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Come affronti un dibattito politico in chat?",
+        choices: [
+          { text: "Incollo l'articolo del Fatto Quotidiano, dico 'Svegliati' e smonto la tua teoria fascista/sovranista.", member: 'PIETRO' },
+          { text: "Ascolto 5 secondi dell'audio, capisco che dici cazzate, rispondo 'BASTA', cito il Capitano e chiudo il discorso.", member: 'FILO' },
+          { text: "Analizzo la cosa da leader di una nazione. La democrazia ha fallito, propongo una soluzione pragmatica ed economicamente ineccepibile.", member: 'SIMO' },
+          { text: "Dico che sono tutti buffoni e che serve un governo tecnico. O una dittatura illuminata.", member: 'DAVE' },
+          { text: "Metto la spunta dell'ironia e guardo voi che vi scannate per tre ore.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Pietro se ne esce con un \"pagellone\" calcistico dove dà 3 alla Lazio e 8 alla Roma. Reazione?",
+        choices: [
+          { text: "Pietro provocatore. Cerca solo di far innervosire Filo e di pararsi il culo.", member: 'SIMO' },
+          { text: "Ma che voti dai? Non ha senso, stai svalutando tutto il campionato per il tuo astio.", member: 'DAVE' },
+          { text: "Pietro è il solito ignorante, i suoi pagelloni fanno pietà.", member: 'FILO' },
+          { text: "È la dura e cruda realtà dei fatti, se non lo capite siete calcisticamente limitati.", member: 'PIETRO' },
+          { text: "Ahahahahah poesia. La Lazio è una squadraccia.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Filippo lancia un insulto pesante in Caps Lock (es. \"IDIOTI DI MERDA STATE ZITTI\").",
+        choices: [
+          { text: "Fillo non stai bene, questo lockdown ti ha distrutto da dentro. Siamo i tuoi psicoterapeuti.", member: 'PIETRO' },
+          { text: "Ahahaha è arrivata la sfuriata quotidiana. Manca l'audio in cui urla.", member: 'SIMO' },
+          { text: "Mi fai morire quando fai così ❤️.", member: 'MARCO' },
+          { text: "È esploso. Ormai è andato. È triggeratissimo.", member: 'DAVE' },
+          { text: "Era rivolto ai napoletani o all'arbitro, me lo merito io di offendere. Voi fate i professori del cazzo.", member: 'FILO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'reazioni_assurde',
+    title: 'Reazioni agli Imprevisti e Situazioni Assurde',
+    description: 'Multe, chiamate alle ASL, incontri ravvicinati con ex-compagni di scuola.',
+    questions: [
+      {
+        id: 1,
+        text: "Prendi una multa per sosta vietata sulle strisce blu. Cosa fai il giorno dopo?",
+        choices: [
+          { text: "Pago la multa entro 5 giorni per lo sconto e bestemmio. Una volta mi han fatto 220 euro sulla spiaggia per la moto e non c'era sconto!", member: 'SIMO' },
+          { text: "Non pago il parcheggio e spero di non prendere la seconda. Se non la prendo ho matematicamente vinto e risparmiato.", member: 'FILO' },
+          { text: "Ti sta bene. Chi gira in macchina in centro merita di essere bastonato.", member: 'PIETRO' },
+          { text: "Fai ricorso dicendo che il cartello era sbiadito o parcheggia fuori Milano e usa la metro, barbone.", member: 'DAVE' },
+          { text: "Pago il parcheggio e taccio, così imparo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "L'app \"Calcio.ga\" per lo streaming illegale si blocca proprio durante il derby.",
+        choices: [
+          { text: "Sto esplodendo! DAVE MANDAMI UN LINK SUBITO! NON SI VEDE UN CAZZO!", member: 'SIMO' },
+          { text: "Usa Opera col VPN e cambia i DNS in 8.8.8.8. Le basi.", member: 'PIETRO' },
+          { text: "Ma pagatevi l'abbonamento pezzenti. Io la sto guardando in 4K sul 501 della Rai.", member: 'DAVE' },
+          { text: "Papahd tutta la vita. Peccato per lo spam porno continuo ai lati.", member: 'FILO' },
+          { text: "Io sto guardando i risultati su Diretta.it e godo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "L'ASL ti mette in quarantena e dopo 10 giorni non ti dà ancora l'esito del tampone.",
+        choices: [
+          { text: "Sono dei deficienti, parassiti. Esco di casa lo stesso, mica posso stare chiuso per dei ritardati.", member: 'FILO' },
+          { text: "Chiamo l'Igiene Pubblica, sto 13 minuti in attesa, mi chiudono il telefono in faccia e io giuro di andare là a sputargli in bocca per infettarli.", member: 'SIMO' },
+          { text: "Fai prima a chiamare l'ASL di Napoli, lì ti fanno la giustificazione per saltare pure la partita di Champions.", member: 'DAVE' },
+          { text: "Io chiamo lo 0544 286854 ma è perennemente occupato perché hanno la cornetta alzata. Ahahahahah.", member: 'MARCO' },
+          { text: "Se non ho sintomi me ne sbatto il cazzo e vado a fare la spesa con la mascherina ffp2.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Vedi per caso \"O' Meccanic\" (vostro vecchio e assurdo conoscente) in piazza.",
+        choices: [
+          { text: "AHAHAHAH l'ho riconosciuto perché era l'unico senza mascherina. Non ho fatto la foto perché stava parlando con un ragazzo.", member: 'SIMO' },
+          { text: "Fai una foto medro! Armati di coraggio, non è illegale. Sei una vergogna.", member: 'FILO' },
+          { text: "Denunciatelo subito all'ASL. Tra l'altro mi dicono faccia l'insegnante, roba da farsi licenziare.", member: 'PIETRO' },
+          { text: "O' Pirett. Certo che a Ravenna avete della fauna locale interessante.", member: 'DAVE' },
+          { text: "Sarebbe stato molto più eroico se stesse limonando una studentessa.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Su Fantascudetto Sky, il tuo miglior giocatore esce infortunato al 15' minuto.",
+        choices: [
+          { text: "MALEDIZIONEEEEEEEEEEEE! BASTAAAAAA! Avevo lui capitano! Partita truccata!", member: 'SIMO' },
+          { text: "Ho appena perso 20 milioni e il primo posto. Spero che la squadra avversaria prenda 4 gol così si pareggia il conto.", member: 'PIETRO' },
+          { text: "Poco male, ho fatto il cambio intelligente all'ultimo minuto inserendo una scommessa pazza che mi farà vincere.", member: 'DAVE' },
+          { text: "AHAHAHAH GODO, Simo sta piangendo sangue e io lo supero in classifica senza manco aprire l'app.", member: 'MARCO' },
+          { text: "Il fanta è 40% culo. Se devi esplodere fallo in silenzio.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Un pilota di Formula 1 (es. Grosjean) fa un incidente clamoroso e la macchina si spezza in due tra le fiamme.",
+        choices: [
+          { text: "La cosa più incredibile che abbia mai visto in 20 anni di F1. Sono scioccato, l'ha rotta a metà!", member: 'PIETRO' },
+          { text: "Si è salvato per miracolo grazie all'Halo. Pazzesco.", member: 'DAVE' },
+          { text: "Ho visto solo i 10 secondi in cui esplode. Poi mi sono disconnesso perché tanto tifavo per Perez al fanta.", member: 'SIMO' },
+          { text: "Mamma mia che botto... io mi stavo quasi addormentando prima.", member: 'MARCO' },
+          { text: "Non me ne frega un cazzo della F1, è uno sport da noiosi, guardo solo la partenza poi stacco.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Ti rubano la password dell'ID Apple da un IP cinese.",
+        choices: [
+          { text: "I cinesi ci stanno hackerando. Abs ci spia da Bangkok. Sto impazzendo, ho dovuto resettare tutto!", member: 'FILO' },
+          { text: "Ahahahahah è colpa dei siti porno o dei cinesoni che usi, caro mio.", member: 'PIETRO' },
+          { text: "Filo i cinesi ti perseguitano perché sei pro-Trump, devi passare a Biden.", member: 'SIMO' },
+          { text: "Attacco hacker dalla Golden Palace. Te l'avevamo detto di usare l'autenticazione a due fattori.", member: 'DAVE' },
+          { text: "🤣🤣🤣 Povero Filo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Devi portare un PC da un cliente importante (es. per ordini milionari). Cosa scegli?",
+        choices: [
+          { text: "Ho un Macbook Air M1 nuovo fiammante, la riccanza. Faccio un figurone.", member: 'FILO' },
+          { text: "Porto un PC aziendale normalissimo. Meglio sembrare poveri per non far capire che guadagni tanto su di loro.", member: 'SIMO' },
+          { text: "Un cinesone tipo Teclast o Xiaomi da 200 euro, piscia in testa all'iPad alla metà del prezzo.", member: 'PIETRO' },
+          { text: "Basta che apra Excel senza laggare, va bene anche un Acer del paleolitico.", member: 'DAVE' },
+          { text: "L'importante è che ci possa guardare le partite di straforo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Il Governo impone la zona rossa a Natale e chiude tutto.",
+        choices: [
+          { text: "Giusto così. Se la gente non sa comportarsi, chiudiamo il palazzo. E poi ci sono io che bevo spritz a casa.", member: 'SIMO' },
+          { text: "Una dittatura sanitaria! Non puoi chiudere bar e ristoranti, hanno i fatturati azzerati. È la fine delle libertà.", member: 'FILO' },
+          { text: "Fanno bene. Anzi, dovrebbero sparare a chi esce senza mascherina. Io me ne sto a casa a fare i miliardi coi Bitcoin.", member: 'PIETRO' },
+          { text: "Non ha senso chiudere tutto il paese se solo due regioni sono messe male, bastava isolare i comuni a rischio.", member: 'DAVE' },
+          { text: "Beh, pazienza... giocherò alla playstation e ordinerò su Glovo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Trovate una vecchia foto compromettente/lesa di qualcuno (es. la Xausa o ex compagni di scuola).",
+        choices: [
+          { text: "Aiuto ahahahaha. Sembra che abbia 40 anni, si è consumata.", member: 'FILO' },
+          { text: "Dopo la triennale iniziano ad avere tutte le rughe. Manco la riconoscevo.", member: 'DAVE' },
+          { text: "AHAHAHAH me la ricordo al Clamm! La metto subito come immagine del gruppo!", member: 'SIMO' },
+          { text: "Teorema delle slave confermato: dopo i 25 anni crollano fisicamente. È la vita aziendale che ti distrugge l'anima.", member: 'PIETRO' },
+          { text: "Mioddio... che scempio.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "L'arbitro fischia un rigore dubbio al 94' contro la tua squadra.",
+        choices: [
+          { text: "È UNO SCHIFO! PARTITA RUBATA! ARBITRO IMBECILLE, QUANTO LI AVETE PAGATI? BASTAAA!", member: 'FILO' },
+          { text: "Taci, inventatissimo! La solita mafia del calcio. Siete ridicoli.", member: 'MARCO' },
+          { text: "Ahahahahah rigorino per la Juve come sempre, ma vinceremo lo stesso ai supplementari.", member: 'SIMO' },
+          { text: "Vabbè ma il regolamento dice che se lo tocchi è fallo, anche se è una regola del cazzo.", member: 'DAVE' },
+          { text: "Io sto godendo. L'avevo pronosticato. E ora fate pippa.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Un giornalista scrive che l'Inter ha un problema di liquidità.",
+        choices: [
+          { text: "Cazzate della Gazzetta. Scrivono roba a caso per vendere i giornali. Suning ha i soldi.", member: 'SIMO' },
+          { text: "Suning è legato al governo cinese. Se la Cina dice stop, falliscono. Sarà un bel ridimensionamento.", member: 'PIETRO' },
+          { text: "Siete alla canna del gas, vendete Eriksen per due spicci e giocate con Gagliardini ahahah.", member: 'DAVE' },
+          { text: "Io spero la comprino gli americani o gli arabi, sti cinesi non mi convincono.", member: 'FILO' },
+          { text: "Ma no... spero sia una bufala, altrimenti siamo fottuti davvero.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "La tua squadra del cuore gioca male e pareggia.",
+        choices: [
+          { text: "È colpa dell'allenatore. Deve essere esonerato stasera stessa. Ha distrutto una rosa superiore.", member: 'DAVE' },
+          { text: "Partita orrenda. Mckennie esterno sinistro, Dybala fantasma. Sono nauseato, spengo la TV.", member: 'FILO' },
+          { text: "Ahahahah che schifo! E io che ci avevo scommesso pure su. Mai una gioia.", member: 'MARCO' },
+          { text: "Vabbè ma l'importante è il risultato, siamo la squadra più forte d'Italia lo stesso. E in Champions spaccheremo.", member: 'SIMO' },
+          { text: "Mi fa morire, giocate il calcio di Giampaolo e vi credete pure forti. Godo.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Ricevi in regalo un cesto aziendale con prodotti tipici.",
+        choices: [
+          { text: "Ahahah ci sono dentro 300 euro di roba (pure i pannolini), godo! Nessuno mi fa regali così.", member: 'SIMO' },
+          { text: "Una cassa normale, inutile esaltarsi. Con 300€ mi facevo io un pacco top con grana e vini seri.", member: 'FILO' },
+          { text: "Cosa te ne fai dei pannolini se sei single? Ahahahah che roba senza senso.", member: 'DAVE' },
+          { text: "Se me lo davano a me lo rivendevo su eBay. Business is business.", member: 'PIETRO' },
+          { text: "Beh dai, sempre meglio di niente, magna e taci.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Trump rifiuta di accettare la sconfitta e twitta che le elezioni sono truccate.",
+        choices: [
+          { text: "Ha fatto benissimo. Ha difeso i suoi principi fino all'ultimo. Biden è un vecchio infermo.", member: 'FILO' },
+          { text: "È un caso clinico, un boomer. Poveretto, uscita di scena patetica, aizzare la folla è roba da criminali.", member: 'DAVE' },
+          { text: "È la fine della democrazia americana. Mi aspettavo scatenasse l'esercito o facesse una guerra civile.", member: 'PIETRO' },
+          { text: "Ahahahah è uno spettacolo. Io sto con i popcorn a vedere il mondo bruciare. Che pagliaccio.", member: 'SIMO' },
+          { text: "USA = Paese di gigalesi. Dal primo all'ultimo. Nient'altro da aggiungere.", member: 'MARCO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'calcio_esplosioni',
+    title: 'Il Calcio, le Esplosioni e le "Lesità" (Serie A e Champions)',
+    description: 'Il ritorno di Allegri, il caso Lukaku e il VAR. Un\'analisi tecnica del declino calcistico.',
+    questions: [
+      {
+        id: 1,
+        text: "Come valuti la stagione della Juve con Andrea Pirlo in panchina?",
+        choices: [
+          { text: "Non ha un'idea, zero organizzazione, zero emozioni trasmesse alla squadra. Chiedo il suo esonero immediato.", member: 'FILO' },
+          { text: "Ha vinto due trofei alla prima stagione senza una punta, è un predestinato, se lo mandate via ve ne pentirete.", member: 'SIMO' },
+          { text: "È riuscito a distruggere una squadra che era solidissima. Manco io avrei fatto così male.", member: 'MARCO' },
+          { text: "La Juve giocava male anche con Sarri, Pirlo ha fatto il suo arrivando quarto all'ultima giornata e vincendo due coppe.", member: 'PIETRO' },
+          { text: "Ha fatto errori su errori e diceva puttanate nelle interviste. Qualsiasi società lo avrebbe già cacciato.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Cristiano Ronaldo: il Re o un problema per la squadra?",
+        choices: [
+          { text: "È una merda, un danno fuori dall'area. Per pagare il suo ingaggio abbiamo smontato una squadra.", member: 'DAVE' },
+          { text: "INCHINATEVI DI FRONTE AL RE! Il giocatore più forte di tutti, ma deve essere servito bene.", member: 'FILO' },
+          { text: "È cotto, deve andare a prendere i big money in America o al Psg e continuare a segnare a quei lesi.", member: 'MARCO' },
+          { text: "È forte per carità, ma non è più nei top 10 del suo ruolo e non vale 60 milioni a bilancio.", member: 'SIMO' },
+          { text: "La Juve non ha bisogno di sostituirlo, 4-4-2 con Dybala e Morata e il brand si salva.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Cosa pensi di Calhanoglu all'Inter?",
+        choices: [
+          { text: "Un normalone, ha pescato il jackpot facendo bene 6 mesi, un Piatek del centrocampo.", member: 'SIMO' },
+          { text: "Acquisto a caso della dirigenza, anche se ha fatto gol all'esordio.", member: 'DAVE' },
+          { text: "Calhanoglu è meglio di Eriksen pre-malore, almeno in Italia.", member: 'FILO' },
+          { text: "Non lo vorrei mai, ma per la rosa dell'Inter forse fa il suo.", member: 'MARCO' },
+          { text: "Si è già preso l'Inter, preso a zero è un capolavoro rispetto a Eriksen.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Come giudichi il livello delle telecronache italiane (Sky/DAZN)?",
+        choices: [
+          { text: "Dicono cazzate con leggerezza, ogni volta mi fanno esplodere.", member: 'FILO' },
+          { text: "I telecronisti Rai sono insopportabili, urlano per niente.", member: 'DAVE' },
+          { text: "Mi sanguinano le orecchie, certe volte spengo l'audio.", member: 'MARCO' },
+          { text: "Sono di parte, esaltano giocatori normali solo perché li conoscono.", member: 'SIMO' },
+          { text: "A Sky sanno fare il loro lavoro, io mi fido di chi ne sa, non mi fingo tuttologo.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Eusebio Di Francesco (Difra) come allenatore?",
+        choices: [
+          { text: "Salutatelo, esonerato sicuro, rovina tutto quello che tocca.", member: 'DAVE' },
+          { text: "La prossima è già dentro o fuori per lui, è una merda.", member: 'SIMO' },
+          { text: "A me fa esplodere che le squadre di A continuino a chiamarlo.", member: 'FILO' },
+          { text: "È un gestore, un allenatore da squadre forti, la Juve dovrebbe valutarlo.", member: 'PIETRO' },
+          { text: "Ahahahah un disastro su tutta la linea, perde tutte le partite.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Romelu Lukaku venduto al Chelsea per 115 milioni: affare o disastro?",
+        choices: [
+          { text: "Lukaku 130 milioni è da cedere, poche storie. Meglio di quest'anno non può fare, ti risolve il bilancio.", member: 'PIETRO' },
+          { text: "Se vendiamo Lukaku è una strage sportiva, non lo sostituisci con uno dalle prestazioni simili.", member: 'SIMO' },
+          { text: "Lukaku è un top mondiale, io non lo avrei mai dato via se volessi vincere.", member: 'FILO' },
+          { text: "Che scoppiati gli inglesi a spendere quei soldi, ma per l'Inter è inevitabile.", member: 'MARCO' },
+          { text: "Senza di lui l'Inter perde lo scudetto 2022, è l'unico che teneva su la baracca.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 7,
+        text: "La regola del fuorigioco millimetrico (VAR): giusta o sbagliata?",
+        choices: [
+          { text: "Linee tirate a caso, se concedi 10 cm di margine e il giocatore è a 10 cm + 1 pixel, si ripete la stessa storia.", member: 'DAVE' },
+          { text: "Il fuorigioco c'è sempre stato. Anche se millimetrico, si annulla, è oggettivo.", member: 'SIMO' },
+          { text: "È la morte del calcio, ci vuole un margine di tolleranza, un intervallo di confidenza.", member: 'FILO' },
+          { text: "Per me ci sta, la regola è quella e va applicata per tutti.", member: 'MARCO' },
+          { text: "Dà fastidio perché non può arrivare l'arbitro di turno a inventare robe, il VAR serve.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Il ritorno di Allegri alla Juventus: la mossa giusta?",
+        choices: [
+          { text: "Allegri è un fenomeno, in 3/4 giornate firma la qualificazione e sa vincere di 'horto muso'.", member: 'SIMO' },
+          { text: "Siamo tornati al settimo posto, la sua mentalità ci ha distrutto.", member: 'MARCO' },
+          { text: "Campionato in tasca, lui si che sa cosa fare in campo.", member: 'DAVE' },
+          { text: "Io lo rivorrei subito, ha vinto 5 scudetti, è un grande allenatore ma la squadra fa pena.", member: 'FILO' },
+          { text: "È l'anticalcio. L'hanno ripreso con un contratto folle dopo due anni al pascolo.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Cosa pensi di Kulusevski?",
+        choices: [
+          { text: "Non capisce niente per colpa di Pirlo, in un sistema confuso si perde ma ha potenziale.", member: 'SIMO' },
+          { text: "Non riesce a saltare un uomo, fa esplodere, soldi buttati.", member: 'FILO' },
+          { text: "Kulusevski non vale un cazzo. Che bidone, rivoglio i miei soldi.", member: 'DAVE' },
+          { text: "Al Parma faceva il fenomeno, alla Juve si è perso, andrebbe dato in prestito.", member: 'PIETRO' },
+          { text: "Buttiamo nel cesso Kulusevski vi prego, Paratici non capisce un cazzo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "La Superlega: era una buona idea?",
+        choices: [
+          { text: "La Superlega dovrebbe organizzarla il Napoli, ci sarebbe da ridere.", member: 'PIETRO' },
+          { text: "Io sono un fiero sostenitore della Superlega, serve a generare i ricavi che UEFA si intasca.", member: 'SIMO' },
+          { text: "Un'idea giusta di base, ma è stata gestita malissimo da Agnelli che è esploso.", member: 'MARCO' },
+          { text: "Si vanno a infilare in una lega chiusa senza meritocrazia, una vergogna.", member: 'DAVE' },
+          { text: "Io sarei andato avanti con le squadre rimaste, l'UEFA fa schifo.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Qual è il problema di Bentancur?",
+        choices: [
+          { text: "Io gli sbatterei la testa contro gli armadietti, sbaglia sempre ed è da galera.", member: 'FILO' },
+          { text: "Giocatore mediocre, fa errori pesanti davanti alla difesa.", member: 'DAVE' },
+          { text: "Fa delle troiate incredibili, e lo dico da suo ex fan.", member: 'PIETRO' },
+          { text: "È un buon giocatore completo, ma sbaglia perché messo fuori ruolo da Pirlo.", member: 'SIMO' },
+          { text: "In campo fa pietà, ma in questa Juve chi si salva?", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Le prestazioni di Donnarumma in Nazionale e i fischi dei tifosi?",
+        choices: [
+          { text: "Chi ha fischiato Donnarumma è un gigaleso, ha fatto una grande parata ed è fortissimo.", member: 'DAVE' },
+          { text: "Si merita i fischi, mercenario che è andato al PSG.", member: 'PIETRO' },
+          { text: "Un ottimo portiere, ma in Europa c'è di meglio per i top club.", member: 'SIMO' },
+          { text: "In Nazionale fa il fenomeno, nulla da dire.", member: 'FILO' },
+          { text: "Non lo sopporto, ma in campo fa il suo dovere.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Il gioco del Sassuolo e la figura di De Zerbi?",
+        choices: [
+          { text: "Qualcuno ammazzi De Zerbi, lo fanno sembrare un maestro ma è sopravvalutato.", member: 'SIMO' },
+          { text: "Il Sassuolo fa sembrare gli allenatori bravi, poi vediamo altrove.", member: 'PIETRO' },
+          { text: "Giocano bene, ma senza difendere non si va da nessuna parte.", member: 'DAVE' },
+          { text: "Hanno un bel progetto e giocatori di qualità come Berardi e Locatelli.", member: 'FILO' },
+          { text: "Tanto fumo e niente arrosto alla fine, l'Atalanta è meglio.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "L'Atalanta e il metodo Gasperini?",
+        choices: [
+          { text: "L'Atalanta ha un sistema di gioco praticamente perfetto, Gasp è un maestro.", member: 'SIMO' },
+          { text: "Squadrone. Giocano a memoria, ma Gasp sa solo lamentarsi degli arbitri.", member: 'MARCO' },
+          { text: "L'Atalanta è una squadra difficilmente migliorabile nei titolari, vorrei Gasp alla Juve.", member: 'DAVE' },
+          { text: "Il Gasp è forte, ma i suoi giocatori quando vanno in altre squadre spesso fanno pena.", member: 'FILO' },
+          { text: "Sfruttano la corsa e il fisico, ma senza i soldi della Champions spariscono.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Le decisioni arbitrali contro la Juventus?",
+        choices: [
+          { text: "Se c'era un'altra squadra a subire lo davano, veniamo sempre ladrati in Champions.", member: 'FILO' },
+          { text: "Siamo scarsi, è giusto uscire, ma gli arbitri europei ci odiano.", member: 'MARCO' },
+          { text: "È il karma per tutti i rigori che ci hanno dato in Serie A.", member: 'DAVE' },
+          { text: "Il VAR in Europa non ti regala niente, dovete abituarvi.", member: 'PIETRO' },
+          { text: "Piangete sempre, siete come gli interisti che criticavate tanto per anni.", member: 'SIMO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'politica_v3',
+    title: 'Politica, Pandemia e Società',
+    description: 'Il Recovery Fund, il DDL Zan e la gestione britannica dei vaccini. Visioni contrapposte.',
+    questions: [
+      {
+        id: 1,
+        text: "Qual è la tua opinione su Mario Draghi Premier?",
+        choices: [
+          { text: "Fiducia in Draghi 100%, i non politici sono migliori dei politici. Top player.", member: 'MARCO' },
+          { text: "È un gigante, ha portato il Recovery Fund e ha restituito credibilità all'Italia, il mio cuoricino.", member: 'PIETRO' },
+          { text: "Draghi è il mio idolo, sono una sua bimba. Dà risposte super centrate.", member: 'SIMO' },
+          { text: "A me piace il suo stile, non gli frega niente di fare dichiarazioni, lui lavora.", member: 'DAVE' },
+          { text: "Speriamo che faccia della pulizia, la politica italiana fa schifo.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "E qual è il tuo giudizio sulla mossa di Matteo Renzi di far cadere Conte?",
+        choices: [
+          { text: "Il più grande stratega, ha sacrificato la sua reputazione per liberarci dal populismo. Gli devono fare una statua.", member: 'PIETRO' },
+          { text: "Renzi è marcio. Lo fa solo per le poltrone, è la nemesi della politica.", member: 'DAVE' },
+          { text: "Ha avuto successo in ciò che voleva fare, ma alla fine il suo partito cesserà di esistere.", member: 'SIMO' },
+          { text: "Non merita risposta un ritardato del genere, è un viscido.", member: 'FILO' },
+          { text: "Tutto grazie a Matteino, ma io tifavo per Conte al governo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "DDL Zan e battaglie civili (Fedez, Ferragni, ecc.): come ti poni?",
+        choices: [
+          { text: "Ddl Zan malattia mentale. Fedez è uno stupido, porta avanti battaglie populiste solo per i like.", member: 'FILO' },
+          { text: "Non mi interessa minimamente, ho fatto bene a non seguire le loro polemiche inutili.", member: 'DAVE' },
+          { text: "È una questione culturale, sono leggi modaiole spinte dai social per il politicamente corretto.", member: 'PIETRO' },
+          { text: "Fedez è il paladino dei valori considerati buoni, dice cose ovvie per i giovani, per quello lo seguono.", member: 'SIMO' },
+          { text: "Non me ne frega niente, fanno solo casino su internet.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Gestione Vaccini e Green Pass: qual è l'approccio giusto?",
+        choices: [
+          { text: "Siamo messi meglio di tanti altri, la nostra campagna vaccinale ha funzionato bene.", member: 'PIETRO' },
+          { text: "L'Europa è la pivella del mondo, Inghilterra e USA hanno fatto molto meglio di noi all'inizio.", member: 'DAVE' },
+          { text: "Il Green Pass è una costrizione senza senso, una dittatura sanitaria. O obbligo o libertà.", member: 'FILO' },
+          { text: "Con il Green pass almeno non chiudono tutto, se ti vaccini abbassi i contagi ed è giusto.", member: 'SIMO' },
+          { text: "Se non tolgono le restrizioni ammazzo tutti, due mesi andati a puttane.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Giuseppe Conte e il Movimento 5 Stelle?",
+        choices: [
+          { text: "Conte è stato un buon presidente del consiglio, la sua squadra mi piaceva.", member: 'MARCO' },
+          { text: "Giggino e Toninelli fanno morire dalle risate, ma il loro partito ormai è finito.", member: 'DAVE' },
+          { text: "Io li ho odiati, hanno creato un governo di incompetenti e Di Battista è il re dei populisti.", member: 'PIETRO' },
+          { text: "Hanno idee di condivisione come Rousseau, ma alla fine mancano di capacità gestionali vere.", member: 'SIMO' },
+          { text: "I 5 Stelle sono una banda di gigalesi e miracolati della politica, vergognosi.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Come valuti la gestione britannica e il 'liberi tutti' di Boris Johnson?",
+        choices: [
+          { text: "L'Inghilterra ha la strategia migliore, far girare il virus e conviverci trattandolo come influenza.", member: 'DAVE' },
+          { text: "Hanno sperimentato tutto, per me sono dei pecorari lo stesso, ma sui tamponi erano avanti.", member: 'MARCO' },
+          { text: "Sono il nostro laboratorio, usano la popolazione come cavia, ma alla fine sono stati bravi coi vaccini.", member: 'PIETRO' },
+          { text: "All'inizio sembravano scemi, poi sono andati spediti, ma per me noi viviamo molto meglio.", member: 'SIMO' },
+          { text: "Così si fa, bisogna riaprire tutto, non possiamo barricarci in casa per un'influenza.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Coprifuoco e zone a colori: sei d'accordo?",
+        choices: [
+          { text: "Io godo in zona rossa, mi chiudo in casa, spero che le zone gialle tornino arancioni.", member: 'PIETRO' },
+          { text: "Pietro ci sguazza, ma per me il coprifuoco alle 22 è la morte della vita sociale, una lesità.", member: 'FILO' },
+          { text: "Se non fai così la gente muore, bisogna passare dalla zona rossa per non tornarci mai più.", member: 'SIMO' },
+          { text: "Tutto inutile, apriamo tutto, basta farsi prendere in giro coi colori che cambiano ogni settimana.", member: 'DAVE' },
+          { text: "Se mi lasciano a casa in estate impazzisco, le restrizioni mi fanno esplodere.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Il ritorno di Salvini al governo e le sue posizioni?",
+        choices: [
+          { text: "Salvini è una banderuola, vota sì e poi fa opposizione dall'interno per prendere voti.", member: 'PIETRO' },
+          { text: "Fa solo caciara su Twitter, è l'apoteosi dell'ignoranza politica.", member: 'FILO' },
+          { text: "Non ho nessuna appartenenza, ma la mossa del Papeete fu un suicidio politico.", member: 'DAVE' },
+          { text: "È la spalla della Meloni, si attaccano su tutto per stare al governo e fare opposizione insieme.", member: 'SIMO' },
+          { text: "Vabbè ma chi se lo caga più Salvini.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Cosa ne pensi delle Sardine e dei movimenti in piazza?",
+        choices: [
+          { text: "Sono una massa di ritardati, peggio dei 5 Stelle.", member: 'FILO' },
+          { text: "Io sono andato a manifestare con loro, almeno ci mettono la faccia contro l'odio.", member: 'PIETRO' },
+          { text: "Il loro leader si è candidato col PD, la solita fine dei movimenti finto-apartitici.", member: 'DAVE' },
+          { text: "Una moda passeggera, come tutto in Italia.", member: 'SIMO' },
+          { text: "Ahahahahah non ci posso credere che Pietro ci sia andato.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "I virologi in TV e l'informazione pandemica?",
+        choices: [
+          { text: "Galli, Ricciardi, tutta gente che vive di terrorismo psicologico, li abolirei.", member: 'FILO' },
+          { text: "Dicono tutto e il contrario di tutto, e Speranza gli va pure dietro. Che inetti.", member: 'DAVE' },
+          { text: "Fanno il loro mestiere, la variante Delta Plus faceva paura ma la scienza deve informare.", member: 'SIMO' },
+          { text: "Il problema sono i giornalisti che fanno terrorismo sui titoli per due click.", member: 'PIETRO' },
+          { text: "Ormai in tv ci sono solo loro, io guardo i film e basta.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "I negazionisti e i No-Vax?",
+        choices: [
+          { text: "Hanno un QI spaziale... sono dei poveretti che credono ai complotti su Facebook.", member: 'SIMO' },
+          { text: "Sono da licenziare tutti, disoccupazione al 2% così.", member: 'PIETRO' },
+          { text: "Chi non vuole farlo è libero, basta accanirsi, c'è libertà di scelta.", member: 'FILO' },
+          { text: "Sono testardi, ma a volte le informazioni del governo sono così contraddittorie che li capisco.", member: 'DAVE' },
+          { text: "La gente sta scoppiando di testa, roba da matti.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Come vedi la Cina sullo scacchiere mondiale (Evergrande, investimenti, ecc.)?",
+        choices: [
+          { text: "Sono un regime, vivono come formiche, ma a livello economico stanno conquistando il mondo fottendoci.", member: 'SIMO' },
+          { text: "In Cina hanno capito come hackerare il sistema, mentre noi in Europa litighiamo.", member: 'PIETRO' },
+          { text: "Trump aveva ragione a mettergli i dazi, andrebbero fermati a tutti i costi.", member: 'FILO' },
+          { text: "Fanno affari in Africa comprandosi interi stati con il debito, è spaventoso.", member: 'DAVE' },
+          { text: "Per me ci comprano anche il calcio, vedi Suning.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Il ruolo dell'Europa (Unione Europea) oggi?",
+        choices: [
+          { text: "L'Europa è la pivella del mondo, non sa imporsi su niente.", member: 'DAVE' },
+          { text: "È l'unico modo per contare qualcosa, ma siamo troppo lenti e burocratici.", member: 'PIETRO' },
+          { text: "Siamo governati da burocrati che pensano solo a fare leggi stupide, un fallimento.", member: 'FILO' },
+          { text: "Si basano su una logica socialdemocratica che tutela i diritti, molto meglio degli USA.", member: 'SIMO' },
+          { text: "Mah, speriamo non ci tolgano i soldi del Recovery.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "La scuola in DAD e la gestione Azzolina?",
+        choices: [
+          { text: "L'Azzolina e i banchi a rotelle sono la più grande lesata della storia italiana.", member: 'DAVE' },
+          { text: "Io sarei sempre a favore delle scuole aperte, la DAD crea danni alle nuove generazioni.", member: 'FILO' },
+          { text: "I professori si lamentano ma si prendono lo stipendio pieno stando a casa in pigiama.", member: 'PIETRO' },
+          { text: "Era una situazione di emergenza, hanno fatto quello che potevano, la DAD era obbligatoria.", member: 'SIMO' },
+          { text: "Menomale che l'hanno cacciata.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Il politicamente corretto e la 'Cancel Culture'?",
+        choices: [
+          { text: "Il mondo sta andando a puttane, la società è finita se non si può più dire niente.", member: 'FILO' },
+          { text: "La gente normale è libera di dire quello che vuole, ma si indignano tutti su Twitter.", member: 'SIMO' },
+          { text: "Ormai i giornali obbediscono a quei 10.000 rompicoglioni sui social pur di non prendere critiche.", member: 'PIETRO' },
+          { text: "Mi rifiuto di seguire queste stronzate.", member: 'DAVE' },
+          { text: "Un degrado totale dell'intelligenza umana.", member: 'MARCO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'soldi_trading',
+    title: 'Soldi, Trading e Lavoro',
+    description: 'Tra eToro, le Big4 e il sogno del posto fisso. Come gestire il vil denaro.',
+    questions: [
+      {
+        id: 1,
+        text: "Qual è la tua piattaforma di trading/investimento preferita?",
+        choices: [
+          { text: "Su eToro sono dei maiali, ti applicano tassi di cambio pessimi e commissioni nascoste. Meglio FTX o Binance.", member: 'PIETRO' },
+          { text: "Io uso ActivTrades perché non ci sono commissioni, si paga solo lo spread ed è perfetto per il forex.", member: 'DAVE' },
+          { text: "Plus500 è l'ideale, ma faccio operazioni pazze in leva per guadagnare subito. Anche se la grafica di eToro fa pena.", member: 'FILO' },
+          { text: "Io non faccio trading giornaliero, preferisco la lunga durata sui titoli sicuri.", member: 'SIMO' },
+          { text: "A me basta guardare il Televideo a pagina 314.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Strategia sui Bitcoin e sulle Criptovalute?",
+        choices: [
+          { text: "Secondo me arriverà a 60k, è il futuro. Tesla farà più soldi coi Bitcoin che con le auto.", member: 'PIETRO' },
+          { text: "Io non mi fido molto, troppa volatilità e speculazione.", member: 'DAVE' },
+          { text: "Non ho soldi da buttare in queste follie, faccio il povero.", member: 'FILO' },
+          { text: "Le cripto sono ovunque, persino sulle maglie dell'Inter.", member: 'SIMO' },
+          { text: "Boh, io capisco solo le azioni tradizionali.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "L'esperienza dei colloqui di lavoro (es. HR)?",
+        choices: [
+          { text: "Gli HR sono la peggio specie, in particolare quelli napoletani. Fanno domande inutili e ti inquadrano con lo stampino.", member: 'FILO' },
+          { text: "Fanno le stesse domande da sempre. Alla Mapei almeno l'HR mi ha passato subito ai manager senza chiedermi punti di forza.", member: 'DAVE' },
+          { text: "Le ovvietà vanno dette, devi dirti volenteroso e preciso, altrimenti perché dovrebbero prenderti rispetto a un altro?", member: 'SIMO' },
+          { text: "Dovresti presentarti con l'approccio di Elon Musk, anche se in Italia non funziona.", member: 'PIETRO' },
+          { text: "Odio le domande stupide dei selezionatori.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Lavorare nella Consulenza (Big4, Accenture, ecc.)?",
+        choices: [
+          { text: "Si lavora 12 ore al giorno per uno stipendio misero, io cerco lavori con meno pressione.", member: 'DAVE' },
+          { text: "Ti succhiano la vita. Ha senso solo se hai forte spirito imprenditoriale e lo usi come rampa di lancio, altrimenti cestini l'esistenza.", member: 'SIMO' },
+          { text: "Sono posti estremamente formativi, impari un botto e poi ti si aprono le porte del mondo.", member: 'FILO' },
+          { text: "Una follia farsi sfruttare così, meglio la banca.", member: 'PIETRO' },
+          { text: "Siete pazzi a lavorarci.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Gestione del TFR (Trattamento di Fine Rapporto)?",
+        choices: [
+          { text: "Lo lascio in azienda, i fondi pensione mi puzzano, mia madre ci ha perso dei soldi coi commercialisti.", member: 'SIMO' },
+          { text: "Meglio metterlo in un fondo, chiedendo a chi ci capisce, tipo un assicuratore.", member: 'FILO' },
+          { text: "È una scommessa, per ora lo tengo in azienda poi si valuta.", member: 'DAVE' },
+          { text: "Il cash is trash, bisogna accumulare e investire da soli.", member: 'PIETRO' },
+          { text: "Non ne capisco molto sinceramente.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Il lavoro nel Pubblico o a Scuola?",
+        choices: [
+          { text: "Il pubblico è un posto magico, se entri sei a posto per tutta la vita tra malattie finte e permessi.", member: 'SIMO' },
+          { text: "Pietro fa il bidello o il lava-scope.", member: 'FILO' },
+          { text: "Io lavoro a scuola ma non sono un raccomandato, spero nel posto fisso.", member: 'PIETRO' },
+          { text: "Prendono agevolazioni assurde e non fanno niente tutto il giorno.", member: 'DAVE' },
+          { text: "Statali ladri.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Spese \"folli\" (Abbonamenti, Apple, Macchine)?",
+        choices: [
+          { text: "Filo critica Netflix a 50 euro l'anno e poi compra iPhone da 1500 euro. È un controsenso umano.", member: 'PIETRO' },
+          { text: "La Apple ha i prodotti migliori, pago per la qualità. Il Cayenne arriverà come frutto dei miei obiettivi.", member: 'FILO' },
+          { text: "Spendere 30 euro al mese per DAZN è una truffa, io mi accontento di Now TV o streaming pirata.", member: 'DAVE' },
+          { text: "Il mio telefono nuovo funziona a meraviglia, ho anche condiviso l'account di DAZN per ammortizzare.", member: 'SIMO' },
+          { text: "Zio canta, con quei soldi mi ci compro da mangiare.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "L'importanza del \"Cash\"?",
+        choices: [
+          { text: "Senza liquidità e senza cacciare i soldi veri, le società di calcio falliscono e gli stati crollano.", member: 'PIETRO' },
+          { text: "Cash is king. Bisogna sempre avere margine a disposizione.", member: 'DAVE' },
+          { text: "I soldi si fanno con i debiti e la leva finanziaria, mentalità aperta.", member: 'FILO' },
+          { text: "A me l'economia reale sembra slegata dalla finanza, i debiti si spalmano.", member: 'SIMO' },
+          { text: "L'importante è non fare debiti strani.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Il lavoro da Data Analyst/Scientist?",
+        choices: [
+          { text: "Creare e modificare anagrafiche prodotto in Excel... a volte penso che le aziende siano ferme agli anni '90.", member: 'DAVE' },
+          { text: "In Fater ci si interfaccia con queste robe, è roba di logistica, i codici prodotto...", member: 'SIMO' },
+          { text: "Se bisogna lavorare tutto il giorno su fogli Excel esplodo dopo 5 minuti.", member: 'FILO' },
+          { text: "I Big Data sono il futuro, ma nel calcio si affidano ai dati per i rigori e poi li sbagliano.", member: 'PIETRO' },
+          { text: "Tutta roba da nerd.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Opinione sugli \"startupper\" stile O' Mechanic / Freecopia?",
+        choices: [
+          { text: "Parlano tanto, fanno finta di avere imperi e poi vendono fuffa su Facebook. Dei lesi.", member: 'FILO' },
+          { text: "Bora è l'unico vero startupper del gruppo, il succo di mela di Elia che fine ha fatto?", member: 'SIMO' },
+          { text: "Questa gente finisce su Forbes per aver creato un'azienda con 1 euro di capitale sociale, follia.", member: 'DAVE' },
+          { text: "Sono la dimostrazione che in Italia se vendi fumo ti credono tutti.", member: 'PIETRO' },
+          { text: "Idoli indiscussi.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Idee imprenditoriali per la \"Barcaccia\"?",
+        choices: [
+          { text: "Creerò un'associazione per distruggere politicamente tutti nel 2026 e puntare al governo nel 2036.", member: 'FILO' },
+          { text: "Facciamo la nostra agenzia di procuratori e gestiamo il mercato del calcio per diventare ricchi.", member: 'SIMO' },
+          { text: "Il format Pagelloni va monetizzato e messo su YouTube.", member: 'PIETRO' },
+          { text: "Apriamo un fondo d'investimento 'Merico Capital'.", member: 'DAVE' },
+          { text: "Siete scoppiati.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Approccio al Trading Intraday?",
+        choices: [
+          { text: "Piazzo l'ordine sopra o sotto la candela per seguire lo short o il long, mi baso sull'analisi tecnica.", member: 'DAVE' },
+          { text: "Non guardare me, io al massimo perdo i soldi.", member: 'PIETRO' },
+          { text: "RSI alla mano, seguo la tendenza, anche se spesso prendo le scoppolate.", member: 'FILO' },
+          { text: "Non mi fido di queste mosse lampo, preferisco capire chi vincerà alla lunga.", member: 'SIMO' },
+          { text: "Mi affido al televideo, è più sicuro.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Quanto è disposto a spendere il gruppo per lo streaming del Calcio?",
+        choices: [
+          { text: "Fino a 19,99€ lo pago volentieri, ma voglio dividere l'account per risparmiare.", member: 'SIMO' },
+          { text: "A me brucia tirare fuori anche 1 centesimo se la Juve fa cagare.", member: 'FILO' },
+          { text: "Neanche un euro, ormai ci sono troppe piattaforme, evviva i siti pirata.", member: 'DAVE' },
+          { text: "Vado a scrocco con account condivisi, Sky Go è il top.", member: 'MARCO' },
+          { text: "Se devo guardare la partita con lag e a scatti mi prendo l'abbonamento singolo.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Lavorare al Sud vs Lavorare al Nord?",
+        choices: [
+          { text: "Pietro è l'unico che lavora in Emilia e tifa come se vivesse al nord, io scappo al sud appena posso.", member: 'FILO' },
+          { text: "Il Sud è basato sui sussidi, meglio lavorare al sud ma con lo stipendio da nord.", member: 'PIETRO' },
+          { text: "Io sono in smart working e scendo in Puglia, il top assoluto.", member: 'DAVE' },
+          { text: "A me basta avere l'auto aziendale e non guidare 10 ore.", member: 'SIMO' },
+          { text: "Il nord vince sempre.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "I bonus fiscali e le regole statali sull'economia?",
+        choices: [
+          { text: "Il Decreto Crescita ha permesso di drogare gli stipendi degli stranieri nel calcio, una cazzata.", member: 'SIMO' },
+          { text: "Il Cashback era una mossa geniale di Conte, toglierlo è stato un errore per i pagamenti digitali.", member: 'PIETRO' },
+          { text: "Quota 100 finita in fretta, lo Stato non sa gestire niente.", member: 'DAVE' },
+          { text: "Qualsiasi bonus lo Stato inventi, finisce sempre nelle mani dei ladri.", member: 'FILO' },
+          { text: "Ladri e tasse.", member: 'MARCO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'media_spettacolo',
+    title: 'Media, TV, DAZN e Società Spettacolo',
+    description: 'La qualità di DAZN, il documentario sulla Juve e l\'ascesa dei social. Critiche feroci.',
+    questions: [
+      {
+        id: 1,
+        text: "La qualità dello streaming di DAZN?",
+        choices: [
+          { text: "Un disastro, rotellina che gira, l'audio in ritardo di due secondi rispetto al video. Inaccettabile.", member: 'SIMO' },
+          { text: "Ho la fibra al top, a me non si blocca quasi mai. Siete voi che avete connessioni del terzo mondo.", member: 'FILO' },
+          { text: "Meglio Calcio.ga, va più fluido di DAZN originale.", member: 'DAVE' },
+          { text: "Un servizio pezzente che ti vende la Serie A con telecronisti fastidiosi, meglio Sky.", member: 'PIETRO' },
+          { text: "Cioè fatemi capire, paghiamo e non si vede nulla?", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Cosa pensate di Diletta Leotta?",
+        choices: [
+          { text: "L'unico vero motivo per guardare i pre-partita su DAZN.", member: 'FILO' },
+          { text: "È una finta, messa lì solo per attirare pubblico senza capire niente di calcio.", member: 'SIMO' },
+          { text: "Meno male che se n'è andata o la nascondono a bordo campo, preferisco altro.", member: 'DAVE' },
+          { text: "È plastificata.", member: 'PIETRO' },
+          { text: "Bellissima.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "I telecronisti e opinionisti (Pardo, Adani, Sconcerti, ecc.)?",
+        choices: [
+          { text: "I telecronisti Rai (Rimedio, ecc.) sono una roba imbarazzante, si esaltano a caso e urlano.", member: 'DAVE' },
+          { text: "Sconcerti non ci sta più con la testa, dice cose pazzesche tipo 'la Juve gioca calcio champagne'.", member: 'SIMO' },
+          { text: "Sono dei venduti, Pardo e compagnia bella fanno solo salotto e sparano cazzate.", member: 'FILO' },
+          { text: "A me Adani piace, dice delle verità tecniche che gli altri non colgono.", member: 'PIETRO' },
+          { text: "Muto l'audio e via.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Come vi informate sul calcio (Gazzetta, TuttoJuve, ecc.)?",
+        choices: [
+          { text: "Sulla Gazzetta ci sono titoli clickbait assurdi, per attirare i boomer. Calcio e Finanza è l'unica pagina top.", member: 'SIMO' },
+          { text: "La Gazzetta è venduta, TuttoJuve pompa i nostri giocatori anche quando fanno pena.", member: 'DAVE' },
+          { text: "Siete voi che leggete siti fake e cascate nelle trollate per fare polemica.", member: 'PIETRO' },
+          { text: "TuttoJuve spara bombe di mercato senza senso per gasare l'ambiente.", member: 'FILO' },
+          { text: "Leggo solo i titoli per farmi due risate.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "I cantanti di Sanremo e i Maneskin?",
+        choices: [
+          { text: "I Maneskin fanno musica finta e costruita, non li sopporto, se li sento in radio cambio canale.", member: 'PIETRO' },
+          { text: "Sono bravi, la canzone era ottima per prendere in giro i prof che gli dicevano di stare zitti e buoni.", member: 'SIMO' },
+          { text: "Puro trash per ragazzine.", member: 'FILO' },
+          { text: "Mai seguiti, ma la canzone era bellina.", member: 'DAVE' },
+          { text: "Sinceramente credevo fossero degli scappati di casa.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Programmi TV Trash e YouTube (Gabboman, ecc.)?",
+        choices: [
+          { text: "Gli youtuber romani (Gabboman) fingono reazioni esagerate per le views, mi fanno chiudere il video dopo 10 secondi.", member: 'FILO' },
+          { text: "La TV generalista fa trasmissioni inutili sul nulla cosmico per riempire i palinsesti, vedi Uno Mattina.", member: 'DAVE' },
+          { text: "Mi spacco di video YouTube per vedere gli errori e le rosicate dei tifosi avversari.", member: 'SIMO' },
+          { text: "Io guardo le iene e i reportage politici per capire come vanno le cose.", member: 'PIETRO' },
+          { text: "Solo il Grande Fratello per la figa.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Fedez e il Codacons?",
+        choices: [
+          { text: "I duelli Fedez-Codacons sono il top dell'intrattenimento, ma il Codacons non è sempre in torto.", member: 'SIMO' },
+          { text: "Fedez è un ipocrita che sfrutta i temi sociali per fare marketing a se stesso e vendere smalti.", member: 'FILO' },
+          { text: "Codacons ridicolo, denuncia la gente a caso per farsi pubblicità gratis.", member: 'PIETRO' },
+          { text: "Stronzate da social.", member: 'DAVE' },
+          { text: "Boh, io tifo per il litigio continuo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Clubhouse (il social vocale)?",
+        choices: [
+          { text: "Un'idea pazzesca, possiamo creare la stanza della Barcaccia e spaccare tutto parlando di calcio.", member: 'FILO' },
+          { text: "Il solito social elitario su invito per radical chic con l'iPhone, morirà presto.", member: 'PIETRO' },
+          { text: "Mi sembra solo un posto per conoscere gente a caso o cuccare con l'audio.", member: 'SIMO' },
+          { text: "Non ce l'ho, ho Android.", member: 'DAVE' },
+          { text: "Se devo ascoltare la gente che parla mi ascolto la radio.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Il documentario 'All or Nothing: Juventus' su Amazon Prime?",
+        choices: [
+          { text: "Lo fanno per fare cassa, ma fa capire quanto la squadra fosse slegata e Pirlo non ci capisse nulla.", member: 'DAVE' },
+          { text: "Le scenate nello spogliatoio di Bonucci e Ronaldo sono puro spettacolo.", member: 'FILO' },
+          { text: "Tutto preparato e finto per le telecamere, non c'è la vera realtà.", member: 'PIETRO' },
+          { text: "A me basta aver visto Pirlo che urla, shock.", member: 'SIMO' },
+          { text: "Io non lo guarderò mai.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "I film e le serie TV consigliati nel gruppo?",
+        choices: [
+          { text: "Gran Torino è un capolavoro assoluto, ignorante e bello. Better Call Saul è la vita.", member: 'FILO' },
+          { text: "Inside Man, e film romantici. Non seguo le cagate che piacciono a voi.", member: 'SIMO' },
+          { text: "Il Grande Lebowski è il top per staccare dal calcio. Di recente guardo film vecchi.", member: 'DAVE' },
+          { text: "The Office è geniale, ma mi son rotto di Netflix, troppo politically correct.", member: 'PIETRO' },
+          { text: "The Boys.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "I social media nel calcio (Instagram dei calciatori)?",
+        choices: [
+          { text: "Odio i post dei giocatori che scrivono ovvietà tipo 'torniamo più forti' dopo una figura di merda.", member: 'DAVE' },
+          { text: "Le fidanzate e i fratelli dei calciatori che si lamentano sui social sono il vero cancro.", member: 'FILO' },
+          { text: "Ronaldo cambia brand e maglia per i follower, la comunicazione ormai comanda.", member: 'SIMO' },
+          { text: "Ormai i giornalisti basano gli articoli sui post criptici di Instagram, è la morte del giornalismo.", member: 'PIETRO' },
+          { text: "Fa tutto schifo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Telecroniste donne ed ex calciatrici in TV?",
+        choices: [
+          { text: "In Francia un arbitro donna ha ammonito Paquetà per un trick... roba da matti.", member: 'SIMO' },
+          { text: "Katia Serra in telecronaca ha una voce fastidiosissima, grida in continuazione.", member: 'DAVE' },
+          { text: "Siamo obbligati a sorbircele per le quote rosa in televisione.", member: 'FILO' },
+          { text: "La Paola Ferrari è la fiera della plastica, imbarazzante.", member: 'PIETRO' },
+          { text: "Non sanno niente di pallone vero.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "La Formula 1 in TV (Sky)?",
+        choices: [
+          { text: "Vanzini e Gené urlano appena Hamilton fa una cazzata, ma poi lui scula e vince lo stesso.", member: 'SIMO' },
+          { text: "Verstappen derubato, ma Leclerc è l'unica gioia.", member: 'PIETRO' },
+          { text: "Non guardo più, sport diventato noiosissimo e deciso a tavolino dalla FIA.", member: 'DAVE' },
+          { text: "Io ho visto due giri e poi ho spento, meglio la Play.", member: 'FILO' },
+          { text: "Siete pazzi a perdere la domenica dietro le macchinine.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Lo stile di comunicazione di Massimiliano Allegri?",
+        choices: [
+          { text: "Conferenze stampa da comico di Zelig, prende in giro i giornalisti con la storiella dei cavalli.", member: 'DAVE' },
+          { text: "Allegri è l'unico che sa gestire le pressioni esterne senza scomporsi, un genio.", member: 'SIMO' },
+          { text: "Vince di 'Horto Muso' ma la sua filosofia di calcio sparagnino in TV è indifendibile.", member: 'PIETRO' },
+          { text: "Fa solo finta di non arrabbiarsi, ma in realtà è vuoto tatticamente.", member: 'FILO' },
+          { text: "Il re delle conferenze stampa.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Gli articoli di Vittorio Feltri / Travaglio (Il Fatto Quotidiano)?",
+        choices: [
+          { text: "Travaglio è illeggibile e palesemente di parte contro Renzi, giornale da M5S.", member: 'PIETRO' },
+          { text: "Scanzi e Peter Gomez sono i peggiori, falsi e moralisti, li cancellerei dalla TV.", member: 'FILO' },
+          { text: "Ogni tanto Travaglio fa delle inchieste sensate, ma sono fissati.", member: 'SIMO' },
+          { text: "Quotidiano immondizia.", member: 'DAVE' },
+          { text: "Mai letto.", member: 'MARCO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'dinamiche_v3',
+    title: 'Dinamiche di Gruppo, Gag e "Lesità"',
+    description: 'Il dizionario della Barcaccia: Sciolto, Esplosione e Gufo. Conoscere i membri nel profondo.',
+    questions: [
+      {
+        id: 1,
+        text: "Cosa significa esattamente il termine \"Sciolto\"?",
+        choices: [
+          { text: "Uno che di fronte all'evidenza si arrampica sugli specchi, come Simo.", member: 'FILO' },
+          { text: "È la mia firma quando smonto le teorie di Pietro con i fatti.", member: 'SIMO' },
+          { text: "È il mio stato d'animo dopo che la Juve prende gol da scappati di casa.", member: 'DAVE' },
+          { text: "Termine rubato dal vocabolario di Filo per dirgli che ha detto una cagata.", member: 'PIETRO' },
+          { text: "È come la Juve in Champions, liquefatta.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Come definiresti una \"Scommessa Pazza\"?",
+        choices: [
+          { text: "È quando pronostico la fine del Covid entro l'estate e il fallimento del Milan, anche se non succede mai.", member: 'SIMO' },
+          { text: "Mettere X sulla vittoria dell'Inter sperando che il Gufo Medro abbia fatto il suo lavoro.", member: 'FILO' },
+          { text: "Giocarmi 10 euro sulla salvezza del Crotone o sull'esonero di Di Francesco alla prima giornata.", member: 'PIETRO' },
+          { text: "La scommessa pazza è che la Juve arrivi in Champions.", member: 'DAVE' },
+          { text: "Vittoria dell'Atalanta al Bernabeu.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Quando scatta una \"Esplosione\" nel gruppo?",
+        choices: [
+          { text: "Quando il telecronista dice per la ventesima volta 'Personalità' o Bentancur sbaglia un appoggio.", member: 'DAVE' },
+          { text: "Quando vedo Rabiot passarla indietro o l'arbitro ci fischia contro, tiro giù il mondo.", member: 'FILO' },
+          { text: "Quando mi danno contro sul Fanta-calcio o sui miei pagelloni ignorando la mia saggezza.", member: 'SIMO' },
+          { text: "Quando Filo non sopporta più le mie teorie su Renzi o sui vaccini e abbandona il gruppo.", member: 'PIETRO' },
+          { text: "Quando il televideo mi dà notizie brutte dalla Borsa.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Il ruolo di \"O' Mechanic\" (Vincenzo) nelle chat?",
+        choices: [
+          { text: "L'emblema del populismo napoletano, difende l'indifendibile su Facebook e pubblica post no-vax.", member: 'FILO' },
+          { text: "Il nostro idolo incontrastato, fonte inesauribile di meme e lezioni di vita.", member: 'SIMO' },
+          { text: "Rappresenta tutto ciò da cui bisogna fuggire per trovare un buon lavoro.", member: 'DAVE' },
+          { text: "Fa i post arrabbiati contro il governo e la Juve, da perculare all'infinito.", member: 'PIETRO' },
+          { text: "Ahahahahah grandissimo O' Mechanic.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Qual è il superpotere (gufata) di Simo?",
+        choices: [
+          { text: "Dichiara un giocatore 'finito' e quello puntualmente fa doppietta la domenica.", member: 'PIETRO' },
+          { text: "Scrive 'Juve devastante' proprio un secondo prima che la Juve subisca un gol ridicolo.", member: 'DAVE' },
+          { text: "Io non gufo, la mia è un'analisi oggettiva che il destino si diverte a smentire.", member: 'SIMO' },
+          { text: "Medro lancia sfiga cosmica, l'ho cacciato dal gruppo per questo.", member: 'FILO' },
+          { text: "I suoi pronostici valgono meno di quelli di un polipo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Il dibattito sullo \"Smalto\" sulle unghie maschili?",
+        choices: [
+          { text: "L'ho comprato ma non ho ancora la personalità per metterlo... devi anche vestirti bene per portarlo.", member: 'PIETRO' },
+          { text: "Aiuto, ti stai facendo influenzare da Fedez. Ormai sei perso.", member: 'SIMO' },
+          { text: "Sei un gigaleso se te lo metti, la società va a puttane.", member: 'FILO' },
+          { text: "Va bene solo se hai tanti tatuaggi e fai il trapper.", member: 'DAVE' },
+          { text: "Mioddio, pietà.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "L'eterna faida sulle pagelle e il Fantacalcio?",
+        choices: [
+          { text: "Redigo pagelloni lunghissimi, super dettagliati, che Filo e Pietro si limitano a criticare per partito preso.", member: 'SIMO' },
+          { text: "Simo mette voti a caso in base a chi gli sta sul cazzo, i miei giudizi sono rapidi e inappellabili.", member: 'FILO' },
+          { text: "Il Fanta senza soldi non ha senso, se non si mette un premio non c'è impegno.", member: 'PIETRO' },
+          { text: "Le pagelle andrebbero mandate a Tuttosport, fanno meno ridere di quelle di Sconcerti.", member: 'DAVE' },
+          { text: "Io punto tutto sui fedelissimi dell'Atalanta e sui bidoni che esplodono.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Que animale è il cane di Pietro?",
+        choices: [
+          { text: "È un incrocio di incroci, non ha una vera razza, ma è in forma.", member: 'PIETRO' },
+          { text: "Una rotonda?", member: 'SIMO' },
+          { text: "Un lupo.", member: 'FILO' },
+          { text: "Secondo me abbaia ai passanti senza motivo.", member: 'DAVE' },
+          { text: "Sarà bellissimo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Cosa si intende per \"Bimbo di...\" nel gruppo?",
+        choices: [
+          { text: "Marco è un bimbo di Conte, Pietro è un bimbo di Renzi/Draghi. Semplice devozione cieca.", member: 'FILO' },
+          { text: "È un complimento, significa riconoscere la grandezza di un personaggio storico.", member: 'PIETRO' },
+          { text: "Io sono un bimbo dell'Ingegneria e dei codici a barre.", member: 'DAVE' },
+          { text: "Io sono una bimba di Draghi, mi fido ciecamente delle sue conferenze.", member: 'SIMO' },
+          { text: "Bimbi del bel giuoco.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Le reazioni agli infortuni di Zaniolo / Dybala / Sensi?",
+        choices: [
+          { text: "Sensi ormai è il nuovo Pepito Rossi, Dybala è di cristallo. È accanimento terapeutico.", member: 'SIMO' },
+          { text: "Dybala è un fenomeno sfortunato, Sensi era fortissimo prima di spaccarsi.", member: 'FILO' },
+          { text: "Se hai il giocatore al Fanta e si rompe al 10', ti si rovina il weekend e scrivi madonne sul gruppo.", member: 'PIETRO' },
+          { text: "Sono fatti di cartapesta, dovrebbero decurtargli lo stipendio in base ai giorni in infermeria.", member: 'DAVE' },
+          { text: "Sempre rotti, che sfiga per la Nazionale.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Qual è la pena invocata per Bentancur o Rabiot?",
+        choices: [
+          { text: "Fucilazione sul campo o spedirli a giocare in Turchia con Pjanic.", member: 'DAVE' },
+          { text: "Via a zero, basta che non tocchino più l'erba dello Stadium.", member: 'FILO' },
+          { text: "Tribuna fissa fino a scadenza del contratto.", member: 'PIETRO' },
+          { text: "Ma poveretti, Bentancur in una squadra strutturata farebbe il suo senza infamia e senza lode.", member: 'SIMO' },
+          { text: "Da mandare a zappare la terra in Siberia.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Quando un membro invia un audio lungo 2 minuti?",
+        choices: [
+          { text: "È Pietro che cerca di difendere l'indifendibile aggrappandosi ai vetri, io rispondo e poi lui abbandona il gruppo.", member: 'FILO' },
+          { text: "Ascolto a velocità x1.5 sennò invecchio.", member: 'PIETRO' },
+          { text: "È la mia analisi tattico/economica, che viene regolarmente snobbata o ridicolizzata.", member: 'SIMO' },
+          { text: "Skippo diretto. Se è importante lo scriveranno.", member: 'DAVE' },
+          { text: "L'unica gioia della giornata.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Come affrontate le uscite notturne o i ritrovi (es. a Milano o Ravenna)?",
+        choices: [
+          { text: "Io invito tutti, andiamo in giro per i navigli o in riviera, ma gli altri paccono.", member: 'FILO' },
+          { text: "Prometto di venire, propongo Villa Merico, ma alla fine il treno fa ritardo o c'è una fiera e salta tutto.", member: 'DAVE' },
+          { text: "Io organizzo cene e brindo al gruppo, offro ospitalità in Romagna.", member: 'SIMO' },
+          { text: "Non vengo perché il mio cane ha la tosse, o perché ho una festa migliore.", member: 'PIETRO' },
+          { text: "Faccio finta di esserci e poi sparisco.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "L'abbandono del gruppo di Pietro (o le sue rimozioni)?",
+        choices: [
+          { text: "Lo caccio perché ha detto troppe lesità e si rifiuta di chiedere scusa. Pura igiene del gruppo.", member: 'FILO' },
+          { text: "Se ne va sbattendo la porta ma poi torna sempre perché gli manchiamo e vuole sparlare dell'Inter.", member: 'SIMO' },
+          { text: "Esco quando la tossicità di Filo diventa insopportabile e non ho voglia di abbassarmi al suo livello.", member: 'PIETRO' },
+          { text: "È una farsa, ogni tre mesi succede. E dopo due giorni si rientra come niente fosse.", member: 'DAVE' },
+          { text: "Diobbo, bambini dell'asilo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Il concetto di \"Teraleso / Gigaleso\"?",
+        choices: [
+          { text: "Un Gigaleso è chiunque non concordi con la mia inoppugnabile logica calcistica, un Teraleso è chi proprio vive fuori dal mondo.", member: 'FILO' },
+          { text: "Un Teraleso è colui che tifa Milan e pensa di vincere la Champions con Krunic.", member: 'SIMO' },
+          { text: "È un termine che rubate tutti ma non sapete usare nel momento giusta.", member: 'PIETRO' },
+          { text: "Paratici che vende Romero a 15 e lo ricompra a 50.", member: 'DAVE' },
+          { text: "Siete tutti dei gigalesi, dal primo all'ultimo.", member: 'MARCO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'calcio_allegri_gufate',
+    title: 'Il Calcio, Allegri e le Gufate',
+    description: 'Focus: Serie A, Juventus, Inter, allenatori e calciomercato. L\'analisi dei risultati e delle scommesse.',
+    questions: [
+      {
+        id: 1,
+        text: "Cosa pensi del rendimento della Juventus e di Max Allegri?",
+        choices: [
+          { text: "Peggio di così mi cavavo gli occhi, giochiamo un calcio di merda. L'anno scorso ci voleva un miracolo.", member: 'FILO' },
+          { text: "Facciamo cagare, siamo scarsi. Usciamo agli ottavi al 99,999999%. Zeru tituli quest'anno.", member: 'MARCO' },
+          { text: "Ha recuperato punti su tutti, la vince lui, è un genio. Ha la squadra più scarsa ma porta i risultati, chiedete scusa ad Allegri.", member: 'SIMO' },
+          { text: "Allegri è stupido, impresentabile. Ha mentalità da perdente, se non gli comprano i giocatori non vince nulla.", member: 'DAVE' },
+          { text: "Gioca per l'1-0, fa schifo. Per vincere ha bisogno di una rosa il doppio più forte della seconda. Ridateci Sarri.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Qual è la tua opinione sul VAR?",
+        choices: [
+          { text: "Rovina il calcio, crea il triplo delle polemiche. Mi fa esplodere, tocchettini da fighette fischiati come rigori.", member: 'FILO' },
+          { text: "Il VAR è ottimo ma è organizzato all'italiana, ci sono errori clamorosi che non dovrebbero esserci.", member: 'DAVE' },
+          { text: "Io lo terrei, ma gli arbitri devono poter valutare l'intensità live senza farsi guidare dai frame al rallentatore.", member: 'SIMO' },
+          { text: "Ha ridato giustizia al calcio, ha eliminato il 99% degli errori. Siete voi che vi lamentate dei complotti.", member: 'PIETRO' },
+          { text: "Gli arbitri sono dei giga lesi incompetenti di merda, il VAR o non il VAR cambia poco.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Come giudichi Simone Inzaghi all'Inter?",
+        choices: [
+          { text: "È un debole, un perdente nato. Sbaglia i cambi e non sa gestire i momenti, si lamenta sempre dell'arbitraggio.", member: 'SIMO' },
+          { text: "Ha preso una squadra in depressione perdendo top player da 150 milioni e ha fatto meglio di Conte proponendo gran gioco.", member: 'PIETRO' },
+          { text: "Troppo forte l'Inter, Inzaghi li fa giocare benissimo. Scudetto vinto a marzo.", member: 'MARCO' },
+          { text: "Squadra che va avanti con l'autopilota impostato da Conte, che ha costruito lui il gruppo.", member: 'DAVE' },
+          { text: "È un lesetto, l'Inter fa pena e ha una sculata infinita, se la Juve avesse giocato decentemente l'Inter era settima.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Chi è il miglior attaccante da comprare o tenere?",
+        choices: [
+          { text: "Lukaku. Ha preso una squadra da solo e fatto vincere lo scudetto. Rivederlo in Serie A è il top.", member: 'MARCO' },
+          { text: "Dusan Vlahovic, nome da top 3 al mondo, devi pagarlo quello che vale. Ma bisogna servirlo.", member: 'DAVE' },
+          { text: "Ciro Immobile. Segna 30 gol a stagione, in nazionale non segna per colpa del modulo di Mancini.", member: 'PIETRO' },
+          { text: "Morata. Si fa il mazzo e corre in difesa perché siamo disperati. Se fosse al Real farebbe sfracelli.", member: 'FILO' },
+          { text: "Gabriel Jesus. È forte, giovane, fa tutti i ruoli. O Scamacca a 25 milioni, il resto è follia. E vendete Lautaro!", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Come commenti una sconfitta o un'eliminazione in Champions della tua squadra?",
+        choices: [
+          { text: "Sono i cancheri mandati da quelli che gufano. Sfiga immensa, quest'anno è un abominio di infortuni.", member: 'FILO' },
+          { text: "Sconfitta inesorabile, siamo una barzelletta. Ce lo meritiamo per aver schierato dei ritardati.", member: 'MARCO' },
+          { text: "Era ampiamente previsto. Abbiamo giocato a difenderci, non sanno gestire i momenti della partita.", member: 'PIETRO' },
+          { text: "Vado su calcio.ga, mi chiudo in camera, so già che vinceranno gli altri, guardo le statistiche ed esplodo.", member: 'DAVE' },
+          { text: "In realtà abbiamo dominato 90 minuti, 20 tiri a 1. È solo sfiga e il loro portiere che ha fatto i miracoli.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Cosa ne pensi di Paulo Dybala?",
+        choices: [
+          { text: "È in scadenza e non se lo caga nessuno, pretende 10 milioni quando non domina mezza partita, a 8 lo lascio andare.", member: 'DAVE' },
+          { text: "Fortissimo ma rotto. È un Gotze forte. Non puoi dargli un botto di soldi per fare 20 partite all'anno.", member: 'SIMO' },
+          { text: "Se va all'Inter è una lesità, la Juve lo ha coccolato, gli ha dato la 10, ma è stato pagato per cazzeggiare su Twitch.", member: 'FILO' },
+          { text: "Un ragazzino viziato. Almeno la società ha fatto bene a silurarlo, in Inghilterra o Spagna farebbe panchina.", member: 'PIETRO' },
+          { text: "Che se ne vada, ormai da noi non ci azzecca più nulla. Fategli scaldare la vostra infermeria.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Parliamo della telecronaca e della stampa sportiva (es. Gazzetta, Adani, Cassano)...",
+        choices: [
+          { text: "Siete vittime della Gazzetta, io non la apro. Cassano urla ma capisce di campo, Adani è un po' pesante ma dice il vero.", member: 'PIETRO' },
+          { text: "La Gazzetta sa le cose, vi giro gli screen. Sulla BoboTV ci beccano. E comunque i giornalisti sono polemici.", member: 'SIMO' },
+          { text: "Lele Adani insopportabile, Cassano è il re dei lesi, capisce l'esatto contrario di quello che dice.", member: 'MARCO' },
+          { text: "I commentatori sono dei ritardati palesemente schierati contro la Juve, è uno schifo.", member: 'FILO' },
+          { text: "Il giornalismo sportivo inventa le notizie. Sparano percentuali a caso per acchiappare click.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Che mercato deve fare la Juventus?",
+        choices: [
+          { text: "Via De Ligt a 100, Arthur, Kean, Bernardeschi, e prendiamo Milinkovic, Zaniolo e Raspadori. Marotta ci ara altrimenti.", member: 'SIMO' },
+          { text: "Pogba a 10 milioni è il top, ma ci vuole Di Maria e bisogna sbolognare quelli che non sanno tenere una palla.", member: 'FILO' },
+          { text: "Ripartire dai giovani: Fagioli, Rovella, Miretti. Cacciare chi prende 7 milioni a vuoto come Rabiot e Alex Sandro.", member: 'DAVE' },
+          { text: "I parametri zero rotti e in età da pensione come Pogba e Di Maria sono il male. Fanno plusvalenze finte.", member: 'PIETRO' },
+          { text: "Comprare altri panchinari, perché tanto i titolari o si spaccano o fanno cagare al cazzo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Qual è il problema della Nazionale italiana che non va ai mondiali?",
+        choices: [
+          { text: "Abbiamo vinto l'Europeo, dovevamo esserci di diritto! Che schifo le regole FIFA!", member: 'FILO' },
+          { text: "Semplice: Immobile non deve più giocare, è un cancro, zero gol. E Jorginho non sa tirare i rigori.", member: 'SIMO' },
+          { text: "Siamo dei cani, la Macedonia del Nord ci ha schiantato. Ma alla fine non avremmo vinto lo stesso, chissenefrega.", member: 'MARCO' },
+          { text: "Culo finito. Mancini ha fallito gestendo i numeri 9 e ha lasciato la squadra in mano a raccomandati.", member: 'DAVE' },
+          { text: "Il calcio in Italia è morto. Senza riforme strutturali e i giovani saremo sempre peggio. È una tragedia.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Cosa ne pensi del calcio internazionale (Premier, PSG, Real)?",
+        choices: [
+          { text: "Le inglesi corrono ma tecnicamente sono poca roba, il PSG ruba, il Real è la rovina.", member: 'FILO' },
+          { text: "La Premier ha un altro ritmo. Da noi non sanno fare tre passaggi, lì ci sono allenamenti veri e intensità.", member: 'DAVE' },
+          { text: "Il PSG ha soldi infiniti ma spende a cazzo. Il Real spende in modo oculato, i giovani come Vinicius sono devastanti.", member: 'SIMO' },
+          { text: "È il trionfo dei petrodollari e dei presidenti esaltati. Fanno affari sporchi, servirebbe una Superlega seria.", member: 'PIETRO' },
+          { text: "L'estero ci asfalta. Noi siamo il terzo mondo, una squadretta di Serie C inglese ci batte.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Se la tua squadra subisce un gol al 90'...",
+        choices: [
+          { text: "SfigaPalace. Sempre tutto contro di noi, la solita inculata, spengo la TV ed esplodo.", member: 'FILO' },
+          { text: "Rido e godo se l'Inter prende gol. Sennò bestemmio gli strateghi del muretto o della panchina.", member: 'SIMO' },
+          { text: "Accetto il destino, siamo dei lesi in difesa, me l'aspettavo fin dal primo minuto.", member: 'MARCO' },
+          { text: "È per via dell'atteggiamento provinciale inculcato dall'allenatore che fa il catenaccio per difendere l'1-0.", member: 'PIETRO' },
+          { text: "Classic. Le partite vanno chiuse prima, si sa che noi le occasioni le sprechiamo tutte.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Quale giovane talento italiano ti esalta?",
+        choices: [
+          { text: "Raspadori e Scamacca. Seppur con difetti, sono gli unici con un po' di tecnica e futuro.", member: 'SIMO' },
+          { text: "Kulusevski... ah no, è svedese. Allora Zaniolo, anche se si spacca sempre.", member: 'MARCO' },
+          { text: "Miretti, Fagioli e Rovella. Bisogna puntare su di loro e farli giocare al posto dei vecchi bolliti.", member: 'DAVE' },
+          { text: "Gnonto, è il nostro Maradona nero, Mancini ha fatto bene a lanciarlo.", member: 'PIETRO' },
+          { text: "Non ci sono giovani forti. In Italia li bruciano o sono già pompati dai media senza aver fatto nulla.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Come vedi il futuro del Calcio (Superlega, ecc.)?",
+        choices: [
+          { text: "Il format attuale è ridicolo. Serve la Superlega per avere scontri al top, non partite inutili coi moldavi.", member: 'SIMO' },
+          { text: "La Superlega era una cazzata a inviti per salvare le casse di Juve e Real dai debiti. Una buffonata.", member: 'PIETRO' },
+          { text: "Bisogna riformare tutto, abolire il VAR e tornare al calcio naturale e genuino senza burocrazia.", member: 'FILO' },
+          { text: "Il calcio italiano è finito, le TV pagano troppo e il prodotto fa pietà. Dazn è un furto.", member: 'DAVE' },
+          { text: "Mettiamo 64 squadre al Mondiale, facciamo la Superlega, a me va bene tutto basta vedere belle partite.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Cosa pensi di Kulusevski al Tottenham?",
+        choices: [
+          { text: "Da noi faceva pena, lì sembra un fenomeno perché corre negli spazi. Marotta ci ha inculato.", member: 'FILO' },
+          { text: "Conte e il sistema Premier lo esaltano. Da noi era depresso e non capiva gli schemi.", member: 'DAVE' },
+          { text: "È sempre stato un fenomeno, lo dicevo io. Ma alla Juve con Allegri dormono e bruciano tutti.", member: 'PIETRO' },
+          { text: "Mamma mia, il coro che gli hanno fatto è bellissimo. Mi fa sbragare, ma da noi era un catorcio.", member: 'MARCO' },
+          { text: "Siete voi che esaltate un giocatore che sa solo correre dritto. Trenta milioni regalati.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "La tua esultanza o reazione tipica dopo una vittoria gufata?",
+        choices: [
+          { text: "SEEEEEEE! L'ho detto io, la legge dei grandi numeri! Che sculata!", member: 'MARCO' },
+          { text: "SI GODE. Sono il dio delle letture delle partite, l'avevo ampiamente predetto, chiedete scusa.", member: 'SIMO' },
+          { text: "Sculo totale. Hanno rubato come al solito. Campionato falsato.", member: 'DAVE' },
+          { text: "Ahahahahah. Il Re ha colpito ancora. Stupendo.", member: 'FILO' },
+          { text: "Pazzesco, hanno avuto un culo indecente. Si sono chiusi in area e hanno vinto a caso.", member: 'PIETRO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'pandemia_dittatura',
+    title: 'Pandemia, Green Pass e Dittatura Sanitaria',
+    description: 'Gestione Covid, vaccini, Speranza, Draghi e mascherine. Un tuffo nel controllo sanitario.',
+    questions: [
+      {
+        id: 1,
+        text: "Qual è la tua posizione sull'obbligo di mascherina all'aperto d'estate?",
+        choices: [
+          { text: "È una lesata milanese/romana, ma d'inverno almeno tiene caldo. Spero la tolgano subito.", member: 'SIMO' },
+          { text: "Follia totale, una roba da minorati mentali o da Teralesi. Io non la metto, mi sento un ribelle.", member: 'FILO' },
+          { text: "Speranza è una merda umana, distrugge il turismo con regole senza senso basate sul nulla.", member: 'DAVE' },
+          { text: "Ringraziate Draghi e il governo dei migliori, obbedite in silenzio. Io sono d'accordo, così non vi vedo in faccia.", member: 'PIETRO' },
+          { text: "Ahahahahah, mi fa morire, siamo in una dittatura senza che nessuno se ne accorga.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Cosa pensi dei non vaccinati?",
+        choices: [
+          { text: "Che vanno inseguiti alle 3 di notte e multati. Occupano le terapie intensive inutilmente.", member: 'DAVE' },
+          { text: "Che i vaccini sono l'unica via per uscirne, ma i dati a volte mi fanno salire i dubbi sui contagi.", member: 'SIMO' },
+          { text: "Che sono dei fottuti imbecilli, però il governo è ancora più imbecille a non mettere l'obbligo vaccinale totale.", member: 'FILO' },
+          { text: "Che fanno bene a non cedere al ricatto dello Stato. Il Green Pass è una misura coercitiva e il vaccino è solo business per Pfizer.", member: 'PIETRO' },
+          { text: "I no vax sono il pane quotidiano per i dati sballati. Per fortuna non li frequento.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Draghi e Speranza: il duo al governo.",
+        choices: [
+          { text: "Draghi è il salvatore della patria, Speranza invece è un talebano. Ma nel complesso bene così.", member: 'SIMO' },
+          { text: "Draghi e Speranza sono un disastro, non hanno risolto nulla, il governo debole crea destini deboli.", member: 'DAVE' },
+          { text: "Speranza è un ritardato che si fa influenzare, Draghi è lì per le banche. Odio l'Italia.", member: 'FILO' },
+          { text: "Grazie Presidente Draghi! Ma Speranza andrebbe cacciato, sono le zecche dei 5 Stelle a tenerlo lì.", member: 'PIETRO' },
+          { text: "Incompetenti di merda, ma non seguo troppo la politica, mi limito a indignarmi.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Come commenti i dati quotidiani dei contagi (i famosi \"100k al giorno\")?",
+        choices: [
+          { text: "Un massacro, 8500 oggi vuol dire 20k a gennaio. Devo chiudermi in casa, la terza dose è obbligatoria.", member: 'SIMO' },
+          { text: "Dati sfalsati perché contano chi muore di incidente stradale ma col tampone positivo. Tutti hanno il covid ormai.", member: 'DAVE' },
+          { text: "I contagi sono alti per colpa delle scuole e dei bambini, chiudere un mese tutto e via.", member: 'FILO' },
+          { text: "Nessuna emergenza, in ospedale ci sono posti. È tutto terrorismo mediatico.", member: 'PIETRO' },
+          { text: "Raga stiamo andando bene tutto sommato, il tasso è all'1,2, finché le T.I. sono scariche chissenefrega.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "La gestione del Green Pass in Italia...",
+        choices: [
+          { text: "Potevano chiamarlo Mega Green Pass e Giga Green Pass, burocrazia infinita per non decidere.", member: 'DAVE' },
+          { text: "Illegittimo, ci vuole la foto, e il QR code si può falsificare facilmente. Uno strumento del controllo.", member: 'PIETRO' },
+          { text: "Un incubo, lo chiedono anche per un caffè schifoso in un rifugio in montagna. Follia.", member: 'FILO' },
+          { text: "Basterebbe chiedere documento e pass insieme, ma se ne fottono. L'importante è che ci faccia tornare alla normalità.", member: 'SIMO' },
+          { text: "Io me lo faccio controllare e basta, ma fa esplondere che cambino le durate ogni tre mesi.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Il tuo approccio personale al Covid:",
+        choices: [
+          { text: "L'ho preso sicuramente ma ero asintomatico. Le mascherine? FFP2 fissa altrimenti mi agito.", member: 'SIMO' },
+          { text: "Sto per andare in Polonia o al supermercato, non me lo prendo mai, ho il sistema immunitario d'acciaio.", member: 'DAVE' },
+          { text: "Sono in ritardo con le dosi apposta, è tutta una farsa. Al massimo mi raffreddo.", member: 'PIETRO' },
+          { text: "Lo odio, blocca la vita sociale, mi fa incazzare chi esce col Covid e rischia di contagiare gli altri.", member: 'FILO' },
+          { text: "Ah io non mi ammalo, al massimo faccio una corsetta e via.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Se l'Asl blocca una partita di calcio...",
+        choices: [
+          { text: "Le Asl non capiscono un cazzo, De Laurentiis li ha convinti a farsi bloccare per non giocare con la Juve.", member: 'DAVE' },
+          { text: "Fanno bene, il calcio non è al di sopra della pandemia. Ci si organizza in base a cosa decide l'Asl, punto.", member: 'SIMO' },
+          { text: "È una buffonata, Coviddopoli! Le Asl sono vendute e decidono in base a chi conviene.", member: 'PIETRO' },
+          { text: "Follia totale, l'Asl di Napoli è il male assoluto. Regole fatte dai teralesi.", member: 'FILO' },
+          { text: "Aiuto, ma che senso ha far partire chi non ha il Green Pass per poi bloccarlo? Ritardati.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Sui no-vax convinti (come alcuni conoscenti o politici)...",
+        choices: [
+          { text: "Sono la feccia, ma alcuni medici che non si vaccinano sono la prova che la classe medica è messa male.", member: 'FILO' },
+          { text: "Li perculo. Ma purtroppo ci sono in mezzo anche tennisti forti o gente che stimo, quindi è un problema.", member: 'SIMO' },
+          { text: "Fanno bene a non cedere al ricatto dello Stato.", member: 'PIETRO' },
+          { text: "Se non si vaccinano che si paghino le cure o restino a casa. Zero tolleranza.", member: 'DAVE' },
+          { text: "Mi fanno ridere, non capiscono nulla ma mi diverto a leggere i loro scleri.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "L'Austria impone il lockdown totale ai non vaccinati.",
+        choices: [
+          { text: "Ottimo, così li fermi. Un bel lockdown ad personam è il massimo.", member: 'DAVE' },
+          { text: "Follia liberticida, se un paese con il 60% di vaccinati fa così significa che i vaccini non coprono abbastanza.", member: 'PIETRO' },
+          { text: "Da noi se lo facessero scenderebbero in piazza. Hanno le palle a farlo.", member: 'SIMO' },
+          { text: "Era ora, l'obbligo vaccinale è la soluzione definitiva per tutti. Dittatura con regole.", member: 'FILO' },
+          { text: "Hanno le terapie intensive piene, ci sta, lo farei anche in Italia.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "La Dad (Didattica a Distanza) e l'Università...",
+        choices: [
+          { text: "Ha fatto schifo, ha distrutto i rapporti umani e la baldoria che si faceva in aula.", member: 'PIETRO' },
+          { text: "Pazzesco, hanno rovinato una generazione. Gli esami però erano più facili.", member: 'DAVE' },
+          { text: "C'era De Luca che la voleva a tutti i costi, un cavernicolo.", member: 'FILO' },
+          { text: "L'importante era finire. Certo che senza poter copiare è stata dura.", member: 'SIMO' },
+          { text: "A me andava bene, stavo in pigiama a casa e mi sono laureato uguale.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "I tamponi rapidi vs molecolari...",
+        choices: [
+          { text: "I rapidi hanno il 50% di falsi negativi, servono solo per assecondare la Lega e i no-vax.", member: 'PIETRO' },
+          { text: "Quel tizio che fa i video dice cazzate sui falsi negativi, non porta dati certi, parla a vanvera.", member: 'FILO' },
+          { text: "I numeri sono impressionanti, 1 milione di tamponi al giorno!", member: 'MARCO' },
+          { text: "Il tampone serve solo per far arricchire le farmacie e illudere la gente.", member: 'DAVE' },
+          { text: "Se sono negativi va bene, ma ti costringono lo stesso a fare il molecolare e ti rovinano le vacanze.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "I virologi in TV (Galli, Pregliasco, Bassetti)...",
+        choices: [
+          { text: "Pregliasco è un minorato, se dice che la mascherina va tenuta d'estate va fucilato.", member: 'FILO' },
+          { text: "Fanno il loro lavoro, io mi affido a chi ne sa di più. Hanno le loro ragioni.", member: 'SIMO' },
+          { text: "Cazzari che hanno trovato visibilità, ogni giorno si smentiscono da soli e fanno show.", member: 'PIETRO' },
+          { text: "Sembra che tifino per l'aumento dei contagi per non perdere la poltrona in TV.", member: 'DAVE' },
+          { text: "Dicono cose ovvie, ma la gente è talmente stupida che serve ripeterle.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "I vaccini per i bambini o la terza dose per gli over 50...",
+        choices: [
+          { text: "Multa di soli 100 euro per i non vaccinati over 50? Una barzelletta, li prendono in giro.", member: 'MARCO' },
+          { text: "Il vaccino ai bimbi di 5 anni è completamente inutile, pura propaganda Pfizer.", member: 'DAVE' },
+          { text: "Obbligo per i boomer ci sta, è per salvare le T.I. I bambini non c'entrano, lasciateli stare.", member: 'PIETRO' },
+          { text: "È la soluzione, vaccinate anche i neonati così ne usciamo prima e il green pass non scade.", member: 'SIMO' },
+          { text: "Devono farlo e basta, se hai la terza dose almeno eviti i controlli idioti per sederti al bar.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "La fine dell'emergenza (primavera 2022).",
+        choices: [
+          { text: "Non ci posso credere, mascherine tolte. Finalmente, non se ne poteva più di questi idioti.", member: 'FILO' },
+          { text: "In Inghilterra hanno tolto tutto da mesi, noi siamo sempre gli ultimi, grazie Speranza!", member: 'DAVE' },
+          { text: "Sono sollevato, basta rotture di palle, finalmente si torna in vacanza tranquilli.", member: 'SIMO' },
+          { text: "Alla fine l'abbiamo scampata senza lockdown esagerati, ha vinto la linea moderata.", member: 'PIETRO' },
+          { text: "Speriamo non torni a ottobre, sennò ci richiudono tutti come dei cani.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Il green pass di Pietro:",
+        choices: [
+          { text: "Non lo ha, è un novax orgoglioso. Ha il green pass di Adolf Hitler.", member: 'SIMO' },
+          { text: "L'ho chiesto ma si vergogna a mandarlo, dice che sono 'dati personali', che sfigato!", member: 'FILO' },
+          { text: "È quello finto per farsi le foto nei locali, lo scarica da Telegram.", member: 'DAVE' },
+          { text: "Certo che ce l'ho, ma non ve lo mando perché mi fate i fotomontaggi da boomer.", member: 'PIETRO' },
+          { text: "Pietro in giro per Vado Ligure non ha bisogno di pass, non c'è niente aperto!", member: 'MARCO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'motori_ferrari_sculo',
+    title: 'Motori, Ferrari e Sculo',
+    description: 'Formula 1, strategie, Leclerc, Verstappen e Hamilton. La sfortuna della Rossa.',
+    questions: [
+      {
+        id: 1,
+        text: "Cosa succede quando la Ferrari sbaglia il pit-stop (es. Monaco)?",
+        choices: [
+          { text: "RITARDATI DI MERDA. Stupidi idioti. In Ferrari non capiscono un cazzo di niente.", member: 'SIMO' },
+          { text: "La Ferrari è una barzelletta, mossa della sconfitta, ma che cazzo fanno!", member: 'MARCO' },
+          { text: "Leclerc doveva rientrare prima, gli ingegneri sanno solo guardare i dati e non la gara reale.", member: 'DAVE' },
+          { text: "La colpa è di Leclerc, è lui che deve chiamare il cambio gomme. Sainz l'aveva capito.", member: 'PIETRO' },
+          { text: "Follia totale. Fa esplodere il cervello, gara buttata nel cesso.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Lewis Hamilton e il suo \"sculo\":",
+        choices: [
+          { text: "Il culo di Hamilton è leggenda. Ha sculato un'intera carriera, safety car sempre a suo favore.", member: 'MARCO' },
+          { text: "Culomilton, il re dei bottoncini magici. Umiliato da Verstappen, godo.", member: 'DAVE' },
+          { text: "Alla fine ha perso il mondiale per colpa di Latifi, non se lo meritava, aveva fatto un garone.", member: 'PIETRO' },
+          { text: "Sento puzza di sculo Hamilton. Gli avversari di Hamilton non hanno speranze, si arrendano.", member: 'SIMO' },
+          { text: "AHAHAHA. Il Re è finito, poveretto. Una roba schifosa da vedere.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Max Verstappen all'ultima gara ad Abu Dhabi (vittoria del Mondiale):",
+        choices: [
+          { text: "Ha fatto una mossa da campione del mondo, sorpasso pazzesco, se l'è meritato dopo lo sculo di Lewis.", member: 'SIMO' },
+          { text: "Gara del millennio, si è fatta la storia. ODDIO ODDIO.", member: 'MARCO' },
+          { text: "Follia della direzione gara, regole cambiate in corsa. Ma godo perché odio la Mercedes.", member: 'DAVE' },
+          { text: "Mi dispiace per Hamilton, così è brutto. Assurdo. Masi è un teraleso.", member: 'FILO' },
+          { text: "Latifi eroe nazionale. Pazzesco, ho 150 di battito. Red Bull ha fatto la strategia perfetta.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Carlos Sainz vs Charles Leclerc:",
+        choices: [
+          { text: "Sainz è un genio della strategia, Leclerc è veloce ma spesso fa cazzate o sbatte.", member: 'PIETRO' },
+          { text: "Sainz non si è fermato sotto virtual. Avere Sainz in squadra è come avere un ragioniere lento.", member: 'DAVE' },
+          { text: "Leclerc è un fenomeno, il Principe! Sainz fa ridere, è dietro 6-0 in qualifica.", member: 'SIMO' },
+          { text: "Mamma mia, Sainz mi fa venire il latte alle ginocchia. Non regge la pressione.", member: 'FILO' },
+          { text: "Ma chi, quel leso di Sainz? Per fortuna Leclerc fa i miracoli.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Le telecronache di Sky e TV8 (Vanzini, Gene, ecc.):",
+        choices: [
+          { text: "Pazzesche, urlano per tutto, ma almeno creano l'hype. E la Masolin è clamorosa.", member: 'DAVE' },
+          { text: "La regia internazionale fa schifo, inquadrano Stroll mentre c'è la bagarre in testa!", member: 'PIETRO' },
+          { text: "Vanzini fa esplodere i timpani. Non si sopporta. Guardo la gara muto.", member: 'FILO' },
+          { text: "Se lo dice Marc Gené mi fido, lui ne sa. ❤️", member: 'MARCO' },
+          { text: "Insopportabili, dicono cose ovvie e difendono sempre la Ferrari anche quando è indifendibile.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Le auto \"Safety Car\" e le penalità della FIA:",
+        choices: [
+          { text: "Commissario peggio di Speranza, bandiera rossa per tre gocce d'acqua. Ma fate correre!", member: 'DAVE' },
+          { text: "La Fia è corrotta pro-Red Bull o pro-Mercedes in base ai momenti. È un circo.", member: 'PIETRO' },
+          { text: "Masi era un disastro, il nuovo è ancora più maiale. Tempistiche di reazione infinite.", member: 'MARCO' },
+          { text: "È una vergogna schifosa, non sanno il regolamento, cambiano idea ogni giro.", member: 'FILO' },
+          { text: "Dieci secondi di penalità ridicoli, si devono prendere a sportellate e basta.", member: 'SIMO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Le \"gufate\" e pronostici F1 sul gruppo:",
+        choices: [
+          { text: "Se lo dico io, vince Max. Mettete 5 euro, quota sicura.", member: 'FILO' },
+          { text: "Io l'ho giocato a 3.50, ma sicuro vince la RedBull perché la Ferrari esplode a 5 giri dalla fine.", member: 'MARCO' },
+          { text: "Io guardo le live timing su un'app pirata e poi vengo a scriverlo qui con un'ora di ritardo.", member: 'PIETRO' },
+          { text: "Segnatevelo: vince Hamilton. (Risultato: Hamilton forato al giro 1).", member: 'SIMO' },
+          { text: "Tifavo Ferrari, ma ora tifo Perez solo perché le quote sballano.", member: 'DAVE' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Che futuro vedi per la Ferrari l'anno prossimo (2023)?",
+        choices: [
+          { text: "Cambiano i regolamenti, la Ferrari ha lavorato tre anni per questo, vinciamo il mondiale al 100%.", member: 'MARCO' },
+          { text: "Se la giocano all'inizio, poi gli strateghi faranno la solita fine e Verstappen li distrugge.", member: 'SIMO' },
+          { text: "Spero che Binotto si licenzi, non hanno la mentalità vincente, manca il pilota killer.", member: 'DAVE' },
+          { text: "Il motore esploderà ogni due gare, meglio investire su Haas.", member: 'PIETRO' },
+          { text: "Devastati dalla RedBull. Faremo pena come sempre.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Il dominio della Red Bull:",
+        choices: [
+          { text: "Hanno una macchina spaziale, nei rettilinei ti sverniciamo. È ingiocabile.", member: 'SIMO' },
+          { text: "Verstappen è antipatico ma è il pilota più forte in griglia. Macchina perfetta.", member: 'DAVE' },
+          { text: "Hanno rotto, l'anno scorso hanno sculato, quest'anno dominano. Che schifo.", member: 'FILO' },
+          { text: "Adrian Newey è il vero genio, sa leggere le pieghe del regolamento meglio di tutti.", member: 'PIETRO' },
+          { text: "Red Bull ti mette le ali e ti fa vincere le schedine! 😍", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Cosa succede quando c'è una gara noiosa?",
+        choices: [
+          { text: "Io mi addormento dopo il pit stop e mi sveglio alle interviste.", member: 'MARCO' },
+          { text: "Non la guardo nemmeno, leggo il riassunto di Simo o della Gazzetta.", member: 'DAVE' },
+          { text: "Mi attacco a telegram e gufo i piloti che ho scommesso.", member: 'PIETRO' },
+          { text: "Mando 40 messaggi consecutivi in caps lock per lamentarmi che non superano.", member: 'SIMO' },
+          { text: "Gara teralesa. Spengo la tv e vado al bar o al mare.", member: 'FILO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "George Russell in Mercedes:",
+        choices: [
+          { text: "È forte, ma è lì per fare il maggiordomo a Lewis.", member: 'DAVE' },
+          { text: "Fortissimo, sta bastonando Hamilton in qualifica. Il futuro è suo.", member: 'SIMO' },
+          { text: "Un raccomandato, guida un trattore ma arriva sempre a punti.", member: 'PIETRO' },
+          { text: "Mi sta antipatico, tipica faccia da inglese spocchioso.", member: 'FILO' },
+          { text: "Bravo, ma la Mercedes quest'anno è un catorcio.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Come valuti la direzione di gara e le interruzioni?",
+        choices: [
+          { text: "I marshall a Monaco sono lentissimi, ci hanno messo 10 minuti a levare una macchina!", member: 'MARCO' },
+          { text: "Ci vogliono bandiere rosse vere, non le VSC che falsano i distacchi per 1 secondo di sfiga.", member: 'SIMO' },
+          { text: "Fa tutto schifo, preferivo i tempi in cui si correva senza tutte queste menate burocratiche.", member: 'FILO' },
+          { text: "Se lasci la Safety Car in pista fino all'ultimo giro sei in malafede.", member: 'DAVE' },
+          { text: "È per lo show americano. Vogliono l'incidente o la ripartenza alla fine per far audience.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Perché la Ferrari perde sempre nei box?",
+        choices: [
+          { text: "Perché hanno ingegneri senza palle. Nessuno prende una decisione sotto pressione.", member: 'DAVE' },
+          { text: "Sono degli inetti. E Binotto con quel sorriso beffardo non sa mai fare la voce grossa.", member: 'SIMO' },
+          { text: "Hanno troppa paura di sbagliare, quindi sbagliano non facendo niente. Mentalità italiana.", member: 'PIETRO' },
+          { text: "Una pena, io al muretto lo farei meglio con un foglio Excel.", member: 'FILO' },
+          { text: "Perché siamo destinati alla sconfitta, rassegniamoci! 🤣", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "L'incidente a Silverstone tra Zhou e Zhou ribaltato:",
+        choices: [
+          { text: "Mamma mia, ho temuto il peggio, le macchine di oggi sono carri armati però. Halo santo.", member: 'SIMO' },
+          { text: "Che botto! Roba da film, fortunatamente nessuno si è fatto niente.", member: 'MARCO' },
+          { text: "Orribile da vedere. Meno male che c'era l'halo, sennò era morto.", member: 'FILO' },
+          { text: "La regia ha aspettato un'ora prima di mostrare il replay per paura che fosse crepato.", member: 'DAVE' },
+          { text: "Eh, il motorsport è pericoloso, ma fa parte del gioco. Spero Russell paghi.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Le tue preferenze in fatto di piloti:",
+        choices: [
+          { text: "Leclerc è il re, quando è in giornata è inavvicinabile. Tifo solo per lui.", member: 'SIMO' },
+          { text: "Alonso. Uno della vecchia guardia, stratega e cattivo al punto giusto.", member: 'PIETRO' },
+          { text: "Hamilton. Solo perché tutti lo odiano e perché ha vinto più di Schumi.", member: 'DAVE' },
+          { text: "Verstappen perché è l'unico che mette le palle sul tavolo e rischia la vita ad ogni curva.", member: 'MARCO' },
+          { text: "Nessuno, mi fanno schifo tutti, sono dei miliardari viziati che piangono alla radio.", member: 'FILO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'politica_guerra_sistemi',
+    title: 'Politica, Guerra e Massimi Sistemi',
+    description: 'Putin, Biden, Draghi, Salvini e Renzi. L\'analisi geopolitica ed economica della Barcaccia.',
+    questions: [
+      {
+        id: 1,
+        text: "Qual è la tua analisi sulla guerra Russia-Ucraina?",
+        choices: [
+          { text: "Putin ha fatto malissimo i conti. L'esercito russo è scarso, l'economia andrà in default tra sanzioni e rublo che crolla.", member: 'SIMO' },
+          { text: "Gli ucraini dovevano rimanere neutrali. L'espansione della NATO a est ha provocato l'orso russo. È geopolitica.", member: 'PIETRO' },
+          { text: "Una follia totale, stanno massacrando civili. L'Europa non conta nulla e dipendiamo dagli USA.", member: 'FILO' },
+          { text: "Draghi in questo caso si allinea alla NATO. Le sanzioni colpiscono più l'Italia e la nostra benzina.", member: 'DAVE' },
+          { text: "Ahahah speriamo Putin non ci lanci l'atomica, sennò siamo fritti!", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Chi è Mario Draghi per te?",
+        choices: [
+          { text: "Il salvatore dell'Italia. Serio, credibile in Europa, polverizza i giornalisti e i boomer alle conferenze stampa.", member: 'SIMO' },
+          { text: "Un burocrate messo lì dai poteri forti. Messo in scacco dai partiti, ma almeno non è un pagliaccio come Conte.", member: 'PIETRO' },
+          { text: "Il classico banchiere. Non si prende responsabilità, lascia fare allo scemo di Speranza.", member: 'FILO' },
+          { text: "Sopravvalutato. È solo l'espressione delle larghe intese, se fosse stato Conte a fare certe cose lo avrebbero massacrato.", member: 'DAVE' },
+          { text: "L'unico competente in un mare di politici inetti.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Su Matteo Renzi e il suo \"peso politico\":",
+        choices: [
+          { text: "È un Re. Poteva avere il 3% ma ha distrutto Conte, fatto eleggere Mattarella e mosso i fili del governo. Cavaliere Oscuro.", member: 'PIETRO' },
+          { text: "Un boomer odioso. L'intervista a Otto e Mezzo contro Travaglio è stata puro cringe, si autoinvita dappertutto.", member: 'FILO' },
+          { text: "Un cinico calcolatore. Ha i suoi intrallazzi con l'Arabia Saudita e la giustizia, ma ha saputo manovrare.", member: 'DAVE' },
+          { text: "È intelligentissimo, ha argomentato benissimo contro i giornalisti di parte come Travaglio. Renzi >> Draghi.", member: 'SIMO' },
+          { text: "Mi fa troppo ridere quando spara cazzate o manda le newsletter in inglese maccheronico.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Cosa pensi di Matteo Salvini?",
+        choices: [
+          { text: "Ormai è una macchietta, va in Polonia a farsi umiliare. Non lo vota più nessuno, la Meloni lo ha distrutto.", member: 'PIETRO' },
+          { text: "Il \"Capitano\"! Mi fa morire dal ridere, posta le foto del cibo, suona ai citofoni. Genio del trash.", member: 'FILO' },
+          { text: "Un ritardato mentale. Se ci fosse stato lui al governo con il Covid eravamo tutti morti o in piazza coi forconi.", member: 'SIMO' },
+          { text: "È in declino totale. Le sue battaglie politiche si basano sull'urlo di giornata senza sostanza.", member: 'DAVE' },
+          { text: "Il re dei meme. Ma guai a fargli governare il paese.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "La crisi energetica (benzina, gas, aumenti):",
+        choices: [
+          { text: "Cinghia stretta! Non faccio più il pieno perché devo chiedere un mutuo per andare a lavorare.", member: 'SIMO' },
+          { text: "Inflazione pazza, ringraziamo le sanzioni alla Russia e la transizione ecologica imposta dall'Europa dei burocrati.", member: 'FILO' },
+          { text: "L'unica soluzione è riaprire le trivelle o puntare sul nucleare, i green sono dei fanatici staccati dalla realtà.", member: 'PIETRO' },
+          { text: "Draghi ha fatto finta di fare uno sconto accise ma ce lo rimettono da dietro con l'inflazione e le bollette raddoppiate.", member: 'DAVE' },
+          { text: "Io lavoro da casa o vado in bici, mi salvo così! 🤣", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Sulle auto elettriche entro il 2035:",
+        choices: [
+          { text: "Follia dell'UE. In Italia non abbiamo le colonnine, distruggeremo l'industria automobilistica italiana per favorire i cinesi.", member: 'FILO' },
+          { text: "Perfetto, così le auto termiche diventeranno d'epoca e potrò rivenderle al triplo. Investimento sicuro!", member: 'SIMO' },
+          { text: "Un'utopia irrealizzabile calata dall'alto dai radical chic che non sanno come vive la gente normale.", member: 'DAVE' },
+          { text: "Se il mercato lo chiede si adegueranno. Meglio investire sulla guida autonoma o sulle bici!", member: 'PIETRO' },
+          { text: "Stronzata cosmica, tanto non avverrà mai, rinvieranno la data all'ultimo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Biden vs Trump (USA):",
+        choices: [
+          { text: "Biden ha l'Alzheimer, cade dalla bici, dice cazzate clamorose e gaffe. Non è adatto a fare il presidente.", member: 'SIMO' },
+          { text: "Trump era amico di Putin ma almeno non scatenava guerre. Sotto Biden l'America è debole.", member: 'FILO' },
+          { text: "Gli americani fanno i loro porci comodi e noi paghiamo il conto. Trump almeno faceva ridere con i tweet.", member: 'DAVE' },
+          { text: "La politica americana è in mano a lobby e miliardari. Noi siamo la loro provincia sottomessa.", member: 'PIETRO' },
+          { text: "Sono tutti e due vecchi bacucchi rincoglioniti, non se ne salva uno.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "Che futuro vedi per l'Italia?",
+        choices: [
+          { text: "Un paese di vecchi e statali. La gente non ha voglia di lavorare, il RdC è una mancia elettorale. Siamo fottuti.", member: 'DAVE' },
+          { text: "Se togliamo i burocrati europei e la classe politica attuale forse ci salviamo, ma è dura.", member: 'FILO' },
+          { text: "Finché abbiamo un'industria manifatturiera di alto livello reggiamo, ma servono i fondi del PNRR spesi bene.", member: 'SIMO' },
+          { text: "Crolleremo sotto i debiti, la colpa è della mentalità assistenzialista che ha distrutto la competitività.", member: 'PIETRO' },
+          { text: "Fuggire all'estero è l'unica opzione saggia.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Il ddl Zan e i diritti civili:",
+        choices: [
+          { text: "Una fuffa mediatica sollevata dai cantanti radical chic come Fedez per fare like su Instagram.", member: 'PIETRO' },
+          { text: "Giusto che sia stato affossato, un circo leso, l'Italia ha problemi molto più gravi di cui occuparsi.", member: 'FILO' },
+          { text: "In un paese civile passerebbe senza fare casino, qua si deve sempre fare il teatrino tra destra e sinistra.", member: 'SIMO' },
+          { text: "Non mi interessa la questione, mi fa solo schifo l'ipocrisia dei politici che applaudono quando viene bocciato in Senato.", member: 'DAVE' },
+          { text: "Troppa attenzione ai social, poca al mondo reale. 😂", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Su Zelensky e la propaganda di guerra:",
+        choices: [
+          { text: "Zelensky è un comico messo lì, non accetta di arrendersi e porta il suo paese alla distruzione.", member: 'PIETRO' },
+          { text: "Si difende come può, è un eroe nazionale per gli ucraini, mentre Putin fa bombardare gli ospedali.", member: 'SIMO' },
+          { text: "Sta diventando invadente, chiede armi tutti i giorni e fa leva sul senso di colpa dell'Europa.", member: 'FILO' },
+          { text: "Fa parte di un gioco più grande tra NATO e Russia. L'Europa è il burattino in mezzo.", member: 'DAVE' },
+          { text: "Mi fa pena la povera gente, dei leader non mi fido di nessuno.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "I post politici di Fedez e Chiara Ferragni...",
+        choices: [
+          { text: "Moralisti del cazzo! Vivono nei super attici da milionari e poi vengono a spiegare a noi come vivere. Insopportabili.", member: 'FILO' },
+          { text: "Fanno il loro gioco per avere i cuoricini e il ritorno d'immagine. Capitalizzano sulle battaglie sociali.", member: 'PIETRO' },
+          { text: "A volte dicono cose sensate contro Salvini, ma restano dei personaggi super trash.", member: 'SIMO' },
+          { text: "Un cancro della società moderna, esaltano i ragazzini lobotomizzati da TikTok.", member: 'DAVE' },
+          { text: "Li ignoro felicemente. Meno li vedo meglio sto.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Quale manovra economica applicheresti subito in Italia?",
+        choices: [
+          { text: "Abbassamento drastico del cuneo fiscale, taglio all'IRPEF per i ceti medi. Troppe tasse sul lavoro!", member: 'DAVE' },
+          { text: "Riapertura immediata di tutte le attività (all'epoca del Covid) e niente cazzate green che ammazzano le imprese.", member: 'FILO' },
+          { text: "Investimenti pesanti sulla tecnologia e sulle energie rinnovabili. Dobbiamo staccarci dalla dipendenza dal gas.", member: 'SIMO' },
+          { text: "Taglio netto a tutti i bonus a pioggia, dal reddito di cittadinanza al bonus facciate che è una truffa legalizzata.", member: 'PIETRO' },
+          { text: "Settimana lavorativa di 4 giorni come in UK! Sarebbe stupendo! 😍", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Il ruolo dell'Europa e dell'Euro.",
+        choices: [
+          { text: "L'Europa è governata da banchieri e burocrati non eletti, serve più sovranità nazionale.", member: 'FILO' },
+          { text: "L'Euro ci ha salvato dal default, senza la BCE e i prestiti europei oggi saremmo l'Argentina.", member: 'SIMO' },
+          { text: "Un carrozzone inutile che sa solo imporre regole su quanto devono essere lunghe le zucchine.", member: 'DAVE' },
+          { text: "Utile commercialmente, ma politicamente è un disastro, non hanno un esercito o una politica estera comune.", member: 'PIETRO' },
+          { text: "Finché non ci mettono altre tasse per me va bene così.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "L'elezione di Mattarella bis (Presidente della Repubblica):",
+        choices: [
+          { text: "Poveretto, voleva riposarsi ma lo hanno obbligato perché la classe politica è formata da inetti che non sanno trovare un nome.", member: 'SIMO' },
+          { text: "Una figura di merda dei partiti. Salvini bruciato, Conte distrutto. Vittoria del compromesso.", member: 'PIETRO' },
+          { text: "Mattarella se avesse le palle avrebbe detto di no. Invece ha ceduto al teatrino.", member: 'FILO' },
+          { text: "Ha accettato perché c'era Draghi dietro che gli parava il culo per mantenere lo status quo.", member: 'DAVE' },
+          { text: "Il nonno degli italiani, fa tenerezza!", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "I media e l'informazione in Italia:",
+        choices: [
+          { text: "I telegiornali fanno terrorismo psicologico. E Fanpage è il regno dei moralisti finti di sinistra.", member: 'FILO' },
+          { text: "La Stampa, Corriere e Gazzetta sbagliano apposta i titoli o copiano fake news per vendere. L'informazione fa schifo.", member: 'DAVE' },
+          { text: "Io mi informo leggendo i bilanci veri, le testate sportive italiane sono imbarazzanti e inventano trattative.", member: 'SIMO' },
+          { text: "I talk show come DiMartedì o Giletti sono pattumiera. Invitano i russi o i complottisti solo per fare caciara e share.", member: 'PIETRO' },
+          { text: "Meno male che c'è Calcio.ga, altrimenti non vedremmo manco le partite!", member: 'MARCO' },
+        ]
+      }
+    ]
+  },
+  {
+    id: 'barcaccia_lifestyle',
+    title: 'Barcaccia Lifestyle, Fanta e Lesità',
+    description: 'Battute interne, lavoro, università, Fantacalcio e idee business folli. Il mondo Barcaccia a 360 gradi.',
+    questions: [
+      {
+        id: 1,
+        text: "Qual è la tua idea geniale per una startup/business?",
+        choices: [
+          { text: "Un'app per prenotare il cibo con gli amici tramite un codice condiviso in cui ognuno mette il suo ordine senza sbagliare. E le opzioni audio negli articoli di giornale!", member: 'SIMO' },
+          { text: "Un e-commerce di vestiti/scarpe usate che, invece di farti lo sconto, investe la % in un fondo a tuo nome per farteli crescere.", member: 'FILO' },
+          { text: "Una società di consulenza per giocatori ricchi che hanno subito estorsioni, o un'agenzia che vende mascherine usate.", member: 'DAVE' },
+          { text: "Investire pesante sul rublo quando è crollato. 'Cash is trash', l'unica via sono le crypto o il mercato azionario asiatico.", member: 'PIETRO' },
+          { text: "Nessuna startup, mi apro un canale Twitch per fare streaming su Warzone.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 2,
+        text: "Qual è l'insulto o l'appellativo preferito in chat?",
+        choices: [
+          { text: "\"Gigaleso\", \"Teraleso\", \"Deficiente\", \"Basta!\".", member: 'FILO' },
+          { text: "\"Idiota\", \"Coglione\", \"Sei un hater\", \"Smettila di blablare\".", member: 'SIMO' },
+          { text: "\"Boomer\", \"Piretto\", \"Complottista\", \"Scappato di casa\".", member: 'PIETRO' },
+          { text: "\"Minorato\", \"Capra\", \"Sculointerista\".", member: 'DAVE' },
+          { text: "\"Re dei lesi\", accompagnato da tante 🤣 e ❤️.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 3,
+        text: "Come gestisci il Fantacalcio?",
+        choices: [
+          { text: "Faccio listoni in Excel, calcolo medie ponderate e so esattamente il budget da spendere al centesimo (es. max 42 per Chiesa).", member: 'SIMO' },
+          { text: "Prendo i miei idoli della Juve, anche se fanno cacare, e sperpero il budget.", member: 'FILO' },
+          { text: "Non lo faccio con voi perché c'è Simo che ha troppo culo o usa i database, meglio evitare.", member: 'DAVE' },
+          { text: "Guardo infortunati, squalificati, batto cassa sui panchinari dimenticati da Dio. Ma non vinco mai.", member: 'PIETRO' },
+          { text: "Prendo i campioni che si spaccano al primo mese e lascio la squadra abbandonata a metà anno.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 4,
+        text: "Cosa pensi di \"Titi\" o \"Piretto\"?",
+        choices: [
+          { text: "Titi è uno che vuole fare il dirigente nel calcio ma manda audio lunghissimi di lamentele. Piretto non capisce nulla.", member: 'SIMO' },
+          { text: "Titi è il ritardato per eccellenza, la sua polmonite 'non-covid' è leggenda. Piretto fa discorsi no-sense su Facebook.", member: 'FILO' },
+          { text: "Piretto vede complotti ovunque. Titi è un ex studente che non so come si sia laureato.", member: 'PIETRO' },
+          { text: "Piretto scrive i poemi su FB, andrebbero incorniciati. Titi va a fare l'università ma non si sa a fare cosa.", member: 'DAVE' },
+          { text: "Mi fanno morire dal ridere, leggo gli screen e godo.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 5,
+        text: "Qual è il \"Sculo\" supremo (la fortuna sfacciata)?",
+        choices: [
+          { text: "Lo sculo della Juve di Allegri, che subisce 30 tiri a partita e vince con un gol al 92' di rimpallo.", member: 'FILO' },
+          { text: "Lo Sculo-Inter: trovano sempre avversari con mezza squadra col Covid, rigori inventati al 90' e l'arbitro che non li ammonisce.", member: 'DAVE' },
+          { text: "Lo sculo di Hamilton o il culo di Simo al Fantacalcio. Sono forze paranormali.", member: 'MARCO' },
+          { text: "Il Real Madrid in Champions League. Sotto di due gol, fanno un tiro e passano il turno.", member: 'SIMO' },
+          { text: "Gli avversari della Lazio che beccano il gol della domenica da 30 metri o le squadrette che si salvano per miracolo.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 6,
+        text: "Come reagisci a uno screen della Gazzetta mandato nel gruppo?",
+        choices: [
+          { text: "\"Sei il direttore del Medro-TG. Ma non leggi gli articoli, ti fermi ai titoli e ci credi pure.\"", member: 'PIETRO' },
+          { text: "\"Ancora Gazzetta Premium? Simo, basta regalargli i soldi per leggere le fake news della Juve.\"", member: 'FILO' },
+          { text: "\"Ahahah, ci hanno letto! Stanno palesemente copiando le nostre analisi del mercato!\"", member: 'DAVE' },
+          { text: "Ne mando altri 10 al giorno, con le formazioni probabili, gli stipendi tagliati male, le pagelle di fine anno.", member: 'SIMO' },
+          { text: "\"Siete fantastici, grandissimi scoop. 🤣\"", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 7,
+        text: "Abbonamenti (DAZN, Sky, Spotify):",
+        choices: [
+          { text: "Le divido con tutti, sospendo Dazn durante le pause nazionali per risparmiare, ho sgamato l'offerta a 19,90.", member: 'SIMO' },
+          { text: "Mi attacco ai link pezzotti di Calcio.ga, vado in differita, se scatta il pop-up esplodo ma non pago 40 euro.", member: 'FILO' },
+          { text: "Ho l'abbonamento ma i telecronisti di Mediaset/Dazn mi fanno venire l'orticaria, disdico appena l'Inter ruba.", member: 'DAVE' },
+          { text: "Meglio investire in borsa i soldi degli abbonamenti, o farsi regalare account da altre persone.", member: 'PIETRO' },
+          { text: "Sfrutto quello del Medro o me lo guardo su Youtube. Sono un parassita felice.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 8,
+        text: "La \"Barcaccia\" e le cene di gruppo...",
+        choices: [
+          { text: "Pacco quasi sempre perché ho compleanni, battesimi o scuse varie, ma poi mi intrometto in chat.", member: 'MARCO' },
+          { text: "C'ero, e se ci sono porto 'simmenthal' e offro piadine con i fondi del mio sito e-commerce.", member: 'FILO' },
+          { text: "Io propongo cene, case con giardino, e scrivo che ci incontriamo per festeggiare, poi organizzo i conti su Satispay.", member: 'SIMO' },
+          { text: "Io vado al massimo a Otranto a un matrimonio, o in Polonia, ho da fare i miei business.", member: 'DAVE' },
+          { text: "Io dico di no perché non c'è voglia, o perché preferisco fare i tornei alla Play e fare il 'Pietro'.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 9,
+        text: "Il lavoro in ufficio / smartworking:",
+        choices: [
+          { text: "Da quando sono alla Mapei faccio orari umani ma sfotto Pietro che cazzeggia a Vado Ligure. L'inflazione mi spaventa.", member: 'DAVE' },
+          { text: "In Fater lavoro sempre fino a tardi, mi riempiono di call e mi tocca sfottere le scelte della concorrenza.", member: 'SIMO' },
+          { text: "In consulenza / agenzia entrate o scrivendo la tesi, valuto l'opportunità di scroccare soldi allo stato.", member: 'PIETRO' },
+          { text: "Lavoro con Word e i margini impazziti mi fanno bestemmiare la madonna. Cerco 'know-how'.", member: 'FILO' },
+          { text: "Sgobbo come un matto ma leggo i messaggi del gruppo di nascosto per farmi due risate.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 10,
+        text: "Il giudizio sulle \"donne\" o \"ragazze\" esterne al gruppo (es. prof, tipe di TikTok):",
+        choices: [
+          { text: "Adogo/Nasti? Delle palesi ignoranti, fanno i video in corsivo e le tipe del corsivo mi fanno vomitare.", member: 'FILO' },
+          { text: "Trovami il profilo IG, valuto se merita. Certo che a Vado o Ravenna il livello non è altissimo.", member: 'PIETRO' },
+          { text: "Vi inoltro i reel trash delle ex compagne che si credono fashion blogger o dicono cazzate epiche.", member: 'SIMO' },
+          { text: "Faccio screenshot e vi inondo la chat, ma attenzione ai parenti/morosi prima di sbilanciarvi.", member: 'DAVE' },
+          { text: "\"Ma questa chi è? Mai vista in vita mia ahahahaha\".", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 11,
+        text: "Se uno scrive un messaggio lungo/Audio lunghissimo:",
+        choices: [
+          { text: "\"4 minuti di audio su Allegri... ti meriti l'Asperger. Mi rifiuto di ascoltarlo.\"", member: 'PIETRO' },
+          { text: "\"Me lo ascolto mentre prendo il sole al mare. Podcast del ritardo.\"", member: 'FILO' },
+          { text: "\"È fondamentale, sennò non capite i concetti tattici o la situazione di bilancio della Juve!\"", member: 'SIMO' },
+          { text: "\"Skippo tutti i messaggi di oggi, siete fusi. Rileggo solo i titoli.\"", member: 'DAVE' },
+          { text: "\"AHAHAH bellissimo l'audio! Siete dei pazzi.\"", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 12,
+        text: "Chi è il \"Leso dell'anno\"?",
+        choices: [
+          { text: "Per me vince Pietro a mani basse, si auto-lesa ogni volta che parla di politica o di Mancini.", member: 'FILO' },
+          { text: "Lo vince Allegri o Inzaghi. O forse Filo quando esplode per la Juve.", member: 'SIMO' },
+          { text: "Il premio va alla Gazzetta dello Sport e a chi le paga l'abbonamento premium.", member: 'DAVE' },
+          { text: "Io mi auto-premio perché sono megalomane. Premio SecchioneLesity.", member: 'MARCO' },
+          { text: "Chiunque non capisca che Draghi ha fallito e che il calcio italiano è finito.", member: 'PIETRO' },
+        ]
+      },
+      {
+        id: 13,
+        text: "Come usi le GIF / Sticker?",
+        choices: [
+          { text: "Mando sticker di Mazzarri che si tocca l'orologio, o di Conte arrabbiato.", member: 'DAVE' },
+          { text: "Rispondo con GIF di personaggi trash (es. Richard Benson) o con screenshot tagliati chirurgicamente.", member: 'SIMO' },
+          { text: "Meme russi, o sticker di Fedez piangente per sfottere i radical chic.", member: 'PIETRO' },
+          { text: "Screenshot di commenti di 'Calciatori Brutti' o 'Chiamarsi Bomber' per far vedere la mediocrità altrui.", member: 'FILO' },
+          { text: "Non le uso, piazzo solo un bel '❤️' o '🤣' tattico sotto le gufate degli altri.", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 14,
+        text: "Discussioni su \"Cash\" e stipendi altrui:",
+        choices: [
+          { text: "\"Ma come fai a dare 15 milioni a Ramsey! Io col 10% del suo stipendio sistemavo il bilancio di 3 famiglie!\"", member: 'DAVE' },
+          { text: "\"Sono tutti soldi falsi, i bilanci calcistici sono gonfiati, le plusvalenze sono il cancro.\"", member: 'SIMO' },
+          { text: "\"Voglio vedere la dichiarazione dei redditi di Ferrero, o il patrimonio di Commisso che si è rifatto lo stadio gratis.\"", member: 'PIETRO' },
+          { text: "\"Voglio fondare un partito, prendere l'80k annuo da parlamentare e andarmene in pensione.\"", member: 'FILO' },
+          { text: "\"Sei povero Simo, accetta i miei 100 euro per Dazn e taci.\"", member: 'MARCO' },
+        ]
+      },
+      {
+        id: 15,
+        text: "Il momento \"Apoteosi\" della Barcaccia:",
+        choices: [
+          { text: "La disdetta di massa a DAZN o la creazione del Medro-TG.", member: 'SIMO' },
+          { text: "L'uscita dai mondiali dell'Italia. Serata di lutto e insulti a Jorginho.", member: 'PIETRO' },
+          { text: "I pagelloni scritti a fine campionato con annessi voti da 4 a 9 alla squadra e a noi stessi.", member: 'DAVE' },
+          { text: "Quando insultiamo i finti fenomeni in TV o scopriamo profili Instagram imbarazzanti.", member: 'FILO' },
+          { text: "Le gufate live durante la Formula 1, rigorosamente 40 secondi in anticipivo rispetto alla TV.", member: 'MARCO' },
+        ]
+      }
+    ]
   }
 ];

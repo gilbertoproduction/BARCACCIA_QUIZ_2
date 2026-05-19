@@ -5,14 +5,14 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, RefreshCw, Users, BookOpen, CheckCircle2, BarChart3 } from 'lucide-react';
-import { Question, Member, Choice } from './types';
+import { ChevronRight, RefreshCw, Users, BookOpen, CheckCircle2 } from 'lucide-react';
+import { Member, Choice } from './types';
 import { QUIZZES, Quiz } from './data/quizzes';
-import { Sondaggi } from './components/Sondaggi';
+import { Question } from './types';
 
 // --- Types ---
 
-type QuizPhase = 'START' | 'SELECT' | 'QUESTION' | 'FEEDBACK' | 'RESULT' | 'POLLS';
+type QuizPhase = 'START' | 'SELECT' | 'QUESTION' | 'FEEDBACK' | 'RESULT';
 
 const RANDOM_ID = 'random-quiz';
 
@@ -134,7 +134,7 @@ export default function App() {
   const matchPercentage = totalAnswers > 0 ? Math.round((scores[topMember] / totalAnswers) * 100) : 0;
 
   return (
-    <div className="fixed inset-0 bg-bg-base text-ink font-sans overflow-hidden">
+    <div className="fixed inset-0 bg-bg-base text-ink font-sans overflow-hidden select-none touch-none">
       <AnimatePresence mode="wait">
         
         {/* START PHASE */}
@@ -175,44 +175,16 @@ export default function App() {
             exit={{ opacity: 0, y: -20 }}
             className="h-full flex flex-col p-8 pt-16 overflow-y-auto"
           >
-            <div className="mb-8">
-              <h2 className="text-3xl font-serif text-olive mb-2">Benvenuto</h2>
-              <p className="text-neutral-500">Esplora i quiz o partecipa ai sondaggi di gruppo.</p>
-            </div>
-
-            {/* SONDAGGI BARCACCIA SECTION */}
             <div className="mb-10">
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-olive mb-4 opacity-40">Sondaggi Barcaccia</h3>
-              <button
-                onClick={() => setPhase('POLLS')}
-                className="w-full text-left p-6 rounded-3xl border transition-all shadow-md active:scale-98 relative group bg-olive border-olive/20"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-white/20 text-white border border-white/20">
-                    <BarChart3 size={20} />
-                  </div>
-                  <div className="flex-1 pr-4 text-white">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-bold text-xl leading-tight">
-                        Nuovo Sondaggio
-                      </h3>
-                      <div className="px-1.5 py-0.5 bg-terracotta rounded text-[8px] font-bold uppercase tracking-widest">Hot</div>
-                    </div>
-                    <p className="text-sm opacity-80 leading-normal">
-                      Chi bisogna cacciare dalla Juventus? Vota e guarda i risultati.
-                    </p>
-                  </div>
-                </div>
-              </button>
+              <h2 className="text-3xl font-serif text-olive mb-2">Scegli il Quiz</h2>
+              <p className="text-neutral-500">Seleziona un argomento per iniziare il test.</p>
             </div>
 
-            <div className="mb-4">
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-olive mb-4 opacity-40">L'Essenza dei 5</h3>
-              <div className="space-y-4">
-                <button
-                  onClick={handleStartRandom}
-                  className="w-full text-left p-6 rounded-3xl border transition-all shadow-sm active:scale-98 relative group bg-terracotta/5 border-terracotta/20"
-                >
+            <div className="space-y-4 pb-12">
+              <button
+                onClick={handleStartRandom}
+                className="w-full text-left p-6 rounded-3xl border transition-all shadow-md active:scale-98 relative group bg-terracotta border-terracotta/20 mb-6"
+              >
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-white/20 text-white border border-white/20">
                     <RefreshCw size={20} className="group-active:rotate-180 transition-transform duration-500" />
@@ -269,9 +241,8 @@ export default function App() {
                 );
               })}
             </div>
-          </div>
-        </motion.div>
-      )}
+          </motion.div>
+        )}
 
         {/* QUESTION PHASE */}
         {phase === 'QUESTION' && currentQuestion && activeQuiz && (
@@ -416,19 +387,6 @@ export default function App() {
             >
               <RefreshCw size={18} /> Altri Quiz
             </button>
-          </motion.div>
-        )}
-
-        {/* POLLS PHASE */}
-        {phase === 'POLLS' && (
-          <motion.div
-            key="polls"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="h-full"
-          >
-            <Sondaggi onBack={() => setPhase('SELECT')} />
           </motion.div>
         )}
 
