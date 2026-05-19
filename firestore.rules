@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isMember(m) {
+      return m in ['SIMO', 'MARCO', 'DAVE', 'PIETRO', 'FILO'];
+    }
+
+    // Polls rules
+    match /polls/{pollId} {
+      allow read: if isSignedIn();
+      allow write: if false; // System defined
+    }
+
+    // Votes rules
+    match /votes/{voteId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && isValidVote(request.resource.data);
+      allow update: if isSignedIn() && resource.data.userId == request.auth.uid && isValidVote(request.resource.data);
+      allow delete: if isSignedIn() && resource.data.userId == request.auth.uid;
+    }
+
+    function isValidVote(data) {
+      return data.keys().hasAll(['pollId', 'member', 'selectedOptions', 'timestamp', 'userId']) &&
+             data.keys().size() == 5 &&
+             data.pollId is string && 
+             data.pollId.size() <= 128 &&
+             isMember(data.member) &&
+             data.selectedOptions is list &&
+             data.selectedOptions.size() <= 100 &&
+             data.timestamp == request.time &&
+             data.userId == request.auth.uid;
+    }
+  }
+}
