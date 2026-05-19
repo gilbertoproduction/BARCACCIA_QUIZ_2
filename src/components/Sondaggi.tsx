@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Users, 
@@ -8,7 +8,8 @@ import {
   BarChart3, 
   LayoutGrid, 
   ListFilter,
-  UserCheck
+  UserCheck,
+  RefreshCw
 } from 'lucide-react';
 import { db } from '../lib/firebase';
 import { 
@@ -137,6 +138,33 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     );
   };
 
+  const pollVotes = useMemo(() => activePoll ? allVotes.filter(v => v.pollId === activePoll.id) : [], [allVotes, activePoll]);
+
+  const memberVotes = useMemo(() => {
+    if (!activePoll) return {} as Record<Member, Vote>;
+    
+    const getVoteTime = (v: Vote) => {
+      if (!v.timestamp) return 0;
+      if (typeof v.timestamp === 'string') return new Date(v.timestamp).getTime();
+      try {
+        if (typeof (v.timestamp as any).toDate === 'function') {
+          return (v.timestamp as any).toDate().getTime();
+        }
+      } catch (e) {}
+      return 0;
+    };
+
+    return pollVotes.reduce((acc, v) => {
+      const vTime = getVoteTime(v);
+      const existingTime = acc[v.member] ? getVoteTime(acc[v.member]) : -1;
+      
+      if (!acc[v.member] || vTime > existingTime) {
+        acc[v.member] = v;
+      }
+      return acc;
+    }, {} as Record<Member, Vote>);
+  }, [pollVotes, activePoll]);
+
   if (error) {
     return (
       <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-bg-base">
@@ -183,11 +211,11 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     );
   }
 
-  if (loading) {
+  if (loading && !activePoll) {
     return (
       <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-bg-base">
         <div className="w-12 h-12 border-4 border-olive/10 border-t-olive rounded-full animate-spin mb-4" />
-        <p className="text-olive font-bold text-xs uppercase tracking-widest opacity-40">Caricamento Sondaggi...</p>
+        <p className="text-olive font-bold text-xs uppercase tracking-widest opacity-40">Caricamento...</p>
       </div>
     );
   }
@@ -196,33 +224,18 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     const dirigenti = activePoll.options.filter(o => o.type === 'dirigente');
     const giocatori = activePoll.options.filter(o => o.type === 'giocatore');
 
-    const pollVotes = allVotes.filter(v => v.pollId === activePoll.id);
-
-    const getVoteTime = (v: Vote) => {
-      if (!v.timestamp) return 0;
-      if (typeof v.timestamp === 'string') return new Date(v.timestamp).getTime();
-      return (v.timestamp as any).toDate?.().getTime() || 0;
-    };
-
-    const memberVotes = pollVotes.reduce((acc, v) => {
-      const vTime = getVoteTime(v);
-      const existingTime = acc[v.member] ? getVoteTime(acc[v.member]) : -1;
-      
-      if (!acc[v.member] || vTime > existingTime) {
-        acc[v.member] = v;
-      }
-      return acc;
-    }, {} as Record<Member, Vote>);
-
     return (
-      <div className="h-full flex flex-col bg-bg-base overflow-hidden">
-        <header className="p-6 pt-12 border-b border-olive/5 bg-cream/50 z-10">
+      <div className="h-full relative flex flex-col bg-bg-base overflow-hidden">
+        <header className="p-6 pt-12 border-b border-olive/5 bg-cream/50 z-10 shrink-0">
           <div className="flex justify-between items-center mb-4">
             <button onClick={() => setActivePoll(null)} className="flex items-center gap-1 text-olive">
               <ChevronLeft size={20} /> <span className="font-bold text-xs uppercase tracking-widest">Sondaggi</span>
             </button>
-            <div className="flex items-center gap-2 px-3 py-1 bg-olive/5 rounded-full">
-              <span className="text-[10px] font-bold text-olive">{selectedMember}</span>
+            <div className="flex items-center gap-2">
+               {loading && <RefreshCw size={10} className="animate-spin text-olive/30" />}
+               <div className="px-3 py-1 bg-olive/5 rounded-full">
+                 <span className="text-[10px] font-bold text-olive">{selectedMember}</span>
+               </div>
             </div>
           </div>
           <h2 className="text-2xl font-serif text-ink leading-tight mb-1">{activePoll.title}</h2>
@@ -320,46 +333,58 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
               </section>
             </div>
           ) : (
-            <div className="space-y-8">
+            <div className="space-y-6">
               {activePoll.options.map(opt => {
-                const voters = MEMBERS.filter(m => memberVotes[m]?.selectedOptions.includes(opt.id));
-                if (voters.length === 0) return null;
+                const voters = MEMBERS.filter(m => {
+                  const vData = memberVotes[m];
+                  return vData && Array.isArray(vData.selectedOptions) && vData.selectedOptions.includes(opt.id);
+                });
+                const voteCount = voters.length;
                 
                 return (
-                  <div key={opt.id} className="bg-cream rounded-2xl p-4 border border-olive/5 shadow-sm">
-                    <div className="flex justify-between items-start mb-3">
+                  <div key={opt.id} className={`bg-cream rounded-2xl p-5 border transition-all ${voteCount > 0 ? 'border-terracotta/20 shadow-md' : 'border-olive/5 opacity-60'}`}>
+                    <div className="flex justify-between items-start mb-4">
                       <div>
-                        <div className="font-bold text-ink">{opt.name}</div>
-                        <div className="text-[10px] text-neutral-400 italic">{opt.role}</div>
+                        <div className="font-bold text-lg text-ink leading-tight">{opt.name}</div>
+                        <div className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest mt-0.5">{opt.role}</div>
                       </div>
-                      <div className="bg-terracotta text-white px-2 py-0.5 rounded text-[10px] font-bold">
-                        {voters.length} VOTI
+                      <div className={`px-3 py-1 rounded-full text-[10px] font-black tracking-tighter ${voteCount > 0 ? 'bg-terracotta text-white' : 'bg-neutral-100 text-neutral-400'}`}>
+                        {voteCount === 1 ? '1 VOTO' : `${voteCount} VOTI`}
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {voters.map(v => {
-                        const vData = memberVotes[v];
-                        let dateStr = '...';
-                        if (vData?.timestamp) {
-                          const date = typeof vData.timestamp === 'string' ? new Date(vData.timestamp) : (vData.timestamp as any).toDate();
-                          dateStr = date.toLocaleString('it-IT', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
-                        }
-                        return (
-                          <div key={v} className="flex flex-col items-center">
-                            <span className="bg-olive/10 text-olive text-[8px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border border-olive/10">
-                              {v}
-                            </span>
-                            <span className="text-[6px] text-neutral-400 mt-0.5">{dateStr}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
+
+                    {voteCount > 0 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {voters.map(v => {
+                          const vData = memberVotes[v];
+                          let dateStr = '';
+                          if (vData?.timestamp) {
+                            try {
+                              const date = typeof vData.timestamp === 'string' 
+                                ? new Date(vData.timestamp) 
+                                : (typeof (vData.timestamp as any).toDate === 'function' ? (vData.timestamp as any).toDate() : new Date());
+                              dateStr = date.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
+                            } catch (e) {}
+                          }
+                          return (
+                            <div key={v} className="bg-white border border-olive/10 px-2 py-1 rounded-lg flex items-center gap-1.5 shadow-sm">
+                              <span className="text-[10px] font-bold text-olive">{v}</span>
+                              {dateStr && <span className="text-[8px] text-neutral-400 border-l border-neutral-100 pl-1.5">{dateStr}</span>}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className="text-[10px] text-neutral-300 italic">Nessuna preferenza</div>
+                    )}
                   </div>
                 );
               })}
               
-              {pollVotes.length === 0 && (
-                <div className="text-center py-20 opacity-30 italic">Nessun voto registrato per questo sondaggio.</div>
+              {pollVotes.length > 0 && (
+                <div className="pt-4 text-center">
+                   <p className="text-[9px] font-bold text-olive/20 uppercase tracking-[0.3em]">Fine Risultati</p>
+                </div>
               )}
             </div>
           )}
