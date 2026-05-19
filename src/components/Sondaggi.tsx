@@ -71,19 +71,36 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    let isMounted = true;
     const q = query(collection(db, 'votes'));
+    
+    // Set a timeout to finish loading even if Firestore is slow/hanging
+    const timeoutId = setTimeout(() => {
+      if (isMounted) setLoading(false);
+    }, 5000);
+
     const unsub = onSnapshot(q, (snapshot) => {
+      if (!isMounted) return;
       const votes = snapshot.docs.map(doc => ({ 
         id: doc.id, 
         ...doc.data() 
       } as Vote));
       setAllVotes(votes);
       setLoading(false);
-    }, (error) => {
-      setError("Errore di connessione a Firestore. Verifica la tua connessione.");
+      clearTimeout(timeoutId);
+    }, (err) => {
+      if (!isMounted) return;
+      console.error("Firestore sync error:", err);
+      // Don't set error state immediately to allow retries/timeout
       setLoading(false);
+      clearTimeout(timeoutId);
     });
-    return unsub;
+
+    return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
+      unsub();
+    };
   }, []);
 
   const handleVote = async () => {
@@ -129,15 +146,6 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     );
   }
 
-  if (loading) {
-    return (
-      <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-bg-base">
-        <div className="w-12 h-12 border-4 border-olive/10 border-t-olive rounded-full animate-spin mb-4" />
-        <p className="text-olive font-bold text-xs uppercase tracking-widest opacity-40">Caricamento Sondaggi...</p>
-      </div>
-    );
-  }
-
   if (!selectedMember) {
     return (
       <div className="h-full flex flex-col p-8 pt-16 bg-bg-base">
@@ -161,6 +169,15 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
             </button>
           ))}
         </div>
+      </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-bg-base">
+        <div className="w-12 h-12 border-4 border-olive/10 border-t-olive rounded-full animate-spin mb-4" />
+        <p className="text-olive font-bold text-xs uppercase tracking-widest opacity-40">Caricamento Sondaggi...</p>
       </div>
     );
   }
