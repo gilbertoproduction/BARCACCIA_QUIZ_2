@@ -68,6 +68,7 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [viewMode, setViewMode] = useState<'VOTE' | 'RESULTS'>('VOTE');
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const q = query(collection(db, 'votes'));
@@ -79,7 +80,7 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
       setAllVotes(votes);
       setLoading(false);
     }, (error) => {
-      handleFirestoreError(error, OperationType.GET, 'votes');
+      setError("Errore di connessione a Firestore. Verifica la tua connessione.");
       setLoading(false);
     });
     return unsub;
@@ -109,7 +110,33 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     );
   };
 
-  if (loading) return null;
+  if (error) {
+    return (
+      <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-bg-base">
+        <div className="w-12 h-12 bg-terracotta/10 rounded-full flex items-center justify-center text-terracotta mb-4">
+          <ChevronLeft size={24} className="rotate-90" />
+        </div>
+        <h3 className="text-xl font-serif text-ink mb-2">Ops! Qualcosa è andato storto</h3>
+        <p className="text-neutral-500 mb-6 text-sm">{error}</p>
+        <button 
+          onClick={() => window.location.reload()}
+          className="bg-olive text-white px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest"
+        >
+          Riprova
+        </button>
+        <button onClick={onBack} className="mt-4 text-neutral-400 text-xs font-bold uppercase tracking-widest">Torna Indietro</button>
+      </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-bg-base">
+        <div className="w-12 h-12 border-4 border-olive/10 border-t-olive rounded-full animate-spin mb-4" />
+        <p className="text-olive font-bold text-xs uppercase tracking-widest opacity-40">Caricamento Sondaggi...</p>
+      </div>
+    );
+  }
 
   if (!selectedMember) {
     return (
@@ -256,11 +283,18 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
-                      {voters.map(v => (
-                        <span key={v} className="bg-olive/10 text-olive text-[8px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border border-olive/10">
-                          {v}
-                        </span>
-                      ))}
+                      {voters.map(v => {
+                        const vData = memberVotes[v];
+                        const dateStr = vData?.timestamp ? new Date((vData.timestamp as any).toDate()).toLocaleString('it-IT', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '...';
+                        return (
+                          <div key={v} className="flex flex-col items-center">
+                            <span className="bg-olive/10 text-olive text-[8px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border border-olive/10">
+                              {v}
+                            </span>
+                            <span className="text-[6px] text-neutral-400 mt-0.5">{dateStr}</span>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 );

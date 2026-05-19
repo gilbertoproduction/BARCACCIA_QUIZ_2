@@ -134,7 +134,7 @@ export default function App() {
   const matchPercentage = totalAnswers > 0 ? Math.round((scores[topMember] / totalAnswers) * 100) : 0;
 
   return (
-    <div className="fixed inset-0 bg-bg-base text-ink font-sans overflow-hidden select-none touch-none">
+    <div className="fixed inset-0 bg-bg-base text-ink font-sans overflow-hidden">
       <AnimatePresence mode="wait">
         
         {/* START PHASE */}
