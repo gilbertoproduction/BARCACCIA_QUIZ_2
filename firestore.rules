@@ -21,28 +21,26 @@ service cloud.firestore {
 
     // Polls rules
     match /polls/{pollId} {
-      allow read: if isSignedIn();
+      allow read: if true;
       allow write: if false; // System defined
     }
 
     // Votes rules
     match /votes/{voteId} {
-      allow read: if isSignedIn();
-      allow create: if isSignedIn() && isValidVote(request.resource.data);
-      allow update: if isSignedIn() && resource.data.userId == request.auth.uid && isValidVote(request.resource.data);
-      allow delete: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow read: if true;
+      allow create: if isValidVote(request.resource.data);
+      allow update: if false; // Simple version: no updates without persistent identity
+      allow delete: if false;
     }
 
     function isValidVote(data) {
-      return data.keys().hasAll(['pollId', 'member', 'selectedOptions', 'timestamp', 'userId']) &&
-             data.keys().size() == 5 &&
+      return data.keys().hasAll(['pollId', 'member', 'selectedOptions', 'timestamp']) &&
+             data.keys().size() == 4 &&
              data.pollId is string && 
              data.pollId.size() <= 128 &&
              isMember(data.member) &&
              data.selectedOptions is list &&
-             data.selectedOptions.size() <= 100 &&
-             data.timestamp == request.time &&
-             data.userId == request.auth.uid;
+             data.selectedOptions.size() <= 100;
     }
   }
 }

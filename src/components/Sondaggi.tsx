@@ -8,23 +8,16 @@ import {
   BarChart3, 
   LayoutGrid, 
   ListFilter,
-  UserCheck,
-  LogOut
+  UserCheck
 } from 'lucide-react';
-import { db, auth } from '../lib/firebase';
+import { db } from '../lib/firebase';
 import { 
   collection, 
   query, 
-  where, 
-  getDocs, 
   addDoc, 
   serverTimestamp, 
   onSnapshot,
-  doc,
-  setDoc,
-  deleteDoc
 } from 'firebase/firestore';
-import { signInWithPopup, GoogleAuthProvider, onAuthStateChanged, User } from 'firebase/auth';
 import { Poll, PollOption, Vote, Member } from '../types';
 import { POLLS } from '../data/polls';
 
@@ -57,17 +50,7 @@ interface FirestoreErrorInfo {
 function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
   const errInfo: FirestoreErrorInfo = {
     error: error instanceof Error ? error.message : String(error),
-    authInfo: {
-      userId: auth.currentUser?.uid,
-      email: auth.currentUser?.email,
-      emailVerified: auth.currentUser?.emailVerified,
-      isAnonymous: auth.currentUser?.isAnonymous,
-      tenantId: auth.currentUser?.tenantId,
-      providerInfo: auth.currentUser?.providerData?.map(provider => ({
-        providerId: provider.providerId,
-        email: provider.email,
-      })) || []
-    },
+    authInfo: {},
     operationType,
     path
   }
@@ -78,7 +61,6 @@ function handleFirestoreError(error: unknown, operationType: OperationType, path
 const MEMBERS: Member[] = ['SIMO', 'MARCO', 'DAVE', 'PIETRO', 'FILO'];
 
 export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
-  const [user, setUser] = useState<User | null>(null);
   const [selectedMember, setSelectedMember] = useState<Member | null>(null);
   const [activePoll, setActivePoll] = useState<Poll | null>(null);
   const [allVotes, setAllVotes] = useState<Vote[]>([]);
@@ -88,15 +70,6 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => {
-      setUser(u);
-      setLoading(false);
-    });
-    return unsub;
-  }, []);
-
-  useEffect(() => {
-    if (!user) return;
     const q = query(collection(db, 'votes'));
     const unsub = onSnapshot(q, (snapshot) => {
       const votes = snapshot.docs.map(doc => ({ 
@@ -104,38 +77,23 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
         ...doc.data() 
       } as Vote));
       setAllVotes(votes);
+      setLoading(false);
     }, (error) => {
       handleFirestoreError(error, OperationType.GET, 'votes');
+      setLoading(false);
     });
     return unsub;
-  }, [user]);
-
-  const handleGoogleLogin = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      await signInWithPopup(auth, provider);
-    } catch (error) {
-      console.error("Login failed", error);
-    }
-  };
+  }, []);
 
   const handleVote = async () => {
-    if (!user || !selectedMember || !activePoll) return;
+    if (!selectedMember || !activePoll) return;
     setIsSubmitting(true);
     try {
-      // Remove existing vote for this member on this poll
-      const existingVote = allVotes.find(v => v.member === selectedMember && v.pollId === activePoll.id);
-      if (existingVote?.id) {
-        // Technically rules might block this if not own userId, but we assume one user per member or shared account for now
-        // For simplicity, we just add a new one and logic handles "latest" per member
-      }
-
       await addDoc(collection(db, 'votes'), {
         pollId: activePoll.id,
         member: selectedMember,
         selectedOptions,
-        timestamp: serverTimestamp(),
-        userId: user.uid
+        timestamp: serverTimestamp()
       });
       setViewMode('RESULTS');
     } catch (error) {
@@ -152,26 +110,6 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
   };
 
   if (loading) return null;
-
-  if (!user) {
-    return (
-      <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-bg-base">
-        <Users size={48} className="text-olive mb-6 opacity-20" />
-        <h2 className="text-3xl font-serif text-olive mb-4">Sondaggi Barcaccia</h2>
-        <p className="text-neutral-500 mb-8 max-w-xs">
-          Per partecipare ai sondaggi e vedere i risultati devi autenticarti.
-        </p>
-        <button
-          onClick={handleGoogleLogin}
-          className="bg-white border border-neutral-200 text-ink px-8 py-3 rounded-full font-bold flex items-center gap-3 shadow-sm active:scale-95 transition-transform"
-        >
-          <img src="https://www.google.com/favicon.ico" className="w-5 h-5" alt="Google" />
-          Accedi con Google
-        </button>
-        <button onClick={onBack} className="mt-6 text-neutral-400 text-sm font-medium">Torna ai Quiz</button>
-      </div>
-    );
-  }
 
   if (!selectedMember) {
     return (
@@ -346,9 +284,9 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
             </button>
           )}
           <div className="mt-4 flex justify-between text-[8px] font-bold text-olive/20 uppercase tracking-[0.2em]">
-             <span>{user.email}</span>
-             <button onClick={() => auth.signOut()} className="flex items-center gap-1 hover:text-terracotta">
-               <LogOut size={10} /> Logout
+             <span>Barcaccia Official App</span>
+             <button onClick={() => setSelectedMember(null)} className="flex items-center gap-1 hover:text-terracotta">
+               <Users size={10} /> Cambia Profilo
              </button>
           </div>
         </footer>
