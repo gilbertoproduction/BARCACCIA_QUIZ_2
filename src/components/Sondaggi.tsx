@@ -73,7 +73,7 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
 
   useEffect(() => {
     let isMounted = true;
-    const q = query(collection(db, 'votes'), orderBy('timestamp', 'asc'));
+    const q = query(collection(db, 'votes'));
     
     const timeoutId = setTimeout(() => {
       if (isMounted) setLoading(false);
@@ -81,6 +81,7 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
 
     const unsub = onSnapshot(q, (snapshot) => {
       if (!isMounted) return;
+      console.log("Snapshot received, docs:", snapshot.docs.length);
       const votes = snapshot.docs.map(doc => ({ 
         id: doc.id, 
         ...doc.data() 
@@ -195,8 +196,21 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     const dirigenti = activePoll.options.filter(o => o.type === 'dirigente');
     const giocatori = activePoll.options.filter(o => o.type === 'giocatore');
 
-    const memberVotes = allVotes.reduce((acc, v) => {
-      acc[v.member] = v;
+    const pollVotes = allVotes.filter(v => v.pollId === activePoll.id);
+
+    const getVoteTime = (v: Vote) => {
+      if (!v.timestamp) return 0;
+      if (typeof v.timestamp === 'string') return new Date(v.timestamp).getTime();
+      return (v.timestamp as any).toDate?.().getTime() || 0;
+    };
+
+    const memberVotes = pollVotes.reduce((acc, v) => {
+      const vTime = getVoteTime(v);
+      const existingTime = acc[v.member] ? getVoteTime(acc[v.member]) : -1;
+      
+      if (!acc[v.member] || vTime > existingTime) {
+        acc[v.member] = v;
+      }
       return acc;
     }, {} as Record<Member, Vote>);
 
@@ -232,6 +246,20 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
               <BarChart3 size={14} /> Risultati
             </button>
           </div>
+          
+          {viewMode === 'RESULTS' && (
+            <div className="mt-4 flex justify-between items-center px-1">
+              <span className="text-[8px] font-bold text-olive/30 uppercase tracking-widest">
+                Aggiornato: {new Date().toLocaleTimeString()}
+              </span>
+              <button 
+                onClick={() => window.location.reload()} 
+                className="text-terracotta text-[8px] font-bold uppercase tracking-widest flex items-center gap-1"
+              >
+                <RefreshCw size={10} /> Forza Ricarica
+              </button>
+            </div>
+          )}
         </header>
 
         <main className="flex-1 overflow-y-auto p-6 pb-32">
@@ -330,8 +358,8 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
                 );
               })}
               
-              {allVotes.length === 0 && (
-                <div className="text-center py-20 opacity-30 italic">Nessun voto registrato.</div>
+              {pollVotes.length === 0 && (
+                <div className="text-center py-20 opacity-30 italic">Nessun voto registrato per questo sondaggio.</div>
               )}
             </div>
           )}
