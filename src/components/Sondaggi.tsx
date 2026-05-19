@@ -15,7 +15,8 @@ import { db } from '../lib/firebase';
 import { 
   collection, 
   query, 
-  addDoc, 
+  setDoc,
+  doc, 
   serverTimestamp, 
   onSnapshot,
   orderBy
@@ -104,11 +105,15 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
 
     const unsub = onSnapshot(q, (snapshot) => {
       if (!isMounted) return;
-      console.log("Snapshot received, docs:", snapshot.docs.length);
-      const votes = snapshot.docs.map(doc => ({ 
-        id: doc.id, 
-        ...doc.data() 
-      } as Vote));
+      console.log("SNAPSHOT RECEIVED. Count:", snapshot.docs.length);
+      const votes = snapshot.docs.map(doc => {
+        const data = doc.data();
+        return { 
+          id: doc.id, 
+          ...data 
+        } as Vote;
+      });
+      console.log("VOTES PROCESSED:", votes.length);
       setAllVotes(votes);
       setLoading(false);
       clearTimeout(timeoutId);
@@ -129,45 +134,48 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
   const handleVote = async () => {
     if (!selectedMember || !activePoll) return;
     
-    // Prevent double submissions
     if (isSubmitting) return;
     
     setIsSubmitting(true);
     setError(null);
     try {
-      const timestamp = new Date().toISOString();
+      // Deterministic ID for the vote to ensure "one per person" and reliability
+      const voteId = `${activePoll.id}_${selectedMember}`;
       
       // Optimistic local update
-      const tempId = `temp-${Date.now()}`;
       const newVote: Vote = {
-        id: tempId,
+        id: voteId,
         pollId: activePoll.id,
         member: selectedMember,
-        selectedOptions: [...selectedOptions], // Clone
-        timestamp: timestamp
+        selectedOptions: [...selectedOptions],
+        timestamp: new Date().toISOString() // Local preview timestamp
       };
 
       setAllVotes(prev => {
-        const filtered = prev.filter(v => !(v.member === selectedMember && v.pollId === activePoll.id));
+        const filtered = prev.filter(v => v.id !== voteId);
         return [...filtered, newVote];
       });
 
-      // Switch to results immediately for the user
+      // Switch to results immediately
       setViewMode('RESULTS');
 
-      // Await Firestore write for better reliability
-      await addDoc(collection(db, 'votes'), {
+      // Write to Firestore with setDoc to overwrite any previous attempts/votes
+      await setDoc(doc(db, 'votes', voteId), {
         pollId: activePoll.id,
         member: selectedMember,
-        selectedOptions,
-        timestamp: timestamp,
-        isFromServer: true // Metadata to help filtering if needed
-      });
+        selectedOptions: selectedOptions,
+        timestamp: serverTimestamp(),
+        updatedAt: new Date().toISOString()
+      }, { merge: true });
       
     } catch (err: any) {
       console.error("Vote failed:", err);
-      setError("Errore durante il salvataggio. Verifica la tua connessione e riprova.");
-      // Rollback might happen via onSnapshot anyway, but we set error to let user know
+      // If it's a permission error, it's likely the rules
+      if (err.message?.includes("permissions")) {
+        setError("Errore di permessi. Contatta l'amministratore.");
+      } else {
+        setError("Errore durante il salvataggio. Riprova.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -185,14 +193,14 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     if (!activePoll) return {} as Record<Member, Vote>;
     
     const getVoteTime = (v: Vote) => {
-      if (!v.timestamp) return 0;
+      if (!v.timestamp) return Date.now(); // Optimistic/pending timestamp
       if (typeof v.timestamp === 'string') return new Date(v.timestamp).getTime();
       try {
         if (typeof (v.timestamp as any).toDate === 'function') {
           return (v.timestamp as any).toDate().getTime();
         }
       } catch (e) {}
-      return 0;
+      return Date.now();
     };
 
     return pollVotes.reduce((acc, v) => {
@@ -274,6 +282,9 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
             </button>
             <div className="flex items-center gap-2">
                {loading && <RefreshCw size={10} className="animate-spin text-olive/30" />}
+               <div className="px-2 py-0.5 bg-terracotta/10 rounded text-[8px] font-bold text-terracotta">
+                 DB: {allVotes.length}
+               </div>
                <div className="px-3 py-1 bg-olive/5 rounded-full">
                  <span className="text-[10px] font-bold text-olive">{selectedMember}</span>
                </div>
