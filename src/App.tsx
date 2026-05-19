@@ -5,15 +5,17 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, RefreshCw, Users, BookOpen, CheckCircle2 } from 'lucide-react';
+import { ChevronRight, RefreshCw, Users, BookOpen, CheckCircle2, User, Gamepad2, AlertCircle } from 'lucide-react';
 import { Member, Choice } from './types';
 import { QUIZZES, Quiz } from './data/quizzes';
 import { Question } from './types';
 
 // --- Types ---
 
-type QuizPhase = 'START' | 'SELECT' | 'QUESTION' | 'FEEDBACK' | 'RESULT';
+type QuizPhase = 'START' | 'SELECT' | 'MODE_SELECT' | 'CHAR_ASSIGN' | 'QUESTION' | 'FEEDBACK' | 'RESULT';
+type QuizMode = 'CLASSIC' | 'IMPERSONATION';
 
+const MEMBERS: Member[] = ['SIMO', 'MARCO', 'DAVE', 'PIETRO', 'FILO'];
 const RANDOM_ID = 'random-quiz';
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -60,6 +62,8 @@ const ProgressBar = ({ current, total }: { current: number; total: number }) => 
 
 export default function App() {
   const [phase, setPhase] = useState<QuizPhase>('START');
+  const [mode, setMode] = useState<QuizMode>('CLASSIC');
+  const [targetMember, setTargetMember] = useState<Member | null>(null);
   const [activeQuiz, setActiveQuiz] = useState<Quiz | null>(null);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [hasAnswered, setHasAnswered] = useState(false);
@@ -94,10 +98,23 @@ export default function App() {
 
   const handleSelectQuiz = (quiz: Quiz) => {
     setActiveQuiz(quiz);
+    setPhase('MODE_SELECT');
+  };
+
+  const handleSelectMode = (selectedMode: QuizMode) => {
+    setMode(selectedMode);
     setCurrentIdx(0);
     setHasAnswered(false);
     setScores({ SIMO: 0, MARCO: 0, DAVE: 0, PIETRO: 0, FILO: 0 });
-    setPhase('QUESTION');
+
+    if (selectedMode === 'IMPERSONATION') {
+      const randomMember = MEMBERS[Math.floor(Math.random() * MEMBERS.length)];
+      setTargetMember(randomMember);
+      setPhase('CHAR_ASSIGN');
+    } else {
+      setTargetMember(null);
+      setPhase('QUESTION');
+    }
   };
 
   const handleChoice = (choice: Choice) => {
@@ -132,6 +149,11 @@ export default function App() {
   const topMember = sortedMembers[0][0];
   const totalAnswers = (Object.values(scores) as number[]).reduce((acc, val) => acc + val, 0);
   const matchPercentage = totalAnswers > 0 ? Math.round((scores[topMember] / totalAnswers) * 100) : 0;
+  
+  const impersonationScore = mode === 'IMPERSONATION' && targetMember 
+    ? Math.round(((scores[targetMember] || 0) / totalAnswers) * 100) 
+    : 0;
+  const hasPassedImpersonation = impersonationScore >= 70;
 
   return (
     <div className="fixed inset-0 bg-bg-base text-ink font-sans overflow-hidden select-none touch-none">
@@ -244,6 +266,96 @@ export default function App() {
           </motion.div>
         )}
 
+        {/* MODE SELECT PHASE */}
+        {phase === 'MODE_SELECT' && (
+          <motion.div
+            key="mode-select"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="h-full flex flex-col p-8 items-center justify-center text-center gap-8"
+          >
+            <div className="space-y-4">
+              <h2 className="text-4xl font-serif text-olive">Scegli la Modalità</h2>
+              <p className="text-neutral-500 max-w-xs mx-auto">
+                Come vuoi affrontare questo test della Barcaccia?
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 w-full max-w-sm">
+              <button
+                onClick={() => handleSelectMode('CLASSIC')}
+                className="flex flex-col items-center gap-4 p-6 bg-cream border border-olive/10 rounded-3xl shadow-sm active:scale-95 transition-all hover:border-terracotta/50"
+              >
+                <div className="w-12 h-12 bg-olive/5 rounded-2xl flex items-center justify-center text-olive">
+                  <User size={28} />
+                </div>
+                <div className="text-center">
+                  <h3 className="font-bold text-xl text-ink mb-1">Classica</h3>
+                  <p className="text-xs text-neutral-400">Scopri chi sei veramente tra i cinque.</p>
+                </div>
+              </button>
+
+              <button
+                onClick={() => handleSelectMode('IMPERSONATION')}
+                className="flex flex-col items-center gap-4 p-6 bg-cream border border-olive/10 rounded-3xl shadow-sm active:scale-95 transition-all hover:border-terracotta/50"
+              >
+                <div className="w-12 h-12 bg-terracotta/10 rounded-2xl flex items-center justify-center text-terracotta">
+                  <Gamepad2 size={28} />
+                </div>
+                <div className="text-center">
+                  <h3 className="font-bold text-xl text-ink mb-1">Impersonificazione</h3>
+                  <p className="text-xs text-neutral-400">Comportati come un membro specifico e raggiungi il 70% di fedeltà.</p>
+                </div>
+              </button>
+            </div>
+
+            <button 
+              onClick={() => setPhase('SELECT')}
+              className="text-olive/40 font-bold text-xs uppercase tracking-widest hover:text-olive transition-colors"
+            >
+              Indietro
+            </button>
+          </motion.div>
+        )}
+
+        {/* CHARACTER ASSIGNMENT PHASE */}
+        {phase === 'CHAR_ASSIGN' && targetMember && (
+          <motion.div
+            key="char-assign"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="h-full flex flex-col p-8 items-center justify-center text-center gap-10"
+          >
+            <div className="space-y-2">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-terracotta">La Sfida</span>
+              <h2 className="text-4xl font-serif text-olive leading-tight">Impersona</h2>
+            </div>
+
+            <div className="space-y-6">
+              <motion.div 
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                className="text-6xl font-sans font-bold uppercase tracking-tighter text-ink bg-cream p-12 rounded-[3rem] border border-olive/5 shadow-xl"
+              >
+                {targetMember}
+              </motion.div>
+              <p className="text-neutral-500 max-w-xs mx-auto text-sm leading-relaxed">
+                Rispondi alle domande come se fossi <span className="font-bold text-ink">{targetMember}</span>. 
+                Devi indovinare almeno il <span className="font-bold text-terracotta">70%</span> delle sue reazioni tipiche.
+              </p>
+            </div>
+
+            <button
+              onClick={() => setPhase('QUESTION')}
+              className="bg-olive text-white px-12 py-4 rounded-full font-bold text-lg uppercase tracking-widest active:scale-95 transition-transform shadow-lg shadow-olive/20 flex items-center gap-2"
+            >
+              Comincia <ChevronRight size={20} />
+            </button>
+          </motion.div>
+        )}
+
         {/* QUESTION PHASE */}
         {phase === 'QUESTION' && currentQuestion && activeQuiz && (
           <motion.div
@@ -255,6 +367,16 @@ export default function App() {
             className="h-full relative flex flex-col p-6 pt-16"
           >
             <ProgressBar current={currentIdx} total={activeQuiz.questions.length} />
+            
+            {mode === 'IMPERSONATION' && targetMember && (
+              <div className="absolute top-10 left-0 right-0 flex justify-center z-40 pointer-events-none">
+                <div className="px-4 py-1 bg-terracotta/10 border border-terracotta/20 rounded-full">
+                  <p className="text-[9px] font-bold uppercase tracking-widest text-terracotta">
+                    Impersonando: <span className="text-ink">{targetMember}</span>
+                  </p>
+                </div>
+              </div>
+            )}
             
             <div className="flex-1 flex flex-col gap-10 mt-8 overflow-y-auto hide-scrollbar">
               <div className="space-y-2">
@@ -346,15 +468,50 @@ export default function App() {
               <div className="inline-block px-3 py-1 bg-terracotta/10 rounded-full text-terracotta font-bold text-[10px] uppercase tracking-widest mb-4">
                 {activeQuiz?.title}
               </div>
-              <h2 className="text-4xl font-serif text-olive leading-tight mb-2">
-                Il tuo Profilo
-              </h2>
-              <p className="text-base text-neutral-500 font-medium mb-6">
-                Sei al <span className="text-terracotta font-bold">{matchPercentage}%</span> simile a
-              </p>
-              <div className="text-7xl font-sans font-bold uppercase tracking-tighter text-ink leading-none">
-                {topMember}
-              </div>
+              
+              {mode === 'CLASSIC' ? (
+                <>
+                  <h2 className="text-4xl font-serif text-olive leading-tight mb-2">
+                    Il tuo Profilo
+                  </h2>
+                  <p className="text-base text-neutral-500 font-medium mb-6">
+                    Sei al <span className="text-terracotta font-bold">{matchPercentage}%</span> simile a
+                  </p>
+                  <div className="text-7xl font-sans font-bold uppercase tracking-tighter text-ink leading-none">
+                    {topMember}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="mb-6">
+                    {hasPassedImpersonation ? (
+                      <div className="w-16 h-16 bg-green-500/10 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/20">
+                        <CheckCircle2 size={32} />
+                      </div>
+                    ) : (
+                      <div className="w-16 h-16 bg-red-500/10 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500/20">
+                        <AlertCircle size={32} />
+                      </div>
+                    )}
+                    <h2 className="text-3xl font-serif text-olive mb-1">
+                      {hasPassedImpersonation ? 'Impersonificazione Riuscita!' : 'Impersonificazione Fallita'}
+                    </h2>
+                    <p className="text-sm text-neutral-500">
+                      Dovevi essere: <span className="text-ink font-bold">{targetMember}</span>
+                    </p>
+                  </div>
+                  
+                  <div className="bg-cream rounded-2xl p-4 border border-olive/5 mb-6">
+                    <div className="text-sm font-medium text-neutral-500 mb-1">Fedeltà al Personaggio</div>
+                    <div className="text-4xl font-bold text-ink">
+                      {impersonationScore}%
+                    </div>
+                    <div className="text-[10px] uppercase tracking-widest text-neutral-400 mt-2 font-bold">
+                      Target minimo: 70%
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
 
             <div className="bg-cream rounded-3xl p-6 shadow-sm border border-olive/5 mb-8">
