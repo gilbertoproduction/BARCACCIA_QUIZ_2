@@ -109,18 +109,35 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     setIsSubmitting(true);
     setError(null);
     try {
-      // Use client-side timestamp for immediate local availability and sorting
       const timestamp = new Date().toISOString();
       
-      // We don't strictly await the network response to provide an "instant" feel
-      // Firestore will handle the persistence and retries in the background.
+      // Optimistic local update
+      const tempId = `temp-${Date.now()}`;
+      const newVote: Vote = {
+        id: tempId,
+        pollId: activePoll.id,
+        member: selectedMember,
+        selectedOptions,
+        timestamp: timestamp
+      };
+
+      setAllVotes(prev => {
+        const filtered = prev.filter(v => !(v.member === selectedMember && v.pollId === activePoll.id));
+        return [...filtered, newVote];
+      });
+
+      // Background Firestore update
       addDoc(collection(db, 'votes'), {
         pollId: activePoll.id,
         member: selectedMember,
         selectedOptions,
         timestamp: timestamp
+      }).then((docRef) => {
+        // Replace temp vote with real one once confirmed if you want, 
+        // but onSnapshot will handle it.
       }).catch(err => {
         console.error("Delayed background vote failure:", err);
+        setError("Salvataggio fallito. Verifica la connessione.");
       });
       
       setViewMode('RESULTS');
@@ -334,15 +351,17 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
             </div>
           ) : (
             <div className="space-y-6">
-              {activePoll.options.map(opt => {
-                const voters = MEMBERS.filter(m => {
-                  const vData = memberVotes[m];
-                  return vData && Array.isArray(vData.selectedOptions) && vData.selectedOptions.includes(opt.id);
-                });
-                const voteCount = voters.length;
-                
-                return (
-                  <div key={opt.id} className={`bg-cream rounded-2xl p-5 border transition-all ${voteCount > 0 ? 'border-terracotta/20 shadow-md' : 'border-olive/5 opacity-60'}`}>
+              {activePoll.options
+                .map(opt => {
+                  const voters = MEMBERS.filter(m => {
+                    const vData = memberVotes[m];
+                    return vData && Array.isArray(vData.selectedOptions) && vData.selectedOptions.includes(opt.id);
+                  });
+                  return { opt, voters, voteCount: voters.length };
+                })
+                .sort((a, b) => b.voteCount - a.voteCount)
+                .map(({ opt, voters, voteCount }) => (
+                  <div key={opt.id} className={`bg-cream rounded-2xl p-5 border transition-all ${voteCount > 0 ? 'border-terracotta/20 shadow-md scale-[1.02]' : 'border-olive/5 opacity-60'}`}>
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <div className="font-bold text-lg text-ink leading-tight">{opt.name}</div>
@@ -367,9 +386,10 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
                             } catch (e) {}
                           }
                           return (
-                            <div key={v} className="bg-white border border-olive/10 px-2 py-1 rounded-lg flex items-center gap-1.5 shadow-sm">
-                              <span className="text-[10px] font-bold text-olive">{v}</span>
-                              {dateStr && <span className="text-[8px] text-neutral-400 border-l border-neutral-100 pl-1.5">{dateStr}</span>}
+                            <div key={v} className="bg-white border border-olive/10 px-3 py-1.5 rounded-xl flex items-center gap-2 shadow-sm">
+                              <div className="w-2 h-2 rounded-full bg-terracotta animate-pulse" />
+                              <span className="text-xs font-bold text-ink">{v}</span>
+                              {dateStr && <span className="text-[8px] text-neutral-300 border-l border-neutral-100 pl-2">{dateStr}</span>}
                             </div>
                           );
                         })}
@@ -378,8 +398,7 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
                       <div className="text-[10px] text-neutral-300 italic">Nessuna preferenza</div>
                     )}
                   </div>
-                );
-              })}
+                ))}
               
               {pollVotes.length > 0 && (
                 <div className="pt-4 text-center">
