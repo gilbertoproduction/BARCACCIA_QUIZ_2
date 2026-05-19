@@ -17,6 +17,7 @@ import {
   query, 
   setDoc,
   doc, 
+  getDocs,
   serverTimestamp, 
   onSnapshot,
   orderBy
@@ -68,6 +69,12 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     const saved = localStorage.getItem('barcaccia_member');
     return (saved as Member) || null;
   });
+  
+  const toggleOption = (id: string) => {
+    setSelectedOptions(prev => 
+      prev.includes(id) ? prev.filter(oid => oid !== id) : [...prev, id]
+    );
+  };
   const [activePoll, setActivePoll] = useState<Poll | null>(null);
   const [allVotes, setAllVotes] = useState<Vote[]>([]);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
@@ -87,6 +94,7 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
   useEffect(() => {
     if (activePoll && selectedMember && !loading) {
       const hasVoted = allVotes.some(v => v.pollId === activePoll.id && v.member === selectedMember);
+      console.log(`Checking vote status: member=${selectedMember}, poll=${activePoll.id}, hasVoted=${hasVoted}, totalVotes=${allVotes.length}`);
       if (hasVoted) {
         setViewMode('RESULTS');
       } else {
@@ -97,15 +105,20 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
 
   useEffect(() => {
     let isMounted = true;
+    console.log("Initializing Firestore sync...");
     const q = query(collection(db, 'votes'));
     
+    setLoading(true);
     const timeoutId = setTimeout(() => {
-      if (isMounted) setLoading(false);
-    }, 5000);
+      if (isMounted) {
+        console.log("Firestore sync timed out after 8s");
+        setLoading(false);
+      }
+    }, 8000);
 
     const unsub = onSnapshot(q, (snapshot) => {
       if (!isMounted) return;
-      console.log("SNAPSHOT RECEIVED. Count:", snapshot.docs.length);
+      
       const votes = snapshot.docs.map(doc => {
         const data = doc.data();
         return { 
@@ -113,13 +126,15 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
           ...data 
         } as Vote;
       });
-      console.log("VOTES PROCESSED:", votes.length);
+      
+      console.log("VOTES UPDATED. New count:", votes.length, "FromCache:", snapshot.metadata.fromCache);
       setAllVotes(votes);
       setLoading(false);
       clearTimeout(timeoutId);
     }, (err) => {
       if (!isMounted) return;
-      console.error("Firestore sync error:", err);
+      console.error("CRITICAL Firestore sync error:", err);
+      setError(`Errore sincronizzazione: ${err.message}`);
       setLoading(false);
       clearTimeout(timeoutId);
     });
@@ -139,16 +154,18 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     setIsSubmitting(true);
     setError(null);
     try {
-      // Deterministic ID for the vote to ensure "one per person" and reliability
       const voteId = `${activePoll.id}_${selectedMember}`;
+      console.log(`Submitting vote: ${voteId}`, selectedOptions);
       
+      const timestampString = new Date().toISOString();
+
       // Optimistic local update
       const newVote: Vote = {
         id: voteId,
         pollId: activePoll.id,
         member: selectedMember,
         selectedOptions: [...selectedOptions],
-        timestamp: new Date().toISOString() // Local preview timestamp
+        timestamp: timestampString
       };
 
       setAllVotes(prev => {
@@ -159,15 +176,16 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
       // Switch to results immediately
       setViewMode('RESULTS');
 
-      // Write to Firestore with setDoc to overwrite any previous attempts/votes
+      // Write to Firestore - Use ISO string for timestamp temporarily to avoid server-side complexity during debugging
       await setDoc(doc(db, 'votes', voteId), {
         pollId: activePoll.id,
         member: selectedMember,
         selectedOptions: selectedOptions,
-        timestamp: serverTimestamp(),
-        updatedAt: new Date().toISOString()
+        timestamp: timestampString, // Reliability test: using string instead of serverTimestamp
+        updatedAt: timestampString
       }, { merge: true });
       
+      console.log("Firestore write SUCCESS");
     } catch (err: any) {
       console.error("Vote failed:", err);
       // If it's a permission error, it's likely the rules
@@ -181,10 +199,20 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     }
   };
 
-  const toggleOption = (id: string) => {
-    setSelectedOptions(prev => 
-      prev.includes(id) ? prev.filter(oid => oid !== id) : [...prev, id]
-    );
+  const forceSync = async () => {
+    setLoading(true);
+    try {
+      const q = query(collection(db, 'votes'));
+      const snapshot = await getDocs(q);
+      const votes = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Vote));
+      setAllVotes(votes);
+      console.log("MANUAL SYNC SUCCESS:", votes.length);
+    } catch (err: any) {
+      console.error("Manual sync failed:", err);
+      setError(`Errore sincronizzazione manuale: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const pollVotes = useMemo(() => activePoll ? allVotes.filter(v => v.pollId === activePoll.id) : [], [allVotes, activePoll]);
@@ -256,6 +284,18 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
             </button>
           ))}
         </div>
+
+        <div className="mt-auto pt-10 text-center">
+          <button 
+            onClick={() => {
+              localStorage.clear();
+              window.location.reload();
+            }}
+            className="text-[10px] font-bold text-red-400 uppercase tracking-widest opacity-50 hover:opacity-100"
+          >
+            Reset App Cache
+          </button>
+        </div>
       </div>
     );
   }
@@ -282,8 +322,8 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
             </button>
             <div className="flex items-center gap-2">
                {loading && <RefreshCw size={10} className="animate-spin text-olive/30" />}
-               <div className="px-2 py-0.5 bg-terracotta/10 rounded text-[8px] font-bold text-terracotta">
-                 DB: {allVotes.length}
+               <div className={`px-2 py-0.5 rounded text-[8px] font-bold ${allVotes.length > 0 ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                 DB Sync: {allVotes.length}
                </div>
                <div className="px-3 py-1 bg-olive/5 rounded-full">
                  <span className="text-[10px] font-bold text-olive">{selectedMember}</span>
@@ -318,10 +358,10 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
                 Aggiornato: {new Date().toLocaleTimeString()}
               </span>
               <button 
-                onClick={() => window.location.reload()} 
+                onClick={forceSync} 
                 className="text-terracotta text-[8px] font-bold uppercase tracking-widest flex items-center gap-1"
               >
-                <RefreshCw size={10} /> Forza Ricarica
+                <RefreshCw size={10} className={`${loading ? 'animate-spin' : ''}`} /> Forza Ricarica
               </button>
             </div>
           )}
