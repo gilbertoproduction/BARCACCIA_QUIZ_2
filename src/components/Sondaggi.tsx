@@ -17,6 +17,7 @@ import {
   addDoc, 
   serverTimestamp, 
   onSnapshot,
+  orderBy
 } from 'firebase/firestore';
 import { Poll, PollOption, Vote, Member } from '../types';
 import { POLLS } from '../data/polls';
@@ -72,9 +73,8 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
 
   useEffect(() => {
     let isMounted = true;
-    const q = query(collection(db, 'votes'));
+    const q = query(collection(db, 'votes'), orderBy('timestamp', 'asc'));
     
-    // Set a timeout to finish loading even if Firestore is slow/hanging
     const timeoutId = setTimeout(() => {
       if (isMounted) setLoading(false);
     }, 5000);
@@ -91,7 +91,6 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
     }, (err) => {
       if (!isMounted) return;
       console.error("Firestore sync error:", err);
-      // Don't set error state immediately to allow retries/timeout
       setLoading(false);
       clearTimeout(timeoutId);
     });
@@ -106,16 +105,26 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
   const handleVote = async () => {
     if (!selectedMember || !activePoll) return;
     setIsSubmitting(true);
+    setError(null);
     try {
-      await addDoc(collection(db, 'votes'), {
+      // Use client-side timestamp for immediate local availability and sorting
+      const timestamp = new Date().toISOString();
+      
+      // We don't strictly await the network response to provide an "instant" feel
+      // Firestore will handle the persistence and retries in the background.
+      addDoc(collection(db, 'votes'), {
         pollId: activePoll.id,
         member: selectedMember,
         selectedOptions,
-        timestamp: serverTimestamp()
+        timestamp: timestamp
+      }).catch(err => {
+        console.error("Delayed background vote failure:", err);
       });
+      
       setViewMode('RESULTS');
-    } catch (error) {
-      handleFirestoreError(error, OperationType.CREATE, 'votes');
+    } catch (err: any) {
+      console.error("Vote failed:", err);
+      setError("Errore durante il salvataggio. Riprova.");
     } finally {
       setIsSubmitting(false);
     }
@@ -302,7 +311,11 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
                     <div className="flex flex-wrap gap-1.5">
                       {voters.map(v => {
                         const vData = memberVotes[v];
-                        const dateStr = vData?.timestamp ? new Date((vData.timestamp as any).toDate()).toLocaleString('it-IT', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '...';
+                        let dateStr = '...';
+                        if (vData?.timestamp) {
+                          const date = typeof vData.timestamp === 'string' ? new Date(vData.timestamp) : (vData.timestamp as any).toDate();
+                          dateStr = date.toLocaleString('it-IT', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+                        }
                         return (
                           <div key={v} className="flex flex-col items-center">
                             <span className="bg-olive/10 text-olive text-[8px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border border-olive/10">
