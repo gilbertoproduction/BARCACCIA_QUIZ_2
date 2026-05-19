@@ -36,5 +36,5 @@ export interface Vote {
   pollId: string;
   member: Member;
   selectedOptions: string[];
-  timestamp: string;
+  timestamp: string | { toDate: () => Date } | any;
 }

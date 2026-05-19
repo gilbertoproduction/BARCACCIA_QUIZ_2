@@ -84,7 +84,7 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
   }, [selectedMember]);
 
   useEffect(() => {
-    if (activePoll && selectedMember) {
+    if (activePoll && selectedMember && !loading) {
       const hasVoted = allVotes.some(v => v.pollId === activePoll.id && v.member === selectedMember);
       if (hasVoted) {
         setViewMode('RESULTS');
@@ -92,7 +92,7 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
         setViewMode('VOTE');
       }
     }
-  }, [activePoll, selectedMember, allVotes]);
+  }, [activePoll, selectedMember, allVotes, loading]);
 
   useEffect(() => {
     let isMounted = true;
@@ -128,6 +128,10 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
 
   const handleVote = async () => {
     if (!selectedMember || !activePoll) return;
+    
+    // Prevent double submissions
+    if (isSubmitting) return;
+    
     setIsSubmitting(true);
     setError(null);
     try {
@@ -139,7 +143,7 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
         id: tempId,
         pollId: activePoll.id,
         member: selectedMember,
-        selectedOptions,
+        selectedOptions: [...selectedOptions], // Clone
         timestamp: timestamp
       };
 
@@ -148,24 +152,22 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
         return [...filtered, newVote];
       });
 
-      // Background Firestore update
-      addDoc(collection(db, 'votes'), {
+      // Switch to results immediately for the user
+      setViewMode('RESULTS');
+
+      // Await Firestore write for better reliability
+      await addDoc(collection(db, 'votes'), {
         pollId: activePoll.id,
         member: selectedMember,
         selectedOptions,
-        timestamp: timestamp
-      }).then((docRef) => {
-        // Replace temp vote with real one once confirmed if you want, 
-        // but onSnapshot will handle it.
-      }).catch(err => {
-        console.error("Delayed background vote failure:", err);
-        setError("Salvataggio fallito. Verifica la connessione.");
+        timestamp: timestamp,
+        isFromServer: true // Metadata to help filtering if needed
       });
       
-      setViewMode('RESULTS');
     } catch (err: any) {
       console.error("Vote failed:", err);
-      setError("Errore durante il salvataggio. Riprova.");
+      setError("Errore durante il salvataggio. Verifica la tua connessione e riprova.");
+      // Rollback might happen via onSnapshot anyway, but we set error to let user know
     } finally {
       setIsSubmitting(false);
     }
@@ -373,6 +375,19 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
             </div>
           ) : (
             <div className="space-y-6">
+              {loading && pollVotes.length === 0 && (
+                <div className="py-20 text-center">
+                  <div className="w-8 h-8 border-2 border-olive/10 border-t-olive rounded-full animate-spin mx-auto mb-4" />
+                  <p className="text-[10px] font-bold text-olive/40 uppercase tracking-widest">Sincronizzazione voti...</p>
+                </div>
+              )}
+              
+              {!loading && pollVotes.length === 0 && (
+                <div className="py-20 text-center opacity-30 italic text-sm">
+                  Nessun voto registrato per questo sondaggio.
+                </div>
+              )}
+
               {activePoll.options
                 .map(opt => {
                   const voters = MEMBERS.filter(m => {
