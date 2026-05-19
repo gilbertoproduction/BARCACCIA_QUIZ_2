@@ -63,7 +63,10 @@ function handleFirestoreError(error: unknown, operationType: OperationType, path
 const MEMBERS: Member[] = ['SIMO', 'MARCO', 'DAVE', 'PIETRO', 'FILO'];
 
 export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
-  const [selectedMember, setSelectedMember] = useState<Member | null>(null);
+  const [selectedMember, setSelectedMember] = useState<Member | null>(() => {
+    const saved = localStorage.getItem('barcaccia_member');
+    return (saved as Member) || null;
+  });
   const [activePoll, setActivePoll] = useState<Poll | null>(null);
   const [allVotes, setAllVotes] = useState<Vote[]>([]);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
@@ -71,6 +74,25 @@ export const Sondaggi = ({ onBack }: { onBack: () => void }) => {
   const [viewMode, setViewMode] = useState<'VOTE' | 'RESULTS'>('VOTE');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (selectedMember) {
+      localStorage.setItem('barcaccia_member', selectedMember);
+    } else {
+      localStorage.removeItem('barcaccia_member');
+    }
+  }, [selectedMember]);
+
+  useEffect(() => {
+    if (activePoll && selectedMember) {
+      const hasVoted = allVotes.some(v => v.pollId === activePoll.id && v.member === selectedMember);
+      if (hasVoted) {
+        setViewMode('RESULTS');
+      } else {
+        setViewMode('VOTE');
+      }
+    }
+  }, [activePoll, selectedMember, allVotes]);
 
   useEffect(() => {
     let isMounted = true;
